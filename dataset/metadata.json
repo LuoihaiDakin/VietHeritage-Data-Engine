@@ -1,0 +1,20 @@
+[
+    {
+        "filename": "test.jpg",
+        "width": 120,
+        "height": 164,
+        "format": "JPG",
+        "file_size_kb": 8.92,
+        "aspect_ratio": 0.7317,
+        "brightness": 123.65,
+        "contrast": 59.93,
+        "sharpness": 14078.92,
+        "category": "unknown",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown"
+    }
+]
