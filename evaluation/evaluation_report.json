@@ -1,0 +1,130 @@
+{
+    "project": "VietHeritage Data Engine",
+    "evaluation_type": "Prototype pipeline evaluation",
+    "ground_truth_available": false,
+    "note": "Accuracy metrics such as IoU, precision, recall, and F1 are not calculated because a manually annotated ground-truth dataset is not available yet.",
+    "images": {
+        "cleaning": {
+            "exists": true,
+            "readable": true,
+            "width": 120,
+            "height": 164,
+            "channels": 3,
+            "file_size_bytes": 13155
+        },
+        "restoration": {
+            "exists": true,
+            "readable": true,
+            "width": 120,
+            "height": 164,
+            "channels": 3,
+            "file_size_bytes": 14197
+        },
+        "edges": {
+            "exists": true,
+            "readable": true,
+            "width": 120,
+            "height": 164,
+            "channels": 3,
+            "file_size_bytes": 14301
+        },
+        "segmentation_mask": {
+            "exists": true,
+            "readable": true,
+            "width": 120,
+            "height": 164,
+            "channels": 1,
+            "file_size_bytes": 8526
+        },
+        "segmented": {
+            "exists": true,
+            "readable": true,
+            "width": 120,
+            "height": 164,
+            "channels": 3,
+            "file_size_bytes": 10055
+        }
+    },
+    "image_quality": {
+        "cleaning": {
+            "exists": true,
+            "readable": true,
+            "sharpness": 12314.4917,
+            "brightness": 123.6006,
+            "contrast": 58.2013,
+            "noise": 13.4509
+        },
+        "restoration": {
+            "exists": true,
+            "readable": true,
+            "sharpness": 16878.7656,
+            "brightness": 118.6465,
+            "contrast": 53.7889,
+            "noise": 16.1352
+        },
+        "segmented": {
+            "exists": true,
+            "readable": true,
+            "sharpness": 37198.8681,
+            "brightness": 22.5991,
+            "contrast": 50.1198,
+            "noise": 17.1804
+        }
+    },
+    "segmentation": {
+        "exists": true,
+        "readable": true,
+        "foreground_ratio": 0.1772,
+        "background_ratio": 0.8228,
+        "empty_mask": false,
+        "full_mask": false,
+        "status": "usable"
+    },
+    "edges": {
+        "exists": true,
+        "readable": true,
+        "edge_ratio": 0.3375,
+        "status": "usable"
+    },
+    "vectorization": {
+        "exists": true,
+        "readable": true,
+        "valid_svg": true,
+        "path_count": 0,
+        "polyline_count": 17,
+        "vector_element_count": 17,
+        "embedded_raster_count": 0,
+        "file_size_bytes": 3770,
+        "status": "usable"
+    },
+    "normalization": {
+        "exists": true,
+        "readable": true,
+        "valid_svg": true,
+        "path_count": 0,
+        "polyline_count": 17,
+        "vector_element_count": 17,
+        "embedded_raster_count": 0,
+        "file_size_bytes": 3898,
+        "status": "usable"
+    },
+    "pipeline": {
+        "completed_steps": 7,
+        "total_steps": 7,
+        "completeness_ratio": 1.0,
+        "completeness_percent": 100.0,
+        "steps": {
+            "cleaning": true,
+            "restoration": true,
+            "edges": true,
+            "segmentation_mask": true,
+            "segmented": true,
+            "vectorization": true,
+            "normalization": true
+        }
+    },
+    "overall": {
+        "status": "PASS",
+        "problems": []
+    }
+}
