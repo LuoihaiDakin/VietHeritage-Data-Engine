@@ -3,8 +3,9 @@ import cv2
 
 def denoise_image(image):
     """
-    Remove noise from an image.
+    Reduce noise while preserving important image details.
     """
+
     cleaned_image = cv2.fastNlMeansDenoisingColored(
         image,
         None,
@@ -19,22 +20,49 @@ def denoise_image(image):
 
 def adjust_brightness_contrast(image):
     """
-    Adjust brightness and contrast.
+    Adjust brightness and contrast based on the image itself.
     """
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+    gray = cv2.cvtColor(
+        image,
+        cv2.COLOR_BGR2GRAY
+    )
 
     brightness = gray.mean()
     contrast = gray.std()
 
+    alpha = 1.0
+    beta = 0
+
     # Adjust brightness
     if brightness < 100:
-        image = cv2.convertScaleAbs(image, alpha=1.0, beta=30)
+        beta = 30
 
     elif brightness > 180:
-        image = cv2.convertScaleAbs(image, alpha=1.0, beta=-30)
+        beta = -30
 
     # Adjust contrast
     if contrast < 30:
-        image = cv2.convertScaleAbs(image, alpha=1.3, beta=0)
+        alpha = 1.3
 
-    return image
+    adjusted = cv2.convertScaleAbs(
+        image,
+        alpha=alpha,
+        beta=beta
+    )
+
+    return adjusted
+
+
+def clean_image(image):
+    """
+    Complete cleaning pipeline.
+    """
+
+    # Step 1: denoise
+    cleaned = denoise_image(image)
+
+    # Step 2: adjust brightness and contrast
+    cleaned = adjust_brightness_contrast(cleaned)
+
+    return cleaned

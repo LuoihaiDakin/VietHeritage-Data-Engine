@@ -3,53 +3,108 @@ import os
 
 
 def quality_check(image_path):
-    if not os.path.exists(image_path):
-        print("ERROR: Image file not found.")
-        return
+    """
+    Check the basic quality of a heritage image.
 
+    Checks:
+    - File existence
+    - Image readability
+    - Resolution
+    - Brightness
+    - Contrast
+    - Blur
+    - File size
+    """
+
+    print("========================================")
+    print("        IMAGE QUALITY CHECK")
+    print("========================================")
+
+    # Check file existence
+    if not os.path.exists(image_path):
+        print("ERROR: File does not exist.")
+        return False
+
+    # Read image
     image = cv2.imread(image_path)
 
     if image is None:
         print("ERROR: Cannot read image.")
-        return
+        return False
 
-    height, width, channels = image.shape
+    # Image dimensions
+    height, width = image.shape[:2]
+
+    print(f"Resolution: {width} x {height}")
+
+    # File size
     file_size = os.path.getsize(image_path)
 
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    print(
+        f"File size: {file_size / (1024 * 1024):.2f} MB"
+    )
 
+    # Convert to grayscale
+    gray = cv2.cvtColor(
+        image,
+        cv2.COLOR_BGR2GRAY
+    )
+
+    # Brightness
     brightness = gray.mean()
-    contrast = gray.std()
-    blur_score = cv2.Laplacian(gray, cv2.CV_64F).var()
 
-    print(f"File: {image_path}")
-    print(f"Resolution: {width} x {height}")
-    print(f"Channels: {channels}")
-    print(f"File size: {file_size / 1024:.2f} KB")
-    print(f"Brightness: {brightness:.2f}")
-    print(f"Contrast: {contrast:.2f}")
-    print(f"Blur score: {blur_score:.2f}")
-
-    print()
-
-    if width < 500 or height < 500:
-        print("Resolution status: LOW")
-    else:
-        print("Resolution status: OK")
+    print(
+        f"Brightness: {brightness:.2f}",
+        end=" "
+    )
 
     if brightness < 50:
-        print("Brightness status: TOO DARK")
+        print("(Too dark)")
     elif brightness > 200:
-        print("Brightness status: TOO BRIGHT")
+        print("(Too bright)")
     else:
-        print("Brightness status: OK")
+        print("(OK)")
+
+    # Contrast
+    contrast = gray.std()
+
+    print(
+        f"Contrast: {contrast:.2f}",
+        end=" "
+    )
 
     if contrast < 30:
-        print("Contrast status: LOW")
+        print("(Low contrast)")
     else:
-        print("Contrast status: OK")
+        print("(OK)")
+
+    # Blur detection
+    blur_score = cv2.Laplacian(
+        gray,
+        cv2.CV_64F
+    ).var()
+
+    print(
+        f"Sharpness score: {blur_score:.2f}",
+        end=" "
+    )
 
     if blur_score < 100:
-        print("Sharpness status: BLURRY")
+        print("(Possibly blurry)")
     else:
-        print("Sharpness status: OK")
+        print("(OK)")
+
+    # Resolution check
+    print(
+        f"Resolution check: ",
+        end=""
+    )
+
+    if width < 500 or height < 500:
+        print("(Low resolution)")
+    else:
+        print("(OK)")
+
+    print("========================================")
+
+    return True
