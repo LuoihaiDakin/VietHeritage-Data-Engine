@@ -1,0 +1,51 @@
+{
+    "asset_id": "VHDE_0001",
+    "name": "Dong Ho Rooster",
+    "title_vi": "Gà Đông Hồ",
+    "category": "Dong Ho",
+    "sub_category": "Vietnamese Folk Art",
+    "culture": "Vietnamese",
+    "asset_type": "Cultural Graphic Pattern",
+    "description": "A Vietnamese cultural graphic asset derived from a Dong Ho folk-art image.",
+    "source": {
+        "type": "Test Dataset",
+        "original_file": null
+    },
+    "processing": {
+        "cleaning": true,
+        "restoration": true,
+        "edge_extraction": true,
+        "segmentation": true,
+        "vectorization": true,
+        "normalization": true
+    },
+    "files": {
+        "cleaned": "outputs/cleaned_test.jpg",
+        "restored": "outputs/restored_test.jpg",
+        "edges": "outputs/edges_test.jpg",
+        "segmentation_mask": "outputs/segmentation_mask.jpg",
+        "segmented": "outputs/segmented_test.jpg",
+        "vectorized": "outputs/vectorized_test.svg",
+        "normalized": "outputs/normalized_test.svg"
+    },
+    "file_sizes": {
+        "cleaned_bytes": 13155,
+        "restored_bytes": 14197,
+        "edges_bytes": 14301,
+        "segmentation_mask_bytes": 8526,
+        "segmented_bytes": 10055,
+        "vectorized_bytes": 3770,
+        "normalized_bytes": 3898
+    },
+    "intended_use": [
+        "Game development",
+        "Animation",
+        "Digital art",
+        "Graphic design",
+        "Cultural education",
+        "Digital cultural preservation"
+    ],
+    "status": "prototype",
+    "created_at": "2026-09-22T18:44:27.426747",
+    "notes": "This asset is currently a prototype processed through the VietHeritage Data Engine pipeline. Source information should be updated when the original historical source is verified."
+}
