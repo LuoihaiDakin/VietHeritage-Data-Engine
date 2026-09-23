@@ -42,7 +42,7 @@ def calculate_image_metrics(image):
     }
 
 
-def analyze_image(file_path):
+def analyze_image(file_path, dataset_path):
     """
     Extract technical metadata from an image.
     """
@@ -50,6 +50,7 @@ def analyze_image(file_path):
     image = cv2.imread(file_path)
 
     if image is None:
+        print(f"WARNING: Cannot read image: {file_path}")
         return None
 
     height, width = image.shape[:2]
@@ -64,9 +65,25 @@ def analyze_image(file_path):
         image
     )
 
+    # Get relative path inside dataset
+    relative_path = os.path.relpath(
+        file_path,
+        dataset_path
+    )
+
+    # Get category from parent folder
+    parent_folder = os.path.basename(
+        os.path.dirname(file_path)
+    )
+
     metadata = {
         "filename": os.path.basename(
             file_path
+        ),
+
+        "path": relative_path.replace(
+            "\\",
+            "/"
         ),
 
         "width": width,
@@ -100,7 +117,7 @@ def analyze_image(file_path):
             "sharpness"
         ],
 
-        "category": "unknown",
+        "category": parent_folder,
 
         "period": "unknown",
 
@@ -120,13 +137,26 @@ def analyze_image(file_path):
 
 def scan_dataset(dataset_path):
     """
-    Scan all images inside a dataset directory.
+    Scan all images inside dataset/images.
     """
 
     metadata_list = []
 
+    images_path = os.path.join(
+        dataset_path,
+        "images"
+    )
+
+    if not os.path.exists(images_path):
+
+        print(
+            f"ERROR: Image dataset not found: {images_path}"
+        )
+
+        return metadata_list
+
     for root, directories, files in os.walk(
-        dataset_path
+        images_path
     ):
 
         for filename in files:
@@ -144,7 +174,8 @@ def scan_dataset(dataset_path):
             )
 
             metadata = analyze_image(
-                file_path
+                file_path,
+                dataset_path
             )
 
             if metadata is not None:
@@ -160,6 +191,11 @@ def save_metadata(metadata_list, output_path):
     """
     Save metadata as JSON.
     """
+
+    os.makedirs(
+        os.path.dirname(output_path),
+        exist_ok=True
+    )
 
     with open(
         output_path,
@@ -177,6 +213,7 @@ def save_metadata(metadata_list, output_path):
 
 def main():
 
+    # Project root
     project_root = os.path.dirname(
         os.path.dirname(
             os.path.dirname(
@@ -185,13 +222,16 @@ def main():
         )
     )
 
+    # Dataset directory
     dataset_path = os.path.join(
         project_root,
         "dataset"
     )
 
+    # Metadata output
     metadata_path = os.path.join(
         dataset_path,
+        "metadata",
         "metadata.json"
     )
 
@@ -210,8 +250,10 @@ def main():
     print()
 
     print(
-        f"Scanning: {dataset_path}"
+        f"Scanning: {os.path.join(dataset_path, 'images')}"
     )
+
+    print()
 
     metadata_list = scan_dataset(
         dataset_path
