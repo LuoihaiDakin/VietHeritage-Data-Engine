@@ -3,6 +3,7 @@ import json
 
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 
 # ========================================
@@ -34,7 +35,47 @@ app = FastAPI(
     ),
     version="1.0.0"
 )
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+DATASET_DIR = os.path.join(
+    PROJECT_ROOT,
+    "dataset"
+)
 
+OUTPUTS_DIR = os.path.join(
+    PROJECT_ROOT,
+    "outputs"
+)
+
+IMAGE_DIR = os.path.join(
+    DATASET_DIR,
+    "images"
+)
+
+app.mount(
+    "/images",
+    StaticFiles(directory=IMAGE_DIR),
+    name="images"
+)
+
+OUTPUTS_DIR = os.path.join(
+    PROJECT_ROOT,
+    "outputs"
+)
+
+app.mount(
+    "/outputs",
+    StaticFiles(directory=OUTPUTS_DIR),
+    name="outputs"
+)
 
 # ========================================
 # CORS
