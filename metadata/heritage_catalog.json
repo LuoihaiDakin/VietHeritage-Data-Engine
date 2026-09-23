@@ -1,0 +1,2394 @@
+[
+    {
+        "id": "dong_ho_dong_ho_001",
+        "filename": "dong_ho_001.jpg",
+        "path": "images/dong_ho/dong_ho_001.jpg",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 89,
+            "format": "JPG",
+            "file_size_kb": 5.74,
+            "brightness": 133.2,
+            "contrast": 51.45,
+            "sharpness": 13585.99
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_001.jpg",
+            "path": "images/dong_ho/dong_ho_001.jpg",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 133.2,
+                "contrast": 51.45,
+                "sharpness": 13585.99,
+                "width": 120,
+                "height": 89
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 76.77,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 61.35,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_002",
+        "filename": "dong_ho_002.jpg",
+        "path": "images/dong_ho/dong_ho_002.jpg",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 153,
+            "format": "JPG",
+            "file_size_kb": 8.02,
+            "brightness": 152.89,
+            "contrast": 35.92,
+            "sharpness": 5595.24
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_002.jpg",
+            "path": "images/dong_ho/dong_ho_002.jpg",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 152.89,
+                "contrast": 35.92,
+                "sharpness": 5595.24,
+                "width": 120,
+                "height": 153
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 50.15,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 56.03,
+            "quality": "POOR",
+            "quality_flags": [
+                "poor_contrast",
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: poor_contrast, low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_003",
+        "filename": "dong_ho_003.jpg",
+        "path": "images/dong_ho/dong_ho_003.jpg",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 178,
+            "format": "JPG",
+            "file_size_kb": 10.59,
+            "brightness": 137.87,
+            "contrast": 50.25,
+            "sharpness": 13292.7
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_003.jpg",
+            "path": "images/dong_ho/dong_ho_003.jpg",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 137.87,
+                "contrast": 50.25,
+                "sharpness": 13292.7,
+                "width": 120,
+                "height": 178
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 74.71,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 60.94,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_004",
+        "filename": "dong_ho_004.JPG",
+        "path": "images/dong_ho/dong_ho_004.JPG",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 78,
+            "format": "JPG",
+            "file_size_kb": 6.35,
+            "brightness": 130.45,
+            "contrast": 85.31,
+            "sharpness": 23682.31
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_004.JPG",
+            "path": "images/dong_ho/dong_ho_004.JPG",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 130.45,
+                "contrast": 85.31,
+                "sharpness": 23682.31,
+                "width": 120,
+                "height": 78
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 100,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 66.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_005",
+        "filename": "dong_ho_005.JPG",
+        "path": "images/dong_ho/dong_ho_005.JPG",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 86,
+            "format": "JPG",
+            "file_size_kb": 6.63,
+            "brightness": 157.22,
+            "contrast": 60.84,
+            "sharpness": 24441.1
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_005.JPG",
+            "path": "images/dong_ho/dong_ho_005.JPG",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 157.22,
+                "contrast": 60.84,
+                "sharpness": 24441.1,
+                "width": 120,
+                "height": 86
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 92.87,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 64.57,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_006",
+        "filename": "dong_ho_006.JPG",
+        "path": "images/dong_ho/dong_ho_006.JPG",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 160,
+            "format": "JPG",
+            "file_size_kb": 8.78,
+            "brightness": 127.85,
+            "contrast": 41.65,
+            "sharpness": 7869.89
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_006.JPG",
+            "path": "images/dong_ho/dong_ho_006.JPG",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 127.85,
+                "contrast": 41.65,
+                "sharpness": 7869.89,
+                "width": 120,
+                "height": 160
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 59.97,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 57.99,
+            "quality": "POOR",
+            "quality_flags": [
+                "poor_contrast",
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: poor_contrast, low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_007",
+        "filename": "dong_ho_007.jpg",
+        "path": "images/dong_ho/dong_ho_007.jpg",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 164,
+            "format": "JPG",
+            "file_size_kb": 11.13,
+            "brightness": 123.43,
+            "contrast": 61.27,
+            "sharpness": 17668.34
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_007.jpg",
+            "path": "images/dong_ho/dong_ho_007.jpg",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 123.43,
+                "contrast": 61.27,
+                "sharpness": 17668.34,
+                "width": 120,
+                "height": 164
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 93.61,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 64.72,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_008",
+        "filename": "dong_ho_008.jpg",
+        "path": "images/dong_ho/dong_ho_008.jpg",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 60,
+            "height": 119,
+            "format": "JPG",
+            "file_size_kb": 4.69,
+            "brightness": 118.58,
+            "contrast": 63.92,
+            "sharpness": 18315.19
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_008.jpg",
+            "path": "images/dong_ho/dong_ho_008.jpg",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 118.58,
+                "contrast": 63.92,
+                "sharpness": 18315.19,
+                "width": 60,
+                "height": 119
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 98.15,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 65.63,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_009",
+        "filename": "dong_ho_009.jpg",
+        "path": "images/dong_ho/dong_ho_009.jpg",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 169,
+            "format": "JPG",
+            "file_size_kb": 14.56,
+            "brightness": 133.01,
+            "contrast": 89.35,
+            "sharpness": 42235.73
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_009.jpg",
+            "path": "images/dong_ho/dong_ho_009.jpg",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 133.01,
+                "contrast": 89.35,
+                "sharpness": 42235.73,
+                "width": 120,
+                "height": 169
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 100,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 66.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_010",
+        "filename": "dong_ho_010.jpg",
+        "path": "images/dong_ho/dong_ho_010.jpg",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 164,
+            "format": "JPG",
+            "file_size_kb": 9.48,
+            "brightness": 178.3,
+            "contrast": 85.25,
+            "sharpness": 13145.8
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_010.jpg",
+            "path": "images/dong_ho/dong_ho_010.jpg",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 178.3,
+                "contrast": 85.25,
+                "sharpness": 13145.8,
+                "width": 120,
+                "height": 164
+            },
+            "quality_scores": {
+                "brightness": 94.5,
+                "contrast": 100,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 65.45,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_011",
+        "filename": "dong_ho_011.jpg",
+        "path": "images/dong_ho/dong_ho_011.jpg",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 90,
+            "format": "JPG",
+            "file_size_kb": 4.39,
+            "brightness": 136.42,
+            "contrast": 47.46,
+            "sharpness": 7973.33
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_011.jpg",
+            "path": "images/dong_ho/dong_ho_011.jpg",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 136.42,
+                "contrast": 47.46,
+                "sharpness": 7973.33,
+                "width": 120,
+                "height": 90
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 69.93,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 59.99,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_012",
+        "filename": "dong_ho_012.jpg",
+        "path": "images/dong_ho/dong_ho_012.jpg",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 78,
+            "format": "JPG",
+            "file_size_kb": 5.98,
+            "brightness": 137.73,
+            "contrast": 89.79,
+            "sharpness": 28224.79
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_012.jpg",
+            "path": "images/dong_ho/dong_ho_012.jpg",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 137.73,
+                "contrast": 89.79,
+                "sharpness": 28224.79,
+                "width": 120,
+                "height": 78
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 100,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 66.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_013",
+        "filename": "dong_ho_013.JPG",
+        "path": "images/dong_ho/dong_ho_013.JPG",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 91,
+            "format": "JPG",
+            "file_size_kb": 8.04,
+            "brightness": 139.39,
+            "contrast": 76.14,
+            "sharpness": 30493.35
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_013.JPG",
+            "path": "images/dong_ho/dong_ho_013.JPG",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 139.39,
+                "contrast": 76.14,
+                "sharpness": 30493.35,
+                "width": 120,
+                "height": 91
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 100,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 66.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_014",
+        "filename": "dong_ho_014.JPG",
+        "path": "images/dong_ho/dong_ho_014.JPG",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 172,
+            "format": "JPG",
+            "file_size_kb": 13.7,
+            "brightness": 122.41,
+            "contrast": 81.54,
+            "sharpness": 32779.6
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_014.JPG",
+            "path": "images/dong_ho/dong_ho_014.JPG",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 122.41,
+                "contrast": 81.54,
+                "sharpness": 32779.6,
+                "width": 120,
+                "height": 172
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 100,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 66.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_015",
+        "filename": "dong_ho_015.JPG",
+        "path": "images/dong_ho/dong_ho_015.JPG",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 91,
+            "format": "JPG",
+            "file_size_kb": 5.85,
+            "brightness": 196.27,
+            "contrast": 50.24,
+            "sharpness": 20039.91
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_015.JPG",
+            "path": "images/dong_ho/dong_ho_015.JPG",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 196.27,
+                "contrast": 50.24,
+                "sharpness": 20039.91,
+                "width": 120,
+                "height": 91
+            },
+            "quality_scores": {
+                "brightness": 64.55,
+                "contrast": 74.7,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 57.39,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_016",
+        "filename": "dong_ho_016.JPG",
+        "path": "images/dong_ho/dong_ho_016.JPG",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 75,
+            "format": "JPG",
+            "file_size_kb": 6.85,
+            "brightness": 161.04,
+            "contrast": 84.56,
+            "sharpness": 35506.34
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_016.JPG",
+            "path": "images/dong_ho/dong_ho_016.JPG",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 161.04,
+                "contrast": 84.56,
+                "sharpness": 35506.34,
+                "width": 120,
+                "height": 75
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 100,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 66.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_017",
+        "filename": "dong_ho_017.jpg",
+        "path": "images/dong_ho/dong_ho_017.jpg",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 61,
+            "format": "JPG",
+            "file_size_kb": 5.04,
+            "brightness": 183.19,
+            "contrast": 63.23,
+            "sharpness": 19688.38
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_017.jpg",
+            "path": "images/dong_ho/dong_ho_017.jpg",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 183.19,
+                "contrast": 63.23,
+                "sharpness": 19688.38,
+                "width": 120,
+                "height": 61
+            },
+            "quality_scores": {
+                "brightness": 86.35,
+                "contrast": 96.97,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 64.03,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_018",
+        "filename": "dong_ho_018.jpg",
+        "path": "images/dong_ho/dong_ho_018.jpg",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 75,
+            "format": "JPG",
+            "file_size_kb": 6.88,
+            "brightness": 161.52,
+            "contrast": 85.14,
+            "sharpness": 37574.04
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_018.jpg",
+            "path": "images/dong_ho/dong_ho_018.jpg",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 161.52,
+                "contrast": 85.14,
+                "sharpness": 37574.04,
+                "width": 120,
+                "height": 75
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 100,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 66.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_019",
+        "filename": "dong_ho_019.jpg",
+        "path": "images/dong_ho/dong_ho_019.jpg",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 61,
+            "format": "JPG",
+            "file_size_kb": 7.08,
+            "brightness": 152.02,
+            "contrast": 45.73,
+            "sharpness": 9928.23
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_019.jpg",
+            "path": "images/dong_ho/dong_ho_019.jpg",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 152.02,
+                "contrast": 45.73,
+                "sharpness": 9928.23,
+                "width": 120,
+                "height": 61
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 66.97,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 59.39,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_020",
+        "filename": "dong_ho_020.jpg",
+        "path": "images/dong_ho/dong_ho_020.jpg",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 81,
+            "format": "JPG",
+            "file_size_kb": 6.6,
+            "brightness": 161.83,
+            "contrast": 70.05,
+            "sharpness": 28630.39
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_020.jpg",
+            "path": "images/dong_ho/dong_ho_020.jpg",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 161.83,
+                "contrast": 70.05,
+                "sharpness": 28630.39,
+                "width": 120,
+                "height": 81
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 100,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 66.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_021",
+        "filename": "dong_ho_021.JPG",
+        "path": "images/dong_ho/dong_ho_021.JPG",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 170,
+            "format": "JPG",
+            "file_size_kb": 13.17,
+            "brightness": 124.82,
+            "contrast": 76.88,
+            "sharpness": 29779.39
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_021.JPG",
+            "path": "images/dong_ho/dong_ho_021.JPG",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 124.82,
+                "contrast": 76.88,
+                "sharpness": 29779.39,
+                "width": 120,
+                "height": 170
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 100,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 66.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_022",
+        "filename": "dong_ho_022.JPG",
+        "path": "images/dong_ho/dong_ho_022.JPG",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 86,
+            "format": "JPG",
+            "file_size_kb": 6.56,
+            "brightness": 102.85,
+            "contrast": 83.21,
+            "sharpness": 16621.85
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_022.JPG",
+            "path": "images/dong_ho/dong_ho_022.JPG",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 102.85,
+                "contrast": 83.21,
+                "sharpness": 16621.85,
+                "width": 120,
+                "height": 86
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 100,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 66.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_023",
+        "filename": "dong_ho_023.JPG",
+        "path": "images/dong_ho/dong_ho_023.JPG",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 82,
+            "format": "JPG",
+            "file_size_kb": 6.64,
+            "brightness": 149.69,
+            "contrast": 63.48,
+            "sharpness": 25032.23
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_023.JPG",
+            "path": "images/dong_ho/dong_ho_023.JPG",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 149.69,
+                "contrast": 63.48,
+                "sharpness": 25032.23,
+                "width": 120,
+                "height": 82
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 97.39,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 65.48,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_024",
+        "filename": "dong_ho_024.JPG",
+        "path": "images/dong_ho/dong_ho_024.JPG",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 164,
+            "format": "JPG",
+            "file_size_kb": 12.72,
+            "brightness": 114.97,
+            "contrast": 86.4,
+            "sharpness": 30548.91
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_024.JPG",
+            "path": "images/dong_ho/dong_ho_024.JPG",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 114.97,
+                "contrast": 86.4,
+                "sharpness": 30548.91,
+                "width": 120,
+                "height": 164
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 100,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 66.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_025",
+        "filename": "dong_ho_025.JPG",
+        "path": "images/dong_ho/dong_ho_025.JPG",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 169,
+            "format": "JPG",
+            "file_size_kb": 10.76,
+            "brightness": 141.73,
+            "contrast": 95.09,
+            "sharpness": 20442.8
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_025.JPG",
+            "path": "images/dong_ho/dong_ho_025.JPG",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 141.73,
+                "contrast": 95.09,
+                "sharpness": 20442.8,
+                "width": 120,
+                "height": 169
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 95,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 65.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_026",
+        "filename": "dong_ho_026.JPG",
+        "path": "images/dong_ho/dong_ho_026.JPG",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 74,
+            "format": "JPG",
+            "file_size_kb": 5.34,
+            "brightness": 151.17,
+            "contrast": 80.59,
+            "sharpness": 24612.77
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_026.JPG",
+            "path": "images/dong_ho/dong_ho_026.JPG",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 151.17,
+                "contrast": 80.59,
+                "sharpness": 24612.77,
+                "width": 120,
+                "height": 74
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 100,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 66.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_027",
+        "filename": "dong_ho_027.jpg",
+        "path": "images/dong_ho/dong_ho_027.jpg",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 91,
+            "format": "JPG",
+            "file_size_kb": 7.92,
+            "brightness": 158.09,
+            "contrast": 83.5,
+            "sharpness": 32040.5
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_027.jpg",
+            "path": "images/dong_ho/dong_ho_027.jpg",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 158.09,
+                "contrast": 83.5,
+                "sharpness": 32040.5,
+                "width": 120,
+                "height": 91
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 100,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 66.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_028",
+        "filename": "dong_ho_028.jpg",
+        "path": "images/dong_ho/dong_ho_028.jpg",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 90,
+            "format": "JPG",
+            "file_size_kb": 5.75,
+            "brightness": 96.98,
+            "contrast": 63.79,
+            "sharpness": 11664.63
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_028.jpg",
+            "path": "images/dong_ho/dong_ho_028.jpg",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 96.98,
+                "contrast": 63.79,
+                "sharpness": 11664.63,
+                "width": 120,
+                "height": 90
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 97.93,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 65.59,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_029",
+        "filename": "dong_ho_029.JPG",
+        "path": "images/dong_ho/dong_ho_029.JPG",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 160,
+            "format": "JPG",
+            "file_size_kb": 9.86,
+            "brightness": 151.49,
+            "contrast": 90.87,
+            "sharpness": 21196.19
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_029.JPG",
+            "path": "images/dong_ho/dong_ho_029.JPG",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 151.49,
+                "contrast": 90.87,
+                "sharpness": 21196.19,
+                "width": 120,
+                "height": 160
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 95,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 65.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_030",
+        "filename": "dong_ho_030.JPG",
+        "path": "images/dong_ho/dong_ho_030.JPG",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 89,
+            "format": "JPG",
+            "file_size_kb": 7.24,
+            "brightness": 114.82,
+            "contrast": 83.71,
+            "sharpness": 24640.08
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_030.JPG",
+            "path": "images/dong_ho/dong_ho_030.JPG",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 114.82,
+                "contrast": 83.71,
+                "sharpness": 24640.08,
+                "width": 120,
+                "height": 89
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 100,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 66.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_031",
+        "filename": "dong_ho_031.jpg",
+        "path": "images/dong_ho/dong_ho_031.jpg",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 187,
+            "format": "JPG",
+            "file_size_kb": 14.01,
+            "brightness": 111.1,
+            "contrast": 85.71,
+            "sharpness": 37854.88
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_031.jpg",
+            "path": "images/dong_ho/dong_ho_031.jpg",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 111.1,
+                "contrast": 85.71,
+                "sharpness": 37854.88,
+                "width": 120,
+                "height": 187
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 100,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 66.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_032",
+        "filename": "dong_ho_032.jpg",
+        "path": "images/dong_ho/dong_ho_032.jpg",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 162,
+            "format": "JPG",
+            "file_size_kb": 11.84,
+            "brightness": 150.15,
+            "contrast": 62.43,
+            "sharpness": 21137.26
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_032.jpg",
+            "path": "images/dong_ho/dong_ho_032.jpg",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 150.15,
+                "contrast": 62.43,
+                "sharpness": 21137.26,
+                "width": 120,
+                "height": 162
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 95.59,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 65.12,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_033",
+        "filename": "dong_ho_033.JPG",
+        "path": "images/dong_ho/dong_ho_033.JPG",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 160,
+            "format": "JPG",
+            "file_size_kb": 9.92,
+            "brightness": 153.42,
+            "contrast": 91.25,
+            "sharpness": 23061.46
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_033.JPG",
+            "path": "images/dong_ho/dong_ho_033.JPG",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 153.42,
+                "contrast": 91.25,
+                "sharpness": 23061.46,
+                "width": 120,
+                "height": 160
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 95,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 65.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "dong_ho_dong_ho_034",
+        "filename": "dong_ho_034.jpg",
+        "path": "images/dong_ho/dong_ho_034.jpg",
+        "category": "dong_ho",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 126,
+            "format": "JPG",
+            "file_size_kb": 7.68,
+            "brightness": 211.06,
+            "contrast": 64.44,
+            "sharpness": 20067.13
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "dong_ho_034.jpg",
+            "path": "images/dong_ho/dong_ho_034.jpg",
+            "category": "dong_ho",
+            "technical_metrics": {
+                "brightness": 211.06,
+                "contrast": 64.44,
+                "sharpness": 20067.13,
+                "width": 120,
+                "height": 126
+            },
+            "quality_scores": {
+                "brightness": 39.9,
+                "contrast": 99.04,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 59.8,
+            "quality": "POOR",
+            "quality_flags": [
+                "poor_brightness",
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: poor_brightness, low_resolution."
+        }
+    },
+    {
+        "id": "phu_dieu_rong_phu_dieu_rong_001",
+        "filename": "phu_dieu_rong_001.jpg",
+        "path": "images/phu_dieu_rong/phu_dieu_rong_001.jpg",
+        "category": "phu_dieu_rong",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 160,
+            "format": "JPG",
+            "file_size_kb": 14.4,
+            "brightness": 132.41,
+            "contrast": 59.98,
+            "sharpness": 30359.77
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "phu_dieu_rong_001.jpg",
+            "path": "images/phu_dieu_rong/phu_dieu_rong_001.jpg",
+            "category": "phu_dieu_rong",
+            "technical_metrics": {
+                "brightness": 132.41,
+                "contrast": 59.98,
+                "sharpness": 30359.77,
+                "width": 120,
+                "height": 160
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 91.39,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 64.28,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "phu_dieu_rong_phu_dieu_rong_002",
+        "filename": "phu_dieu_rong_002.jpg",
+        "path": "images/phu_dieu_rong/phu_dieu_rong_002.jpg",
+        "category": "phu_dieu_rong",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 80,
+            "format": "JPG",
+            "file_size_kb": 5.27,
+            "brightness": 107.24,
+            "contrast": 52.23,
+            "sharpness": 10835.46
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "phu_dieu_rong_002.jpg",
+            "path": "images/phu_dieu_rong/phu_dieu_rong_002.jpg",
+            "category": "phu_dieu_rong",
+            "technical_metrics": {
+                "brightness": 107.24,
+                "contrast": 52.23,
+                "sharpness": 10835.46,
+                "width": 120,
+                "height": 80
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 78.11,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 61.62,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "phu_dieu_rong_phu_dieu_rong_003",
+        "filename": "phu_dieu_rong_003.jpg",
+        "path": "images/phu_dieu_rong/phu_dieu_rong_003.jpg",
+        "category": "phu_dieu_rong",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 160,
+            "format": "JPG",
+            "file_size_kb": 10.37,
+            "brightness": 77.82,
+            "contrast": 40.69,
+            "sharpness": 7656.44
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "phu_dieu_rong_003.jpg",
+            "path": "images/phu_dieu_rong/phu_dieu_rong_003.jpg",
+            "category": "phu_dieu_rong",
+            "technical_metrics": {
+                "brightness": 77.82,
+                "contrast": 40.69,
+                "sharpness": 7656.44,
+                "width": 120,
+                "height": 160
+            },
+            "quality_scores": {
+                "brightness": 65.64,
+                "contrast": 58.33,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 54.23,
+            "quality": "POOR",
+            "quality_flags": [
+                "poor_contrast",
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: poor_contrast, low_resolution."
+        }
+    },
+    {
+        "id": "phu_dieu_rong_phu_dieu_rong_005",
+        "filename": "phu_dieu_rong_005.jpg",
+        "path": "images/phu_dieu_rong/phu_dieu_rong_005.jpg",
+        "category": "phu_dieu_rong",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 120,
+            "format": "JPG",
+            "file_size_kb": 9.53,
+            "brightness": 146.28,
+            "contrast": 72.71,
+            "sharpness": 26750.2
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "phu_dieu_rong_005.jpg",
+            "path": "images/phu_dieu_rong/phu_dieu_rong_005.jpg",
+            "category": "phu_dieu_rong",
+            "technical_metrics": {
+                "brightness": 146.28,
+                "contrast": 72.71,
+                "sharpness": 26750.2,
+                "width": 120,
+                "height": 120
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 100,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 66.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "rong_viet_nam_rong_viet_nam_001",
+        "filename": "rong_viet_nam_001.JPG",
+        "path": "images/rong_viet_nam/rong_viet_nam_001.JPG",
+        "category": "rong_viet_nam",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 90,
+            "format": "JPG",
+            "file_size_kb": 4.9,
+            "brightness": 158.56,
+            "contrast": 58.71,
+            "sharpness": 6036.43
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "rong_viet_nam_001.JPG",
+            "path": "images/rong_viet_nam/rong_viet_nam_001.JPG",
+            "category": "rong_viet_nam",
+            "technical_metrics": {
+                "brightness": 158.56,
+                "contrast": 58.71,
+                "sharpness": 6036.43,
+                "width": 120,
+                "height": 90
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 89.22,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 63.84,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "rong_viet_nam_rong_viet_nam_002",
+        "filename": "rong_viet_nam_002.jpg",
+        "path": "images/rong_viet_nam/rong_viet_nam_002.jpg",
+        "category": "rong_viet_nam",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 213,
+            "format": "JPG",
+            "file_size_kb": 11.66,
+            "brightness": 139.85,
+            "contrast": 46.13,
+            "sharpness": 7736.16
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "rong_viet_nam_002.jpg",
+            "path": "images/rong_viet_nam/rong_viet_nam_002.jpg",
+            "category": "rong_viet_nam",
+            "technical_metrics": {
+                "brightness": 139.85,
+                "contrast": 46.13,
+                "sharpness": 7736.16,
+                "width": 120,
+                "height": 213
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 67.65,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 59.53,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "rong_viet_nam_rong_viet_nam_003",
+        "filename": "rong_viet_nam_003.png",
+        "path": "images/rong_viet_nam/rong_viet_nam_003.png",
+        "category": "rong_viet_nam",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 121,
+            "format": "PNG",
+            "file_size_kb": 32.88,
+            "brightness": 101.58,
+            "contrast": 35.22,
+            "sharpness": 4018.81
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "rong_viet_nam_003.png",
+            "path": "images/rong_viet_nam/rong_viet_nam_003.png",
+            "category": "rong_viet_nam",
+            "technical_metrics": {
+                "brightness": 101.58,
+                "contrast": 35.22,
+                "sharpness": 4018.81,
+                "width": 120,
+                "height": 121
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 48.95,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 55.79,
+            "quality": "POOR",
+            "quality_flags": [
+                "poor_contrast",
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: poor_contrast, low_resolution."
+        }
+    },
+    {
+        "id": "rong_viet_nam_rong_viet_nam_004",
+        "filename": "rong_viet_nam_004.webp",
+        "path": "images/rong_viet_nam/rong_viet_nam_004.webp",
+        "category": "rong_viet_nam",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 93,
+            "format": "WEBP",
+            "file_size_kb": 8.24,
+            "brightness": 108.27,
+            "contrast": 97.43,
+            "sharpness": 32379.41
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "rong_viet_nam_004.webp",
+            "path": "images/rong_viet_nam/rong_viet_nam_004.webp",
+            "category": "rong_viet_nam",
+            "technical_metrics": {
+                "brightness": 108.27,
+                "contrast": 97.43,
+                "sharpness": 32379.41,
+                "width": 120,
+                "height": 93
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 95,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 65.0,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "rong_viet_nam_rong_viet_nam_005",
+        "filename": "rong_viet_nam_005.png",
+        "path": "images/rong_viet_nam/rong_viet_nam_005.png",
+        "category": "rong_viet_nam",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 129,
+            "format": "PNG",
+            "file_size_kb": 31.99,
+            "brightness": 130.55,
+            "contrast": 40.64,
+            "sharpness": 2151.12
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "rong_viet_nam_005.png",
+            "path": "images/rong_viet_nam/rong_viet_nam_005.png",
+            "category": "rong_viet_nam",
+            "technical_metrics": {
+                "brightness": 130.55,
+                "contrast": 40.64,
+                "sharpness": 2151.12,
+                "width": 120,
+                "height": 129
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 58.24,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 57.65,
+            "quality": "POOR",
+            "quality_flags": [
+                "poor_contrast",
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: poor_contrast, low_resolution."
+        }
+    },
+    {
+        "id": "rong_viet_nam_rong_viet_nam_006",
+        "filename": "rong_viet_nam_006.png",
+        "path": "images/rong_viet_nam/rong_viet_nam_006.png",
+        "category": "rong_viet_nam",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 176,
+            "format": "PNG",
+            "file_size_kb": 37.86,
+            "brightness": 131.88,
+            "contrast": 50.63,
+            "sharpness": 1754.46
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "rong_viet_nam_006.png",
+            "path": "images/rong_viet_nam/rong_viet_nam_006.png",
+            "category": "rong_viet_nam",
+            "technical_metrics": {
+                "brightness": 131.88,
+                "contrast": 50.63,
+                "sharpness": 1754.46,
+                "width": 120,
+                "height": 176
+            },
+            "quality_scores": {
+                "brightness": 100,
+                "contrast": 75.37,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 61.07,
+            "quality": "POOR",
+            "quality_flags": [
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        }
+    },
+    {
+        "id": "rong_viet_nam_rong_viet_nam_007",
+        "filename": "rong_viet_nam_007.png",
+        "path": "images/rong_viet_nam/rong_viet_nam_007.png",
+        "category": "rong_viet_nam",
+        "period": "unknown",
+        "dynasty": "unknown",
+        "motif": "unknown",
+        "region": "unknown",
+        "source": "unknown",
+        "license": "unknown",
+        "original": {
+            "width": 120,
+            "height": 119,
+            "format": "PNG",
+            "file_size_kb": 29.85,
+            "brightness": 62.33,
+            "contrast": 58.06,
+            "sharpness": 3871.66
+        },
+        "processing": {
+            "preprocessed": true,
+            "restored": true,
+            "normalized": true,
+            "segmented": true,
+            "vectorized": true
+        },
+        "outputs": {},
+        "quality": {
+            "filename": "rong_viet_nam_007.png",
+            "path": "images/rong_viet_nam/rong_viet_nam_007.png",
+            "category": "rong_viet_nam",
+            "technical_metrics": {
+                "brightness": 62.33,
+                "contrast": 58.06,
+                "sharpness": 3871.66,
+                "width": 120,
+                "height": 119
+            },
+            "quality_scores": {
+                "brightness": 37.22,
+                "contrast": 88.1,
+                "sharpness": 90,
+                "resolution": 0
+            },
+            "overall_score": 57.34,
+            "quality": "POOR",
+            "quality_flags": [
+                "poor_brightness",
+                "low_resolution"
+            ],
+            "recommendation": "Image requires restoration or preprocessing: poor_brightness, low_resolution."
+        }
+    }
+]

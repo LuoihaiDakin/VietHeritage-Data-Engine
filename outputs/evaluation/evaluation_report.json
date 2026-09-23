@@ -1,0 +1,1949 @@
+{
+    "project": "VietHeritage Data Engine",
+    "evaluation_type": "Pipeline Evaluation",
+    "summary": {
+        "total_images": 45,
+        "evaluated_images": 45,
+        "average_quality_change": -37.86,
+        "average_foreground_ratio": 0.5334,
+        "average_vector_count": 1.67,
+        "average_point_reduction_ratio": 0.8988
+    },
+    "results": [
+        {
+            "filename": "dong_ho_001.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 133.2,
+                    "contrast": 51.45,
+                    "sharpness": 13585.99,
+                    "width": 120,
+                    "height": 89
+                },
+                "processed": {
+                    "brightness": 141.51,
+                    "contrast": 74.35,
+                    "sharpness": 38.23,
+                    "width": 1024,
+                    "height": 759
+                },
+                "change": {
+                    "brightness": 8.31,
+                    "contrast": 22.9,
+                    "sharpness": -13547.76
+                },
+                "quality_score": {
+                    "original": 97.05,
+                    "processed": 52.14,
+                    "change": -44.91
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 759,
+                "foreground_pixels": 392617,
+                "background_pixels": 384599,
+                "foreground_ratio": 0.5052,
+                "contour_count": 2
+            },
+            "vectorization": {
+                "vector_count": 2,
+                "original_points": 1373,
+                "simplified_points": 119,
+                "point_reduction_ratio": 0.9133
+            }
+        },
+        {
+            "filename": "dong_ho_002.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 152.89,
+                    "contrast": 35.92,
+                    "sharpness": 5595.24,
+                    "width": 120,
+                    "height": 153
+                },
+                "processed": {
+                    "brightness": 151.12,
+                    "contrast": 53.29,
+                    "sharpness": 48.6,
+                    "width": 803,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": -1.77,
+                    "contrast": 17.37,
+                    "sharpness": -5546.64
+                },
+                "quality_score": {
+                    "original": 90.98,
+                    "processed": 49.89,
+                    "change": -41.09
+                }
+            },
+            "segmentation": {
+                "width": 803,
+                "height": 1024,
+                "foreground_pixels": 283655,
+                "background_pixels": 538617,
+                "foreground_ratio": 0.345,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 1508,
+                "simplified_points": 80,
+                "point_reduction_ratio": 0.9469
+            }
+        },
+        {
+            "filename": "dong_ho_003.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 137.87,
+                    "contrast": 50.25,
+                    "sharpness": 13292.7,
+                    "width": 120,
+                    "height": 178
+                },
+                "processed": {
+                    "brightness": 142.08,
+                    "contrast": 65.5,
+                    "sharpness": 155.36,
+                    "width": 690,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": 4.21,
+                    "contrast": 15.25,
+                    "sharpness": -13137.34
+                },
+                "quality_score": {
+                    "original": 95.97,
+                    "processed": 66.67,
+                    "change": -29.3
+                }
+            },
+            "segmentation": {
+                "width": 690,
+                "height": 1024,
+                "foreground_pixels": 386321,
+                "background_pixels": 320239,
+                "foreground_ratio": 0.5468,
+                "contour_count": 4
+            },
+            "vectorization": {
+                "vector_count": 4,
+                "original_points": 1396,
+                "simplified_points": 129,
+                "point_reduction_ratio": 0.9076
+            }
+        },
+        {
+            "filename": "dong_ho_004.JPG",
+            "image_quality": {
+                "original": {
+                    "brightness": 130.45,
+                    "contrast": 85.31,
+                    "sharpness": 23682.31,
+                    "width": 120,
+                    "height": 78
+                },
+                "processed": {
+                    "brightness": 134.66,
+                    "contrast": 80.95,
+                    "sharpness": 42.04,
+                    "width": 1024,
+                    "height": 665
+                },
+                "change": {
+                    "brightness": 4.21,
+                    "contrast": -4.36,
+                    "sharpness": -23640.27
+                },
+                "quality_score": {
+                    "original": 99.52,
+                    "processed": 53.95,
+                    "change": -45.57
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 665,
+                "foreground_pixels": 529878,
+                "background_pixels": 151082,
+                "foreground_ratio": 0.7781,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 555,
+                "simplified_points": 43,
+                "point_reduction_ratio": 0.9225
+            }
+        },
+        {
+            "filename": "dong_ho_005.JPG",
+            "image_quality": {
+                "original": {
+                    "brightness": 157.22,
+                    "contrast": 60.84,
+                    "sharpness": 24441.1,
+                    "width": 120,
+                    "height": 86
+                },
+                "processed": {
+                    "brightness": 150.87,
+                    "contrast": 70.8,
+                    "sharpness": 52.64,
+                    "width": 1024,
+                    "height": 734
+                },
+                "change": {
+                    "brightness": -6.35,
+                    "contrast": 9.96,
+                    "sharpness": -24388.46
+                },
+                "quality_score": {
+                    "original": 93.7,
+                    "processed": 52.11,
+                    "change": -41.59
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 734,
+                "foreground_pixels": 497592,
+                "background_pixels": 254024,
+                "foreground_ratio": 0.662,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 990,
+                "simplified_points": 72,
+                "point_reduction_ratio": 0.9273
+            }
+        },
+        {
+            "filename": "dong_ho_006.JPG",
+            "image_quality": {
+                "original": {
+                    "brightness": 127.85,
+                    "contrast": 41.65,
+                    "sharpness": 7869.89,
+                    "width": 120,
+                    "height": 160
+                },
+                "processed": {
+                    "brightness": 154.27,
+                    "contrast": 74.61,
+                    "sharpness": 99.9,
+                    "width": 768,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": 26.42,
+                    "contrast": 32.96,
+                    "sharpness": -7769.99
+                },
+                "quality_score": {
+                    "original": 96.63,
+                    "processed": 57.36,
+                    "change": -39.27
+                }
+            },
+            "segmentation": {
+                "width": 768,
+                "height": 1024,
+                "foreground_pixels": 501502,
+                "background_pixels": 284930,
+                "foreground_ratio": 0.6377,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 784,
+                "simplified_points": 58,
+                "point_reduction_ratio": 0.926
+            }
+        },
+        {
+            "filename": "dong_ho_007.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 123.43,
+                    "contrast": 61.27,
+                    "sharpness": 17668.34,
+                    "width": 120,
+                    "height": 164
+                },
+                "processed": {
+                    "brightness": 130.76,
+                    "contrast": 64.77,
+                    "sharpness": 133.62,
+                    "width": 749,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": 7.33,
+                    "contrast": 3.5,
+                    "sharpness": -17534.72
+                },
+                "quality_score": {
+                    "original": 98.57,
+                    "processed": 66.13,
+                    "change": -32.44
+                }
+            },
+            "segmentation": {
+                "width": 749,
+                "height": 1024,
+                "foreground_pixels": 291995,
+                "background_pixels": 474981,
+                "foreground_ratio": 0.3807,
+                "contour_count": 5
+            },
+            "vectorization": {
+                "vector_count": 5,
+                "original_points": 2220,
+                "simplified_points": 239,
+                "point_reduction_ratio": 0.8923
+            }
+        },
+        {
+            "filename": "dong_ho_008.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 118.58,
+                    "contrast": 63.92,
+                    "sharpness": 18315.19,
+                    "width": 60,
+                    "height": 119
+                },
+                "processed": {
+                    "brightness": 135.3,
+                    "contrast": 72.61,
+                    "sharpness": 34.89,
+                    "width": 516,
+                    "height": 1023
+                },
+                "change": {
+                    "brightness": 16.72,
+                    "contrast": 8.69,
+                    "sharpness": -18280.3
+                },
+                "quality_score": {
+                    "original": 98.01,
+                    "processed": 52.94,
+                    "change": -45.07
+                }
+            },
+            "segmentation": {
+                "width": 516,
+                "height": 1023,
+                "foreground_pixels": 203302,
+                "background_pixels": 324566,
+                "foreground_ratio": 0.3851,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 952,
+                "simplified_points": 61,
+                "point_reduction_ratio": 0.9359
+            }
+        },
+        {
+            "filename": "dong_ho_009.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 133.01,
+                    "contrast": 89.35,
+                    "sharpness": 42235.73,
+                    "width": 120,
+                    "height": 169
+                },
+                "processed": {
+                    "brightness": 141.32,
+                    "contrast": 81.68,
+                    "sharpness": 223.2,
+                    "width": 727,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": 8.31,
+                    "contrast": -7.67,
+                    "sharpness": -42012.53
+                },
+                "quality_score": {
+                    "original": 99.02,
+                    "processed": 75.3,
+                    "change": -23.72
+                }
+            },
+            "segmentation": {
+                "width": 727,
+                "height": 1024,
+                "foreground_pixels": 318538,
+                "background_pixels": 425910,
+                "foreground_ratio": 0.4279,
+                "contour_count": 2
+            },
+            "vectorization": {
+                "vector_count": 2,
+                "original_points": 1454,
+                "simplified_points": 124,
+                "point_reduction_ratio": 0.9147
+            }
+        },
+        {
+            "filename": "dong_ho_010.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 178.3,
+                    "contrast": 85.25,
+                    "sharpness": 13145.8,
+                    "width": 120,
+                    "height": 164
+                },
+                "processed": {
+                    "brightness": 179.19,
+                    "contrast": 72.52,
+                    "sharpness": 80.0,
+                    "width": 749,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": 0.89,
+                    "contrast": -12.73,
+                    "sharpness": -13065.8
+                },
+                "quality_score": {
+                    "original": 90.18,
+                    "processed": 50.0,
+                    "change": -40.18
+                }
+            },
+            "segmentation": {
+                "width": 749,
+                "height": 1024,
+                "foreground_pixels": 294087,
+                "background_pixels": 472889,
+                "foreground_ratio": 0.3834,
+                "contour_count": 2
+            },
+            "vectorization": {
+                "vector_count": 2,
+                "original_points": 1278,
+                "simplified_points": 143,
+                "point_reduction_ratio": 0.8881
+            }
+        },
+        {
+            "filename": "dong_ho_011.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 136.42,
+                    "contrast": 47.46,
+                    "sharpness": 7973.33,
+                    "width": 120,
+                    "height": 90
+                },
+                "processed": {
+                    "brightness": 167.59,
+                    "contrast": 58.92,
+                    "sharpness": 30.55,
+                    "width": 1024,
+                    "height": 768
+                },
+                "change": {
+                    "brightness": 31.17,
+                    "contrast": 11.46,
+                    "sharpness": -7942.78
+                },
+                "quality_score": {
+                    "original": 95.85,
+                    "processed": 45.22,
+                    "change": -50.63
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 768,
+                "foreground_pixels": 412695,
+                "background_pixels": 373737,
+                "foreground_ratio": 0.5248,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 128,
+                "simplified_points": 8,
+                "point_reduction_ratio": 0.9375
+            }
+        },
+        {
+            "filename": "dong_ho_012.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 137.73,
+                    "contrast": 89.79,
+                    "sharpness": 28224.79,
+                    "width": 120,
+                    "height": 78
+                },
+                "processed": {
+                    "brightness": 144.07,
+                    "contrast": 83.51,
+                    "sharpness": 40.58,
+                    "width": 1024,
+                    "height": 665
+                },
+                "change": {
+                    "brightness": 6.34,
+                    "contrast": -6.28,
+                    "sharpness": -28184.21
+                },
+                "quality_score": {
+                    "original": 98.1,
+                    "processed": 51.93,
+                    "change": -46.17
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 665,
+                "foreground_pixels": 550758,
+                "background_pixels": 130202,
+                "foreground_ratio": 0.8088,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 4,
+                "simplified_points": 4,
+                "point_reduction_ratio": 0.0
+            }
+        },
+        {
+            "filename": "dong_ho_013.JPG",
+            "image_quality": {
+                "original": {
+                    "brightness": 139.39,
+                    "contrast": 76.14,
+                    "sharpness": 30493.35,
+                    "width": 120,
+                    "height": 91
+                },
+                "processed": {
+                    "brightness": 140.61,
+                    "contrast": 76.5,
+                    "sharpness": 50.15,
+                    "width": 1024,
+                    "height": 776
+                },
+                "change": {
+                    "brightness": 1.22,
+                    "contrast": 0.36,
+                    "sharpness": -30443.2
+                },
+                "quality_score": {
+                    "original": 97.78,
+                    "processed": 53.81,
+                    "change": -43.97
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 776,
+                "foreground_pixels": 287051,
+                "background_pixels": 507573,
+                "foreground_ratio": 0.3612,
+                "contour_count": 4
+            },
+            "vectorization": {
+                "vector_count": 4,
+                "original_points": 1938,
+                "simplified_points": 248,
+                "point_reduction_ratio": 0.872
+            }
+        },
+        {
+            "filename": "dong_ho_014.JPG",
+            "image_quality": {
+                "original": {
+                    "brightness": 122.41,
+                    "contrast": 81.54,
+                    "sharpness": 32779.6,
+                    "width": 120,
+                    "height": 172
+                },
+                "processed": {
+                    "brightness": 121.13,
+                    "contrast": 75.64,
+                    "sharpness": 210.36,
+                    "width": 714,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": -1.28,
+                    "contrast": -5.9,
+                    "sharpness": -32569.24
+                },
+                "quality_score": {
+                    "original": 98.91,
+                    "processed": 74.95,
+                    "change": -23.96
+                }
+            },
+            "segmentation": {
+                "width": 714,
+                "height": 1024,
+                "foreground_pixels": 476385,
+                "background_pixels": 254751,
+                "foreground_ratio": 0.6516,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 1119,
+                "simplified_points": 60,
+                "point_reduction_ratio": 0.9464
+            }
+        },
+        {
+            "filename": "dong_ho_015.JPG",
+            "image_quality": {
+                "original": {
+                    "brightness": 196.27,
+                    "contrast": 50.24,
+                    "sharpness": 20039.91,
+                    "width": 120,
+                    "height": 91
+                },
+                "processed": {
+                    "brightness": 178.27,
+                    "contrast": 66.39,
+                    "sharpness": 51.74,
+                    "width": 1024,
+                    "height": 776
+                },
+                "change": {
+                    "brightness": -18.0,
+                    "contrast": 16.15,
+                    "sharpness": -19988.17
+                },
+                "quality_score": {
+                    "original": 84.56,
+                    "processed": 46.65,
+                    "change": -37.91
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 776,
+                "foreground_pixels": 403073,
+                "background_pixels": 391551,
+                "foreground_ratio": 0.5072,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 732,
+                "simplified_points": 53,
+                "point_reduction_ratio": 0.9276
+            }
+        },
+        {
+            "filename": "dong_ho_016.JPG",
+            "image_quality": {
+                "original": {
+                    "brightness": 161.04,
+                    "contrast": 84.56,
+                    "sharpness": 35506.34,
+                    "width": 120,
+                    "height": 75
+                },
+                "processed": {
+                    "brightness": 150.65,
+                    "contrast": 77.06,
+                    "sharpness": 58.31,
+                    "width": 1024,
+                    "height": 640
+                },
+                "change": {
+                    "brightness": -10.39,
+                    "contrast": -7.5,
+                    "sharpness": -35448.03
+                },
+                "quality_score": {
+                    "original": 93.55,
+                    "processed": 52.86,
+                    "change": -40.69
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 640,
+                "foreground_pixels": 267533,
+                "background_pixels": 387827,
+                "foreground_ratio": 0.4082,
+                "contour_count": 2
+            },
+            "vectorization": {
+                "vector_count": 2,
+                "original_points": 1254,
+                "simplified_points": 123,
+                "point_reduction_ratio": 0.9019
+            }
+        },
+        {
+            "filename": "dong_ho_017.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 183.19,
+                    "contrast": 63.23,
+                    "sharpness": 19688.38,
+                    "width": 120,
+                    "height": 61
+                },
+                "processed": {
+                    "brightness": 158.89,
+                    "contrast": 74.56,
+                    "sharpness": 34.84,
+                    "width": 1024,
+                    "height": 520
+                },
+                "change": {
+                    "brightness": -24.3,
+                    "contrast": 11.33,
+                    "sharpness": -19653.54
+                },
+                "quality_score": {
+                    "original": 88.97,
+                    "processed": 48.32,
+                    "change": -40.65
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 520,
+                "foreground_pixels": 135939,
+                "background_pixels": 396541,
+                "foreground_ratio": 0.2553,
+                "contour_count": 4
+            },
+            "vectorization": {
+                "vector_count": 4,
+                "original_points": 1080,
+                "simplified_points": 212,
+                "point_reduction_ratio": 0.8037
+            }
+        },
+        {
+            "filename": "dong_ho_018.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 161.52,
+                    "contrast": 85.14,
+                    "sharpness": 37574.04,
+                    "width": 120,
+                    "height": 75
+                },
+                "processed": {
+                    "brightness": 151.38,
+                    "contrast": 76.94,
+                    "sharpness": 61.25,
+                    "width": 1024,
+                    "height": 640
+                },
+                "change": {
+                    "brightness": -10.14,
+                    "contrast": -8.2,
+                    "sharpness": -37512.79
+                },
+                "quality_score": {
+                    "original": 93.45,
+                    "processed": 53.09,
+                    "change": -40.36
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 640,
+                "foreground_pixels": 246812,
+                "background_pixels": 408548,
+                "foreground_ratio": 0.3766,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 1124,
+                "simplified_points": 68,
+                "point_reduction_ratio": 0.9395
+            }
+        },
+        {
+            "filename": "dong_ho_019.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 152.02,
+                    "contrast": 45.73,
+                    "sharpness": 9928.23,
+                    "width": 120,
+                    "height": 61
+                },
+                "processed": {
+                    "brightness": 141.99,
+                    "contrast": 69.57,
+                    "sharpness": 32.83,
+                    "width": 1024,
+                    "height": 520
+                },
+                "change": {
+                    "brightness": -10.03,
+                    "contrast": 23.84,
+                    "sharpness": -9895.4
+                },
+                "quality_score": {
+                    "original": 92.56,
+                    "processed": 51.37,
+                    "change": -41.19
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 520,
+                "foreground_pixels": 193472,
+                "background_pixels": 339008,
+                "foreground_ratio": 0.3633,
+                "contour_count": 3
+            },
+            "vectorization": {
+                "vector_count": 3,
+                "original_points": 1472,
+                "simplified_points": 186,
+                "point_reduction_ratio": 0.8736
+            }
+        },
+        {
+            "filename": "dong_ho_020.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 161.83,
+                    "contrast": 70.05,
+                    "sharpness": 28630.39,
+                    "width": 120,
+                    "height": 81
+                },
+                "processed": {
+                    "brightness": 148.45,
+                    "contrast": 76.2,
+                    "sharpness": 48.32,
+                    "width": 1023,
+                    "height": 691
+                },
+                "change": {
+                    "brightness": -13.38,
+                    "contrast": 6.15,
+                    "sharpness": -28582.07
+                },
+                "quality_score": {
+                    "original": 93.39,
+                    "processed": 52.05,
+                    "change": -41.34
+                }
+            },
+            "segmentation": {
+                "width": 1023,
+                "height": 691,
+                "foreground_pixels": 94066,
+                "background_pixels": 612827,
+                "foreground_ratio": 0.1331,
+                "contour_count": 5
+            },
+            "vectorization": {
+                "vector_count": 5,
+                "original_points": 1070,
+                "simplified_points": 243,
+                "point_reduction_ratio": 0.7729
+            }
+        },
+        {
+            "filename": "dong_ho_021.JPG",
+            "image_quality": {
+                "original": {
+                    "brightness": 124.82,
+                    "contrast": 76.88,
+                    "sharpness": 29779.39,
+                    "width": 120,
+                    "height": 170
+                },
+                "processed": {
+                    "brightness": 126.48,
+                    "contrast": 74.72,
+                    "sharpness": 184.92,
+                    "width": 723,
+                    "height": 1023
+                },
+                "change": {
+                    "brightness": 1.66,
+                    "contrast": -2.16,
+                    "sharpness": -29594.47
+                },
+                "quality_score": {
+                    "original": 99.38,
+                    "processed": 72.82,
+                    "change": -26.56
+                }
+            },
+            "segmentation": {
+                "width": 723,
+                "height": 1023,
+                "foreground_pixels": 568474,
+                "background_pixels": 171155,
+                "foreground_ratio": 0.7686,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 512,
+                "simplified_points": 18,
+                "point_reduction_ratio": 0.9648
+            }
+        },
+        {
+            "filename": "dong_ho_022.JPG",
+            "image_quality": {
+                "original": {
+                    "brightness": 102.85,
+                    "contrast": 83.21,
+                    "sharpness": 16621.85,
+                    "width": 120,
+                    "height": 86
+                },
+                "processed": {
+                    "brightness": 124.73,
+                    "contrast": 79.33,
+                    "sharpness": 46.09,
+                    "width": 1024,
+                    "height": 734
+                },
+                "change": {
+                    "brightness": 21.88,
+                    "contrast": -3.88,
+                    "sharpness": -16575.76
+                },
+                "quality_score": {
+                    "original": 95.09,
+                    "processed": 55.12,
+                    "change": -39.97
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 734,
+                "foreground_pixels": 461095,
+                "background_pixels": 290521,
+                "foreground_ratio": 0.6135,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 1208,
+                "simplified_points": 72,
+                "point_reduction_ratio": 0.9404
+            }
+        },
+        {
+            "filename": "dong_ho_023.JPG",
+            "image_quality": {
+                "original": {
+                    "brightness": 149.69,
+                    "contrast": 63.48,
+                    "sharpness": 25032.23,
+                    "width": 120,
+                    "height": 82
+                },
+                "processed": {
+                    "brightness": 139.21,
+                    "contrast": 74.65,
+                    "sharpness": 46.45,
+                    "width": 1024,
+                    "height": 699
+                },
+                "change": {
+                    "brightness": -10.48,
+                    "contrast": 11.17,
+                    "sharpness": -24985.78
+                },
+                "quality_score": {
+                    "original": 95.55,
+                    "processed": 53.62,
+                    "change": -41.93
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 699,
+                "foreground_pixels": 310941,
+                "background_pixels": 404835,
+                "foreground_ratio": 0.4344,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 1262,
+                "simplified_points": 80,
+                "point_reduction_ratio": 0.9366
+            }
+        },
+        {
+            "filename": "dong_ho_024.JPG",
+            "image_quality": {
+                "original": {
+                    "brightness": 114.97,
+                    "contrast": 86.4,
+                    "sharpness": 30548.91,
+                    "width": 120,
+                    "height": 164
+                },
+                "processed": {
+                    "brightness": 123.33,
+                    "contrast": 80.8,
+                    "sharpness": 158.47,
+                    "width": 749,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": 8.36,
+                    "contrast": -5.6,
+                    "sharpness": -30390.44
+                },
+                "quality_score": {
+                    "original": 97.46,
+                    "processed": 68.9,
+                    "change": -28.56
+                }
+            },
+            "segmentation": {
+                "width": 749,
+                "height": 1024,
+                "foreground_pixels": 594349,
+                "background_pixels": 172627,
+                "foreground_ratio": 0.7749,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 453,
+                "simplified_points": 24,
+                "point_reduction_ratio": 0.947
+            }
+        },
+        {
+            "filename": "dong_ho_025.JPG",
+            "image_quality": {
+                "original": {
+                    "brightness": 141.73,
+                    "contrast": 95.09,
+                    "sharpness": 20442.8,
+                    "width": 120,
+                    "height": 169
+                },
+                "processed": {
+                    "brightness": 142.45,
+                    "contrast": 81.34,
+                    "sharpness": 135.1,
+                    "width": 727,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": 0.72,
+                    "contrast": -13.75,
+                    "sharpness": -20307.7
+                },
+                "quality_score": {
+                    "original": 97.32,
+                    "processed": 64.07,
+                    "change": -33.25
+                }
+            },
+            "segmentation": {
+                "width": 727,
+                "height": 1024,
+                "foreground_pixels": 597340,
+                "background_pixels": 147108,
+                "foreground_ratio": 0.8024,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 88,
+                "simplified_points": 9,
+                "point_reduction_ratio": 0.8977
+            }
+        },
+        {
+            "filename": "dong_ho_026.JPG",
+            "image_quality": {
+                "original": {
+                    "brightness": 151.17,
+                    "contrast": 80.59,
+                    "sharpness": 24612.77,
+                    "width": 120,
+                    "height": 74
+                },
+                "processed": {
+                    "brightness": 141.58,
+                    "contrast": 79.45,
+                    "sharpness": 57.75,
+                    "width": 1024,
+                    "height": 631
+                },
+                "change": {
+                    "brightness": -9.59,
+                    "contrast": -1.14,
+                    "sharpness": -24555.02
+                },
+                "quality_score": {
+                    "original": 95.47,
+                    "processed": 54.57,
+                    "change": -40.9
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 631,
+                "foreground_pixels": 509362,
+                "background_pixels": 136782,
+                "foreground_ratio": 0.7883,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 154,
+                "simplified_points": 13,
+                "point_reduction_ratio": 0.9156
+            }
+        },
+        {
+            "filename": "dong_ho_027.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 158.09,
+                    "contrast": 83.5,
+                    "sharpness": 32040.5,
+                    "width": 120,
+                    "height": 91
+                },
+                "processed": {
+                    "brightness": 156.36,
+                    "contrast": 80.68,
+                    "sharpness": 51.24,
+                    "width": 1024,
+                    "height": 776
+                },
+                "change": {
+                    "brightness": -1.73,
+                    "contrast": -2.82,
+                    "sharpness": -31989.26
+                },
+                "quality_score": {
+                    "original": 94.12,
+                    "processed": 50.87,
+                    "change": -43.25
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 776,
+                "foreground_pixels": 509137,
+                "background_pixels": 285487,
+                "foreground_ratio": 0.6407,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 1017,
+                "simplified_points": 62,
+                "point_reduction_ratio": 0.939
+            }
+        },
+        {
+            "filename": "dong_ho_028.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 96.98,
+                    "contrast": 63.79,
+                    "sharpness": 11664.63,
+                    "width": 120,
+                    "height": 90
+                },
+                "processed": {
+                    "brightness": 123.75,
+                    "contrast": 78.07,
+                    "sharpness": 42.06,
+                    "width": 1024,
+                    "height": 768
+                },
+                "change": {
+                    "brightness": 26.77,
+                    "contrast": 14.28,
+                    "sharpness": -11622.57
+                },
+                "quality_score": {
+                    "original": 93.77,
+                    "processed": 54.43,
+                    "change": -39.34
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 768,
+                "foreground_pixels": 388710,
+                "background_pixels": 397722,
+                "foreground_ratio": 0.4943,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 312,
+                "simplified_points": 6,
+                "point_reduction_ratio": 0.9808
+            }
+        },
+        {
+            "filename": "dong_ho_029.JPG",
+            "image_quality": {
+                "original": {
+                    "brightness": 151.49,
+                    "contrast": 90.87,
+                    "sharpness": 21196.19,
+                    "width": 120,
+                    "height": 160
+                },
+                "processed": {
+                    "brightness": 143.55,
+                    "contrast": 79.49,
+                    "sharpness": 113.0,
+                    "width": 768,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": -7.94,
+                    "contrast": -11.38,
+                    "sharpness": -21083.19
+                },
+                "quality_score": {
+                    "original": 95.41,
+                    "processed": 61.09,
+                    "change": -34.32
+                }
+            },
+            "segmentation": {
+                "width": 768,
+                "height": 1024,
+                "foreground_pixels": 571543,
+                "background_pixels": 214889,
+                "foreground_ratio": 0.7268,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 1009,
+                "simplified_points": 44,
+                "point_reduction_ratio": 0.9564
+            }
+        },
+        {
+            "filename": "dong_ho_030.JPG",
+            "image_quality": {
+                "original": {
+                    "brightness": 114.82,
+                    "contrast": 83.71,
+                    "sharpness": 24640.08,
+                    "width": 120,
+                    "height": 89
+                },
+                "processed": {
+                    "brightness": 126.22,
+                    "contrast": 81.02,
+                    "sharpness": 48.38,
+                    "width": 1024,
+                    "height": 759
+                },
+                "change": {
+                    "brightness": 11.4,
+                    "contrast": -2.69,
+                    "sharpness": -24591.7
+                },
+                "quality_score": {
+                    "original": 97.43,
+                    "processed": 55.7,
+                    "change": -41.73
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 759,
+                "foreground_pixels": 395681,
+                "background_pixels": 381535,
+                "foreground_ratio": 0.5091,
+                "contour_count": 3
+            },
+            "vectorization": {
+                "vector_count": 3,
+                "original_points": 2060,
+                "simplified_points": 203,
+                "point_reduction_ratio": 0.9015
+            }
+        },
+        {
+            "filename": "dong_ho_031.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 111.1,
+                    "contrast": 85.71,
+                    "sharpness": 37854.88,
+                    "width": 120,
+                    "height": 187
+                },
+                "processed": {
+                    "brightness": 118.97,
+                    "contrast": 82.12,
+                    "sharpness": 265.88,
+                    "width": 657,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": 7.87,
+                    "contrast": -3.59,
+                    "sharpness": -37589.0
+                },
+                "quality_score": {
+                    "original": 96.7,
+                    "processed": 81.47,
+                    "change": -15.23
+                }
+            },
+            "segmentation": {
+                "width": 657,
+                "height": 1024,
+                "foreground_pixels": 501393,
+                "background_pixels": 171375,
+                "foreground_ratio": 0.7453,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 532,
+                "simplified_points": 36,
+                "point_reduction_ratio": 0.9323
+            }
+        },
+        {
+            "filename": "dong_ho_032.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 150.15,
+                    "contrast": 62.43,
+                    "sharpness": 21137.26,
+                    "width": 120,
+                    "height": 162
+                },
+                "processed": {
+                    "brightness": 142.21,
+                    "contrast": 73.88,
+                    "sharpness": 115.96,
+                    "width": 758,
+                    "height": 1023
+                },
+                "change": {
+                    "brightness": -7.94,
+                    "contrast": 11.45,
+                    "sharpness": -21021.3
+                },
+                "quality_score": {
+                    "original": 95.31,
+                    "processed": 61.72,
+                    "change": -33.59
+                }
+            },
+            "segmentation": {
+                "width": 758,
+                "height": 1023,
+                "foreground_pixels": 600412,
+                "background_pixels": 175022,
+                "foreground_ratio": 0.7743,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 266,
+                "simplified_points": 13,
+                "point_reduction_ratio": 0.9511
+            }
+        },
+        {
+            "filename": "dong_ho_033.JPG",
+            "image_quality": {
+                "original": {
+                    "brightness": 153.42,
+                    "contrast": 91.25,
+                    "sharpness": 23061.46,
+                    "width": 120,
+                    "height": 160
+                },
+                "processed": {
+                    "brightness": 149.69,
+                    "contrast": 81.21,
+                    "sharpness": 111.5,
+                    "width": 768,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": -3.73,
+                    "contrast": -10.04,
+                    "sharpness": -22949.96
+                },
+                "quality_score": {
+                    "original": 95.04,
+                    "processed": 59.7,
+                    "change": -35.34
+                }
+            },
+            "segmentation": {
+                "width": 768,
+                "height": 1024,
+                "foreground_pixels": 626040,
+                "background_pixels": 160392,
+                "foreground_ratio": 0.7961,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 92,
+                "simplified_points": 4,
+                "point_reduction_ratio": 0.9565
+            }
+        },
+        {
+            "filename": "dong_ho_034.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 211.06,
+                    "contrast": 64.44,
+                    "sharpness": 20067.13,
+                    "width": 120,
+                    "height": 126
+                },
+                "processed": {
+                    "brightness": 195.6,
+                    "contrast": 77.4,
+                    "sharpness": 38.5,
+                    "width": 975,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": -15.46,
+                    "contrast": 12.96,
+                    "sharpness": -20028.63
+                },
+                "quality_score": {
+                    "original": 83.7,
+                    "processed": 41.61,
+                    "change": -42.09
+                }
+            },
+            "segmentation": {
+                "width": 975,
+                "height": 1024,
+                "foreground_pixels": 488313,
+                "background_pixels": 510087,
+                "foreground_ratio": 0.4891,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 1264,
+                "simplified_points": 87,
+                "point_reduction_ratio": 0.9312
+            }
+        },
+        {
+            "filename": "phu_dieu_rong_001.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 132.41,
+                    "contrast": 59.98,
+                    "sharpness": 30359.77,
+                    "width": 120,
+                    "height": 160
+                },
+                "processed": {
+                    "brightness": 125.38,
+                    "contrast": 77.9,
+                    "sharpness": 179.14,
+                    "width": 768,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": -7.03,
+                    "contrast": 17.92,
+                    "sharpness": -30180.63
+                },
+                "quality_score": {
+                    "original": 98.42,
+                    "processed": 71.88,
+                    "change": -26.54
+                }
+            },
+            "segmentation": {
+                "width": 768,
+                "height": 1024,
+                "foreground_pixels": 32564,
+                "background_pixels": 753868,
+                "foreground_ratio": 0.0414,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 308,
+                "simplified_points": 58,
+                "point_reduction_ratio": 0.8117
+            }
+        },
+        {
+            "filename": "phu_dieu_rong_002.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 107.24,
+                    "contrast": 52.23,
+                    "sharpness": 10835.46,
+                    "width": 120,
+                    "height": 80
+                },
+                "processed": {
+                    "brightness": 123.98,
+                    "contrast": 68.69,
+                    "sharpness": 39.62,
+                    "width": 1024,
+                    "height": 682
+                },
+                "change": {
+                    "brightness": 16.74,
+                    "contrast": 16.46,
+                    "sharpness": -10795.84
+                },
+                "quality_score": {
+                    "original": 94.12,
+                    "processed": 54.17,
+                    "change": -39.95
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 682,
+                "foreground_pixels": 413432,
+                "background_pixels": 284936,
+                "foreground_ratio": 0.592,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 256,
+                "simplified_points": 12,
+                "point_reduction_ratio": 0.9531
+            }
+        },
+        {
+            "filename": "phu_dieu_rong_003.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 77.82,
+                    "contrast": 40.69,
+                    "sharpness": 7656.44,
+                    "width": 120,
+                    "height": 160
+                },
+                "processed": {
+                    "brightness": 122.15,
+                    "contrast": 71.04,
+                    "sharpness": 86.41,
+                    "width": 768,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": 44.33,
+                    "contrast": 30.35,
+                    "sharpness": -7570.03
+                },
+                "quality_score": {
+                    "original": 86.73,
+                    "processed": 59.66,
+                    "change": -27.07
+                }
+            },
+            "segmentation": {
+                "width": 768,
+                "height": 1024,
+                "foreground_pixels": 382985,
+                "background_pixels": 403447,
+                "foreground_ratio": 0.487,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 826,
+                "simplified_points": 57,
+                "point_reduction_ratio": 0.931
+            }
+        },
+        {
+            "filename": "phu_dieu_rong_005.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 146.28,
+                    "contrast": 72.71,
+                    "sharpness": 26750.2,
+                    "width": 120,
+                    "height": 120
+                },
+                "processed": {
+                    "brightness": 141.14,
+                    "contrast": 78.59,
+                    "sharpness": 96.83,
+                    "width": 1024,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": -5.14,
+                    "contrast": 5.88,
+                    "sharpness": -26653.37
+                },
+                "quality_score": {
+                    "original": 96.43,
+                    "processed": 59.54,
+                    "change": -36.89
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 1024,
+                "foreground_pixels": 610386,
+                "background_pixels": 438190,
+                "foreground_ratio": 0.5821,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 925,
+                "simplified_points": 49,
+                "point_reduction_ratio": 0.947
+            }
+        },
+        {
+            "filename": "rong_viet_nam_001.JPG",
+            "image_quality": {
+                "original": {
+                    "brightness": 158.56,
+                    "contrast": 58.71,
+                    "sharpness": 6036.43,
+                    "width": 120,
+                    "height": 90
+                },
+                "processed": {
+                    "brightness": 169.57,
+                    "contrast": 71.12,
+                    "sharpness": 22.35,
+                    "width": 1024,
+                    "height": 768
+                },
+                "change": {
+                    "brightness": 11.01,
+                    "contrast": 12.41,
+                    "sharpness": -6014.08
+                },
+                "quality_score": {
+                    "original": 93.13,
+                    "processed": 44.67,
+                    "change": -48.46
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 768,
+                "foreground_pixels": 313114,
+                "background_pixels": 473318,
+                "foreground_ratio": 0.3981,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 984,
+                "simplified_points": 75,
+                "point_reduction_ratio": 0.9238
+            }
+        },
+        {
+            "filename": "rong_viet_nam_002.jpg",
+            "image_quality": {
+                "original": {
+                    "brightness": 139.85,
+                    "contrast": 46.13,
+                    "sharpness": 7736.16,
+                    "width": 120,
+                    "height": 213
+                },
+                "processed": {
+                    "brightness": 130.8,
+                    "contrast": 66.14,
+                    "sharpness": 171.8,
+                    "width": 577,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": -9.05,
+                    "contrast": 20.01,
+                    "sharpness": -7564.36
+                },
+                "quality_score": {
+                    "original": 94.99,
+                    "processed": 70.93,
+                    "change": -24.06
+                }
+            },
+            "segmentation": {
+                "width": 577,
+                "height": 1024,
+                "foreground_pixels": 262340,
+                "background_pixels": 328508,
+                "foreground_ratio": 0.444,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 347,
+                "simplified_points": 32,
+                "point_reduction_ratio": 0.9078
+            }
+        },
+        {
+            "filename": "rong_viet_nam_003.png",
+            "image_quality": {
+                "original": {
+                    "brightness": 101.58,
+                    "contrast": 35.22,
+                    "sharpness": 4018.81,
+                    "width": 120,
+                    "height": 121
+                },
+                "processed": {
+                    "brightness": 137.0,
+                    "contrast": 68.97,
+                    "sharpness": 30.88,
+                    "width": 1016,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": 35.42,
+                    "contrast": 33.75,
+                    "sharpness": -3987.93
+                },
+                "quality_score": {
+                    "original": 90.59,
+                    "processed": 52.1,
+                    "change": -38.49
+                }
+            },
+            "segmentation": {
+                "width": 1016,
+                "height": 1024,
+                "foreground_pixels": 588987,
+                "background_pixels": 451397,
+                "foreground_ratio": 0.5661,
+                "contour_count": 2
+            },
+            "vectorization": {
+                "vector_count": 2,
+                "original_points": 1582,
+                "simplified_points": 98,
+                "point_reduction_ratio": 0.9381
+            }
+        },
+        {
+            "filename": "rong_viet_nam_004.webp",
+            "image_quality": {
+                "original": {
+                    "brightness": 108.27,
+                    "contrast": 97.43,
+                    "sharpness": 32379.41,
+                    "width": 120,
+                    "height": 93
+                },
+                "processed": {
+                    "brightness": 111.25,
+                    "contrast": 96.25,
+                    "sharpness": 54.12,
+                    "width": 1024,
+                    "height": 793
+                },
+                "change": {
+                    "brightness": 2.98,
+                    "contrast": -1.18,
+                    "sharpness": -32325.29
+                },
+                "quality_score": {
+                    "original": 96.15,
+                    "processed": 53.49,
+                    "change": -42.66
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 793,
+                "foreground_pixels": 514271,
+                "background_pixels": 297761,
+                "foreground_ratio": 0.6333,
+                "contour_count": 3
+            },
+            "vectorization": {
+                "vector_count": 3,
+                "original_points": 1268,
+                "simplified_points": 101,
+                "point_reduction_ratio": 0.9203
+            }
+        },
+        {
+            "filename": "rong_viet_nam_005.png",
+            "image_quality": {
+                "original": {
+                    "brightness": 130.55,
+                    "contrast": 40.64,
+                    "sharpness": 2151.12,
+                    "width": 120,
+                    "height": 129
+                },
+                "processed": {
+                    "brightness": 148.18,
+                    "contrast": 63.4,
+                    "sharpness": 20.87,
+                    "width": 953,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": 17.63,
+                    "contrast": 22.76,
+                    "sharpness": -2130.25
+                },
+                "quality_score": {
+                    "original": 96.02,
+                    "processed": 48.44,
+                    "change": -47.58
+                }
+            },
+            "segmentation": {
+                "width": 953,
+                "height": 1024,
+                "foreground_pixels": 590001,
+                "background_pixels": 385871,
+                "foreground_ratio": 0.6046,
+                "contour_count": 1
+            },
+            "vectorization": {
+                "vector_count": 1,
+                "original_points": 1155,
+                "simplified_points": 61,
+                "point_reduction_ratio": 0.9472
+            }
+        },
+        {
+            "filename": "rong_viet_nam_006.png",
+            "image_quality": {
+                "original": {
+                    "brightness": 131.88,
+                    "contrast": 50.63,
+                    "sharpness": 1754.46,
+                    "width": 120,
+                    "height": 176
+                },
+                "processed": {
+                    "brightness": 143.79,
+                    "contrast": 64.77,
+                    "sharpness": 26.09,
+                    "width": 698,
+                    "height": 1024
+                },
+                "change": {
+                    "brightness": 11.91,
+                    "contrast": 14.14,
+                    "sharpness": -1728.37
+                },
+                "quality_score": {
+                    "original": 97.19,
+                    "processed": 50.14,
+                    "change": -47.05
+                }
+            },
+            "segmentation": {
+                "width": 698,
+                "height": 1024,
+                "foreground_pixels": 344455,
+                "background_pixels": 370297,
+                "foreground_ratio": 0.4819,
+                "contour_count": 2
+            },
+            "vectorization": {
+                "vector_count": 2,
+                "original_points": 1226,
+                "simplified_points": 97,
+                "point_reduction_ratio": 0.9209
+            }
+        },
+        {
+            "filename": "rong_viet_nam_007.png",
+            "image_quality": {
+                "original": {
+                    "brightness": 62.33,
+                    "contrast": 58.06,
+                    "sharpness": 3871.66,
+                    "width": 120,
+                    "height": 119
+                },
+                "processed": {
+                    "brightness": 99.51,
+                    "contrast": 86.86,
+                    "sharpness": 22.89,
+                    "width": 1024,
+                    "height": 1016
+                },
+                "change": {
+                    "brightness": 37.18,
+                    "contrast": 28.8,
+                    "sharpness": -3848.77
+                },
+                "quality_score": {
+                    "original": 86.18,
+                    "processed": 47.3,
+                    "change": -38.88
+                }
+            },
+            "segmentation": {
+                "width": 1024,
+                "height": 1016,
+                "foreground_pixels": 387626,
+                "background_pixels": 652758,
+                "foreground_ratio": 0.3726,
+                "contour_count": 2
+            },
+            "vectorization": {
+                "vector_count": 2,
+                "original_points": 2935,
+                "simplified_points": 165,
+                "point_reduction_ratio": 0.9438
+            }
+        }
+    ]
+}
