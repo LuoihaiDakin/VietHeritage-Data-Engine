@@ -1,0 +1,42 @@
+{
+    "source_image": "dong_ho_010_mask.png",
+    "width": 749,
+    "height": 1024,
+    "vector_count": 2,
+    "vectors": [
+        {
+            "area": 287150.0,
+            "perimeter": 3270.95,
+            "bounding_box": {
+                "x": 117,
+                "y": 136,
+                "width": 590,
+                "height": 760
+            },
+            "center": {
+                "x": 418.08,
+                "y": 545.26
+            },
+            "original_points": 1034,
+            "simplified_points": 69,
+            "id": "contour_1"
+        },
+        {
+            "area": 6075.0,
+            "perimeter": 652.9,
+            "bounding_box": {
+                "x": 137,
+                "y": 136,
+                "width": 85,
+                "height": 153
+            },
+            "center": {
+                "x": 183.13,
+                "y": 214.62
+            },
+            "original_points": 244,
+            "simplified_points": 74,
+            "id": "contour_2"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "source_image": "dong_ho_022_mask.png",
+    "width": 1024,
+    "height": 734,
+    "vector_count": 1,
+    "vectors": [
+        {
+            "area": 467948.5,
+            "perimeter": 3912.27,
+            "bounding_box": {
+                "x": 51,
+                "y": 46,
+                "width": 922,
+                "height": 636
+            },
+            "center": {
+                "x": 522.06,
+                "y": 364.53
+            },
+            "original_points": 1208,
+            "simplified_points": 72,
+            "id": "contour_1"
+        }
+    ]
+}

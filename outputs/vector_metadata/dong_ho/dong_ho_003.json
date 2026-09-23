@@ -1,0 +1,76 @@
+{
+    "source_image": "dong_ho_003_mask.png",
+    "width": 690,
+    "height": 1024,
+    "vector_count": 4,
+    "vectors": [
+        {
+            "area": 40.0,
+            "perimeter": 24.49,
+            "bounding_box": {
+                "x": 99,
+                "y": 964,
+                "width": 8,
+                "height": 8
+            },
+            "center": {
+                "x": 102.5,
+                "y": 967.5
+            },
+            "original_points": 14,
+            "simplified_points": 14,
+            "id": "contour_1"
+        },
+        {
+            "area": 275.5,
+            "perimeter": 101.21,
+            "bounding_box": {
+                "x": 576,
+                "y": 885,
+                "width": 11,
+                "height": 46
+            },
+            "center": {
+                "x": 581.66,
+                "y": 906.94
+            },
+            "original_points": 25,
+            "simplified_points": 25,
+            "id": "contour_2"
+        },
+        {
+            "area": 22.5,
+            "perimeter": 19.07,
+            "bounding_box": {
+                "x": 593,
+                "y": 235,
+                "width": 7,
+                "height": 6
+            },
+            "center": {
+                "x": 595.9,
+                "y": 237.61
+            },
+            "original_points": 13,
+            "simplified_points": 13,
+            "id": "contour_3"
+        },
+        {
+            "area": 384297.5,
+            "perimeter": 3757.95,
+            "bounding_box": {
+                "x": 34,
+                "y": 51,
+                "width": 616,
+                "height": 922
+            },
+            "center": {
+                "x": 327.16,
+                "y": 483.95
+            },
+            "original_points": 1344,
+            "simplified_points": 77,
+            "id": "contour_4"
+        }
+    ]
+}

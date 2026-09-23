@@ -1,0 +1,93 @@
+{
+    "source_image": "dong_ho_007_mask.png",
+    "width": 749,
+    "height": 1024,
+    "vector_count": 5,
+    "vectors": [
+        {
+            "area": 155.5,
+            "perimeter": 47.21,
+            "bounding_box": {
+                "x": 68,
+                "y": 718,
+                "width": 13,
+                "height": 17
+            },
+            "center": {
+                "x": 73.54,
+                "y": 725.54
+            },
+            "original_points": 16,
+            "simplified_points": 16,
+            "id": "contour_1"
+        },
+        {
+            "area": 181.0,
+            "perimeter": 53.46,
+            "bounding_box": {
+                "x": 75,
+                "y": 231,
+                "width": 17,
+                "height": 17
+            },
+            "center": {
+                "x": 83.14,
+                "y": 238.97
+            },
+            "original_points": 21,
+            "simplified_points": 21,
+            "id": "contour_2"
+        },
+        {
+            "area": 4408.5,
+            "perimeter": 448.09,
+            "bounding_box": {
+                "x": 423,
+                "y": 105,
+                "width": 72,
+                "height": 122
+            },
+            "center": {
+                "x": 455.9,
+                "y": 169.36
+            },
+            "original_points": 200,
+            "simplified_points": 63,
+            "id": "contour_3"
+        },
+        {
+            "area": 2275.0,
+            "perimeter": 268.45,
+            "bounding_box": {
+                "x": 521,
+                "y": 99,
+                "width": 56,
+                "height": 71
+            },
+            "center": {
+                "x": 548.31,
+                "y": 135.32
+            },
+            "original_points": 100,
+            "simplified_points": 47,
+            "id": "contour_4"
+        },
+        {
+            "area": 282379.5,
+            "perimeter": 5368.09,
+            "bounding_box": {
+                "x": 93,
+                "y": 86,
+                "width": 550,
+                "height": 810
+            },
+            "center": {
+                "x": 348.27,
+                "y": 506.89
+            },
+            "original_points": 1883,
+            "simplified_points": 92,
+            "id": "contour_5"
+        }
+    ]
+}

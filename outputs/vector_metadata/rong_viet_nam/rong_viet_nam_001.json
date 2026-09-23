@@ -1,0 +1,25 @@
+{
+    "source_image": "rong_viet_nam_001_mask.png",
+    "width": 1024,
+    "height": 768,
+    "vector_count": 1,
+    "vectors": [
+        {
+            "area": 311704.5,
+            "perimeter": 3225.0,
+            "bounding_box": {
+                "x": 63,
+                "y": 165,
+                "width": 910,
+                "height": 531
+            },
+            "center": {
+                "x": 501.82,
+                "y": 470.96
+            },
+            "original_points": 984,
+            "simplified_points": 75,
+            "id": "contour_1"
+        }
+    ]
+}

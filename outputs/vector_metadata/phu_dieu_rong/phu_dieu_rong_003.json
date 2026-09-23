@@ -1,0 +1,25 @@
+{
+    "source_image": "phu_dieu_rong_003_mask.png",
+    "width": 768,
+    "height": 1024,
+    "vector_count": 1,
+    "vectors": [
+        {
+            "area": 381713.0,
+            "perimeter": 2870.06,
+            "bounding_box": {
+                "x": 96,
+                "y": 124,
+                "width": 597,
+                "height": 849
+            },
+            "center": {
+                "x": 434.1,
+                "y": 587.99
+            },
+            "original_points": 826,
+            "simplified_points": 57,
+            "id": "contour_1"
+        }
+    ]
+}

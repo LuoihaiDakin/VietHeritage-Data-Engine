@@ -1,0 +1,93 @@
+{
+    "source_image": "dong_ho_020_mask.png",
+    "width": 1023,
+    "height": 691,
+    "vector_count": 5,
+    "vectors": [
+        {
+            "area": 2915.0,
+            "perimeter": 216.79,
+            "bounding_box": {
+                "x": 296,
+                "y": 527,
+                "width": 59,
+                "height": 76
+            },
+            "center": {
+                "x": 322.69,
+                "y": 561.18
+            },
+            "original_points": 48,
+            "simplified_points": 38,
+            "id": "contour_1"
+        },
+        {
+            "area": 4040.5,
+            "perimeter": 268.01,
+            "bounding_box": {
+                "x": 55,
+                "y": 467,
+                "width": 90,
+                "height": 75
+            },
+            "center": {
+                "x": 99.29,
+                "y": 506.7
+            },
+            "original_points": 92,
+            "simplified_points": 50,
+            "id": "contour_2"
+        },
+        {
+            "area": 8482.0,
+            "perimeter": 455.24,
+            "bounding_box": {
+                "x": 143,
+                "y": 428,
+                "width": 118,
+                "height": 144
+            },
+            "center": {
+                "x": 200.23,
+                "y": 499.58
+            },
+            "original_points": 139,
+            "simplified_points": 40,
+            "id": "contour_3"
+        },
+        {
+            "area": 23462.0,
+            "perimeter": 730.61,
+            "bounding_box": {
+                "x": 387,
+                "y": 216,
+                "width": 236,
+                "height": 158
+            },
+            "center": {
+                "x": 521.51,
+                "y": 295.53
+            },
+            "original_points": 245,
+            "simplified_points": 48,
+            "id": "contour_4"
+        },
+        {
+            "area": 53756.5,
+            "perimeter": 1642.2,
+            "bounding_box": {
+                "x": 530,
+                "y": 214,
+                "width": 381,
+                "height": 332
+            },
+            "center": {
+                "x": 738.22,
+                "y": 400.27
+            },
+            "original_points": 546,
+            "simplified_points": 67,
+            "id": "contour_5"
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "source_image": "rong_viet_nam_003_mask.png",
+    "width": 1016,
+    "height": 1024,
+    "vector_count": 2,
+    "vectors": [
+        {
+            "area": 228.5,
+            "perimeter": 59.7,
+            "bounding_box": {
+                "x": 372,
+                "y": 162,
+                "width": 15,
+                "height": 23
+            },
+            "center": {
+                "x": 379.17,
+                "y": 172.98
+            },
+            "original_points": 20,
+            "simplified_points": 20,
+            "id": "contour_1"
+        },
+        {
+            "area": 586745.0,
+            "perimeter": 4630.6,
+            "bounding_box": {
+                "x": 50,
+                "y": 137,
+                "width": 915,
+                "height": 836
+            },
+            "center": {
+                "x": 502.94,
+                "y": 562.97
+            },
+            "original_points": 1562,
+            "simplified_points": 78,
+            "id": "contour_2"
+        }
+    ]
+}
