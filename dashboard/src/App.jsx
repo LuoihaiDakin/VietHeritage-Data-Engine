@@ -1,343 +1,330 @@
-import { useEffect, useState } from "react";
-import AssetCard from "./components/AssetCard";
-import AssetModal from "./components/AssetModal";
+import { useEffect, useMemo, useState } from "react";
 import "./App.css";
 
-const API_URL = "http://127.0.0.1:8000";
+import AssetCard from "./components/AssetCard";
+import AssetModal from "./components/AssetModal";
+
+const API_BASE = "http://127.0.0.1:8000";
 
 function App() {
   const [assets, setAssets] = useState([]);
   const [selectedAsset, setSelectedAsset] = useState(null);
 
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("");
+  const [quality, setQuality] = useState("");
+
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
 
-  // Search
-  const [searchTerm, setSearchTerm] = useState("");
-
-  // Category filter
-  const [categoryFilter, setCategoryFilter] = useState("all");
-
-  // Quality filter
-  const [qualityFilter, setQualityFilter] = useState("all");
-
+  // =========================
+  // LOAD ASSETS
+  // =========================
   useEffect(() => {
-    fetch(`${API_URL}/assets`)
-      .then((response) => {
+    async function loadAssets() {
+      try {
+        setLoading(true);
+        setError("");
+
+        const response = await fetch(
+          `${API_BASE}/assets?limit=100&offset=0`
+        );
+
         if (!response.ok) {
           throw new Error(`API error: ${response.status}`);
         }
 
-        return response.json();
-      })
-      .then((data) => {
-        console.log("API response:", data);
+        const data = await response.json();
+
+        console.log("API DATA:", data);
 
         setAssets(data.results || []);
+      } catch (err) {
+        console.error(err);
+        setError("Cannot load assets from API.");
+      } finally {
         setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Failed to load assets:", err);
+      }
+    }
 
-        setError(err.message);
-        setLoading(false);
-      });
+    loadAssets();
   }, []);
 
-  /*
-   * Get unique categories
-   *
-   * Example:
-   * dong_ho
-   * hang_trong
-   * ...
-   */
-  const categories = [
-    ...new Set(
-      assets
-        .map((asset) => asset.category)
-        .filter(Boolean)
-    ),
-  ];
+  // =========================
+  // CATEGORIES
+  // =========================
+  const categories = useMemo(() => {
+    const uniqueCategories = [
+      ...new Set(
+        assets
+          .map((asset) => asset.category)
+          .filter(Boolean)
+      ),
+    ];
 
-  /*
-   * Filter assets
-   */
-  const filteredAssets = assets.filter((asset) => {
-    /*
-     * SEARCH
-     *
-     * Search through:
-     * - filename
-     * - category
-     * - period
-     * - dynasty
-     * - motif
-     * - region
-     */
-    const search = searchTerm.toLowerCase().trim();
+    return uniqueCategories.sort();
+  }, [assets]);
 
-    const matchesSearch =
-      search === "" ||
-      [
-        asset.filename,
-        asset.category,
-        asset.period,
-        asset.dynasty,
-        asset.motif,
-        asset.region,
-      ]
-        .filter(Boolean)
-        .some((value) =>
-          String(value)
-            .toLowerCase()
-            .includes(search)
-        );
+  // =========================
+  // STATISTICS
+  // =========================
+  const statistics = useMemo(() => {
+    return {
+      total: assets.length,
 
-    /*
-     * CATEGORY
-     */
-    const matchesCategory =
-      categoryFilter === "all" ||
-      asset.category === categoryFilter;
+      good: assets.filter(
+        (asset) => asset.quality?.quality === "GOOD"
+      ).length,
 
-    /*
-     * QUALITY
-     */
-    const matchesQuality =
-      qualityFilter === "all" ||
-      asset.quality?.quality?.toLowerCase() ===
-        qualityFilter.toLowerCase();
+      acceptable: assets.filter(
+        (asset) => asset.quality?.quality === "ACCEPTABLE"
+      ).length,
 
-    return (
-      matchesSearch &&
-      matchesCategory &&
-      matchesQuality
-    );
-  });
+      poor: assets.filter(
+        (asset) => asset.quality?.quality === "POOR"
+      ).length,
+    };
+  }, [assets]);
 
-  /*
-   * Clear all filters
-   */
-  const clearFilters = () => {
-    setSearchTerm("");
-    setCategoryFilter("all");
-    setQualityFilter("all");
-  };
+  // =========================
+  // FILTER
+  // =========================
+  const filteredAssets = useMemo(() => {
+    return assets.filter((asset) => {
+      const searchText = search.toLowerCase().trim();
+
+      const matchesSearch =
+        !searchText ||
+        asset.filename?.toLowerCase().includes(searchText) ||
+        asset.id?.toLowerCase().includes(searchText) ||
+        asset.category?.toLowerCase().includes(searchText);
+
+      const matchesCategory =
+        !category ||
+        asset.category === category;
+
+      const matchesQuality =
+        !quality ||
+        asset.quality?.quality === quality;
+
+      return (
+        matchesSearch &&
+        matchesCategory &&
+        matchesQuality
+      );
+    });
+  }, [assets, search, category, quality]);
+
+  // =========================
+  // RESET FILTER
+  // =========================
+  function clearFilters() {
+    setSearch("");
+    setCategory("");
+    setQuality("");
+  }
 
   return (
-    <div className="dashboard">
-
-      {/* HEADER */}
-      <header className="dashboard-header">
+    <div className="app">
+      {/* ================= HEADER ================= */}
+      <header className="header">
         <div>
           <h1>VietHeritage Data Engine</h1>
-
           <p>
-            Digital heritage restoration and cultural
-            asset management
+            Heritage Asset Management & Data Quality Dashboard
           </p>
         </div>
       </header>
 
+      {/* ================= MAIN ================= */}
+      <main className="container">
 
-      {/* MAIN */}
-      <main className="dashboard-content">
+        {/* ================= STATS ================= */}
+        <section className="stats-grid">
 
-        {/* SECTION HEADER */}
-        <div className="section-header">
+          <div className="stat-card">
+            <span className="stat-label">
+              Total Assets
+            </span>
 
-          <div>
-            <h2>Heritage Assets</h2>
-
-            <p>
-              Browse and inspect Vietnamese cultural
-              heritage assets.
-            </p>
+            <strong className="stat-value">
+              {statistics.total}
+            </strong>
           </div>
 
-          <div className="asset-count">
-            {filteredAssets.length} / {assets.length} assets
+          <div className="stat-card">
+            <span className="stat-label">
+              Good
+            </span>
+
+            <strong className="stat-value">
+              {statistics.good}
+            </strong>
           </div>
 
-        </div>
+          <div className="stat-card">
+            <span className="stat-label">
+              Acceptable
+            </span>
 
+            <strong className="stat-value">
+              {statistics.acceptable}
+            </strong>
+          </div>
 
-        {/* SEARCH + FILTERS */}
-        <div className="filters">
+          <div className="stat-card">
+            <span className="stat-label">
+              Poor
+            </span>
 
-          {/* SEARCH */}
-          <div className="search-box">
+            <strong className="stat-value">
+              {statistics.poor}
+            </strong>
+          </div>
+
+        </section>
+
+        {/* ================= FILTERS ================= */}
+        <section className="filters">
+
+          <div className="filter-group">
+            <label>
+              Search
+            </label>
 
             <input
               type="text"
-              placeholder="Search heritage assets..."
-              value={searchTerm}
-              onChange={(event) =>
-                setSearchTerm(event.target.value)
-              }
+              placeholder="Search filename or ID..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
-
           </div>
 
-
-          {/* CATEGORY */}
           <div className="filter-group">
-
             <label>
               Category
             </label>
 
             <select
-              value={categoryFilter}
-              onChange={(event) =>
-                setCategoryFilter(event.target.value)
-              }
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
             >
-              <option value="all">
+              <option value="">
                 All categories
               </option>
 
-              {categories.map((category) => (
+              {categories.map((item) => (
                 <option
-                  key={category}
-                  value={category}
+                  key={item}
+                  value={item}
                 >
-                  {category}
+                  {item}
                 </option>
               ))}
             </select>
-
           </div>
 
-
-          {/* QUALITY */}
           <div className="filter-group">
-
             <label>
               Quality
             </label>
 
             <select
-              value={qualityFilter}
-              onChange={(event) =>
-                setQualityFilter(event.target.value)
-              }
+              value={quality}
+              onChange={(e) => setQuality(e.target.value)}
             >
-              <option value="all">
+              <option value="">
                 All quality
               </option>
 
-              <option value="good">
+              <option value="GOOD">
                 Good
               </option>
 
-              <option value="acceptable">
+              <option value="ACCEPTABLE">
                 Acceptable
               </option>
 
-              <option value="poor">
+              <option value="POOR">
                 Poor
               </option>
-
             </select>
-
           </div>
 
-
-          {/* CLEAR */}
           <button
-            className="clear-filters"
+            className="clear-button"
             onClick={clearFilters}
           >
             Clear
           </button>
 
-        </div>
+        </section>
 
+        {/* ================= RESULTS INFO ================= */}
+        <section className="results-info">
 
-        {/* LOADING */}
+          <div>
+            Showing{" "}
+            <strong>
+              {filteredAssets.length}
+            </strong>{" "}
+            of{" "}
+            <strong>
+              {assets.length}
+            </strong>{" "}
+            assets
+          </div>
+
+          {(search || category || quality) && (
+            <div className="active-filters">
+              Filters active
+            </div>
+          )}
+
+        </section>
+
+        {/* ================= CONTENT ================= */}
+
         {loading && (
-          <div className="status">
+          <div className="message">
             Loading assets...
           </div>
         )}
 
-
-        {/* ERROR */}
         {error && (
-          <div className="status error">
-            Failed to load assets: {error}
+          <div className="message error">
+            {error}
           </div>
         )}
 
-
-        {/* NO ASSETS */}
         {!loading &&
           !error &&
-          assets.length === 0 && (
-            <div className="status">
-              No heritage assets found.
-            </div>
-          )}
-
-
-        {/* NO SEARCH RESULT */}
-        {!loading &&
-          !error &&
-          assets.length > 0 &&
           filteredAssets.length === 0 && (
-            <div className="status">
-
-              <h3>
-                No matching assets
-              </h3>
-
-              <p>
-                Try changing your search or filters.
-              </p>
-
-              <button
-                className="clear-filters"
-                onClick={clearFilters}
-              >
-                Clear filters
-              </button>
-
+            <div className="message">
+              No assets found.
             </div>
           )}
 
-
-        {/* ASSET GRID */}
         {!loading &&
           !error &&
           filteredAssets.length > 0 && (
-
-            <div className="asset-grid">
-
+            <section className="asset-grid">
               {filteredAssets.map((asset) => (
-
-                <div
+                <AssetCard
                   key={asset.id}
+                  asset={asset}
                   onClick={() =>
                     setSelectedAsset(asset)
                   }
-                >
-                  <AssetCard
-                    asset={asset}
-                  />
-                </div>
-
+                />
               ))}
-
-            </div>
-
+            </section>
           )}
 
       </main>
 
+      {/* ================= MODAL ================= */}
 
-      {/* MODAL */}
       {selectedAsset && (
         <AssetModal
           asset={selectedAsset}
@@ -346,7 +333,6 @@ function App() {
           }
         />
       )}
-
     </div>
   );
 }

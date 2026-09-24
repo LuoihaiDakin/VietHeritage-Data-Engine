@@ -1,43 +1,65 @@
-const API_URL = "http://127.0.0.1:8000";
+function AssetCard({ asset, onClick }) {
+  const quality = asset.quality?.quality || "UNKNOWN";
 
-function AssetCard({ asset }) {
-  const imagePath = asset.path
-    ? `${API_URL}/${asset.path}`
+  const score =
+    asset.quality?.overall_score ?? "-";
+
+  const category =
+    asset.category || "Unknown";
+
+  const imagePath =
+    asset.original?.path ||
+    asset.path;
+
+  const imageUrl = imagePath
+    ? `http://127.0.0.1:8000/${imagePath.replace(/^\/+/, "")}`
     : null;
 
   return (
-    <div className="asset-card">
-      {imagePath ? (
-        <img
-          src={imagePath}
-          alt={asset.filename || "Heritage asset"}
-          className="asset-card-image"
-          onError={(event) => {
-            console.error("Image failed:", event.target.src);
-          }}
-        />
-      ) : (
-        <div className="asset-card-placeholder">
-          No Image
-        </div>
-      )}
+    <div
+      className="asset-card"
+      onClick={onClick}
+    >
+      <div className="asset-image-container">
 
-      <div className="asset-card-content">
+        {imageUrl ? (
+          <img
+            src={imageUrl}
+            alt={asset.filename}
+            className="asset-image"
+          />
+        ) : (
+          <div className="image-placeholder">
+            No image
+          </div>
+        )}
+
+      </div>
+
+      <div className="asset-content">
+
         <h3>
-          {asset.filename || "Untitled"}
+          {asset.filename}
         </h3>
 
-        <p>
-          Category: {asset.category || "Unknown"}
+        <p className="asset-category">
+          {category}
         </p>
 
-        <p>
-          Quality: {asset.quality?.quality || "Unknown"}
-        </p>
+        <div className="asset-meta">
 
-        <p>
-          Score: {asset.quality?.overall_score ?? "N/A"}
-        </p>
+          <span
+            className={`quality-badge ${quality.toLowerCase()}`}
+          >
+            {quality}
+          </span>
+
+          <span className="score">
+            Score: {score}
+          </span>
+
+        </div>
+
       </div>
     </div>
   );
