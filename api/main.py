@@ -1,10 +1,13 @@
 import os
 import json
 
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Query, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
+from pydantic import BaseModel
+
+from processing.pipeline import process_image
 
 # ========================================
 # PROJECT PATH
@@ -35,6 +38,9 @@ app = FastAPI(
     ),
     version="1.0.0"
 )
+class ProcessRequest(BaseModel):
+    image_path: str
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -578,3 +584,78 @@ def quality_statistics():
         "average_score": average_score,
         "classifications": classifications
     }
+# ========================================
+# PROCESS IMAGE
+# ========================================
+
+@app.post("/process")
+def process_asset(request: ProcessRequest):
+
+    input_path = request.image_path
+
+    # Convert relative path to absolute path
+    if not os.path.isabs(input_path):
+        input_path = os.path.join(
+            PROJECT_ROOT,
+            input_path
+        )
+
+    input_path = os.path.abspath(input_path)
+
+    # Check input image
+    if not os.path.exists(input_path):
+        raise HTTPException(
+            status_code=404,
+            detail=f"Image not found: {input_path}"
+        )
+
+    try:
+        # Create output folder based on filename
+        filename = os.path.splitext(
+            os.path.basename(input_path)
+        )[0]
+
+        output_dir = os.path.join(
+            OUTPUTS_DIR,
+            filename
+        )
+
+        # Run processing pipeline
+        result = process_image(
+            input_path,
+            output_dir
+        )
+
+        # Convert local paths to browser URLs
+        result["outputs"]["restored"] = (
+            f"/outputs/{filename}/restored.png"
+        )
+
+        result["outputs"]["segmented"] = (
+            f"/outputs/{filename}/segmented.png"
+        )
+
+        result["outputs"]["edges"] = (
+            f"/outputs/{filename}/edges.png"
+        )
+
+        result["outputs"]["svg"] = (
+            f"/outputs/{filename}/pattern.svg"
+        )
+
+        result["input"]["path"] = (
+            request.image_path
+        )
+
+        result["restored"]["path"] = (
+            f"/outputs/{filename}/restored.png"
+        )
+
+        return result
+
+    except Exception as error:
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(error)
+        )

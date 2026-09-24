@@ -1,110 +1,200 @@
-import React from "react";
+import ProcessPanel from "./ProcessPanel";
 
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE = "http://127.0.0.1:8000";
 
-function getImageUrl(asset) {
-  const imagePath =
-    asset?.original?.path ||
-    asset?.path ||
-    "";
+function buildImageUrl(path) {
+    if (!path) {
+        return "";
+    }
 
-  if (!imagePath) {
-    return "";
-  }
+    // Already full URL
+    if (
+        path.startsWith("http://") ||
+        path.startsWith("https://")
+    ) {
+        return path;
+    }
 
-  // Nếu API đã trả về URL đầy đủ
-  if (
-    imagePath.startsWith("http://") ||
-    imagePath.startsWith("https://")
-  ) {
-    return imagePath;
-  }
+    // Normalize Windows slashes
+    let normalizedPath = path.replace(/\\/g, "/");
 
-  // Chuẩn hóa path Windows
-  const normalizedPath = imagePath
-    .replaceAll("\\", "/")
-    .replace(/^\/+/, "");
+    // Remove leading slash
+    normalizedPath = normalizedPath.replace(/^\/+/, "");
 
-  return `${API_BASE_URL}/${normalizedPath}`;
+    /*
+        Possible paths:
+
+        dataset/images/dong_ho/dong_ho_003.jpg
+        images/dong_ho/dong_ho_003.jpg
+        /images/dong_ho/dong_ho_003.jpg
+    */
+
+    if (normalizedPath.startsWith("dataset/images/")) {
+        normalizedPath = normalizedPath.replace(
+            "dataset/images/",
+            ""
+        );
+
+        return `${API_BASE}/images/${normalizedPath}`;
+    }
+
+    if (normalizedPath.startsWith("images/")) {
+        normalizedPath = normalizedPath.replace(
+            "images/",
+            ""
+        );
+
+        return `${API_BASE}/images/${normalizedPath}`;
+    }
+
+    return `${API_BASE}/${normalizedPath}`;
 }
 
-function AssetModal({ asset, onClose }) {
-  if (!asset) {
-    return null;
-  }
+export default function AssetModal({
+    asset,
+    onClose
+}) {
+    if (!asset) {
+        return null;
+    }
 
-  const imageUrl = getImageUrl(asset);
+    const imagePath =
+        asset.original?.path ||
+        asset.path ||
+        "";
 
-  return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div
-        className="modal-content"
-        onClick={(event) => event.stopPropagation()}
-      >
-        <button className="modal-close" onClick={onClose}>
-          ×
-        </button>
+    const imageUrl = buildImageUrl(imagePath);
 
-        <div className="modal-image-container">
-          {imageUrl ? (
-            <img
-              src={imageUrl}
-              alt={asset.filename || "Heritage asset"}
-              className="modal-image"
-              onError={(event) => {
-                console.error(
-                  "Cannot load image:",
-                  imageUrl
-                );
+    const quality =
+        asset.quality?.quality ||
+        "UNKNOWN";
 
-                event.currentTarget.style.display = "none";
-              }}
-            />
-          ) : (
-            <div className="no-image">
-              No image available
+    const sharpness =
+        asset.quality?.sharpness ??
+        asset.quality?.score ??
+        "-";
+
+    return (
+        <div
+            className="modal-overlay"
+            onClick={onClose}
+        >
+            <div
+                className="modal"
+                onClick={(event) =>
+                    event.stopPropagation()
+                }
+            >
+
+                {/* HEADER */}
+                <div className="modal-header">
+
+                    <div>
+                        <h2>
+                            {asset.filename || "Asset"}
+                        </h2>
+
+                        <p>
+                            Heritage Digital Asset
+                        </p>
+                    </div>
+
+                    <button
+                        className="modal-close"
+                        onClick={onClose}
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                {/* ORIGINAL IMAGE */}
+                <div className="modal-image-container">
+
+                    {imageUrl ? (
+                        <img
+                            src={imageUrl}
+                            alt={
+                                asset.filename ||
+                                "Heritage asset"
+                            }
+                            className="modal-image"
+                        />
+                    ) : (
+                        <div className="image-placeholder">
+                            No image available
+                        </div>
+                    )}
+
+                </div>
+
+
+                {/* ASSET INFORMATION */}
+                <div className="asset-info">
+
+                    <div className="info-item">
+
+                        <span className="info-label">
+                            Filename
+                        </span>
+
+                        <span className="info-value">
+                            {asset.filename || "-"}
+                        </span>
+
+                    </div>
+
+
+                    <div className="info-item">
+
+                        <span className="info-label">
+                            Category
+                        </span>
+
+                        <span className="info-value">
+                            {asset.category || "-"}
+                        </span>
+
+                    </div>
+
+
+                    <div className="info-item">
+
+                        <span className="info-label">
+                            Quality
+                        </span>
+
+                        <span
+                            className={`quality-badge ${quality.toLowerCase()}`}
+                        >
+                            {quality}
+                        </span>
+
+                    </div>
+
+
+                    <div className="info-item">
+
+                        <span className="info-label">
+                            Sharpness
+                        </span>
+
+                        <span className="info-value">
+                            {sharpness}
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                {/* PROCESSING */}
+                <ProcessPanel
+                    asset={asset}
+                />
+
             </div>
-          )}
         </div>
-
-        <div className="modal-info">
-          <h2>{asset.filename}</h2>
-
-          <div className="info-row">
-            <span>Category</span>
-            <strong>
-              {asset.category || "Unknown"}
-            </strong>
-          </div>
-
-          <div className="info-row">
-            <span>Quality</span>
-            <strong>
-              {asset.quality?.quality || "Unknown"}
-            </strong>
-          </div>
-
-          {asset.quality?.score !== undefined && (
-            <div className="info-row">
-              <span>Quality Score</span>
-              <strong>
-                {asset.quality.score}
-              </strong>
-            </div>
-          )}
-
-          {asset.path && (
-            <div className="info-row">
-              <span>Path</span>
-              <strong className="path-text">
-                {asset.path}
-              </strong>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
+    );
 }
-
-export default AssetModal;
