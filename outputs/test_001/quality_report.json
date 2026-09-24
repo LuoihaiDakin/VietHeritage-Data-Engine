@@ -1,0 +1,29 @@
+{
+    "input": {
+        "path": "dataset/images/dong_ho/dong_ho_001.jpg",
+        "metrics": {
+            "width": 120,
+            "height": 89,
+            "brightness": 133.2,
+            "contrast": 51.45,
+            "sharpness": 13585.99
+        }
+    },
+    "restored": {
+        "path": "outputs/test_001\\restored.png",
+        "metrics": {
+            "width": 480,
+            "height": 356,
+            "brightness": 154.83,
+            "contrast": 67.04,
+            "sharpness": 236.84
+        }
+    },
+    "outputs": {
+        "restored": "outputs/test_001\\restored.png",
+        "segmented": "outputs/test_001\\segmented.png",
+        "edges": "outputs/test_001\\edges.png",
+        "svg": "outputs/test_001\\pattern.svg"
+    },
+    "status": "completed"
+}

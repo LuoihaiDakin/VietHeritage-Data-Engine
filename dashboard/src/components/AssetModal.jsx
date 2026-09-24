@@ -1,87 +1,107 @@
+import React from "react";
+
+const API_BASE_URL = "http://127.0.0.1:8000";
+
+function getImageUrl(asset) {
+  const imagePath =
+    asset?.original?.path ||
+    asset?.path ||
+    "";
+
+  if (!imagePath) {
+    return "";
+  }
+
+  // Nếu API đã trả về URL đầy đủ
+  if (
+    imagePath.startsWith("http://") ||
+    imagePath.startsWith("https://")
+  ) {
+    return imagePath;
+  }
+
+  // Chuẩn hóa path Windows
+  const normalizedPath = imagePath
+    .replaceAll("\\", "/")
+    .replace(/^\/+/, "");
+
+  return `${API_BASE_URL}/${normalizedPath}`;
+}
+
 function AssetModal({ asset, onClose }) {
-  const quality = asset.quality?.quality || "UNKNOWN";
+  if (!asset) {
+    return null;
+  }
 
-  const score =
-    asset.quality?.overall_score ?? "-";
-
-  const category =
-    asset.category || "Unknown";
+  const imageUrl = getImageUrl(asset);
 
   return (
-    <div
-      className="modal-overlay"
-      onClick={onClose}
-    >
+    <div className="modal-overlay" onClick={onClose}>
       <div
-        className="modal"
-        onClick={(e) => e.stopPropagation()}
+        className="modal-content"
+        onClick={(event) => event.stopPropagation()}
       >
+        <button className="modal-close" onClick={onClose}>
+          ×
+        </button>
 
-        <div className="modal-header">
-          <h2>
-            Asset Details
-          </h2>
+        <div className="modal-image-container">
+          {imageUrl ? (
+            <img
+              src={imageUrl}
+              alt={asset.filename || "Heritage asset"}
+              className="modal-image"
+              onError={(event) => {
+                console.error(
+                  "Cannot load image:",
+                  imageUrl
+                );
 
-          <button
-            className="close-button"
-            onClick={onClose}
-          >
-            ×
-          </button>
+                event.currentTarget.style.display = "none";
+              }}
+            />
+          ) : (
+            <div className="no-image">
+              No image available
+            </div>
+          )}
         </div>
 
-        <div className="modal-body">
+        <div className="modal-info">
+          <h2>{asset.filename}</h2>
 
-          <div className="detail-row">
-            <strong>ID:</strong>
-            <span>{asset.id}</span>
+          <div className="info-row">
+            <span>Category</span>
+            <strong>
+              {asset.category || "Unknown"}
+            </strong>
           </div>
 
-          <div className="detail-row">
-            <strong>Filename:</strong>
-            <span>{asset.filename}</span>
+          <div className="info-row">
+            <span>Quality</span>
+            <strong>
+              {asset.quality?.quality || "Unknown"}
+            </strong>
           </div>
 
-          <div className="detail-row">
-            <strong>Category:</strong>
-            <span>{category}</span>
-          </div>
+          {asset.quality?.score !== undefined && (
+            <div className="info-row">
+              <span>Quality Score</span>
+              <strong>
+                {asset.quality.score}
+              </strong>
+            </div>
+          )}
 
-          <div className="detail-row">
-            <strong>Quality:</strong>
-
-            <span
-              className={`quality-badge ${quality.toLowerCase()}`}
-            >
-              {quality}
-            </span>
-          </div>
-
-          <div className="detail-row">
-            <strong>Overall Score:</strong>
-            <span>{score}</span>
-          </div>
-
-          <div className="detail-row">
-            <strong>Path:</strong>
-            <span>{asset.path}</span>
-          </div>
-
-          <div className="detail-row">
-            <strong>Processing:</strong>
-
-            <span>
-              {asset.processing
-                ? Object.entries(asset.processing)
-                    .filter(([, value]) => value)
-                    .map(([key]) => key)
-                    .join(", ")
-                : "None"}
-            </span>
-          </div>
-
+          {asset.path && (
+            <div className="info-row">
+              <span>Path</span>
+              <strong className="path-text">
+                {asset.path}
+              </strong>
+            </div>
+          )}
         </div>
-
       </div>
     </div>
   );
