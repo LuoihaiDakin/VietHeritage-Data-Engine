@@ -232,8 +232,8 @@ function App() {
                 Good
               </option>
 
-              <option value="fair">
-                Fair
+              <option value="acceptable">
+                Acceptable
               </option>
 
               <option value="poor">
