@@ -63,6 +63,9 @@ def process_image(input_path, output_dir):
     original_metrics = evaluate_image(
         image
     )
+    original_quality = classify_quality(
+        original_metrics
+    )
 
     # ========================================================
     # 4. RESTORATION / REAL-ESRGAN
@@ -203,6 +206,9 @@ def process_image(input_path, output_dir):
     restored_metrics = evaluate_image(
         restored
     )
+    restored_quality = classify_quality(
+        restored_metrics
+    )
 
     # ========================================================
     # 11. EVALUATE CLEANED IMAGE
@@ -210,6 +216,9 @@ def process_image(input_path, output_dir):
 
     cleaned_metrics = evaluate_image(
         cleaned
+    )
+    cleaned_quality = classify_quality(
+        cleaned_metrics
     )
 
     # ========================================================
@@ -219,6 +228,9 @@ def process_image(input_path, output_dir):
     normalized_metrics = evaluate_image(
         normalized
     )
+    normalized_quality = classify_quality(
+        normalized_metrics
+    )
 
     # ========================================================
     # 13. QUALITY REPORT
@@ -226,38 +238,42 @@ def process_image(input_path, output_dir):
 
     quality_report = {
 
-        "input": {
-            "path": input_path,
-            "metrics": original_metrics
-        },
+    "input": {
+        "path": input_path,
+        "metrics": original_metrics,
+        "quality": original_quality
+    },
 
-        "restored": {
-            "path": restored_path,
-            "metrics": restored_metrics
-        },
+    "restored": {
+        "path": restored_path,
+        "metrics": restored_metrics,
+        "quality": restored_quality
+    },
 
-        "cleaned": {
-            "path": cleaned_path,
-            "metrics": cleaned_metrics
-        },
+    "cleaned": {
+        "path": cleaned_path,
+        "metrics": cleaned_metrics,
+        "quality": cleaned_quality
+    },
 
-        "normalized": {
-            "path": normalized_path,
-            "metrics": normalized_metrics
-        },
+    "normalized": {
+        "path": normalized_path,
+        "metrics": normalized_metrics,
+        "quality": normalized_quality
+    },
 
-        "outputs": {
-            "restored": restored_path,
-            "cleaned": cleaned_path,
-            "normalized": normalized_path,
-            "edges": edges_path,
-            "segmented": segmented_path,
-            "mask": mask_path,
-            "svg": svg_path
-        },
+    "outputs": {
+        "restored": restored_path,
+        "cleaned": cleaned_path,
+        "normalized": normalized_path,
+        "edges": edges_path,
+        "segmented": segmented_path,
+        "mask": mask_path,
+        "svg": svg_path
+    },
 
-        "status": "completed"
-    }
+    "status": "completed"
+}
 
     # ========================================================
     # 14. SAVE QUALITY REPORT
