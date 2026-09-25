@@ -168,6 +168,9 @@ export default function ProcessPanel({ asset }) {
 
 
             setResult(data);
+            if (onProcessed) {
+                onProcessed();
+}
 
 
         } catch (err) {

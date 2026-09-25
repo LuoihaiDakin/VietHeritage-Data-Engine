@@ -1,68 +1,132 @@
-function AssetCard({ asset, onClick }) {
-  const quality = asset.quality?.quality || "UNKNOWN";
+function getQualityClass(quality) {
+    if (!quality) {
+        return "";
+    }
 
-  const score =
-    asset.quality?.overall_score ?? "-";
-
-  const category =
-    asset.category || "Unknown";
-
-  const imagePath =
-    asset.original?.path ||
-    asset.path;
-
-  const imageUrl = imagePath
-    ? `http://127.0.0.1:8000/${imagePath.replace(/^\/+/, "")}`
-    : null;
-
-  return (
-    <div
-      className="asset-card"
-      onClick={onClick}
-    >
-      <div className="asset-image-container">
-
-        {imageUrl ? (
-          <img
-            src={imageUrl}
-            alt={asset.filename}
-            className="asset-image"
-          />
-        ) : (
-          <div className="image-placeholder">
-            No image
-          </div>
-        )}
-
-      </div>
-
-      <div className="asset-content">
-
-        <h3>
-          {asset.filename}
-        </h3>
-
-        <p className="asset-category">
-          {category}
-        </p>
-
-        <div className="asset-meta">
-
-          <span
-            className={`quality-badge ${quality.toLowerCase()}`}
-          >
-            {quality}
-          </span>
-
-          <span className="score">
-            Score: {score}
-          </span>
-
-        </div>
-
-      </div>
-    </div>
-  );
+    return quality.toLowerCase();
 }
 
-export default AssetCard;
+
+export default function AssetCard({
+    asset,
+    onClick
+}) {
+
+    const quality =
+        asset.quality?.quality ||
+        "UNKNOWN";
+
+    const processing =
+        asset.processing || {};
+
+
+    const isProcessed =
+        processing.restored &&
+        processing.segmented &&
+        processing.vectorized;
+
+
+    return (
+        <div
+            className="asset-card"
+            onClick={() => onClick(asset)}
+        >
+
+            {/* IMAGE */}
+
+            <div className="asset-image-wrapper">
+
+                <img
+                    src={
+                        `http://127.0.0.1:8000/images/` +
+                        asset.path
+                            .replace(
+                                /^images\//,
+                                ""
+                            )
+                    }
+                    alt={asset.filename}
+                    className="asset-image"
+                />
+
+            </div>
+
+
+            {/* CONTENT */}
+
+            <div className="asset-content">
+
+                <h3>
+                    {asset.filename}
+                </h3>
+
+
+                <p className="asset-category">
+                    {asset.category || "Unknown"}
+                </p>
+
+
+                {/* QUALITY */}
+
+                <div className="asset-quality-row">
+
+                    <span>
+                        Quality:
+                    </span>
+
+                    <span
+                        className={
+                            `quality-badge ` +
+                            getQualityClass(
+                                quality
+                            )
+                        }
+                    >
+                        {quality}
+                    </span>
+
+                </div>
+
+
+                {/* PROCESSING STATUS */}
+
+                <div className="asset-processing-row">
+
+                    <span>
+                        Processing:
+                    </span>
+
+                    {isProcessed ? (
+
+                        <span className="processing-badge processed">
+                            Processed
+                        </span>
+
+                    ) : (
+
+                        <span className="processing-badge pending">
+                            Not Processed
+                        </span>
+
+                    )}
+
+                </div>
+
+
+                {/* OUTPUT COUNT */}
+
+                {asset.processing_outputs && (
+
+                    <div className="asset-output-info">
+
+                        Outputs available
+
+                    </div>
+
+                )}
+
+            </div>
+
+        </div>
+    );
+}

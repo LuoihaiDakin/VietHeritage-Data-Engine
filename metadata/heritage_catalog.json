@@ -2313,6 +2313,29 @@
                 "low_resolution"
             ],
             "recommendation": "Image requires restoration or preprocessing: poor_contrast, low_resolution."
+        },
+        "processing_outputs": {
+            "restored": "/outputs/rong_viet_nam_003/restored.png",
+            "normalized": "/outputs/rong_viet_nam_003/normalized.png",
+            "segmented": "/outputs/rong_viet_nam_003/segmented.png",
+            "edges": "/outputs/rong_viet_nam_003/edges.png",
+            "svg": "/outputs/rong_viet_nam_003/pattern.svg",
+            "quality_report": "/outputs/rong_viet_nam_003/quality_report.json"
+        },
+        "processed_at": "2026-09-26T01:43:20",
+        "processed_quality": {
+            "width": 480,
+            "height": 484,
+            "brightness": 138.38,
+            "contrast": 57.73,
+            "sharpness": 127.7
+        },
+        "normalized_quality": {
+            "width": 480,
+            "height": 484,
+            "brightness": 138.38,
+            "contrast": 57.73,
+            "sharpness": 127.7
         }
     },
     {

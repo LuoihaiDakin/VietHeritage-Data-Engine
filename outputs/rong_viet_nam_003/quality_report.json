@@ -1,0 +1,40 @@
+{
+    "input": {
+        "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\dataset\\images\\rong_viet_nam\\rong_viet_nam_003.png",
+        "metrics": {
+            "width": 120,
+            "height": 121,
+            "brightness": 101.58,
+            "contrast": 35.22,
+            "sharpness": 4018.81
+        }
+    },
+    "restored": {
+        "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\rong_viet_nam_003\\restored.png",
+        "metrics": {
+            "width": 480,
+            "height": 484,
+            "brightness": 138.38,
+            "contrast": 57.73,
+            "sharpness": 127.7
+        }
+    },
+    "normalized": {
+        "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\rong_viet_nam_003\\normalized.png",
+        "metrics": {
+            "width": 480,
+            "height": 484,
+            "brightness": 138.38,
+            "contrast": 57.73,
+            "sharpness": 127.7
+        }
+    },
+    "outputs": {
+        "restored": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\rong_viet_nam_003\\restored.png",
+        "normalized": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\rong_viet_nam_003\\normalized.png",
+        "segmented": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\rong_viet_nam_003\\segmented.png",
+        "edges": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\rong_viet_nam_003\\edges.png",
+        "svg": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\rong_viet_nam_003\\pattern.svg"
+    },
+    "status": "completed"
+}
