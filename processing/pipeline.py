@@ -1,7 +1,7 @@
 import json
 import os
 import cv2
-
+from processing.quality_classifier import classify_quality
 from processing.cleaning import clean_image
 from processing.restoration import restore_image
 from processing.normalization import normalize_image
@@ -16,11 +16,12 @@ def process_image(input_path, output_dir):
     Complete VietHeritage image processing pipeline.
 
     Pipeline:
+
     Original
         ↓
-    Cleaning
+    Restoration / Real-ESRGAN
         ↓
-    Restoration
+    Cleaning
         ↓
     Normalization
         ↓
@@ -33,18 +34,18 @@ def process_image(input_path, output_dir):
     Evaluation
     """
 
-    # ========================================
+    # ========================================================
     # 1. CREATE OUTPUT DIRECTORY
-    # ========================================
+    # ========================================================
 
     os.makedirs(
         output_dir,
         exist_ok=True
     )
 
-    # ========================================
+    # ========================================================
     # 2. LOAD IMAGE
-    # ========================================
+    # ========================================================
 
     image = cv2.imread(
         input_path
@@ -55,28 +56,20 @@ def process_image(input_path, output_dir):
             f"Cannot read image: {input_path}"
         )
 
-    # ========================================
+    # ========================================================
     # 3. EVALUATE ORIGINAL IMAGE
-    # ========================================
+    # ========================================================
 
     original_metrics = evaluate_image(
         image
     )
 
-    # ========================================
-    # 4. CLEANING
-    # ========================================
-
-    cleaned = clean_image(
-        image
-    )
-
-    # ========================================
-    # 5. RESTORATION
-    # ========================================
+    # ========================================================
+    # 4. RESTORATION / REAL-ESRGAN
+    # ========================================================
 
     restored = restore_image(
-        cleaned
+        image
     )
 
     restored_path = os.path.join(
@@ -84,17 +77,41 @@ def process_image(input_path, output_dir):
         "restored.png"
     )
 
-    cv2.imwrite(
+    if not cv2.imwrite(
         restored_path,
+        restored
+    ):
+        raise RuntimeError(
+            f"Failed to save: {restored_path}"
+        )
+
+    # ========================================================
+    # 5. CLEANING
+    # ========================================================
+
+    cleaned = clean_image(
         restored
     )
 
-    # ========================================
+    cleaned_path = os.path.join(
+        output_dir,
+        "cleaned.png"
+    )
+
+    if not cv2.imwrite(
+        cleaned_path,
+        cleaned
+    ):
+        raise RuntimeError(
+            f"Failed to save: {cleaned_path}"
+        )
+
+    # ========================================================
     # 6. NORMALIZATION
-    # ========================================
+    # ========================================================
 
     normalized = normalize_image(
-        restored
+        cleaned
     )
 
     normalized_path = os.path.join(
@@ -102,14 +119,17 @@ def process_image(input_path, output_dir):
         "normalized.png"
     )
 
-    cv2.imwrite(
+    if not cv2.imwrite(
         normalized_path,
         normalized
-    )
+    ):
+        raise RuntimeError(
+            f"Failed to save: {normalized_path}"
+        )
 
-    # ========================================
+    # ========================================================
     # 7. EDGE PROCESSING
-    # ========================================
+    # ========================================================
 
     edges = process_edges(
         normalized
@@ -120,14 +140,17 @@ def process_image(input_path, output_dir):
         "edges.png"
     )
 
-    cv2.imwrite(
+    if not cv2.imwrite(
         edges_path,
         edges
-    )
+    ):
+        raise RuntimeError(
+            f"Failed to save: {edges_path}"
+        )
 
-    # ========================================
+    # ========================================================
     # 8. SEGMENTATION
-    # ========================================
+    # ========================================================
 
     segmented, mask = segment_image(
         normalized
@@ -138,14 +161,30 @@ def process_image(input_path, output_dir):
         "segmented.png"
     )
 
-    cv2.imwrite(
-        segmented_path,
-        segmented
+    mask_path = os.path.join(
+        output_dir,
+        "mask.png"
     )
 
-    # ========================================
+    if not cv2.imwrite(
+        segmented_path,
+        segmented
+    ):
+        raise RuntimeError(
+            f"Failed to save: {segmented_path}"
+        )
+
+    if not cv2.imwrite(
+        mask_path,
+        mask
+    ):
+        raise RuntimeError(
+            f"Failed to save: {mask_path}"
+        )
+
+    # ========================================================
     # 9. VECTORIZATION
-    # ========================================
+    # ========================================================
 
     svg_path = os.path.join(
         output_dir,
@@ -157,25 +196,33 @@ def process_image(input_path, output_dir):
         svg_path
     )
 
-    # ========================================
+    # ========================================================
     # 10. EVALUATE RESTORED IMAGE
-    # ========================================
+    # ========================================================
 
     restored_metrics = evaluate_image(
         restored
     )
 
-    # ========================================
-    # 11. EVALUATE NORMALIZED IMAGE
-    # ========================================
+    # ========================================================
+    # 11. EVALUATE CLEANED IMAGE
+    # ========================================================
+
+    cleaned_metrics = evaluate_image(
+        cleaned
+    )
+
+    # ========================================================
+    # 12. EVALUATE NORMALIZED IMAGE
+    # ========================================================
 
     normalized_metrics = evaluate_image(
         normalized
     )
 
-    # ========================================
-    # 12. QUALITY REPORT
-    # ========================================
+    # ========================================================
+    # 13. QUALITY REPORT
+    # ========================================================
 
     quality_report = {
 
@@ -189,6 +236,11 @@ def process_image(input_path, output_dir):
             "metrics": restored_metrics
         },
 
+        "cleaned": {
+            "path": cleaned_path,
+            "metrics": cleaned_metrics
+        },
+
         "normalized": {
             "path": normalized_path,
             "metrics": normalized_metrics
@@ -196,18 +248,20 @@ def process_image(input_path, output_dir):
 
         "outputs": {
             "restored": restored_path,
+            "cleaned": cleaned_path,
             "normalized": normalized_path,
-            "segmented": segmented_path,
             "edges": edges_path,
+            "segmented": segmented_path,
+            "mask": mask_path,
             "svg": svg_path
         },
 
         "status": "completed"
     }
 
-    # ========================================
-    # 13. SAVE QUALITY REPORT
-    # ========================================
+    # ========================================================
+    # 14. SAVE QUALITY REPORT
+    # ========================================================
 
     report_path = os.path.join(
         output_dir,
