@@ -1,0 +1,29 @@
+{
+    "input": {
+        "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\dataset\\images\\dong_ho\\dong_ho_004.JPG",
+        "metrics": {
+            "width": 120,
+            "height": 78,
+            "brightness": 130.45,
+            "contrast": 85.31,
+            "sharpness": 23682.31
+        }
+    },
+    "restored": {
+        "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\dong_ho_004\\restored.png",
+        "metrics": {
+            "width": 480,
+            "height": 312,
+            "brightness": 138.03,
+            "contrast": 84.03,
+            "sharpness": 268.08
+        }
+    },
+    "outputs": {
+        "restored": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\dong_ho_004\\restored.png",
+        "segmented": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\dong_ho_004\\segmented.png",
+        "edges": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\dong_ho_004\\edges.png",
+        "svg": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\dong_ho_004\\pattern.svg"
+    },
+    "status": "completed"
+}

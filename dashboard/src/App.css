@@ -727,3 +727,383 @@ main {
     }
 
 }
+/* =========================================================
+   VIETHERITAGE DASHBOARD ANALYTICS
+   ========================================================= */
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+
+.analytics-card {
+  padding: 22px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+.analytics-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 22px;
+}
+
+
+.analytics-header h2 {
+  margin: 0;
+
+  color: #f2f2f2;
+
+  font-size: 14px;
+  font-weight: 750;
+
+  letter-spacing: -0.1px;
+}
+
+
+.analytics-header p {
+  margin: 5px 0 0;
+
+  color: #666;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   QUALITY
+   ========================================================= */
+
+.quality-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+
+.quality-row {
+  position: relative;
+}
+
+
+.quality-row-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 7px;
+
+  color: #a0a0a0;
+
+  font-size: 11px;
+}
+
+
+.quality-row-top strong {
+  color: #e5e5e5;
+
+  font-size: 11px;
+}
+
+
+.quality-track {
+  width: 100%;
+  height: 7px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.055);
+}
+
+
+.quality-fill {
+  height: 100%;
+
+  min-width: 0;
+
+  border-radius: inherit;
+
+  transition:
+    width 0.45s ease;
+}
+
+
+.quality-fill.good {
+  background: #65c58d;
+}
+
+
+.quality-fill.acceptable {
+  background: #cba75d;
+}
+
+
+.quality-fill.poor {
+  background: #c96f6f;
+}
+
+
+.quality-percent {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #555;
+
+  font-size: 9px;
+
+  text-align: right;
+}
+
+
+/* =========================================================
+   PROCESSING
+   ========================================================= */
+
+.processing-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+
+.processing-row {
+  position: relative;
+}
+
+
+.processing-row-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 6px;
+
+  color: #999;
+
+  font-size: 10px;
+}
+
+
+.processing-row-top strong {
+  color: #ddd;
+
+  font-size: 10px;
+}
+
+
+.processing-track {
+  width: 100%;
+  height: 6px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.055);
+}
+
+
+.processing-fill {
+  height: 100%;
+
+  min-width: 0;
+
+  border-radius: inherit;
+
+  background: #a36a5d;
+
+  transition:
+    width 0.45s ease;
+}
+
+
+.processing-percent {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #505050;
+
+  font-size: 8px;
+
+  text-align: right;
+}
+
+
+/* =========================================================
+   STAT CARDS ENHANCEMENT
+   ========================================================= */
+
+.stat-card {
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+.stat-card::after {
+  content: "";
+
+  position: absolute;
+
+  right: -25px;
+  bottom: -35px;
+
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(163, 106, 93, 0.045);
+
+  pointer-events: none;
+}
+
+
+.stat-description {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #555;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .analytics-grid {
+    gap: 12px;
+  }
+
+
+  .analytics-card {
+    padding: 17px;
+  }
+
+
+  .analytics-header {
+    margin-bottom: 17px;
+  }
+
+
+  .quality-bars {
+    gap: 14px;
+  }
+
+
+  .processing-bars {
+    gap: 11px;
+  }
+
+}
+/* =========================================================
+   ASSET MODAL - QUALITY VISUALIZATION
+   ========================================================= */
+
+.vh-quality-metric {
+  padding: 13px;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+.vh-quality-metric-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+}
+
+
+.vh-quality-metric-header span {
+  color: #666;
+
+  font-size: 9px;
+}
+
+
+.vh-quality-metric-header strong {
+  color: #ddd;
+
+  font-size: 12px;
+}
+
+
+.vh-quality-track {
+  width: 100%;
+  height: 5px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.06);
+}
+
+
+.vh-quality-fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: #a36a5d;
+
+  transition:
+    width 0.45s ease;
+}
+
+
+/* =========================================================
+   RESPONSIVE QUALITY METRICS
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .vh-quality-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .vh-quality-metrics {
+    grid-template-columns: 1fr;
+  }
+
+}

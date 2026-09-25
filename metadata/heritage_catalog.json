@@ -50,6 +50,29 @@
                 "low_resolution"
             ],
             "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        },
+        "processing_outputs": {
+            "restored": "/outputs/dong_ho_001/restored.png",
+            "normalized": "/outputs/dong_ho_001/normalized.png",
+            "segmented": "/outputs/dong_ho_001/segmented.png",
+            "edges": "/outputs/dong_ho_001/edges.png",
+            "svg": "/outputs/dong_ho_001/pattern.svg",
+            "quality_report": "/outputs/dong_ho_001/quality_report.json"
+        },
+        "processed_at": "2026-09-25T17:44:41",
+        "processed_quality": {
+            "width": 480,
+            "height": 356,
+            "brightness": 154.83,
+            "contrast": 67.04,
+            "sharpness": 236.84
+        },
+        "normalized_quality": {
+            "width": 480,
+            "height": 356,
+            "brightness": 154.83,
+            "contrast": 67.04,
+            "sharpness": 236.84
         }
     },
     {
@@ -104,6 +127,29 @@
                 "low_resolution"
             ],
             "recommendation": "Image requires restoration or preprocessing: poor_contrast, low_resolution."
+        },
+        "processing_outputs": {
+            "restored": "/outputs/dong_ho_002/restored.png",
+            "normalized": "/outputs/dong_ho_002/normalized.png",
+            "segmented": "/outputs/dong_ho_002/segmented.png",
+            "edges": "/outputs/dong_ho_002/edges.png",
+            "svg": "/outputs/dong_ho_002/pattern.svg",
+            "quality_report": "/outputs/dong_ho_002/quality_report.json"
+        },
+        "processed_at": "2026-09-25T17:37:40",
+        "processed_quality": {
+            "width": 480,
+            "height": 612,
+            "brightness": 165.65,
+            "contrast": 44.32,
+            "sharpness": 106.05
+        },
+        "normalized_quality": {
+            "width": 480,
+            "height": 612,
+            "brightness": 165.65,
+            "contrast": 44.32,
+            "sharpness": 106.05
         }
     },
     {
@@ -157,6 +203,22 @@
                 "low_resolution"
             ],
             "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        },
+        "processing_outputs": {
+            "restored": "/outputs/dong_ho_003/restored.png",
+            "normalized": "/outputs/dong_ho_003/normalized.png",
+            "segmented": "/outputs/dong_ho_003/segmented.png",
+            "edges": "/outputs/dong_ho_003/edges.png",
+            "svg": "/outputs/dong_ho_003/pattern.svg",
+            "quality_report": "/outputs/dong_ho_003/quality_report.json"
+        },
+        "processed_at": "2026-09-25T17:30:12",
+        "processed_quality": {
+            "width": 480,
+            "height": 712,
+            "brightness": 158.34,
+            "contrast": 59.07,
+            "sharpness": 204.72
         }
     },
     {
@@ -210,6 +272,21 @@
                 "low_resolution"
             ],
             "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        },
+        "processing_outputs": {
+            "restored": "/outputs/dong_ho_004/restored.png",
+            "segmented": "/outputs/dong_ho_004/segmented.png",
+            "edges": "/outputs/dong_ho_004/edges.png",
+            "svg": "/outputs/dong_ho_004/pattern.svg",
+            "quality_report": "/outputs/dong_ho_004/quality_report.json"
+        },
+        "processed_at": "2026-09-25T16:59:31",
+        "processed_quality": {
+            "width": 480,
+            "height": 312,
+            "brightness": 138.03,
+            "contrast": 84.03,
+            "sharpness": 268.08
         }
     },
     {
@@ -263,6 +340,29 @@
                 "low_resolution"
             ],
             "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        },
+        "processing_outputs": {
+            "restored": "/outputs/dong_ho_005/restored.png",
+            "normalized": "/outputs/dong_ho_005/normalized.png",
+            "segmented": "/outputs/dong_ho_005/segmented.png",
+            "edges": "/outputs/dong_ho_005/edges.png",
+            "svg": "/outputs/dong_ho_005/pattern.svg",
+            "quality_report": "/outputs/dong_ho_005/quality_report.json"
+        },
+        "processed_at": "2026-09-25T17:49:11",
+        "processed_quality": {
+            "width": 480,
+            "height": 344,
+            "brightness": 166.21,
+            "contrast": 66.65,
+            "sharpness": 277.54
+        },
+        "normalized_quality": {
+            "width": 480,
+            "height": 344,
+            "brightness": 166.21,
+            "contrast": 66.65,
+            "sharpness": 277.54
         }
     },
     {
@@ -317,6 +417,21 @@
                 "low_resolution"
             ],
             "recommendation": "Image requires restoration or preprocessing: poor_contrast, low_resolution."
+        },
+        "processing_outputs": {
+            "restored": "/outputs/dong_ho_006/restored.png",
+            "segmented": "/outputs/dong_ho_006/segmented.png",
+            "edges": "/outputs/dong_ho_006/edges.png",
+            "svg": "/outputs/dong_ho_006/pattern.svg",
+            "quality_report": "/outputs/dong_ho_006/quality_report.json"
+        },
+        "processed_at": "2026-09-25T17:01:36",
+        "processed_quality": {
+            "width": 480,
+            "height": 640,
+            "brightness": 172.67,
+            "contrast": 61.95,
+            "sharpness": 207.43
         }
     },
     {
@@ -370,6 +485,29 @@
                 "low_resolution"
             ],
             "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        },
+        "processing_outputs": {
+            "restored": "/outputs/dong_ho_007/restored.png",
+            "normalized": "/outputs/dong_ho_007/normalized.png",
+            "segmented": "/outputs/dong_ho_007/segmented.png",
+            "edges": "/outputs/dong_ho_007/edges.png",
+            "svg": "/outputs/dong_ho_007/pattern.svg",
+            "quality_report": "/outputs/dong_ho_007/quality_report.json"
+        },
+        "processed_at": "2026-09-25T17:41:32",
+        "processed_quality": {
+            "width": 480,
+            "height": 656,
+            "brightness": 137.22,
+            "contrast": 65.33,
+            "sharpness": 239.45
+        },
+        "normalized_quality": {
+            "width": 480,
+            "height": 656,
+            "brightness": 137.22,
+            "contrast": 65.33,
+            "sharpness": 239.45
         }
     },
     {
