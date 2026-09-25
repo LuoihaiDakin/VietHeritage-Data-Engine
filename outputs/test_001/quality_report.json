@@ -6,7 +6,9 @@
             "height": 89,
             "brightness": 133.2,
             "contrast": 51.45,
-            "sharpness": 13585.99
+            "sharpness": 13585.99,
+            "noise": 19.51,
+            "edge_density": 0.2538
         }
     },
     "restored": {
@@ -14,15 +16,44 @@
         "metrics": {
             "width": 480,
             "height": 356,
-            "brightness": 154.83,
-            "contrast": 67.04,
-            "sharpness": 236.84
+            "brightness": 130.09,
+            "contrast": 55.1,
+            "sharpness": 2015.25,
+            "noise": 3.71,
+            "edge_density": 0.1477
+        }
+    },
+    "cleaned": {
+        "path": "outputs/test_001\\cleaned.png",
+        "metrics": {
+            "width": 480,
+            "height": 356,
+            "brightness": 142.1,
+            "contrast": 65.67,
+            "sharpness": 3606.06,
+            "noise": 4.45,
+            "edge_density": 0.1627
+        }
+    },
+    "normalized": {
+        "path": "outputs/test_001\\normalized.png",
+        "metrics": {
+            "width": 480,
+            "height": 356,
+            "brightness": 142.1,
+            "contrast": 65.67,
+            "sharpness": 3606.06,
+            "noise": 4.45,
+            "edge_density": 0.1627
         }
     },
     "outputs": {
         "restored": "outputs/test_001\\restored.png",
-        "segmented": "outputs/test_001\\segmented.png",
+        "cleaned": "outputs/test_001\\cleaned.png",
+        "normalized": "outputs/test_001\\normalized.png",
         "edges": "outputs/test_001\\edges.png",
+        "segmented": "outputs/test_001\\segmented.png",
+        "mask": "outputs/test_001\\mask.png",
         "svg": "outputs/test_001\\pattern.svg"
     },
     "status": "completed"

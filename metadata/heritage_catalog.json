@@ -275,18 +275,30 @@
         },
         "processing_outputs": {
             "restored": "/outputs/dong_ho_004/restored.png",
+            "normalized": "/outputs/dong_ho_004/normalized.png",
             "segmented": "/outputs/dong_ho_004/segmented.png",
             "edges": "/outputs/dong_ho_004/edges.png",
             "svg": "/outputs/dong_ho_004/pattern.svg",
             "quality_report": "/outputs/dong_ho_004/quality_report.json"
         },
-        "processed_at": "2026-09-25T16:59:31",
+        "processed_at": "2026-09-26T03:09:10",
         "processed_quality": {
             "width": 480,
             "height": 312,
-            "brightness": 138.03,
-            "contrast": 84.03,
-            "sharpness": 268.08
+            "brightness": 131.76,
+            "contrast": 90.15,
+            "sharpness": 2539.94,
+            "noise": 1.85,
+            "edge_density": 0.1222
+        },
+        "normalized_quality": {
+            "width": 480,
+            "height": 312,
+            "brightness": 134.73,
+            "contrast": 84.45,
+            "sharpness": 2622.35,
+            "noise": 2.32,
+            "edge_density": 0.1313
         }
     },
     {
@@ -932,6 +944,33 @@
                 "low_resolution"
             ],
             "recommendation": "Image requires restoration or preprocessing: low_resolution."
+        },
+        "processing_outputs": {
+            "restored": "/outputs/dong_ho_015/restored.png",
+            "normalized": "/outputs/dong_ho_015/normalized.png",
+            "segmented": "/outputs/dong_ho_015/segmented.png",
+            "edges": "/outputs/dong_ho_015/edges.png",
+            "svg": "/outputs/dong_ho_015/pattern.svg",
+            "quality_report": "/outputs/dong_ho_015/quality_report.json"
+        },
+        "processed_at": "2026-09-26T03:09:37",
+        "processed_quality": {
+            "width": 480,
+            "height": 364,
+            "brightness": 199.77,
+            "contrast": 50.11,
+            "sharpness": 2299.31,
+            "noise": 1.02,
+            "edge_density": 0.088
+        },
+        "normalized_quality": {
+            "width": 480,
+            "height": 364,
+            "brightness": 188.3,
+            "contrast": 51.07,
+            "sharpness": 2125.52,
+            "noise": 0.93,
+            "edge_density": 0.092
         }
     },
     {
