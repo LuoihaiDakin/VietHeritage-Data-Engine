@@ -1,13 +1,28 @@
 import os
 import json
+import shutil
+import uuid
+
 from datetime import datetime
-from fastapi import FastAPI, Query, HTTPException
+
+import cv2
+
+from fastapi import (
+    FastAPI,
+    Query,
+    HTTPException,
+    UploadFile,
+    File
+)
+
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from pydantic import BaseModel
 
 from processing.pipeline import process_image
+from processing.comparison import build_comparison
+from dataset.metadata.quality_scorer import score_image
 
 # ========================================
 # PROJECT PATH
@@ -25,6 +40,46 @@ CATALOG_PATH = os.path.join(
     "heritage_catalog.json"
 )
 
+DATASET_DIR = os.path.join(
+    PROJECT_ROOT,
+    "dataset"
+)
+
+IMAGE_DIR = os.path.join(
+    DATASET_DIR,
+    "images"
+)
+
+UPLOAD_DIR = os.path.join(
+    IMAGE_DIR,
+    "uploaded"
+)
+
+OUTPUTS_DIR = os.path.join(
+    PROJECT_ROOT,
+    "outputs"
+)
+
+
+# ========================================
+# CREATE REQUIRED DIRECTORIES
+# ========================================
+
+os.makedirs(
+    IMAGE_DIR,
+    exist_ok=True
+)
+
+os.makedirs(
+    UPLOAD_DIR,
+    exist_ok=True
+)
+
+os.makedirs(
+    OUTPUTS_DIR,
+    exist_ok=True
+)
+
 
 # ========================================
 # FASTAPI APP
@@ -38,8 +93,20 @@ app = FastAPI(
     ),
     version="1.0.0"
 )
+
+
+# ========================================
+# REQUEST MODELS
+# ========================================
+
 class ProcessRequest(BaseModel):
+
     image_path: str
+
+
+# ========================================
+# CORS
+# ========================================
 
 app.add_middleware(
     CORSMiddleware,
@@ -51,48 +118,26 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-DATASET_DIR = os.path.join(
-    PROJECT_ROOT,
-    "dataset"
-)
 
-OUTPUTS_DIR = os.path.join(
-    PROJECT_ROOT,
-    "outputs"
-)
 
-IMAGE_DIR = os.path.join(
-    DATASET_DIR,
-    "images"
-)
+# ========================================
+# STATIC FILES
+# ========================================
 
 app.mount(
     "/images",
-    StaticFiles(directory=IMAGE_DIR),
+    StaticFiles(
+        directory=IMAGE_DIR
+    ),
     name="images"
-)
-
-OUTPUTS_DIR = os.path.join(
-    PROJECT_ROOT,
-    "outputs"
 )
 
 app.mount(
     "/outputs",
-    StaticFiles(directory=OUTPUTS_DIR),
+    StaticFiles(
+        directory=OUTPUTS_DIR
+    ),
     name="outputs"
-)
-
-# ========================================
-# CORS
-# ========================================
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
 )
 
 
@@ -102,10 +147,13 @@ app.add_middleware(
 
 def load_catalog():
 
-    if not os.path.exists(CATALOG_PATH):
+    if not os.path.exists(
+        CATALOG_PATH
+    ):
         return []
 
     try:
+
         with open(
             CATALOG_PATH,
             "r",
@@ -133,6 +181,13 @@ def save_catalog(catalog):
     heritage_catalog.json.
     """
 
+    os.makedirs(
+        os.path.dirname(
+            CATALOG_PATH
+        ),
+        exist_ok=True
+    )
+
     with open(
         CATALOG_PATH,
         "w",
@@ -151,7 +206,10 @@ def save_catalog(catalog):
 # FIND ASSET IN CATALOG
 # ========================================
 
-def find_asset_index(catalog, input_path):
+def find_asset_index(
+    catalog,
+    input_path
+):
     """
     Find the catalog asset corresponding
     to the processed image.
@@ -165,21 +223,27 @@ def find_asset_index(catalog, input_path):
         normalized_input
     ).lower()
 
-
-    for index, item in enumerate(catalog):
+    for index, item in enumerate(
+        catalog
+    ):
 
         # --------------------------------
         # Check filename
         # --------------------------------
 
         catalog_filename = str(
-            item.get("filename", "")
+            item.get(
+                "filename",
+                ""
+            )
         ).lower()
 
         if (
             catalog_filename
-            and catalog_filename == input_filename
+            and catalog_filename
+            == input_filename
         ):
+
             return index
 
 
@@ -192,10 +256,16 @@ def find_asset_index(catalog, input_path):
             {}
         )
 
-        if isinstance(original, dict):
+        if isinstance(
+            original,
+            dict
+        ):
 
             original_path = str(
-                original.get("path", "")
+                original.get(
+                    "path",
+                    ""
+                )
             )
 
             if original_path:
@@ -210,6 +280,7 @@ def find_asset_index(catalog, input_path):
                     normalized_original
                     == normalized_input
                 ):
+
                     return index
 
 
@@ -218,7 +289,10 @@ def find_asset_index(catalog, input_path):
         # --------------------------------
 
         item_path = str(
-            item.get("path", "")
+            item.get(
+                "path",
+                ""
+            )
         )
 
         if item_path:
@@ -233,10 +307,11 @@ def find_asset_index(catalog, input_path):
                 normalized_item_path
                 == normalized_input
             ):
+
                 return index
 
-
     return None
+
 
 # ========================================
 # HELPER
@@ -247,27 +322,153 @@ def normalize_text(value):
     if value is None:
         return ""
 
-    return str(value).strip().lower()
+    return str(
+        value
+    ).strip().lower()
 
 
 def get_quality(item):
 
-    quality = item.get("quality")
+    quality = item.get(
+        "quality"
+    )
 
-    if not isinstance(quality, dict):
+    if not isinstance(
+        quality,
+        dict
+    ):
         return None
 
-    return quality.get("quality")
+    return quality.get(
+        "quality"
+    )
 
 
 def get_quality_score(item):
 
-    quality = item.get("quality")
+    quality = item.get(
+        "quality"
+    )
 
-    if not isinstance(quality, dict):
+    if not isinstance(
+        quality,
+        dict
+    ):
         return None
 
-    return quality.get("overall_score")
+    return quality.get(
+        "overall_score"
+    )
+
+
+def calculate_image_metrics(
+    image_path
+):
+
+    image = cv2.imread(
+        image_path
+    )
+
+    if image is None:
+
+        raise ValueError(
+            f"Cannot read image: {image_path}"
+        )
+
+    height, width = image.shape[:2]
+
+    gray = cv2.cvtColor(
+        image,
+        cv2.COLOR_BGR2GRAY
+    )
+
+    brightness = float(
+        gray.mean()
+    )
+
+    contrast = float(
+        gray.std()
+    )
+
+    sharpness = float(
+        cv2.Laplacian(
+            gray,
+            cv2.CV_64F
+        ).var()
+    )
+
+    return {
+
+        "brightness": round(
+            brightness,
+            2
+        ),
+
+        "contrast": round(
+            contrast,
+            2
+        ),
+
+        "sharpness": round(
+            sharpness,
+            2
+        ),
+
+        "width": int(
+            width
+        ),
+
+        "height": int(
+            height
+        )
+
+    }
+
+
+def evaluate_image_quality(
+    image_path,
+    filename,
+    relative_path,
+    category="uploaded"
+):
+
+    metrics = calculate_image_metrics(
+        image_path
+    )
+
+    metadata = {
+
+        "filename": filename,
+
+        "path": relative_path,
+
+        "category": category,
+
+        "brightness": (
+            metrics["brightness"]
+        ),
+
+        "contrast": (
+            metrics["contrast"]
+        ),
+
+        "sharpness": (
+            metrics["sharpness"]
+        ),
+
+        "width": (
+            metrics["width"]
+        ),
+
+        "height": (
+            metrics["height"]
+        )
+
+    }
+
+    return score_image(
+        metadata
+    )
 
 
 # ========================================
@@ -278,7 +479,9 @@ def get_quality_score(item):
 def root():
 
     return {
-        "project": "VietHeritage Data Engine",
+        "project": (
+            "VietHeritage Data Engine"
+        ),
         "status": "running",
         "version": "1.0.0"
     }
@@ -295,7 +498,9 @@ def health():
 
     return {
         "status": "healthy",
-        "catalog_loaded": len(catalog) > 0,
+        "catalog_loaded": (
+            len(catalog) > 0
+        ),
         "total_assets": len(catalog)
     }
 
@@ -338,20 +543,428 @@ def get_assets(
 # GET ASSET BY ID
 # ========================================
 
-@app.get("/assets/{asset_id}")
-def get_asset(asset_id: str):
+@app.get(
+    "/assets/{asset_id}"
+)
+def get_asset(
+    asset_id: str
+):
 
     catalog = load_catalog()
 
     for item in catalog:
 
-        if item.get("id") == asset_id:
+        if item.get(
+            "id"
+        ) == asset_id:
 
             return item
 
     return {
         "error": "Asset not found",
         "asset_id": asset_id
+    }
+
+
+# ========================================
+# UPLOAD IMAGE
+# ========================================
+
+@app.post("/upload")
+async def upload_image(
+    file: UploadFile = File(...)
+):
+
+    # ========================================
+    # 1. CHECK FILE
+    # ========================================
+
+    if not file.filename:
+
+        raise HTTPException(
+            status_code=400,
+            detail="No file selected."
+        )
+
+
+    # ========================================
+    # 2. CHECK EXTENSION
+    # ========================================
+
+    original_filename = os.path.basename(
+        file.filename
+    )
+
+    extension = os.path.splitext(
+        original_filename
+    )[1].lower()
+
+    allowed_extensions = {
+        ".jpg",
+        ".jpeg",
+        ".png"
+    }
+
+    if (
+        extension
+        not in allowed_extensions
+    ):
+
+        raise HTTPException(
+            status_code=400,
+            detail=(
+                "Only JPG, JPEG, and PNG "
+                "images are supported."
+            )
+        )
+
+
+    # ========================================
+    # 3. CREATE SAFE FILENAME
+    # ========================================
+
+    filename_without_extension = (
+        os.path.splitext(
+            original_filename
+        )[0]
+    )
+
+    safe_name = "".join(
+        character
+        if (
+            character.isalnum()
+            or character in (
+                "_",
+                "-"
+            )
+        )
+        else "_"
+        for character
+        in filename_without_extension
+    )
+
+    if not safe_name:
+
+        safe_name = (
+            "uploaded_image"
+        )
+
+
+    # ========================================
+    # 4. CREATE UNIQUE ID
+    # ========================================
+
+    unique_id = uuid.uuid4().hex[:8]
+
+    saved_filename = (
+        f"{safe_name}_"
+        f"{unique_id}"
+        f"{extension}"
+    )
+
+
+    # ========================================
+    # 5. BUILD SAVE PATH
+    # ========================================
+
+    saved_path = os.path.join(
+        UPLOAD_DIR,
+        saved_filename
+    )
+
+
+    # ========================================
+    # 6. SAVE IMAGE
+    # ========================================
+
+    try:
+
+        with open(
+            saved_path,
+            "wb"
+        ) as buffer:
+
+            shutil.copyfileobj(
+                file.file,
+                buffer
+            )
+
+    except Exception as error:
+
+        raise HTTPException(
+            status_code=500,
+            detail=(
+                "Could not save image: "
+                f"{error}"
+            )
+        )
+
+
+    # ========================================
+    # 7. CREATE ASSET ID
+    # ========================================
+
+    asset_id = (
+        f"uploaded_"
+        f"{unique_id}_"
+        f"{safe_name}"
+    )
+
+
+    # ========================================
+    # 8. CREATE RELATIVE IMAGE PATH
+    # ========================================
+
+    relative_image_path = (
+        f"images/uploaded/"
+        f"{saved_filename}"
+    )
+
+
+    # ========================================
+    # 9. CREATE BASIC CATALOG ENTRY
+    # ========================================
+
+    asset = {
+
+        "id": asset_id,
+
+        "filename": saved_filename,
+
+        "path": relative_image_path,
+
+        "category": "uploaded",
+
+        "dynasty": "",
+
+        "period": "",
+
+        "motif": "",
+
+        "region": "",
+
+        "source": "User Upload",
+
+        "original": {
+
+            "path": relative_image_path,
+
+            "filename": saved_filename
+
+        },
+
+        "processing": {
+
+            "preprocessed": False,
+
+            "restored": False,
+
+            "normalized": False,
+
+            "segmented": False,
+
+            "vectorized": False
+
+        },
+
+        "processing_outputs": {},
+
+        "uploaded_at": (
+            datetime.now().isoformat(
+                timespec="seconds"
+            )
+        )
+
+    }
+
+
+    # ========================================
+    # 10. QUALITY
+    # ========================================
+    #
+    # Quality will be calculated by the
+    # processing pipeline when the image
+    # is processed.
+    #
+
+    quality_warning = None
+
+    asset["quality"] = {}
+
+
+    # ========================================
+    # 11. LOAD CATALOG
+    # ========================================
+
+    catalog = load_catalog()
+
+
+    # ========================================
+    # 12. ADD NEW ASSET
+    # ========================================
+
+    catalog.append(
+        asset
+    )
+
+
+    # ========================================
+    # 13. SAVE CATALOG
+    # ========================================
+
+    try:
+
+        save_catalog(
+            catalog
+        )
+
+    except Exception as error:
+
+        # Remove uploaded file if
+        # catalog saving fails.
+
+        if os.path.exists(
+            saved_path
+        ):
+
+            os.remove(
+                saved_path
+            )
+
+        raise HTTPException(
+            status_code=500,
+            detail=(
+                "Could not update catalog: "
+                f"{error}"
+            )
+        )
+
+
+    # ========================================
+    # 14. RETURN RESULT
+    # ========================================
+
+    response = {
+
+        "success": True,
+
+        "message": (
+            "Image uploaded successfully."
+        ),
+
+        "asset": asset
+
+    }
+
+    return response
+
+
+# ========================================
+# METADATA UPDATE
+# ========================================
+
+class MetadataUpdate(BaseModel):
+
+    category: str = ""
+
+    dynasty: str = ""
+
+    period: str = ""
+
+    motif: str = ""
+
+    region: str = ""
+
+    source: str = ""
+
+    license: str = ""
+
+
+@app.patch(
+    "/assets/{asset_id}/metadata"
+)
+def update_asset_metadata(
+    asset_id: str,
+    metadata: MetadataUpdate
+):
+
+    catalog = load_catalog()
+
+    asset_index = None
+
+    for index, asset in enumerate(
+        catalog
+    ):
+
+        if str(
+            asset.get(
+                "id"
+            )
+        ) == str(
+            asset_id
+        ):
+
+            asset_index = index
+
+            break
+
+
+    if asset_index is None:
+
+        raise HTTPException(
+            status_code=404,
+            detail="Asset not found"
+        )
+
+
+    asset = catalog[
+        asset_index
+    ]
+
+    asset[
+        "category"
+    ] = metadata.category.strip()
+
+    asset[
+        "dynasty"
+    ] = metadata.dynasty.strip()
+
+    asset[
+        "period"
+    ] = metadata.period.strip()
+
+    asset[
+        "motif"
+    ] = metadata.motif.strip()
+
+    asset[
+        "region"
+    ] = metadata.region.strip()
+
+    asset[
+        "source"
+    ] = metadata.source.strip()
+
+    asset[
+        "license"
+    ] = metadata.license.strip()
+
+
+    save_catalog(
+        catalog
+    )
+
+
+    return {
+
+        "success": True,
+
+        "message": (
+            "Metadata updated successfully"
+        ),
+
+        "asset": asset
+
     }
 
 
@@ -412,10 +1025,14 @@ def search_assets(
             ])
 
             if (
-                normalize_text(keyword)
+                normalize_text(
+                    keyword
+                )
                 not in searchable_text
             ):
+
                 continue
+
 
         # -----------------------------
         # CATEGORY
@@ -427,9 +1044,13 @@ def search_assets(
                 normalize_text(
                     item.get("category")
                 )
-                != normalize_text(category)
+                != normalize_text(
+                    category
+                )
             ):
+
                 continue
+
 
         # -----------------------------
         # DYNASTY
@@ -441,9 +1062,13 @@ def search_assets(
                 normalize_text(
                     item.get("dynasty")
                 )
-                != normalize_text(dynasty)
+                != normalize_text(
+                    dynasty
+                )
             ):
+
                 continue
+
 
         # -----------------------------
         # PERIOD
@@ -455,9 +1080,13 @@ def search_assets(
                 normalize_text(
                     item.get("period")
                 )
-                != normalize_text(period)
+                != normalize_text(
+                    period
+                )
             ):
+
                 continue
+
 
         # -----------------------------
         # MOTIF
@@ -469,9 +1098,13 @@ def search_assets(
                 normalize_text(
                     item.get("motif")
                 )
-                != normalize_text(motif)
+                != normalize_text(
+                    motif
+                )
             ):
+
                 continue
+
 
         # -----------------------------
         # REGION
@@ -483,9 +1116,13 @@ def search_assets(
                 normalize_text(
                     item.get("region")
                 )
-                != normalize_text(region)
+                != normalize_text(
+                    region
+                )
             ):
+
                 continue
+
 
         # -----------------------------
         # QUALITY
@@ -493,13 +1130,21 @@ def search_assets(
 
         if quality:
 
-            item_quality = get_quality(item)
+            item_quality = get_quality(
+                item
+            )
 
             if (
-                normalize_text(item_quality)
-                != normalize_text(quality)
+                normalize_text(
+                    item_quality
+                )
+                != normalize_text(
+                    quality
+                )
             ):
+
                 continue
+
 
         # -----------------------------
         # PROCESSING
@@ -517,6 +1162,7 @@ def search_assets(
                 False
             )
         ):
+
             continue
 
         if (
@@ -526,6 +1172,7 @@ def search_assets(
                 False
             )
         ):
+
             continue
 
         if (
@@ -535,6 +1182,7 @@ def search_assets(
                 False
             )
         ):
+
             continue
 
         if (
@@ -544,6 +1192,7 @@ def search_assets(
                 False
             )
         ):
+
             continue
 
         if (
@@ -553,13 +1202,23 @@ def search_assets(
                 False
             )
         ):
+
             continue
 
-        results.append(item)
+
+        results.append(
+            item
+        )
+
 
     return {
-        "total": len(results),
+
+        "total": len(
+            results
+        ),
+
         "results": results
+
     }
 
 
@@ -575,15 +1234,23 @@ def statistics():
     total = len(catalog)
 
     categories = {}
+
     quality = {}
 
     processing = {
+
         "preprocessed": 0,
+
         "restored": 0,
+
         "normalized": 0,
+
         "segmented": 0,
+
         "vectorized": 0
+
     }
+
 
     for item in catalog:
 
@@ -597,20 +1264,30 @@ def statistics():
         )
 
         categories[category] = (
-            categories.get(category, 0) + 1
+            categories.get(
+                category,
+                0
+            ) + 1
         )
+
 
         # -----------------------------
         # QUALITY
         # -----------------------------
 
-        item_quality = get_quality(item)
+        item_quality = get_quality(
+            item
+        )
 
         if item_quality:
 
             quality[item_quality] = (
-                quality.get(item_quality, 0) + 1
+                quality.get(
+                    item_quality,
+                    0
+                ) + 1
             )
+
 
         # -----------------------------
         # PROCESSING
@@ -630,11 +1307,17 @@ def statistics():
 
                 processing[stage] += 1
 
+
     return {
+
         "total_assets": total,
+
         "categories": categories,
+
         "quality": quality,
+
         "processing": processing
+
     }
 
 
@@ -650,10 +1333,15 @@ def quality_statistics():
     scores = []
 
     classifications = {
+
         "GOOD": 0,
+
         "ACCEPTABLE": 0,
+
         "POOR": 0
+
     }
+
 
     for item in catalog:
 
@@ -665,25 +1353,42 @@ def quality_statistics():
             item_quality,
             dict
         ):
+
             continue
 
-        classification = item_quality.get(
-            "quality"
+
+        classification = (
+            item_quality.get(
+                "quality"
+            )
         )
 
-        score = item_quality.get(
-            "overall_score"
+        score = (
+            item_quality.get(
+                "overall_score"
+            )
         )
 
-        if classification in classifications:
+
+        if (
+            classification
+            in classifications
+        ):
 
             classifications[
                 classification
             ] += 1
 
-        if isinstance(score, (int, float)):
 
-            scores.append(score)
+        if isinstance(
+            score,
+            (int, float)
+        ):
+
+            scores.append(
+                score
+            )
+
 
     average_score = 0
 
@@ -694,391 +1399,308 @@ def quality_statistics():
             2
         )
 
+
     return {
-        "total_scored": len(scores),
-        "average_score": average_score,
-        "classifications": classifications
+
+        "total_scored": len(
+            scores
+        ),
+
+        "average_score": (
+            average_score
+        ),
+
+        "classifications": (
+            classifications
+        )
+
     }
-"""
+
+
 # ========================================
-# PROCESS IMAGE
-# ========================================
-
-@app.post("/process")
-def process_asset(request: ProcessRequest):
-
-    input_path = request.image_path
-
-
-    # ========================================
-# 1. CONVERT INPUT PATH
+# SAVE COMPARISON HISTORY
 # ========================================
 
-raw_input_path = str(request.image_path).strip()
+def save_comparison_history(
+    output_dir,
+    comparison
+):
+    """
+    Keep a history of every comparison instead
+    of overwriting the previous comparison.
+    """
 
-# Normalize slash
-normalized_path = raw_input_path.replace("\\", "/")
+    history_path = os.path.join(
+        output_dir,
+        "comparison_history.json"
+    )
 
-candidate_paths = []
+    history = []
 
-# ----------------------------------------
-# Candidate 1: path exactly as provided
-# ----------------------------------------
+    if os.path.exists(
+        history_path
+    ):
 
-if os.path.isabs(raw_input_path):
-    candidate_paths.append(raw_input_path)
+        try:
 
-else:
-    candidate_paths.append(
-        os.path.join(
-            PROJECT_ROOT,
-            raw_input_path
+            with open(
+                history_path,
+                "r",
+                encoding="utf-8"
+            ) as file:
+
+                history = json.load(
+                    file
+                )
+
+            if not isinstance(
+                history,
+                list
+            ):
+
+                history = []
+
+        except Exception:
+
+            history = []
+
+    history.append(
+        comparison
+    )
+
+    with open(
+        history_path,
+        "w",
+        encoding="utf-8"
+    ) as file:
+
+        json.dump(
+            history,
+            file,
+            indent=4,
+            ensure_ascii=False
         )
-    )
 
 
-# ----------------------------------------
-# Candidate 2: dataset/<path>
-# ----------------------------------------
+# ========================================
+# GET ASSET COMPARISON
+# ========================================
 
-clean_relative = normalized_path.lstrip("/")
-
-candidate_paths.append(
-    os.path.join(
-        PROJECT_ROOT,
-        clean_relative.replace("/", os.sep)
-    )
+@app.get(
+    "/assets/{asset_id}/comparison"
 )
+def get_asset_comparison(
+    asset_id: str
+):
 
-candidate_paths.append(
-    os.path.join(
-        PROJECT_ROOT,
-        "dataset",
-        clean_relative.replace("/", os.sep)
-    )
-)
+    catalog = load_catalog()
 
-
-# ----------------------------------------
-# Candidate 3:
-# If path contains "images/...",
-# force it into dataset/images/...
-# ----------------------------------------
-
-images_marker = "/images/"
-
-if images_marker in normalized_path:
-
-    images_relative = normalized_path.split(
-        images_marker,
-        1
-    )[1]
-
-    candidate_paths.append(
-        os.path.join(
-            DATASET_DIR,
-            "images",
-            images_relative.replace("/", os.sep)
-        )
+    asset = next(
+        (
+            item
+            for item in catalog
+            if item.get("id") == asset_id
+        ),
+        None
     )
 
-
-# ----------------------------------------
-# Find first existing file
-# ----------------------------------------
-
-input_path = None
-
-for candidate in candidate_paths:
-
-    candidate = os.path.abspath(candidate)
-
-    if os.path.isfile(candidate):
-
-        input_path = candidate
-
-        break
-
-
-# ----------------------------------------
-# File not found
-# ----------------------------------------
-
-if input_path is None:
-
-    raise HTTPException(
-        status_code=404,
-        detail=(
-            f"Image not found. "
-            f"Received path: {raw_input_path}"
-        )
-    )
-
-
-    # ========================================
-    # 2. CHECK INPUT IMAGE
-    # ========================================
-
-    if not os.path.exists(input_path):
+    if not asset:
 
         raise HTTPException(
             status_code=404,
-            detail=f"Image not found: {input_path}"
+            detail="Asset not found"
         )
 
+    filename = asset.get(
+        "filename"
+    )
+
+    if not filename:
+
+        raise HTTPException(
+            status_code=404,
+            detail="Asset filename not found"
+        )
+
+    output_name = os.path.splitext(
+        filename
+    )[0]
+
+    output_dir = os.path.join(
+        OUTPUTS_DIR,
+        output_name
+    )
+
+    comparison_path = os.path.join(
+        output_dir,
+        "comparison.json"
+    )
+
+    if not os.path.exists(
+        comparison_path
+    ):
+
+        raise HTTPException(
+            status_code=404,
+            detail="Comparison has not been generated yet"
+        )
 
     try:
 
-        # ====================================
-        # 3. CREATE OUTPUT DIRECTORY
-        # ====================================
+        with open(
+            comparison_path,
+            "r",
+            encoding="utf-8"
+        ) as file:
 
-        filename = os.path.splitext(
-            os.path.basename(input_path)
-        )[0]
-
-
-        output_dir = os.path.join(
-            OUTPUTS_DIR,
-            filename
-        )
-
-
-        # ====================================
-        # 4. RUN PROCESSING PIPELINE
-        # ====================================
-
-        result = process_image(
-            input_path,
-            output_dir
-        )
-
-
-        # ====================================
-        # 5. CONVERT OUTPUT PATHS
-        #    INTO BROWSER URLS
-        # ====================================
-
-        result["outputs"]["restored"] = (
-            f"/outputs/{filename}/restored.png"
-        )
-
-        result["outputs"]["segmented"] = (
-            f"/outputs/{filename}/segmented.png"
-        )
-
-        result["outputs"]["edges"] = (
-            f"/outputs/{filename}/edges.png"
-        )
-
-        result["outputs"]["svg"] = (
-            f"/outputs/{filename}/pattern.svg"
-        )
-
-
-        # ====================================
-        # 6. UPDATE INPUT PATH IN RESPONSE
-        # ====================================
-
-        result["input"]["path"] = (
-            request.image_path
-        )
-
-
-        result["restored"]["path"] = (
-            f"/outputs/{filename}/restored.png"
-        )
-
-
-        # ====================================
-        # 7. LOAD CATALOG
-        # ====================================
-
-        catalog = load_catalog()
-
-
-        # ====================================
-        # 8. FIND ASSET
-        # ====================================
-
-        asset_index = find_asset_index(
-            catalog,
-            input_path
-        )
-
-
-        catalog_updated = False
-
-
-        # ====================================
-        # 9. UPDATE CATALOG
-        # ====================================
-
-        if asset_index is not None:
-
-            asset = catalog[asset_index]
-
-
-            # --------------------------------
-            # Existing processing object
-            # --------------------------------
-
-            processing = asset.get(
-                "processing"
+            comparison = json.load(
+                file
             )
-
-
-            if not isinstance(
-                processing,
-                dict
-            ):
-
-                processing = {}
-
-
-            # --------------------------------
-            # Processing status
-            # --------------------------------
-
-            processing["preprocessed"] = True
-
-            processing["restored"] = True
-
-            processing["segmented"] = True
-
-            processing["vectorized"] = True
-
-
-            # --------------------------------
-            # Keep normalized status
-            # --------------------------------
-
-            if "normalized" not in processing:
-
-                processing["normalized"] = False
-
-
-            asset["processing"] = processing
-
-
-            # --------------------------------
-            # Save output references
-            # --------------------------------
-
-            asset["processing_outputs"] = {
-
-                "restored": (
-                    f"/outputs/"
-                    f"{filename}/restored.png"
-                ),
-
-                "segmented": (
-                    f"/outputs/"
-                    f"{filename}/segmented.png"
-                ),
-
-                "edges": (
-                    f"/outputs/"
-                    f"{filename}/edges.png"
-                ),
-
-                "svg": (
-                    f"/outputs/"
-                    f"{filename}/pattern.svg"
-                ),
-
-                "quality_report": (
-                    f"/outputs/"
-                    f"{filename}/quality_report.json"
-                )
-            }
-
-
-            # --------------------------------
-            # Save processing timestamp
-            # --------------------------------
-
-            asset["processed_at"] = (
-                datetime.now().isoformat(
-                    timespec="seconds"
-                )
-            )
-
-
-            # --------------------------------
-            # Save restored metrics
-            # --------------------------------
-
-            if result.get("restored"):
-
-                restored_metrics = result[
-                    "restored"
-                ].get(
-                    "metrics"
-                )
-
-
-                if restored_metrics:
-
-                    asset[
-                        "processed_quality"
-                    ] = restored_metrics
-
-
-            # --------------------------------
-            # Save catalog
-            # --------------------------------
-
-            save_catalog(
-                catalog
-            )
-
-
-            catalog_updated = True
-
-
-        # ====================================
-        # 10. ADD CATALOG STATUS TO RESPONSE
-        # ====================================
-
-        result["catalog"] = {
-
-            "updated": catalog_updated,
-
-            "asset_index": asset_index
-
-        }
-
-
-        # ====================================
-        # 11. RETURN RESULT
-        # ====================================
-
-        return result
-
 
     except Exception as error:
 
         raise HTTPException(
             status_code=500,
-            detail=str(error)
+            detail=(
+                "Failed to read comparison: "
+                f"{str(error)}"
+            )
         )
-"""
 
 
-# ========================================
-# PROCESS IMAGE
-# ========================================
+# ---------------------------------------------------------
+# ORIGINAL IMAGE URL
+# ---------------------------------------------------------
+
+    original_path = None
+
+    original = asset.get("original")
+
+    if isinstance(original, dict):
+        original_path = original.get("path")
+
+    if not original_path:
+        original_path = asset.get("path")
+
+    if not original_path:
+        original_path = asset.get("image_path")
+
+    if original_path:
+        original_path = str(original_path).replace("\\", "/")
+
+        if original_path.startswith("dataset/images/"):
+            original_url = "/" + original_path.replace(
+                "dataset/",
+                "",
+                1
+            )
+
+        elif original_path.startswith("./dataset/images/"):
+            original_url = "/" + original_path.replace(
+                "./dataset/",
+                "",
+                1
+            )
+
+        elif original_path.startswith("images/"):
+            original_url = "/" + original_path
+
+        elif original_path.startswith("/images/"):
+            original_url = original_path
+
+        else:
+            original_url = "/images/" + os.path.basename(
+                original_path
+            )
+
+    else:
+        original_url = None
+
+    # ---------------------------------------------------------
+    # PROCESSED IMAGE URL
+    # ---------------------------------------------------------
+
+    processed_url = None
+
+    processing_outputs = asset.get(
+        "processing_outputs",
+        {}
+    )
+
+    if isinstance(processing_outputs, dict):
+        processed_url = (
+            processing_outputs.get("normalized")
+            or processing_outputs.get("processed")
+        )
+
+    if processed_url:
+        processed_url = str(processed_url).replace(
+            "\\",
+            "/"
+        )
+
+        if processed_url.startswith("outputs/"):
+            processed_url = "/" + processed_url
+
+        elif not processed_url.startswith("/"):
+            processed_url = "/" + processed_url
+
+    # If catalog does not contain it, use normalized.png
+    if not processed_url:
+        normalized_path = os.path.join(
+            output_dir,
+            "normalized.png"
+        )
+
+        if os.path.exists(normalized_path):
+            processed_url = (
+                f"/outputs/{output_name}/normalized.png"
+            )
+
+    # ---------------------------------------------------------
+    # COMPARISON PREVIEW
+    # ---------------------------------------------------------
+
+    preview_url = None
+
+    preview_path = os.path.join(
+        output_dir,
+        "comparison_preview.png"
+    )
+
+    if os.path.exists(preview_path):
+        preview_url = (
+            f"/outputs/{output_name}/comparison_preview.png"
+        )
+
+    # ---------------------------------------------------------
+    # FORCE CORRECT FILE URL STRUCTURE
+    # ---------------------------------------------------------
+
+    if "files" not in comparison:
+        comparison["files"] = {}
+
+    comparison["files"]["original"] = original_url
+    comparison["files"]["processed"] = processed_url
+    comparison["files"]["preview"] = preview_url
+
+    # Useful aliases for frontend/debugging
+    comparison["asset_id"] = asset_id
+    comparison["filename"] = filename
+
+    return comparison
+
 
 # ========================================
 # PROCESS IMAGE
 # ========================================
 
 @app.post("/process")
-def process_asset(request: ProcessRequest):
+def process_asset(
+    request: ProcessRequest
+):
 
     input_path = request.image_path
-
 
     # ========================================
     # 1. CONVERT INPUT PATH
@@ -1091,11 +1713,9 @@ def process_asset(request: ProcessRequest):
             input_path
         )
 
-
     input_path = os.path.abspath(
         input_path
     )
-
 
     # ========================================
     # 2. CHECK INPUT IMAGE
@@ -1105,9 +1725,11 @@ def process_asset(request: ProcessRequest):
 
         raise HTTPException(
             status_code=404,
-            detail=f"Image not found: {input_path}"
+            detail=(
+                f"Image not found: "
+                f"{input_path}"
+            )
         )
-
 
     try:
 
@@ -1116,101 +1738,343 @@ def process_asset(request: ProcessRequest):
         # ====================================
 
         filename = os.path.splitext(
-            os.path.basename(input_path)
+            os.path.basename(
+                input_path
+            )
         )[0]
-
 
         output_dir = os.path.join(
             OUTPUTS_DIR,
             filename
         )
 
-
         os.makedirs(
             output_dir,
             exist_ok=True
         )
 
+        # ====================================
+        # 4. EVALUATE ORIGINAL IMAGE BEFORE AI
+        # ====================================
 
-        # ====================================
-        # 4. RUN PROCESSING PIPELINE
-        # ====================================
+        relative_path = None
+
+        catalog_before = load_catalog()
+
+        asset_index_before = find_asset_index(
+            catalog_before,
+            input_path
+        )
+
+        before_asset = None
+
+        if asset_index_before is not None:
+
+            before_asset = (
+                catalog_before[
+                    asset_index_before
+                ]
+            )
+
+            relative_path = before_asset.get(
+                "path",
+                request.image_path
+            )
+
+        else:
+
+            relative_path = request.image_path
+
+        try:
+
+            before_quality = (
+                evaluate_image_quality(
+                    input_path,
+                    (
+                        before_asset.get(
+                            "filename",
+                            os.path.basename(
+                                input_path
+                            )
+                        )
+                        if before_asset
+                        else os.path.basename(
+                            input_path
+                        )
+                    ),
+                    relative_path,
+                    (
+                        before_asset.get(
+                            "category",
+                            "uploaded"
+                        )
+                        if before_asset
+                        else "uploaded"
+                    )
+                )
+            )
+
+        except Exception as quality_error:
+
+            raise HTTPException(
+                status_code=500,
+                detail=(
+                    "Could not evaluate original "
+                    f"image quality: {quality_error}"
+                )
+            )
+
+        # ========================================
+        # 5. SAVE BEFORE QUALITY
+        # ========================================
+
+        before_quality_path = os.path.join(
+            output_dir,
+            "before_quality.json"
+        )
+
+        with open(
+            before_quality_path,
+            "w",
+            encoding="utf-8"
+        ) as file:
+
+            json.dump(
+                before_quality,
+                file,
+                indent=4,
+                ensure_ascii=False
+            )
+
+        # ========================================
+        # 6. RUN PROCESSING PIPELINE
+        # ========================================
 
         result = process_image(
             input_path,
             output_dir
         )
 
+        # ====================================
+        # CREATE BEFORE / AFTER COMPARISON
+        # ====================================
+
+        comparison_data = None
+
+        comparison_json_path = os.path.join(
+            output_dir,
+            "comparison.json"
+        )
+
+        comparison_preview_path = os.path.join(
+            output_dir,
+            "comparison_preview.png"
+        )
+
+        comparison_history_path = os.path.join(
+            output_dir,
+            "comparison_history.json"
+        )
+
+        # ----------------------------------------
+        # Find normalized output
+        # ----------------------------------------
+
+        normalized_output_path = os.path.join(
+            output_dir,
+            "normalized.png"
+        )
+
+        # ----------------------------------------
+        # Determine AFTER quality
+        # ----------------------------------------
+
+        after_quality = {}
+
+        for stage_name in [
+            "normalized",
+            "cleaned",
+            "restored"
+        ]:
+
+            stage = result.get(
+                stage_name
+            )
+
+            if not isinstance(
+                stage,
+                dict
+            ):
+                continue
+
+            stage_quality = stage.get(
+                "quality"
+            )
+
+            if isinstance(
+                stage_quality,
+                dict
+            ):
+
+                after_quality = (
+                    stage_quality
+                )
+
+                break
+
+        # ----------------------------------------
+        # Build comparison
+        # ----------------------------------------
+
+        if os.path.exists(
+            normalized_output_path
+        ):
+
+            try:
+
+                comparison_data = (
+                    build_comparison(
+                        before_path=input_path,
+                        after_path=normalized_output_path,
+                        before_quality=before_quality,
+                        after_quality=after_quality,
+                        output_path=(
+                            comparison_json_path
+                        ),
+                        preview_path=(
+                            comparison_preview_path
+                        )
+                    )
+                )
+
+                save_comparison_history(
+                    output_dir,
+                    comparison_data
+                )
+
+                print(
+                    "COMPARISON CREATED: "
+                    f"{comparison_data['before']['quality']} "
+                    "-> "
+                    f"{comparison_data['after']['quality']}"
+                )
+
+            except Exception as comparison_error:
+
+                print(
+                    "WARNING: Comparison failed: "
+                    f"{comparison_error}"
+                )
+
+                comparison_data = {
+                    "error": str(
+                        comparison_error
+                    )
+                }
 
         # ====================================
-        # 5. BUILD OUTPUT URLS
+        # 7. BUILD OUTPUT URLS
         # ====================================
 
         restored_url = (
-            f"/outputs/{filename}/restored.png"
+            f"/outputs/"
+            f"{filename}/"
+            f"restored.png"
         )
 
         normalized_url = (
-            f"/outputs/{filename}/normalized.png"
+            f"/outputs/"
+            f"{filename}/"
+            f"normalized.png"
         )
 
         segmented_url = (
-            f"/outputs/{filename}/segmented.png"
+            f"/outputs/"
+            f"{filename}/"
+            f"segmented.png"
         )
 
         edges_url = (
-            f"/outputs/{filename}/edges.png"
+            f"/outputs/"
+            f"{filename}/"
+            f"edges.png"
         )
 
         svg_url = (
-            f"/outputs/{filename}/pattern.svg"
+            f"/outputs/"
+            f"{filename}/"
+            f"pattern.svg"
         )
 
         quality_report_url = (
-            f"/outputs/{filename}/quality_report.json"
+            f"/outputs/"
+            f"{filename}/"
+            f"quality_report.json"
         )
 
+        comparison_url = (
+            f"/outputs/"
+            f"{filename}/"
+            f"comparison.json"
+        )
+
+        comparison_preview_url = (
+            f"/outputs/"
+            f"{filename}/"
+            f"comparison_preview.png"
+        )
+
+        before_quality_url = (
+            f"/outputs/"
+            f"{filename}/"
+            f"before_quality.json"
+        )
+
+        comparison_history_url = (
+            f"/outputs/"
+            f"{filename}/"
+            f"comparison_history.json"
+        )
 
         # ====================================
-        # 6. UPDATE RESPONSE OUTPUT PATHS
+        # 8. UPDATE RESPONSE OUTPUT PATHS
         # ====================================
 
-        result["outputs"]["restored"] = (
-            restored_url
-        )
+        if "outputs" not in result:
+            result["outputs"] = {}
 
-        result["outputs"]["normalized"] = (
-            normalized_url
-        )
-
-        result["outputs"]["segmented"] = (
-            segmented_url
-        )
-
-        result["outputs"]["edges"] = (
-            edges_url
-        )
-
-        result["outputs"]["svg"] = (
-            svg_url
-        )
-
+        result["outputs"]["restored"] = restored_url
+        result["outputs"]["normalized"] = normalized_url
+        result["outputs"]["segmented"] = segmented_url
+        result["outputs"]["edges"] = edges_url
+        result["outputs"]["svg"] = svg_url
         result["outputs"]["quality_report"] = (
             quality_report_url
         )
-
-
-        # ====================================
-        # 7. UPDATE RESPONSE INPUT PATH
-        # ====================================
-
-        result["input"]["path"] = (
-            request.image_path
+        result["outputs"]["comparison"] = (
+            comparison_url
+        )
+        result["outputs"]["comparison_preview"] = (
+            comparison_preview_url
+        )
+        result["outputs"]["before_quality"] = (
+            before_quality_url
+        )
+        result["outputs"]["comparison_history"] = (
+            comparison_history_url
         )
 
+        # ====================================
+        # 9. UPDATE RESPONSE INPUT PATH
+        # ====================================
+
+        if "input" not in result:
+            result["input"] = {}
+
+        result["input"]["path"] = request.image_path
 
         # ====================================
-        # 8. UPDATE STAGE PATHS
+        # 10. UPDATE STAGE PATHS
         # ====================================
 
         if result.get("restored"):
@@ -1219,23 +2083,20 @@ def process_asset(request: ProcessRequest):
                 restored_url
             )
 
-
         if result.get("normalized"):
 
             result["normalized"]["path"] = (
                 normalized_url
             )
 
-
         # ====================================
-        # 9. LOAD CATALOG
+        # 11. LOAD CATALOG
         # ====================================
 
         catalog = load_catalog()
 
-
         # ====================================
-        # 10. FIND ASSET
+        # 12. FIND ASSET
         # ====================================
 
         asset_index = find_asset_index(
@@ -1243,18 +2104,17 @@ def process_asset(request: ProcessRequest):
             input_path
         )
 
-
         catalog_updated = False
 
-
         # ====================================
-        # 11. UPDATE CATALOG
+        # 13. UPDATE CATALOG
         # ====================================
 
         if asset_index is not None:
 
-            asset = catalog[asset_index]
-
+            asset = catalog[
+                asset_index
+            ]
 
             # --------------------------------
             # PROCESSING STATUS
@@ -1264,7 +2124,6 @@ def process_asset(request: ProcessRequest):
                 "processing"
             )
 
-
             if not isinstance(
                 processing,
                 dict
@@ -1272,26 +2131,17 @@ def process_asset(request: ProcessRequest):
 
                 processing = {}
 
-
             # --------------------------------
             # ALL PIPELINE STAGES COMPLETED
             # --------------------------------
 
             processing["preprocessed"] = True
-
             processing["restored"] = True
-
             processing["normalized"] = True
-
             processing["segmented"] = True
-
             processing["vectorized"] = True
 
-
-            asset["processing"] = (
-                processing
-            )
-
+            asset["processing"] = processing
 
             # --------------------------------
             # PROCESSING OUTPUTS
@@ -1299,31 +2149,37 @@ def process_asset(request: ProcessRequest):
 
             asset["processing_outputs"] = {
 
-                "restored": (
-                    restored_url
-                ),
+                "restored": restored_url,
 
-                "normalized": (
-                    normalized_url
-                ),
+                "normalized": normalized_url,
 
-                "segmented": (
-                    segmented_url
-                ),
+                "segmented": segmented_url,
 
-                "edges": (
-                    edges_url
-                ),
+                "edges": edges_url,
 
-                "svg": (
-                    svg_url
-                ),
+                "svg": svg_url,
 
                 "quality_report": (
                     quality_report_url
-                )
-            }
+                ),
 
+                "before_quality": (
+                    before_quality_url
+                ),
+
+                "comparison": (
+                    comparison_url
+                ),
+
+                "comparison_preview": (
+                    comparison_preview_url
+                ),
+
+                "comparison_history": (
+                    comparison_history_url
+                )
+
+            }
 
             # --------------------------------
             # PROCESSING TIMESTAMP
@@ -1335,19 +2191,143 @@ def process_asset(request: ProcessRequest):
                 )
             )
 
+            # --------------------------------
+            # COMPARISON
+            # --------------------------------
+
+            if isinstance(
+                comparison_data,
+                dict
+            ):
+
+                asset["comparison"] = (
+                    comparison_data
+                )
+
+            # =================================
+            # QUALITY CLASSIFICATION
+            # =================================
+            #
+            # Quality được lấy trực tiếp từ
+            # processing pipeline.
+            #
+            # Không chấm lại bằng
+            # dataset.metadata.quality_scorer
+            # vì pipeline đã có quality_classifier
+            # riêng.
+            #
+
+            pipeline_quality = None
+
+            if isinstance(
+                result.get("input"),
+                dict
+            ):
+
+                input_quality = result[
+                    "input"
+                ].get(
+                    "quality"
+                )
+
+                if isinstance(
+                    input_quality,
+                    dict
+                ):
+
+                    pipeline_quality = (
+                        input_quality
+                    )
 
             # --------------------------------
-            # SAVE QUALITY INFORMATION
+            # SAVE PIPELINE QUALITY
+            # --------------------------------
+
+            if pipeline_quality:
+
+                asset["quality"] = {
+
+                    "quality": pipeline_quality.get(
+                        "quality"
+                    ),
+
+                    "overall_score": pipeline_quality.get(
+                        "score"
+                    ),
+
+                    "quality_scores": pipeline_quality.get(
+                        "component_scores",
+                        {}
+                    ),
+
+                    "technical_metrics": (
+                        result.get(
+                            "input",
+                            {}
+                        ).get(
+                            "metrics",
+                            {}
+                        )
+                    )
+
+                }
+
+                result["quality"] = (
+                    asset["quality"]
+                )
+
+                print(
+                    "QUALITY FROM PIPELINE: "
+                    f"{pipeline_quality.get('quality')} "
+                    f"- "
+                    f"{pipeline_quality.get('score')}"
+                )
+
+            else:
+
+                # Pipeline không trả quality.
+                # Giữ quality cũ nếu catalog đã có.
+
+                current_quality = asset.get(
+                    "quality"
+                )
+
+                if (
+                    isinstance(
+                        current_quality,
+                        dict
+                    )
+                    and current_quality.get(
+                        "quality"
+                    )
+                ):
+
+                    result["quality"] = (
+                        current_quality
+                    )
+
+                else:
+
+                    result[
+                        "quality_warning"
+                    ] = (
+                        "Pipeline did not return "
+                        "quality classification."
+                    )
+
+            # --------------------------------
+            # SAVE RESTORED METRICS
             # --------------------------------
 
             if result.get("restored"):
 
-                restored_metrics = result[
-                    "restored"
-                ].get(
-                    "metrics"
+                restored_metrics = (
+                    result[
+                        "restored"
+                    ].get(
+                        "metrics"
+                    )
                 )
-
 
                 if restored_metrics:
 
@@ -1355,26 +2335,25 @@ def process_asset(request: ProcessRequest):
                         "processed_quality"
                     ] = restored_metrics
 
-
             # --------------------------------
             # SAVE NORMALIZED METRICS
             # --------------------------------
 
             if result.get("normalized"):
 
-                normalized_metrics = result[
-                    "normalized"
-                ].get(
-                    "metrics"
+                normalized_metrics = (
+                    result[
+                        "normalized"
+                    ].get(
+                        "metrics"
+                    )
                 )
-
 
                 if normalized_metrics:
 
                     asset[
                         "normalized_quality"
                     ] = normalized_metrics
-
 
             # --------------------------------
             # SAVE CATALOG
@@ -1384,12 +2363,10 @@ def process_asset(request: ProcessRequest):
                 catalog
             )
 
-
             catalog_updated = True
 
-
         # ====================================
-        # 12. RETURN CATALOG STATUS
+        # 14. RETURN CATALOG STATUS
         # ====================================
 
         result["catalog"] = {
@@ -1401,11 +2378,11 @@ def process_asset(request: ProcessRequest):
             "asset_index": (
                 asset_index
             )
+
         }
 
-
         # ====================================
-        # 13. RETURN UPDATED ASSET
+        # 15. RETURN UPDATED ASSET
         # ====================================
 
         if (
@@ -1413,17 +2390,23 @@ def process_asset(request: ProcessRequest):
             and asset_index is not None
         ):
 
-            result["catalog"]["asset"] = (
-                catalog[asset_index]
-            )
-
+            result[
+                "catalog"
+            ][
+                "asset"
+            ] = catalog[
+                asset_index
+            ]
 
         # ====================================
-        # 14. RETURN RESULT
+        # 16. RETURN RESULT
         # ====================================
 
         return result
 
+    except HTTPException:
+
+        raise
 
     except Exception as error:
 

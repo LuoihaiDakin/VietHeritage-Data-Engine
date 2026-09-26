@@ -1,0 +1,24 @@
+{
+    "filename": "dong_ho_003.jpg",
+    "path": "images/dong_ho/dong_ho_003.jpg",
+    "category": "dong_ho",
+    "technical_metrics": {
+        "brightness": 137.87,
+        "contrast": 50.25,
+        "sharpness": 13292.7,
+        "width": 120,
+        "height": 178
+    },
+    "quality_scores": {
+        "brightness": 100,
+        "contrast": 74.71,
+        "sharpness": 90,
+        "resolution": 0
+    },
+    "overall_score": 60.94,
+    "quality": "POOR",
+    "quality_flags": [
+        "low_resolution"
+    ],
+    "recommendation": "Image requires restoration or preprocessing: low_resolution."
+}

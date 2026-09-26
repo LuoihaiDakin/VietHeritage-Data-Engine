@@ -91,7 +91,7 @@ function formatNumber(value, decimals = 2) {
 }
 
 
-export default function ProcessPanel({ asset }) {
+export default function ProcessPanel({ asset, onProcessed }) {
 
     const [processing, setProcessing] =
         useState(false);
@@ -168,9 +168,10 @@ export default function ProcessPanel({ asset }) {
 
 
             setResult(data);
+
             if (onProcessed) {
                 onProcessed();
-}
+            }
 
 
         } catch (err) {

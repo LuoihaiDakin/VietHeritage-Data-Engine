@@ -6,7 +6,19 @@
             "height": 86,
             "brightness": 157.22,
             "contrast": 60.84,
-            "sharpness": 24441.1
+            "sharpness": 24441.1,
+            "noise": 25.02,
+            "edge_density": 0.2685
+        },
+        "quality": {
+            "quality": "ACCEPTABLE",
+            "score": 77.5,
+            "component_scores": {
+                "resolution": 70.0,
+                "brightness": 100.0,
+                "contrast": 100.0,
+                "noise": 50.0
+            }
         }
     },
     "restored": {
@@ -14,9 +26,43 @@
         "metrics": {
             "width": 480,
             "height": 344,
-            "brightness": 166.21,
-            "contrast": 66.65,
-            "sharpness": 277.54
+            "brightness": 159.36,
+            "contrast": 60.35,
+            "sharpness": 2347.64,
+            "noise": 2.13,
+            "edge_density": 0.1198
+        },
+        "quality": {
+            "quality": "GOOD",
+            "score": 100.0,
+            "component_scores": {
+                "resolution": 100.0,
+                "brightness": 100.0,
+                "contrast": 100.0,
+                "noise": 100.0
+            }
+        }
+    },
+    "cleaned": {
+        "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\dong_ho_005\\cleaned.png",
+        "metrics": {
+            "width": 480,
+            "height": 344,
+            "brightness": 159.82,
+            "contrast": 62.01,
+            "sharpness": 2466.89,
+            "noise": 2.32,
+            "edge_density": 0.1256
+        },
+        "quality": {
+            "quality": "GOOD",
+            "score": 100.0,
+            "component_scores": {
+                "resolution": 100.0,
+                "brightness": 100.0,
+                "contrast": 100.0,
+                "noise": 100.0
+            }
         }
     },
     "normalized": {
@@ -24,16 +70,30 @@
         "metrics": {
             "width": 480,
             "height": 344,
-            "brightness": 166.21,
-            "contrast": 66.65,
-            "sharpness": 277.54
+            "brightness": 159.82,
+            "contrast": 62.01,
+            "sharpness": 2466.89,
+            "noise": 2.32,
+            "edge_density": 0.1256
+        },
+        "quality": {
+            "quality": "GOOD",
+            "score": 100.0,
+            "component_scores": {
+                "resolution": 100.0,
+                "brightness": 100.0,
+                "contrast": 100.0,
+                "noise": 100.0
+            }
         }
     },
     "outputs": {
         "restored": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\dong_ho_005\\restored.png",
+        "cleaned": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\dong_ho_005\\cleaned.png",
         "normalized": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\dong_ho_005\\normalized.png",
-        "segmented": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\dong_ho_005\\segmented.png",
         "edges": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\dong_ho_005\\edges.png",
+        "segmented": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\dong_ho_005\\segmented.png",
+        "mask": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\dong_ho_005\\mask.png",
         "svg": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\dong_ho_005\\pattern.svg"
     },
     "status": "completed"

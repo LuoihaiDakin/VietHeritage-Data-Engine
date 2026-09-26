@@ -1,0 +1,469 @@
+{
+    "version": "1.0",
+    "comparison_type": "original_vs_processed",
+    "original": {
+        "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\dataset\\images\\dong_ho\\dong_ho_002.jpg",
+        "metrics": {
+            "width": 120,
+            "height": 153,
+            "brightness": 152.89,
+            "contrast": 35.92,
+            "sharpness": 5595.24,
+            "noise": 4.73,
+            "edge_density": 0.1447
+        },
+        "quality": {
+            "quality": "GOOD",
+            "score": 96.25,
+            "component_scores": {
+                "resolution": 100.0,
+                "brightness": 100.0,
+                "contrast": 85.0,
+                "noise": 100.0
+            }
+        }
+    },
+    "stages": {
+        "restored": {
+            "original": {
+                "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\dataset\\images\\dong_ho\\dong_ho_002.jpg",
+                "metrics": {
+                    "width": 120,
+                    "height": 153,
+                    "brightness": 152.89,
+                    "contrast": 35.92,
+                    "sharpness": 5595.24,
+                    "noise": 4.73,
+                    "edge_density": 0.1447
+                },
+                "quality": {
+                    "quality": "GOOD",
+                    "score": 96.25,
+                    "component_scores": {
+                        "resolution": 100.0,
+                        "brightness": 100.0,
+                        "contrast": 85.0,
+                        "noise": 100.0
+                    }
+                }
+            },
+            "processed": {
+                "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\dong_ho_002\\restored.png",
+                "metrics": {
+                    "width": 480,
+                    "height": 612,
+                    "brightness": 152.91,
+                    "contrast": 37.62,
+                    "sharpness": 668.66,
+                    "noise": 0.74,
+                    "edge_density": 0.065
+                },
+                "quality": {
+                    "quality": "GOOD",
+                    "score": 96.25,
+                    "component_scores": {
+                        "resolution": 100.0,
+                        "brightness": 100.0,
+                        "contrast": 85.0,
+                        "noise": 100.0
+                    }
+                }
+            },
+            "quality_comparison": {
+                "original": {
+                    "quality": "GOOD",
+                    "score": 96.25
+                },
+                "processed": {
+                    "quality": "GOOD",
+                    "score": 96.25
+                },
+                "score_difference": 0.0,
+                "score_percentage_change": 0.0,
+                "classification_change": "UNCHANGED"
+            },
+            "metric_comparison": {
+                "resolution": {
+                    "original": {
+                        "width": 120,
+                        "height": 153,
+                        "pixels": 18360
+                    },
+                    "processed": {
+                        "width": 480,
+                        "height": 612,
+                        "pixels": 293760
+                    },
+                    "pixel_percentage_change": 1500.0,
+                    "direction": "IMPROVED"
+                },
+                "brightness": {
+                    "original": 152.89,
+                    "processed": 152.91,
+                    "difference": 0.02,
+                    "percentage_change": 0.01,
+                    "direction": "CHANGED"
+                },
+                "contrast": {
+                    "original": 35.92,
+                    "processed": 37.62,
+                    "difference": 1.7,
+                    "percentage_change": 4.73,
+                    "direction": "CHANGED"
+                },
+                "sharpness": {
+                    "original": 5595.24,
+                    "processed": 668.66,
+                    "difference": -4926.58,
+                    "percentage_change": -88.05,
+                    "direction": "DECREASED"
+                },
+                "noise": {
+                    "original": 4.73,
+                    "processed": 0.74,
+                    "difference": -3.99,
+                    "percentage_change": -84.36,
+                    "direction": "IMPROVED"
+                },
+                "edge_density": {
+                    "original": 0.1447,
+                    "processed": 0.065,
+                    "difference": -0.0797,
+                    "percentage_change": -55.08,
+                    "direction": "CHANGED"
+                }
+            }
+        },
+        "cleaned": {
+            "original": {
+                "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\dataset\\images\\dong_ho\\dong_ho_002.jpg",
+                "metrics": {
+                    "width": 120,
+                    "height": 153,
+                    "brightness": 152.89,
+                    "contrast": 35.92,
+                    "sharpness": 5595.24,
+                    "noise": 4.73,
+                    "edge_density": 0.1447
+                },
+                "quality": {
+                    "quality": "GOOD",
+                    "score": 96.25,
+                    "component_scores": {
+                        "resolution": 100.0,
+                        "brightness": 100.0,
+                        "contrast": 85.0,
+                        "noise": 100.0
+                    }
+                }
+            },
+            "processed": {
+                "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\dong_ho_002\\cleaned.png",
+                "metrics": {
+                    "width": 480,
+                    "height": 612,
+                    "brightness": 153.78,
+                    "contrast": 43.05,
+                    "sharpness": 932.67,
+                    "noise": 0.46,
+                    "edge_density": 0.0673
+                },
+                "quality": {
+                    "quality": "GOOD",
+                    "score": 100.0,
+                    "component_scores": {
+                        "resolution": 100.0,
+                        "brightness": 100.0,
+                        "contrast": 100.0,
+                        "noise": 100.0
+                    }
+                }
+            },
+            "quality_comparison": {
+                "original": {
+                    "quality": "GOOD",
+                    "score": 96.25
+                },
+                "processed": {
+                    "quality": "GOOD",
+                    "score": 100.0
+                },
+                "score_difference": 3.75,
+                "score_percentage_change": 3.9,
+                "classification_change": "UNCHANGED"
+            },
+            "metric_comparison": {
+                "resolution": {
+                    "original": {
+                        "width": 120,
+                        "height": 153,
+                        "pixels": 18360
+                    },
+                    "processed": {
+                        "width": 480,
+                        "height": 612,
+                        "pixels": 293760
+                    },
+                    "pixel_percentage_change": 1500.0,
+                    "direction": "IMPROVED"
+                },
+                "brightness": {
+                    "original": 152.89,
+                    "processed": 153.78,
+                    "difference": 0.89,
+                    "percentage_change": 0.58,
+                    "direction": "CHANGED"
+                },
+                "contrast": {
+                    "original": 35.92,
+                    "processed": 43.05,
+                    "difference": 7.13,
+                    "percentage_change": 19.85,
+                    "direction": "CHANGED"
+                },
+                "sharpness": {
+                    "original": 5595.24,
+                    "processed": 932.67,
+                    "difference": -4662.57,
+                    "percentage_change": -83.33,
+                    "direction": "DECREASED"
+                },
+                "noise": {
+                    "original": 4.73,
+                    "processed": 0.46,
+                    "difference": -4.27,
+                    "percentage_change": -90.27,
+                    "direction": "IMPROVED"
+                },
+                "edge_density": {
+                    "original": 0.1447,
+                    "processed": 0.0673,
+                    "difference": -0.0774,
+                    "percentage_change": -53.49,
+                    "direction": "CHANGED"
+                }
+            }
+        },
+        "normalized": {
+            "original": {
+                "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\dataset\\images\\dong_ho\\dong_ho_002.jpg",
+                "metrics": {
+                    "width": 120,
+                    "height": 153,
+                    "brightness": 152.89,
+                    "contrast": 35.92,
+                    "sharpness": 5595.24,
+                    "noise": 4.73,
+                    "edge_density": 0.1447
+                },
+                "quality": {
+                    "quality": "GOOD",
+                    "score": 96.25,
+                    "component_scores": {
+                        "resolution": 100.0,
+                        "brightness": 100.0,
+                        "contrast": 85.0,
+                        "noise": 100.0
+                    }
+                }
+            },
+            "processed": {
+                "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\dong_ho_002\\normalized.png",
+                "metrics": {
+                    "width": 480,
+                    "height": 612,
+                    "brightness": 153.78,
+                    "contrast": 43.05,
+                    "sharpness": 932.67,
+                    "noise": 0.46,
+                    "edge_density": 0.0673
+                },
+                "quality": {
+                    "quality": "GOOD",
+                    "score": 100.0,
+                    "component_scores": {
+                        "resolution": 100.0,
+                        "brightness": 100.0,
+                        "contrast": 100.0,
+                        "noise": 100.0
+                    }
+                }
+            },
+            "quality_comparison": {
+                "original": {
+                    "quality": "GOOD",
+                    "score": 96.25
+                },
+                "processed": {
+                    "quality": "GOOD",
+                    "score": 100.0
+                },
+                "score_difference": 3.75,
+                "score_percentage_change": 3.9,
+                "classification_change": "UNCHANGED"
+            },
+            "metric_comparison": {
+                "resolution": {
+                    "original": {
+                        "width": 120,
+                        "height": 153,
+                        "pixels": 18360
+                    },
+                    "processed": {
+                        "width": 480,
+                        "height": 612,
+                        "pixels": 293760
+                    },
+                    "pixel_percentage_change": 1500.0,
+                    "direction": "IMPROVED"
+                },
+                "brightness": {
+                    "original": 152.89,
+                    "processed": 153.78,
+                    "difference": 0.89,
+                    "percentage_change": 0.58,
+                    "direction": "CHANGED"
+                },
+                "contrast": {
+                    "original": 35.92,
+                    "processed": 43.05,
+                    "difference": 7.13,
+                    "percentage_change": 19.85,
+                    "direction": "CHANGED"
+                },
+                "sharpness": {
+                    "original": 5595.24,
+                    "processed": 932.67,
+                    "difference": -4662.57,
+                    "percentage_change": -83.33,
+                    "direction": "DECREASED"
+                },
+                "noise": {
+                    "original": 4.73,
+                    "processed": 0.46,
+                    "difference": -4.27,
+                    "percentage_change": -90.27,
+                    "direction": "IMPROVED"
+                },
+                "edge_density": {
+                    "original": 0.1447,
+                    "processed": 0.0673,
+                    "difference": -0.0774,
+                    "percentage_change": -53.49,
+                    "direction": "CHANGED"
+                }
+            }
+        }
+    },
+    "final_stage": "normalized",
+    "final_comparison": {
+        "original": {
+            "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\dataset\\images\\dong_ho\\dong_ho_002.jpg",
+            "metrics": {
+                "width": 120,
+                "height": 153,
+                "brightness": 152.89,
+                "contrast": 35.92,
+                "sharpness": 5595.24,
+                "noise": 4.73,
+                "edge_density": 0.1447
+            },
+            "quality": {
+                "quality": "GOOD",
+                "score": 96.25,
+                "component_scores": {
+                    "resolution": 100.0,
+                    "brightness": 100.0,
+                    "contrast": 85.0,
+                    "noise": 100.0
+                }
+            }
+        },
+        "processed": {
+            "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\dong_ho_002\\normalized.png",
+            "metrics": {
+                "width": 480,
+                "height": 612,
+                "brightness": 153.78,
+                "contrast": 43.05,
+                "sharpness": 932.67,
+                "noise": 0.46,
+                "edge_density": 0.0673
+            },
+            "quality": {
+                "quality": "GOOD",
+                "score": 100.0,
+                "component_scores": {
+                    "resolution": 100.0,
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "noise": 100.0
+                }
+            }
+        },
+        "quality_comparison": {
+            "original": {
+                "quality": "GOOD",
+                "score": 96.25
+            },
+            "processed": {
+                "quality": "GOOD",
+                "score": 100.0
+            },
+            "score_difference": 3.75,
+            "score_percentage_change": 3.9,
+            "classification_change": "UNCHANGED"
+        },
+        "metric_comparison": {
+            "resolution": {
+                "original": {
+                    "width": 120,
+                    "height": 153,
+                    "pixels": 18360
+                },
+                "processed": {
+                    "width": 480,
+                    "height": 612,
+                    "pixels": 293760
+                },
+                "pixel_percentage_change": 1500.0,
+                "direction": "IMPROVED"
+            },
+            "brightness": {
+                "original": 152.89,
+                "processed": 153.78,
+                "difference": 0.89,
+                "percentage_change": 0.58,
+                "direction": "CHANGED"
+            },
+            "contrast": {
+                "original": 35.92,
+                "processed": 43.05,
+                "difference": 7.13,
+                "percentage_change": 19.85,
+                "direction": "CHANGED"
+            },
+            "sharpness": {
+                "original": 5595.24,
+                "processed": 932.67,
+                "difference": -4662.57,
+                "percentage_change": -83.33,
+                "direction": "DECREASED"
+            },
+            "noise": {
+                "original": 4.73,
+                "processed": 0.46,
+                "difference": -4.27,
+                "percentage_change": -90.27,
+                "direction": "IMPROVED"
+            },
+            "edge_density": {
+                "original": 0.1447,
+                "processed": 0.0673,
+                "difference": -0.0774,
+                "percentage_change": -53.49,
+                "direction": "CHANGED"
+            }
+        }
+    }
+}

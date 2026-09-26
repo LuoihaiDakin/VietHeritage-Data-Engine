@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import ProcessPanel from "./ProcessPanel";
+import ComparisonPanel from "./ComparisonPanel";
 
 const API_BASE = "http://127.0.0.1:8000";
 
@@ -148,47 +150,87 @@ function AssetModal({
   onClose,
   onProcessed,
 }) {
-  if (!asset) {
+  const [currentAsset, setCurrentAsset] = useState(asset);
+
+  const [isEditingMetadata, setIsEditingMetadata] =
+    useState(false);
+
+  const [isSavingMetadata, setIsSavingMetadata] =
+    useState(false);
+
+  const [metadataMessage, setMetadataMessage] =
+    useState("");
+
+  const [metadata, setMetadata] = useState({
+    category: "",
+    dynasty: "",
+    period: "",
+    motif: "",
+    region: "",
+    source: "",
+    license: "",
+  });
+
+  useEffect(() => {
+    setCurrentAsset(asset);
+
+    setMetadata({
+      category: asset?.category || "",
+      dynasty: asset?.dynasty || "",
+      period: asset?.period || "",
+      motif: asset?.motif || "",
+      region: asset?.region || "",
+      source: asset?.source || "",
+      license: asset?.license || "",
+    });
+
+    setIsEditingMetadata(false);
+    setMetadataMessage("");
+  }, [asset]);
+
+  if (!currentAsset) {
     return null;
   }
 
-  const quality = getQuality(asset);
+  const workingAsset = currentAsset;
+
+  const quality = getQuality(workingAsset);
 
   const qualityScore =
-    getQualityScore(asset);
+    getQualityScore(workingAsset);
 
   const qualityClass =
     getQualityClass(quality);
 
   const originalPath =
-    getOriginalPath(asset);
+    getOriginalPath(workingAsset);
 
   const originalImageUrl =
     buildImageUrl(originalPath);
 
   const technicalMetrics =
-    asset?.quality?.technical_metrics ||
-    asset?.original ||
+    workingAsset?.quality?.technical_metrics ||
+    workingAsset?.original ||
     {};
 
   const qualityScores =
-    asset?.quality?.quality_scores ||
+    workingAsset?.quality?.quality_scores ||
     {};
 
   const qualityFlags =
-    asset?.quality?.quality_flags ||
+    workingAsset?.quality?.quality_flags ||
     [];
 
   const recommendation =
-    asset?.quality?.recommendation ||
+    workingAsset?.quality?.recommendation ||
     "No recommendation available.";
 
   const processing =
-    asset?.processing || {};
+    workingAsset?.processing || {};
 
   const outputs =
-    asset?.processing_outputs ||
-    asset?.outputs ||
+    workingAsset?.processing_outputs ||
+    workingAsset?.outputs ||
     {};
 
   const processingStages = [
@@ -256,6 +298,74 @@ function AssetModal({
     return outputs?.[key] || "";
   }
 
+  function handleMetadataChange(field, value) {
+    setMetadata((previous) => ({
+      ...previous,
+      [field]: value,
+    }));
+  }
+
+  async function handleSaveMetadata() {
+    if (!workingAsset?.id) {
+      return;
+    }
+
+    setIsSavingMetadata(true);
+    setMetadataMessage("");
+
+    try {
+      const response = await fetch(
+        `${API_BASE}/assets/${workingAsset.id}/metadata`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(metadata),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          data?.detail ||
+            "Failed to update metadata."
+        );
+      }
+
+      setCurrentAsset(data.asset);
+
+      setMetadata({
+        category: data.asset?.category || "",
+        dynasty: data.asset?.dynasty || "",
+        period: data.asset?.period || "",
+        motif: data.asset?.motif || "",
+        region: data.asset?.region || "",
+        source: data.asset?.source || "",
+        license: data.asset?.license || "",
+      });
+
+      setIsEditingMetadata(false);
+
+      setMetadataMessage(
+        "Metadata saved successfully."
+      );
+    } catch (error) {
+      console.error(
+        "Metadata update error:",
+        error
+      );
+
+      setMetadataMessage(
+        error.message ||
+          "Failed to save metadata."
+      );
+    } finally {
+      setIsSavingMetadata(false);
+    }
+  }
+
   return (
     <div
       className="vh-modal-overlay"
@@ -279,11 +389,11 @@ function AssetModal({
             </div>
 
             <h2>
-              {getDisplayName(asset)}
+              {getDisplayName(workingAsset)}
             </h2>
 
             <div className="vh-modal-id">
-              ID: {formatValue(asset.id)}
+              ID: {formatValue(workingAsset.id)}
             </div>
 
           </div>
@@ -311,7 +421,7 @@ function AssetModal({
               {originalImageUrl ? (
                 <img
                   src={originalImageUrl}
-                  alt={getDisplayName(asset)}
+                  alt={getDisplayName(workingAsset)}
                   className="vh-main-image"
                 />
               ) : (
@@ -581,9 +691,7 @@ function AssetModal({
           {/* ================= METADATA ================= */}
 
           <section className="vh-section">
-
             <div className="vh-section-header">
-
               <div>
                 <span className="vh-section-label">
                   HERITAGE METADATA
@@ -594,83 +702,287 @@ function AssetModal({
                 </h3>
               </div>
 
+              <button
+                type="button"
+                className={`vh-metadata-edit-button ${
+                  isEditingMetadata
+                    ? "active"
+                    : ""
+                }`}
+                onClick={() => {
+                  setIsEditingMetadata(
+                    (previous) => !previous
+                  );
+
+                  setMetadataMessage("");
+                }}
+              >
+                {isEditingMetadata
+                  ? "Cancel"
+                  : "Edit Metadata"}
+              </button>
             </div>
 
-            <div className="vh-metadata-grid">
+            {!isEditingMetadata ? (
+              <>
+                <div className="vh-metadata-grid">
+                  <div className="vh-meta-item">
+                    <span>Filename</span>
+                    <strong>
+                      {formatValue(
+                        workingAsset.filename
+                      )}
+                    </strong>
+                  </div>
 
-              <div className="vh-meta-item">
-                <span>Filename</span>
-                <strong>
-                  {formatValue(
-                    asset.filename
-                  )}
-                </strong>
+                  <div className="vh-meta-item">
+                    <span>Category</span>
+                    <strong>
+                      {formatValue(
+                        workingAsset.category
+                      )}
+                    </strong>
+                  </div>
+
+                  <div className="vh-meta-item">
+                    <span>Dynasty</span>
+                    <strong>
+                      {formatValue(
+                        workingAsset.dynasty
+                      )}
+                    </strong>
+                  </div>
+
+                  <div className="vh-meta-item">
+                    <span>Period</span>
+                    <strong>
+                      {formatValue(
+                        workingAsset.period
+                      )}
+                    </strong>
+                  </div>
+
+                  <div className="vh-meta-item">
+                    <span>Motif</span>
+                    <strong>
+                      {formatValue(
+                        workingAsset.motif
+                      )}
+                    </strong>
+                  </div>
+
+                  <div className="vh-meta-item">
+                    <span>Region</span>
+                    <strong>
+                      {formatValue(
+                        workingAsset.region
+                      )}
+                    </strong>
+                  </div>
+
+                  <div className="vh-meta-item">
+                    <span>Source</span>
+                    <strong>
+                      {formatValue(
+                        workingAsset.source
+                      )}
+                    </strong>
+                  </div>
+
+                  <div className="vh-meta-item">
+                    <span>License</span>
+                    <strong>
+                      {formatValue(
+                        workingAsset.license
+                      )}
+                    </strong>
+                  </div>
+                </div>
+
+                {metadataMessage && (
+                  <div className="vh-metadata-message success">
+                    {metadataMessage}
+                  </div>
+                )}
+              </>
+            ) : (
+              <div className="vh-metadata-editor">
+                <div className="vh-metadata-form-grid">
+                  <div className="vh-metadata-field">
+                    <label>
+                      Category
+                    </label>
+
+                    <input
+                      type="text"
+                      value={metadata.category}
+                      onChange={(event) =>
+                        handleMetadataChange(
+                          "category",
+                          event.target.value
+                        )
+                      }
+                      placeholder="e.g. dong_ho"
+                    />
+                  </div>
+
+                  <div className="vh-metadata-field">
+                    <label>
+                      Dynasty
+                    </label>
+
+                    <input
+                      type="text"
+                      value={metadata.dynasty}
+                      onChange={(event) =>
+                        handleMetadataChange(
+                          "dynasty",
+                          event.target.value
+                        )
+                      }
+                      placeholder="e.g. Nguyen"
+                    />
+                  </div>
+
+                  <div className="vh-metadata-field">
+                    <label>
+                      Period
+                    </label>
+
+                    <input
+                      type="text"
+                      value={metadata.period}
+                      onChange={(event) =>
+                        handleMetadataChange(
+                          "period",
+                          event.target.value
+                        )
+                      }
+                      placeholder="e.g. 19th century"
+                    />
+                  </div>
+
+                  <div className="vh-metadata-field">
+                    <label>
+                      Motif
+                    </label>
+
+                    <input
+                      type="text"
+                      value={metadata.motif}
+                      onChange={(event) =>
+                        handleMetadataChange(
+                          "motif",
+                          event.target.value
+                        )
+                      }
+                      placeholder="e.g. folk painting"
+                    />
+                  </div>
+
+                  <div className="vh-metadata-field">
+                    <label>
+                      Region
+                    </label>
+
+                    <input
+                      type="text"
+                      value={metadata.region}
+                      onChange={(event) =>
+                        handleMetadataChange(
+                          "region",
+                          event.target.value
+                        )
+                      }
+                      placeholder="e.g. Northern Vietnam"
+                    />
+                  </div>
+
+                  <div className="vh-metadata-field">
+                    <label>
+                      Source
+                    </label>
+
+                    <input
+                      type="text"
+                      value={metadata.source}
+                      onChange={(event) =>
+                        handleMetadataChange(
+                          "source",
+                          event.target.value
+                        )
+                      }
+                      placeholder="e.g. Dong Ho Museum"
+                    />
+                  </div>
+
+                  <div className="vh-metadata-field">
+                    <label>
+                      License
+                    </label>
+
+                    <input
+                      type="text"
+                      value={metadata.license}
+                      onChange={(event) =>
+                        handleMetadataChange(
+                          "license",
+                          event.target.value
+                        )
+                      }
+                      placeholder="e.g. Public Domain"
+                    />
+                  </div>
+                </div>
+
+                {metadataMessage && (
+                  <div className="vh-metadata-message error">
+                    {metadataMessage}
+                  </div>
+                )}
+
+                <div className="vh-metadata-actions">
+                  <button
+                    type="button"
+                    className="vh-metadata-cancel"
+                    onClick={() => {
+                      setIsEditingMetadata(false);
+                      setMetadataMessage("");
+
+                      setMetadata({
+                        category:
+                          workingAsset.category || "",
+                        dynasty:
+                          workingAsset.dynasty || "",
+                        period:
+                          workingAsset.period || "",
+                        motif:
+                          workingAsset.motif || "",
+                        region:
+                          workingAsset.region || "",
+                        source:
+                          workingAsset.source || "",
+                        license:
+                          workingAsset.license || "",
+                      });
+                    }}
+                  >
+                    Cancel
+                  </button>
+
+                  <button
+                    type="button"
+                    className="vh-metadata-save"
+                    onClick={handleSaveMetadata}
+                    disabled={isSavingMetadata}
+                  >
+                    {isSavingMetadata
+                      ? "Saving..."
+                      : "Save Metadata"}
+                  </button>
+                </div>
               </div>
-
-              <div className="vh-meta-item">
-                <span>Category</span>
-                <strong>
-                  {formatValue(
-                    asset.category
-                  )}
-                </strong>
-              </div>
-
-              <div className="vh-meta-item">
-                <span>Dynasty</span>
-                <strong>
-                  {formatValue(
-                    asset.dynasty
-                  )}
-                </strong>
-              </div>
-
-              <div className="vh-meta-item">
-                <span>Period</span>
-                <strong>
-                  {formatValue(
-                    asset.period
-                  )}
-                </strong>
-              </div>
-
-              <div className="vh-meta-item">
-                <span>Motif</span>
-                <strong>
-                  {formatValue(
-                    asset.motif
-                  )}
-                </strong>
-              </div>
-
-              <div className="vh-meta-item">
-                <span>Region</span>
-                <strong>
-                  {formatValue(
-                    asset.region
-                  )}
-                </strong>
-              </div>
-
-              <div className="vh-meta-item">
-                <span>Source</span>
-                <strong>
-                  {formatValue(
-                    asset.source
-                  )}
-                </strong>
-              </div>
-
-              <div className="vh-meta-item">
-                <span>License</span>
-                <strong>
-                  {formatValue(
-                    asset.license
-                  )}
-                </strong>
-              </div>
-
-            </div>
+            )}
 
           </section>
 
@@ -783,14 +1095,14 @@ function AssetModal({
 
             </div>
 
-            {asset.processed_at && (
+            {workingAsset.processed_at && (
               <div className="processed-time">
                 <span>
                   Last processed
                 </span>
 
                 <strong>
-                  {asset.processed_at}
+                  {workingAsset.processed_at}
                 </strong>
               </div>
             )}
@@ -925,7 +1237,7 @@ function AssetModal({
                 <span>Format</span>
                 <strong>
                   {formatValue(
-                    asset.original?.format
+                    workingAsset.original?.format
                   )}
                 </strong>
               </div>
@@ -933,11 +1245,11 @@ function AssetModal({
               <div className="vh-technical-item">
                 <span>File Size</span>
                 <strong>
-                  {asset.original
+                  {workingAsset.original
                     ?.file_size_kb !==
                   undefined
                     ? `${formatMetric(
-                        asset.original
+                        workingAsset.original
                           .file_size_kb
                       )} KB`
                     : "—"}
@@ -996,8 +1308,12 @@ function AssetModal({
             </div>
 
             <ProcessPanel
-              asset={asset}
+              asset={workingAsset}
               onProcessed={onProcessed}
+            />
+
+            <ComparisonPanel
+              asset={workingAsset}
             />
 
           </section>
@@ -1502,6 +1818,148 @@ function AssetModal({
            METADATA
         ======================================== */
 
+        .vh-metadata-edit-button {
+          padding: 7px 11px;
+          border: 1px solid rgba(255,255,255,0.08);
+          border-radius: 8px;
+          background: rgba(255,255,255,0.035);
+          color: #999;
+          font-size: 9px;
+          font-weight: 700;
+          cursor: pointer;
+          transition:
+            background 0.2s ease,
+            border-color 0.2s ease,
+            color 0.2s ease;
+        }
+
+        .vh-metadata-edit-button:hover,
+        .vh-metadata-edit-button.active {
+          border-color: rgba(180,123,109,0.35);
+          background: rgba(180,123,109,0.1);
+          color: #d29a8a;
+        }
+
+        .vh-metadata-editor {
+          padding: 15px;
+          border: 1px solid rgba(255,255,255,0.055);
+          border-radius: 12px;
+          background: rgba(255,255,255,0.018);
+        }
+
+        .vh-metadata-form-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+
+        .vh-metadata-field {
+          min-width: 0;
+        }
+
+        .vh-metadata-field label {
+          display: block;
+          margin-bottom: 6px;
+          color: #666;
+          font-size: 9px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        .vh-metadata-field input {
+          width: 100%;
+          box-sizing: border-box;
+          padding: 10px 11px;
+          border: 1px solid rgba(255,255,255,0.07);
+          border-radius: 8px;
+          outline: none;
+          background: rgba(0,0,0,0.2);
+          color: #ddd;
+          font-family: inherit;
+          font-size: 10px;
+          transition:
+            border-color 0.2s ease,
+            background 0.2s ease;
+        }
+
+        .vh-metadata-field input::placeholder {
+          color: #444;
+        }
+
+        .vh-metadata-field input:focus {
+          border-color: rgba(180,123,109,0.45);
+          background: rgba(255,255,255,0.025);
+        }
+
+        .vh-metadata-actions {
+          display: flex;
+          justify-content: flex-end;
+          gap: 8px;
+          margin-top: 15px;
+          padding-top: 13px;
+          border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .vh-metadata-cancel,
+        .vh-metadata-save {
+          padding: 8px 13px;
+          border-radius: 8px;
+          font-size: 9px;
+          font-weight: 700;
+          cursor: pointer;
+          transition:
+            background 0.2s ease,
+            border-color 0.2s ease,
+            color 0.2s ease;
+        }
+
+        .vh-metadata-cancel {
+          border: 1px solid rgba(255,255,255,0.07);
+          background: rgba(255,255,255,0.025);
+          color: #777;
+        }
+
+        .vh-metadata-cancel:hover {
+          background: rgba(255,255,255,0.06);
+          color: #bbb;
+        }
+
+        .vh-metadata-save {
+          border: 1px solid rgba(180,123,109,0.35);
+          background: rgba(180,123,109,0.13);
+          color: #d29a8a;
+        }
+
+        .vh-metadata-save:hover {
+          background: rgba(180,123,109,0.2);
+          border-color: rgba(180,123,109,0.5);
+        }
+
+        .vh-metadata-save:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+
+        .vh-metadata-message {
+          margin-top: 11px;
+          padding: 8px 10px;
+          border-radius: 7px;
+          font-size: 9px;
+        }
+
+        .vh-metadata-message.success {
+          border: 1px solid rgba(101,197,141,0.15);
+          background: rgba(101,197,141,0.06);
+          color: #65c58d;
+        }
+
+        .vh-metadata-message.error {
+          border: 1px solid rgba(201,111,111,0.18);
+          background: rgba(201,111,111,0.06);
+          color: #c98282;
+        }
+
         .vh-metadata-grid {
           display: grid;
 
@@ -1972,6 +2430,10 @@ function AssetModal({
           .vh-quality-metrics {
             grid-template-columns:
               repeat(2, 1fr);
+          }
+
+          .vh-metadata-form-grid {
+            grid-template-columns: 1fr;
           }
 
           .vh-metadata-grid,

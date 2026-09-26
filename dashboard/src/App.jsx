@@ -31,6 +31,16 @@ function App() {
   const [error, setError] = useState("");
 
   // =========================
+  // UPLOAD STATE
+  // =========================
+
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState("");
+  const [uploadSuccess, setUploadSuccess] = useState("");
+  const [uploadedFile, setUploadedFile] = useState(null);
+  const [uploadPreview, setUploadPreview] = useState("");
+
+  // =========================
   // LOAD ASSETS
   // =========================
 
@@ -44,9 +54,7 @@ function App() {
       );
 
       if (!response.ok) {
-        throw new Error(
-          `API error: ${response.status}`
-        );
+        throw new Error(`API error: ${response.status}`);
       }
 
       const data = await response.json();
@@ -55,13 +63,114 @@ function App() {
 
       setAssets(data.results || []);
     } catch (err) {
-      console.error(err);
-
-      setError(
-        "Cannot load assets from API."
-      );
+      console.error("Load assets error:", err);
+      setError("Cannot load assets from API.");
     } finally {
       setLoading(false);
+    }
+  }
+
+  // =========================
+  // UPLOAD IMAGE
+  // =========================
+
+  async function handleUpload(event) {
+    const file = event.target.files?.[0];
+
+    if (!file) {
+      return;
+    }
+
+    setUploadError("");
+    setUploadSuccess("");
+    setUploadedFile(null);
+
+    // Validate file type
+    const allowedTypes = [
+      "image/jpeg",
+      "image/png",
+    ];
+
+    if (!allowedTypes.includes(file.type)) {
+      setUploadError(
+        "Only JPG, JPEG, and PNG images are supported."
+      );
+
+      event.target.value = "";
+      return;
+    }
+
+    // Validate file size: 20 MB maximum
+    const maxSize = 20 * 1024 * 1024;
+
+    if (file.size > maxSize) {
+      setUploadError(
+        "Image is too large. Maximum file size is 20 MB."
+      );
+
+      event.target.value = "";
+      return;
+    }
+
+    // Create local preview
+    const previewUrl = URL.createObjectURL(file);
+
+    setUploadPreview(previewUrl);
+    setUploadedFile(file);
+
+    try {
+      setUploading(true);
+
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const response = await fetch(
+        `${API_BASE}/upload`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      let data = {};
+
+      try {
+        data = await response.json();
+      } catch {
+        data = {};
+      }
+
+      if (!response.ok) {
+        if (response.status === 404) {
+          throw new Error(
+            "Upload API not found. Your FastAPI backend does not currently have POST /upload."
+          );
+        }
+
+        throw new Error(
+          data.detail || `Upload failed with status ${response.status}.`
+        );
+      }
+
+      setUploadSuccess(
+        `"${file.name}" uploaded successfully.`
+      );
+
+      console.log("UPLOAD RESPONSE:", data);
+
+      // Reload catalog after upload
+      await loadAssets();
+
+    } catch (err) {
+      console.error("Upload error:", err);
+
+      setUploadError(
+        err.message || "Upload failed."
+      );
+
+    } finally {
+      setUploading(false);
+      event.target.value = "";
     }
   }
 
@@ -72,6 +181,18 @@ function App() {
   useEffect(() => {
     loadAssets();
   }, []);
+
+  // =========================
+  // CLEAN PREVIEW URL
+  // =========================
+
+  useEffect(() => {
+    return () => {
+      if (uploadPreview) {
+        URL.revokeObjectURL(uploadPreview);
+      }
+    };
+  }, [uploadPreview]);
 
   // =========================
   // UNIQUE FILTER VALUES
@@ -200,13 +321,10 @@ function App() {
       normalized,
       segmented,
       vectorized,
-
       processed: restored,
-
       good,
       acceptable,
       poor,
-
       averageQuality,
     };
   }, [assets]);
@@ -239,8 +357,7 @@ function App() {
 
     return {
       preprocessed:
-        (statistics.preprocessed / total) *
-        100,
+        (statistics.preprocessed / total) * 100,
 
       restored:
         (statistics.restored / total) * 100,
@@ -265,10 +382,6 @@ function App() {
       const searchText =
         search.toLowerCase().trim();
 
-      // =========================
-      // SEARCH
-      // =========================
-
       const searchableFields = [
         asset.filename,
         asset.id,
@@ -289,57 +402,29 @@ function App() {
               .includes(searchText)
         );
 
-      // =========================
-      // CATEGORY
-      // =========================
-
       const matchesCategory =
         !category ||
         asset.category === category;
-
-      // =========================
-      // DYNASTY
-      // =========================
 
       const matchesDynasty =
         !dynasty ||
         asset.dynasty === dynasty;
 
-      // =========================
-      // PERIOD
-      // =========================
-
       const matchesPeriod =
         !period ||
         asset.period === period;
-
-      // =========================
-      // MOTIF
-      // =========================
 
       const matchesMotif =
         !motif ||
         asset.motif === motif;
 
-      // =========================
-      // REGION
-      // =========================
-
       const matchesRegion =
         !region ||
         asset.region === region;
 
-      // =========================
-      // QUALITY
-      // =========================
-
       const matchesQuality =
         !quality ||
         asset.quality?.quality === quality;
-
-      // =========================
-      // PROCESSING
-      // =========================
 
       let matchesProcessing = true;
 
@@ -431,28 +516,24 @@ function App() {
       percentage:
         processingPercentages.preprocessed,
     },
-
     {
       label: "Restored",
       value: statistics.restored,
       percentage:
         processingPercentages.restored,
     },
-
     {
       label: "Normalized",
       value: statistics.normalized,
       percentage:
         processingPercentages.normalized,
     },
-
     {
       label: "Segmented",
       value: statistics.segmented,
       percentage:
         processingPercentages.segmented,
     },
-
     {
       label: "Vectorized",
       value: statistics.vectorized,
@@ -473,7 +554,6 @@ function App() {
         qualityPercentages.good,
       className: "good",
     },
-
     {
       label: "Acceptable",
       value: statistics.acceptable,
@@ -481,7 +561,6 @@ function App() {
         qualityPercentages.acceptable,
       className: "acceptable",
     },
-
     {
       label: "Poor",
       value: statistics.poor,
@@ -497,7 +576,8 @@ function App() {
       {/* ================= HEADER ================= */}
 
       <header className="header">
-        <div>
+
+        <div className="header-title">
           <h1>
             VietHeritage Data Engine
           </h1>
@@ -507,7 +587,95 @@ function App() {
             Data Quality Dashboard
           </p>
         </div>
+
+        <div className="header-actions">
+
+          <label
+            className={`upload-button ${
+              uploading ? "uploading" : ""
+            }`}
+          >
+            <span>
+              {uploading
+                ? "Uploading..."
+                : "Upload Image"}
+            </span>
+
+            <input
+              type="file"
+              accept=".jpg,.jpeg,.png,image/jpeg,image/png"
+              onChange={handleUpload}
+              disabled={uploading}
+              hidden
+            />
+          </label>
+
+          <button
+            type="button"
+            className="refresh-button"
+            onClick={loadAssets}
+            disabled={loading || uploading}
+          >
+            {loading
+              ? "Loading..."
+              : "Refresh"}
+          </button>
+
+        </div>
+
       </header>
+
+      {/* ================= UPLOAD MESSAGE ================= */}
+
+      {(uploadError ||
+        uploadSuccess ||
+        uploadPreview) && (
+        <section className="upload-section">
+
+          <div className="upload-panel">
+
+            <div className="upload-panel-content">
+
+              <div>
+                <h3>
+                  Image Upload
+                </h3>
+
+                {uploadedFile && (
+                  <p className="upload-file-name">
+                    {uploadedFile.name}
+                  </p>
+                )}
+
+                {uploadError && (
+                  <div className="upload-message upload-message-error">
+                    {uploadError}
+                  </div>
+                )}
+
+                {uploadSuccess && !uploadError && (
+                  <div className="upload-message upload-message-success">
+                    {uploadSuccess}
+                  </div>
+                )}
+
+              </div>
+
+              {uploadPreview && (
+                <div className="upload-preview">
+                  <img
+                    src={uploadPreview}
+                    alt="Uploaded preview"
+                  />
+                </div>
+              )}
+
+            </div>
+
+          </div>
+
+        </section>
+      )}
 
       {/* ================= MAIN ================= */}
 
@@ -565,11 +733,8 @@ function App() {
             </span>
 
             <strong className="stat-value">
-              {statistics.averageQuality !==
-              null
-                ? statistics.averageQuality.toFixed(
-                    1
-                  )
+              {statistics.averageQuality !== null
+                ? statistics.averageQuality.toFixed(1)
                 : "—"}
             </strong>
 
@@ -583,8 +748,6 @@ function App() {
         {/* ================= ANALYTICS ================= */}
 
         <section className="analytics-grid">
-
-          {/* ================= QUALITY ================= */}
 
           <div className="analytics-card">
 
@@ -609,7 +772,6 @@ function App() {
                 >
 
                   <div className="quality-row-top">
-
                     <span>
                       {row.label}
                     </span>
@@ -617,29 +779,23 @@ function App() {
                     <strong>
                       {row.value}
                     </strong>
-
                   </div>
 
                   <div className="quality-track">
-
                     <div
                       className={`quality-fill ${row.className}`}
                       style={{
                         width:
                           `${Math.max(
                             row.percentage,
-                            row.value > 0
-                              ? 3
-                              : 0
+                            row.value > 0 ? 3 : 0
                           )}%`,
                       }}
                     />
-
                   </div>
 
                   <span className="quality-percent">
-                    {row.percentage.toFixed(1)}
-                    %
+                    {row.percentage.toFixed(1)}%
                   </span>
 
                 </div>
@@ -648,8 +804,6 @@ function App() {
             </div>
 
           </div>
-
-          {/* ================= PROCESSING ================= */}
 
           <div className="analytics-card">
 
@@ -688,25 +842,20 @@ function App() {
                   </div>
 
                   <div className="processing-track">
-
                     <div
                       className="processing-fill"
                       style={{
                         width:
                           `${Math.max(
                             row.percentage,
-                            row.value > 0
-                              ? 3
-                              : 0
+                            row.value > 0 ? 3 : 0
                           )}%`,
                       }}
                     />
-
                   </div>
 
                   <span className="processing-percent">
-                    {row.percentage.toFixed(1)}
-                    %
+                    {row.percentage.toFixed(1)}%
                   </span>
 
                 </div>
@@ -722,10 +871,7 @@ function App() {
 
         <section className="filters">
 
-          {/* SEARCH */}
-
           <div className="filter-group filter-search">
-
             <label>
               Search
             </label>
@@ -738,13 +884,9 @@ function App() {
                 setSearch(e.target.value)
               }
             />
-
           </div>
 
-          {/* CATEGORY */}
-
           <div className="filter-group">
-
             <label>
               Category
             </label>
@@ -755,7 +897,6 @@ function App() {
                 setCategory(e.target.value)
               }
             >
-
               <option value="">
                 All categories
               </option>
@@ -768,15 +909,10 @@ function App() {
                   {item}
                 </option>
               ))}
-
             </select>
-
           </div>
 
-          {/* DYNASTY */}
-
           <div className="filter-group">
-
             <label>
               Dynasty
             </label>
@@ -787,7 +923,6 @@ function App() {
                 setDynasty(e.target.value)
               }
             >
-
               <option value="">
                 All dynasties
               </option>
@@ -800,15 +935,10 @@ function App() {
                   {item}
                 </option>
               ))}
-
             </select>
-
           </div>
 
-          {/* PERIOD */}
-
           <div className="filter-group">
-
             <label>
               Period
             </label>
@@ -819,7 +949,6 @@ function App() {
                 setPeriod(e.target.value)
               }
             >
-
               <option value="">
                 All periods
               </option>
@@ -832,15 +961,10 @@ function App() {
                   {item}
                 </option>
               ))}
-
             </select>
-
           </div>
 
-          {/* MOTIF */}
-
           <div className="filter-group">
-
             <label>
               Motif
             </label>
@@ -851,7 +975,6 @@ function App() {
                 setMotif(e.target.value)
               }
             >
-
               <option value="">
                 All motifs
               </option>
@@ -864,15 +987,10 @@ function App() {
                   {item}
                 </option>
               ))}
-
             </select>
-
           </div>
 
-          {/* REGION */}
-
           <div className="filter-group">
-
             <label>
               Region
             </label>
@@ -883,7 +1001,6 @@ function App() {
                 setRegion(e.target.value)
               }
             >
-
               <option value="">
                 All regions
               </option>
@@ -896,15 +1013,10 @@ function App() {
                   {item}
                 </option>
               ))}
-
             </select>
-
           </div>
 
-          {/* QUALITY */}
-
           <div className="filter-group">
-
             <label>
               Quality
             </label>
@@ -915,7 +1027,6 @@ function App() {
                 setQuality(e.target.value)
               }
             >
-
               <option value="">
                 All quality
               </option>
@@ -931,15 +1042,10 @@ function App() {
               <option value="POOR">
                 Poor
               </option>
-
             </select>
-
           </div>
 
-          {/* PROCESSING */}
-
           <div className="filter-group">
-
             <label>
               Processing
             </label>
@@ -952,7 +1058,6 @@ function App() {
                 )
               }
             >
-
               <option value="">
                 All processing
               </option>
@@ -976,14 +1081,11 @@ function App() {
               <option value="vectorized">
                 Vectorized
               </option>
-
             </select>
-
           </div>
 
-          {/* CLEAR */}
-
           <button
+            type="button"
             className="clear-button"
             onClick={clearFilters}
           >
