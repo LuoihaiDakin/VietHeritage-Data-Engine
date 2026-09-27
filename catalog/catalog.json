@@ -1,0 +1,2196 @@
+{
+    "assets": [
+        {
+            "asset_id": "dong_ho_001",
+            "category": "dong_ho",
+            "filename": "dong_ho_001.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_001.jpg"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_001.jpg",
+                "width": 120,
+                "height": 89,
+                "format": "jpg",
+                "size_bytes": 5879
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 13585.99,
+                    "resolution": 70.0,
+                    "overall_score": 83.5,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_001/restored.png",
+                "cleaned": "outputs/dong_ho_001/cleaned.png",
+                "normalized": "outputs/dong_ho_001/normalized.png",
+                "edges": "outputs/dong_ho_001/edges.png",
+                "segmented": "outputs/dong_ho_001/segmented.png",
+                "mask": "outputs/dong_ho_001/mask.png",
+                "svg": "outputs/dong_ho_001/pattern.svg",
+                "quality_report": "outputs/dong_ho_001/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_002",
+            "category": "dong_ho",
+            "filename": "dong_ho_002.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_002.jpg"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_002.jpg",
+                "width": 120,
+                "height": 153,
+                "format": "jpg",
+                "size_bytes": 8217
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 85.0,
+                    "sharpness": 5595.24,
+                    "resolution": 100.0,
+                    "overall_score": 96.25,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_002/restored.png",
+                "cleaned": "outputs/dong_ho_002/cleaned.png",
+                "normalized": "outputs/dong_ho_002/normalized.png",
+                "edges": "outputs/dong_ho_002/edges.png",
+                "segmented": "outputs/dong_ho_002/segmented.png",
+                "mask": "outputs/dong_ho_002/mask.png",
+                "svg": "outputs/dong_ho_002/pattern.svg",
+                "quality_report": "outputs/dong_ho_002/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_003",
+            "category": "dong_ho",
+            "filename": "dong_ho_003.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_003.jpg"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_003.jpg",
+                "width": 120,
+                "height": 178,
+                "format": "jpg",
+                "size_bytes": 10842
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 13292.7,
+                    "resolution": 100.0,
+                    "overall_score": 95.5,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_003/restored.png",
+                "cleaned": "outputs/dong_ho_003/cleaned.png",
+                "normalized": "outputs/dong_ho_003/normalized.png",
+                "edges": "outputs/dong_ho_003/edges.png",
+                "segmented": "outputs/dong_ho_003/segmented.png",
+                "mask": "outputs/dong_ho_003/mask.png",
+                "svg": "outputs/dong_ho_003/pattern.svg",
+                "quality_report": "outputs/dong_ho_003/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_004",
+            "category": "dong_ho",
+            "filename": "dong_ho_004.JPG",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_004.JPG"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_004.JPG",
+                "width": 120,
+                "height": 78,
+                "format": "jpg",
+                "size_bytes": 6507
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 23682.31,
+                    "resolution": 70.0,
+                    "overall_score": 77.5,
+                    "label": "ACCEPTABLE"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_004/restored.png",
+                "cleaned": "outputs/dong_ho_004/cleaned.png",
+                "normalized": "outputs/dong_ho_004/normalized.png",
+                "edges": "outputs/dong_ho_004/edges.png",
+                "segmented": "outputs/dong_ho_004/segmented.png",
+                "mask": "outputs/dong_ho_004/mask.png",
+                "svg": "outputs/dong_ho_004/pattern.svg",
+                "quality_report": "outputs/dong_ho_004/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_005",
+            "category": "dong_ho",
+            "filename": "dong_ho_005.JPG",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_005.JPG"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_005.JPG",
+                "width": 120,
+                "height": 86,
+                "format": "jpg",
+                "size_bytes": 6785
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 24441.1,
+                    "resolution": 70.0,
+                    "overall_score": 77.5,
+                    "label": "ACCEPTABLE"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_005/restored.png",
+                "cleaned": "outputs/dong_ho_005/cleaned.png",
+                "normalized": "outputs/dong_ho_005/normalized.png",
+                "edges": "outputs/dong_ho_005/edges.png",
+                "segmented": "outputs/dong_ho_005/segmented.png",
+                "mask": "outputs/dong_ho_005/mask.png",
+                "svg": "outputs/dong_ho_005/pattern.svg",
+                "quality_report": "outputs/dong_ho_005/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_006",
+            "category": "dong_ho",
+            "filename": "dong_ho_006.JPG",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_006.JPG"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_006.JPG",
+                "width": 120,
+                "height": 160,
+                "format": "jpg",
+                "size_bytes": 8990
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 7869.89,
+                    "resolution": 100.0,
+                    "overall_score": 95.5,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_006/restored.png",
+                "edges": "outputs/dong_ho_006/edges.png",
+                "segmented": "outputs/dong_ho_006/segmented.png",
+                "svg": "outputs/dong_ho_006/pattern.svg",
+                "quality_report": "outputs/dong_ho_006/quality_report.json",
+                "cleaned": "outputs/dong_ho_006/cleaned.png",
+                "normalized": "outputs/dong_ho_006/normalized.png",
+                "mask": "outputs/dong_ho_006/mask.png"
+            }
+        },
+        {
+            "asset_id": "dong_ho_007",
+            "category": "dong_ho",
+            "filename": "dong_ho_007.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_007.jpg"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_007.jpg",
+                "width": 120,
+                "height": 164,
+                "format": "jpg",
+                "size_bytes": 11402
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 17668.34,
+                    "resolution": 100.0,
+                    "overall_score": 91.0,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_007/restored.png",
+                "cleaned": "outputs/dong_ho_007/cleaned.png",
+                "normalized": "outputs/dong_ho_007/normalized.png",
+                "edges": "outputs/dong_ho_007/edges.png",
+                "segmented": "outputs/dong_ho_007/segmented.png",
+                "mask": "outputs/dong_ho_007/mask.png",
+                "svg": "outputs/dong_ho_007/pattern.svg",
+                "quality_report": "outputs/dong_ho_007/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_008",
+            "category": "dong_ho",
+            "filename": "dong_ho_008.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_008.jpg"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_008.jpg",
+                "width": 60,
+                "height": 119,
+                "format": "jpg",
+                "size_bytes": 4799
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 18315.19,
+                    "resolution": 70.0,
+                    "overall_score": 83.5,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_008/restored.png",
+                "cleaned": "outputs/dong_ho_008/cleaned.png",
+                "normalized": "outputs/dong_ho_008/normalized.png",
+                "edges": "outputs/dong_ho_008/edges.png",
+                "segmented": "outputs/dong_ho_008/segmented.png",
+                "mask": "outputs/dong_ho_008/mask.png",
+                "svg": "outputs/dong_ho_008/pattern.svg",
+                "quality_report": "outputs/dong_ho_008/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_009",
+            "category": "dong_ho",
+            "filename": "dong_ho_009.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_009.jpg"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_009.jpg",
+                "width": 120,
+                "height": 169,
+                "format": "jpg",
+                "size_bytes": 14911
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 42235.73,
+                    "resolution": 100.0,
+                    "overall_score": 85.0,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_009/restored.png",
+                "cleaned": "outputs/dong_ho_009/cleaned.png",
+                "normalized": "outputs/dong_ho_009/normalized.png",
+                "edges": "outputs/dong_ho_009/edges.png",
+                "segmented": "outputs/dong_ho_009/segmented.png",
+                "mask": "outputs/dong_ho_009/mask.png",
+                "svg": "outputs/dong_ho_009/pattern.svg",
+                "quality_report": "outputs/dong_ho_009/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_010",
+            "category": "dong_ho",
+            "filename": "dong_ho_010.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_010.jpg"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_010.jpg",
+                "width": 120,
+                "height": 164,
+                "format": "jpg",
+                "size_bytes": 9710
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 13145.8,
+                    "resolution": 100.0,
+                    "overall_score": 95.5,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_010/restored.png",
+                "cleaned": "outputs/dong_ho_010/cleaned.png",
+                "normalized": "outputs/dong_ho_010/normalized.png",
+                "edges": "outputs/dong_ho_010/edges.png",
+                "segmented": "outputs/dong_ho_010/segmented.png",
+                "mask": "outputs/dong_ho_010/mask.png",
+                "svg": "outputs/dong_ho_010/pattern.svg",
+                "quality_report": "outputs/dong_ho_010/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_011",
+            "category": "dong_ho",
+            "filename": "dong_ho_011.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_011.jpg"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_011.jpg",
+                "width": 120,
+                "height": 90,
+                "format": "jpg",
+                "size_bytes": 4492
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 7973.33,
+                    "resolution": 85.0,
+                    "overall_score": 96.25,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_011/restored.png",
+                "cleaned": "outputs/dong_ho_011/cleaned.png",
+                "normalized": "outputs/dong_ho_011/normalized.png",
+                "edges": "outputs/dong_ho_011/edges.png",
+                "segmented": "outputs/dong_ho_011/segmented.png",
+                "mask": "outputs/dong_ho_011/mask.png",
+                "svg": "outputs/dong_ho_011/pattern.svg",
+                "quality_report": "outputs/dong_ho_011/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_012",
+            "category": "dong_ho",
+            "filename": "dong_ho_012.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_012.jpg"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_012.jpg",
+                "width": 120,
+                "height": 78,
+                "format": "jpg",
+                "size_bytes": 6123
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 28224.79,
+                    "resolution": 70.0,
+                    "overall_score": 71.5,
+                    "label": "ACCEPTABLE"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_012/restored.png",
+                "cleaned": "outputs/dong_ho_012/cleaned.png",
+                "normalized": "outputs/dong_ho_012/normalized.png",
+                "edges": "outputs/dong_ho_012/edges.png",
+                "segmented": "outputs/dong_ho_012/segmented.png",
+                "mask": "outputs/dong_ho_012/mask.png",
+                "svg": "outputs/dong_ho_012/pattern.svg",
+                "quality_report": "outputs/dong_ho_012/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_013",
+            "category": "dong_ho",
+            "filename": "dong_ho_013.JPG",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_013.JPG"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_013.JPG",
+                "width": 120,
+                "height": 91,
+                "format": "jpg",
+                "size_bytes": 8235
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 30493.35,
+                    "resolution": 85.0,
+                    "overall_score": 75.25,
+                    "label": "ACCEPTABLE"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_013/restored.png",
+                "cleaned": "outputs/dong_ho_013/cleaned.png",
+                "normalized": "outputs/dong_ho_013/normalized.png",
+                "edges": "outputs/dong_ho_013/edges.png",
+                "segmented": "outputs/dong_ho_013/segmented.png",
+                "mask": "outputs/dong_ho_013/mask.png",
+                "svg": "outputs/dong_ho_013/pattern.svg",
+                "quality_report": "outputs/dong_ho_013/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_014",
+            "category": "dong_ho",
+            "filename": "dong_ho_014.JPG",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_014.JPG"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_014.JPG",
+                "width": 120,
+                "height": 172,
+                "format": "jpg",
+                "size_bytes": 14026
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 32779.6,
+                    "resolution": 100.0,
+                    "overall_score": 91.0,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_014/restored.png",
+                "cleaned": "outputs/dong_ho_014/cleaned.png",
+                "normalized": "outputs/dong_ho_014/normalized.png",
+                "edges": "outputs/dong_ho_014/edges.png",
+                "segmented": "outputs/dong_ho_014/segmented.png",
+                "mask": "outputs/dong_ho_014/mask.png",
+                "svg": "outputs/dong_ho_014/pattern.svg",
+                "quality_report": "outputs/dong_ho_014/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_015",
+            "category": "dong_ho",
+            "filename": "dong_ho_015.JPG",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_015.JPG"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_015.JPG",
+                "width": 120,
+                "height": 91,
+                "format": "jpg",
+                "size_bytes": 5988
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 65.0,
+                    "contrast": 100.0,
+                    "sharpness": 20039.91,
+                    "resolution": 85.0,
+                    "overall_score": 84.75,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_015/restored.png",
+                "cleaned": "outputs/dong_ho_015/cleaned.png",
+                "normalized": "outputs/dong_ho_015/normalized.png",
+                "edges": "outputs/dong_ho_015/edges.png",
+                "segmented": "outputs/dong_ho_015/segmented.png",
+                "mask": "outputs/dong_ho_015/mask.png",
+                "svg": "outputs/dong_ho_015/pattern.svg",
+                "quality_report": "outputs/dong_ho_015/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_016",
+            "category": "dong_ho",
+            "filename": "dong_ho_016.JPG",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_016.JPG"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_016.JPG",
+                "width": 120,
+                "height": 75,
+                "format": "jpg",
+                "size_bytes": 7019
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 35506.34,
+                    "resolution": 70.0,
+                    "overall_score": 71.5,
+                    "label": "ACCEPTABLE"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_016/restored.png",
+                "cleaned": "outputs/dong_ho_016/cleaned.png",
+                "normalized": "outputs/dong_ho_016/normalized.png",
+                "edges": "outputs/dong_ho_016/edges.png",
+                "segmented": "outputs/dong_ho_016/segmented.png",
+                "mask": "outputs/dong_ho_016/mask.png",
+                "svg": "outputs/dong_ho_016/pattern.svg",
+                "quality_report": "outputs/dong_ho_016/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_017",
+            "category": "dong_ho",
+            "filename": "dong_ho_017.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_017.jpg"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_017.jpg",
+                "width": 120,
+                "height": 61,
+                "format": "jpg",
+                "size_bytes": 5162
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 85.0,
+                    "contrast": 100.0,
+                    "sharpness": 19688.38,
+                    "resolution": 70.0,
+                    "overall_score": 74.5,
+                    "label": "ACCEPTABLE"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_017/restored.png",
+                "cleaned": "outputs/dong_ho_017/cleaned.png",
+                "normalized": "outputs/dong_ho_017/normalized.png",
+                "edges": "outputs/dong_ho_017/edges.png",
+                "segmented": "outputs/dong_ho_017/segmented.png",
+                "mask": "outputs/dong_ho_017/mask.png",
+                "svg": "outputs/dong_ho_017/pattern.svg",
+                "quality_report": "outputs/dong_ho_017/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_018",
+            "category": "dong_ho",
+            "filename": "dong_ho_018.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_018.jpg"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_018.jpg",
+                "width": 120,
+                "height": 75,
+                "format": "jpg",
+                "size_bytes": 7045
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 37574.04,
+                    "resolution": 70.0,
+                    "overall_score": 71.5,
+                    "label": "ACCEPTABLE"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_018/restored.png",
+                "cleaned": "outputs/dong_ho_018/cleaned.png",
+                "normalized": "outputs/dong_ho_018/normalized.png",
+                "edges": "outputs/dong_ho_018/edges.png",
+                "segmented": "outputs/dong_ho_018/segmented.png",
+                "mask": "outputs/dong_ho_018/mask.png",
+                "svg": "outputs/dong_ho_018/pattern.svg",
+                "quality_report": "outputs/dong_ho_018/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_019",
+            "category": "dong_ho",
+            "filename": "dong_ho_019.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_019.jpg"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_019.jpg",
+                "width": 120,
+                "height": 61,
+                "format": "jpg",
+                "size_bytes": 7247
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 9928.23,
+                    "resolution": 70.0,
+                    "overall_score": 83.5,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_019/restored.png",
+                "cleaned": "outputs/dong_ho_019/cleaned.png",
+                "normalized": "outputs/dong_ho_019/normalized.png",
+                "edges": "outputs/dong_ho_019/edges.png",
+                "segmented": "outputs/dong_ho_019/segmented.png",
+                "mask": "outputs/dong_ho_019/mask.png",
+                "svg": "outputs/dong_ho_019/pattern.svg",
+                "quality_report": "outputs/dong_ho_019/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_020",
+            "category": "dong_ho",
+            "filename": "dong_ho_020.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_020.jpg"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_020.jpg",
+                "width": 120,
+                "height": 81,
+                "format": "jpg",
+                "size_bytes": 6758
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 28630.39,
+                    "resolution": 70.0,
+                    "overall_score": 77.5,
+                    "label": "ACCEPTABLE"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_020/restored.png",
+                "cleaned": "outputs/dong_ho_020/cleaned.png",
+                "normalized": "outputs/dong_ho_020/normalized.png",
+                "edges": "outputs/dong_ho_020/edges.png",
+                "segmented": "outputs/dong_ho_020/segmented.png",
+                "mask": "outputs/dong_ho_020/mask.png",
+                "svg": "outputs/dong_ho_020/pattern.svg",
+                "quality_report": "outputs/dong_ho_020/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_021",
+            "category": "dong_ho",
+            "filename": "dong_ho_021.JPG",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_021.JPG"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_021.JPG",
+                "width": 120,
+                "height": 170,
+                "format": "jpg",
+                "size_bytes": 13491
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 29779.39,
+                    "resolution": 100.0,
+                    "overall_score": 91.0,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_021/restored.png",
+                "cleaned": "outputs/dong_ho_021/cleaned.png",
+                "normalized": "outputs/dong_ho_021/normalized.png",
+                "edges": "outputs/dong_ho_021/edges.png",
+                "segmented": "outputs/dong_ho_021/segmented.png",
+                "mask": "outputs/dong_ho_021/mask.png",
+                "svg": "outputs/dong_ho_021/pattern.svg",
+                "quality_report": "outputs/dong_ho_021/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_022",
+            "category": "dong_ho",
+            "filename": "dong_ho_022.JPG",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_022.JPG"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_022.JPG",
+                "width": 120,
+                "height": 86,
+                "format": "jpg",
+                "size_bytes": 6718
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 16621.85,
+                    "resolution": 70.0,
+                    "overall_score": 83.5,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_022/restored.png",
+                "cleaned": "outputs/dong_ho_022/cleaned.png",
+                "normalized": "outputs/dong_ho_022/normalized.png",
+                "edges": "outputs/dong_ho_022/edges.png",
+                "segmented": "outputs/dong_ho_022/segmented.png",
+                "mask": "outputs/dong_ho_022/mask.png",
+                "svg": "outputs/dong_ho_022/pattern.svg",
+                "quality_report": "outputs/dong_ho_022/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_023",
+            "category": "dong_ho",
+            "filename": "dong_ho_023.JPG",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_023.JPG"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_023.JPG",
+                "width": 120,
+                "height": 82,
+                "format": "jpg",
+                "size_bytes": 6800
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 25032.23,
+                    "resolution": 70.0,
+                    "overall_score": 77.5,
+                    "label": "ACCEPTABLE"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_023/restored.png",
+                "cleaned": "outputs/dong_ho_023/cleaned.png",
+                "normalized": "outputs/dong_ho_023/normalized.png",
+                "edges": "outputs/dong_ho_023/edges.png",
+                "segmented": "outputs/dong_ho_023/segmented.png",
+                "mask": "outputs/dong_ho_023/mask.png",
+                "svg": "outputs/dong_ho_023/pattern.svg",
+                "quality_report": "outputs/dong_ho_023/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_024",
+            "category": "dong_ho",
+            "filename": "dong_ho_024.JPG",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_024.JPG"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_024.JPG",
+                "width": 120,
+                "height": 164,
+                "format": "jpg",
+                "size_bytes": 13024
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 30548.91,
+                    "resolution": 100.0,
+                    "overall_score": 85.0,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_024/restored.png",
+                "cleaned": "outputs/dong_ho_024/cleaned.png",
+                "normalized": "outputs/dong_ho_024/normalized.png",
+                "edges": "outputs/dong_ho_024/edges.png",
+                "segmented": "outputs/dong_ho_024/segmented.png",
+                "mask": "outputs/dong_ho_024/mask.png",
+                "svg": "outputs/dong_ho_024/pattern.svg",
+                "quality_report": "outputs/dong_ho_024/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_025",
+            "category": "dong_ho",
+            "filename": "dong_ho_025.JPG",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_025.JPG"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_025.JPG",
+                "width": 120,
+                "height": 169,
+                "format": "jpg",
+                "size_bytes": 11022
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 85.0,
+                    "sharpness": 20442.8,
+                    "resolution": 100.0,
+                    "overall_score": 91.75,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_025/restored.png",
+                "cleaned": "outputs/dong_ho_025/cleaned.png",
+                "normalized": "outputs/dong_ho_025/normalized.png",
+                "edges": "outputs/dong_ho_025/edges.png",
+                "segmented": "outputs/dong_ho_025/segmented.png",
+                "mask": "outputs/dong_ho_025/mask.png",
+                "svg": "outputs/dong_ho_025/pattern.svg",
+                "quality_report": "outputs/dong_ho_025/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_026",
+            "category": "dong_ho",
+            "filename": "dong_ho_026.JPG",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_026.JPG"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_026.JPG",
+                "width": 120,
+                "height": 74,
+                "format": "jpg",
+                "size_bytes": 5464
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 24612.77,
+                    "resolution": 70.0,
+                    "overall_score": 83.5,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_026/restored.png",
+                "cleaned": "outputs/dong_ho_026/cleaned.png",
+                "normalized": "outputs/dong_ho_026/normalized.png",
+                "edges": "outputs/dong_ho_026/edges.png",
+                "segmented": "outputs/dong_ho_026/segmented.png",
+                "mask": "outputs/dong_ho_026/mask.png",
+                "svg": "outputs/dong_ho_026/pattern.svg",
+                "quality_report": "outputs/dong_ho_026/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_027",
+            "category": "dong_ho",
+            "filename": "dong_ho_027.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_027.jpg"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_027.jpg",
+                "width": 120,
+                "height": 91,
+                "format": "jpg",
+                "size_bytes": 8109
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 32040.5,
+                    "resolution": 85.0,
+                    "overall_score": 81.25,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_027/restored.png",
+                "cleaned": "outputs/dong_ho_027/cleaned.png",
+                "normalized": "outputs/dong_ho_027/normalized.png",
+                "edges": "outputs/dong_ho_027/edges.png",
+                "segmented": "outputs/dong_ho_027/segmented.png",
+                "mask": "outputs/dong_ho_027/mask.png",
+                "svg": "outputs/dong_ho_027/pattern.svg",
+                "quality_report": "outputs/dong_ho_027/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_028",
+            "category": "dong_ho",
+            "filename": "dong_ho_028.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_028.jpg"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_028.jpg",
+                "width": 120,
+                "height": 90,
+                "format": "jpg",
+                "size_bytes": 5888
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 85.0,
+                    "contrast": 100.0,
+                    "sharpness": 11664.63,
+                    "resolution": 85.0,
+                    "overall_score": 84.25,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_028/restored.png",
+                "cleaned": "outputs/dong_ho_028/cleaned.png",
+                "normalized": "outputs/dong_ho_028/normalized.png",
+                "edges": "outputs/dong_ho_028/edges.png",
+                "segmented": "outputs/dong_ho_028/segmented.png",
+                "mask": "outputs/dong_ho_028/mask.png",
+                "svg": "outputs/dong_ho_028/pattern.svg",
+                "quality_report": "outputs/dong_ho_028/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_029",
+            "category": "dong_ho",
+            "filename": "dong_ho_029.JPG",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_029.JPG"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_029.JPG",
+                "width": 120,
+                "height": 160,
+                "format": "jpg",
+                "size_bytes": 10097
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 85.0,
+                    "sharpness": 21196.19,
+                    "resolution": 100.0,
+                    "overall_score": 91.75,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_029/restored.png",
+                "cleaned": "outputs/dong_ho_029/cleaned.png",
+                "normalized": "outputs/dong_ho_029/normalized.png",
+                "edges": "outputs/dong_ho_029/edges.png",
+                "segmented": "outputs/dong_ho_029/segmented.png",
+                "mask": "outputs/dong_ho_029/mask.png",
+                "svg": "outputs/dong_ho_029/pattern.svg",
+                "quality_report": "outputs/dong_ho_029/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_030",
+            "category": "dong_ho",
+            "filename": "dong_ho_030.JPG",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_030.JPG"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_030.JPG",
+                "width": 120,
+                "height": 89,
+                "format": "jpg",
+                "size_bytes": 7414
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 24640.08,
+                    "resolution": 70.0,
+                    "overall_score": 77.5,
+                    "label": "ACCEPTABLE"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_030/restored.png",
+                "cleaned": "outputs/dong_ho_030/cleaned.png",
+                "normalized": "outputs/dong_ho_030/normalized.png",
+                "edges": "outputs/dong_ho_030/edges.png",
+                "segmented": "outputs/dong_ho_030/segmented.png",
+                "mask": "outputs/dong_ho_030/mask.png",
+                "svg": "outputs/dong_ho_030/pattern.svg",
+                "quality_report": "outputs/dong_ho_030/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_031",
+            "category": "dong_ho",
+            "filename": "dong_ho_031.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_031.jpg"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_031.jpg",
+                "width": 120,
+                "height": 187,
+                "format": "jpg",
+                "size_bytes": 14349
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 37854.88,
+                    "resolution": 100.0,
+                    "overall_score": 79.0,
+                    "label": "ACCEPTABLE"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_031/restored.png",
+                "cleaned": "outputs/dong_ho_031/cleaned.png",
+                "normalized": "outputs/dong_ho_031/normalized.png",
+                "edges": "outputs/dong_ho_031/edges.png",
+                "segmented": "outputs/dong_ho_031/segmented.png",
+                "mask": "outputs/dong_ho_031/mask.png",
+                "svg": "outputs/dong_ho_031/pattern.svg",
+                "quality_report": "outputs/dong_ho_031/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_032",
+            "category": "dong_ho",
+            "filename": "dong_ho_032.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_032.jpg"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_032.jpg",
+                "width": 120,
+                "height": 162,
+                "format": "jpg",
+                "size_bytes": 12127
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 21137.26,
+                    "resolution": 100.0,
+                    "overall_score": 85.0,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_032/restored.png",
+                "cleaned": "outputs/dong_ho_032/cleaned.png",
+                "normalized": "outputs/dong_ho_032/normalized.png",
+                "edges": "outputs/dong_ho_032/edges.png",
+                "segmented": "outputs/dong_ho_032/segmented.png",
+                "mask": "outputs/dong_ho_032/mask.png",
+                "svg": "outputs/dong_ho_032/pattern.svg",
+                "quality_report": "outputs/dong_ho_032/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_033",
+            "category": "dong_ho",
+            "filename": "dong_ho_033.JPG",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_033.JPG"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_033.JPG",
+                "width": 120,
+                "height": 160,
+                "format": "jpg",
+                "size_bytes": 10153
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 85.0,
+                    "sharpness": 23061.46,
+                    "resolution": 100.0,
+                    "overall_score": 91.75,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_033/restored.png",
+                "cleaned": "outputs/dong_ho_033/cleaned.png",
+                "normalized": "outputs/dong_ho_033/normalized.png",
+                "edges": "outputs/dong_ho_033/edges.png",
+                "segmented": "outputs/dong_ho_033/segmented.png",
+                "mask": "outputs/dong_ho_033/mask.png",
+                "svg": "outputs/dong_ho_033/pattern.svg",
+                "quality_report": "outputs/dong_ho_033/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_034",
+            "category": "dong_ho",
+            "filename": "dong_ho_034.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_034.jpg"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_034.jpg",
+                "width": 120,
+                "height": 126,
+                "format": "jpg",
+                "size_bytes": 7863
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 40.0,
+                    "contrast": 100.0,
+                    "sharpness": 20067.13,
+                    "resolution": 100.0,
+                    "overall_score": 88.0,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_034/restored.png",
+                "cleaned": "outputs/dong_ho_034/cleaned.png",
+                "normalized": "outputs/dong_ho_034/normalized.png",
+                "edges": "outputs/dong_ho_034/edges.png",
+                "segmented": "outputs/dong_ho_034/segmented.png",
+                "mask": "outputs/dong_ho_034/mask.png",
+                "svg": "outputs/dong_ho_034/pattern.svg",
+                "quality_report": "outputs/dong_ho_034/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phu_dieu_rong_001",
+            "category": "phu_dieu_rong",
+            "filename": "phu_dieu_rong_001.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phu_dieu_rong_001.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phu_dieu_rong/phu_dieu_rong_001.jpg",
+                "width": 120,
+                "height": 160,
+                "format": "jpg",
+                "size_bytes": 14747
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 30359.77,
+                    "resolution": 100.0,
+                    "overall_score": 79.0,
+                    "label": "ACCEPTABLE"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/phu_dieu_rong_001/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_001/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_001/normalized.png",
+                "edges": "outputs/phu_dieu_rong_001/edges.png",
+                "segmented": "outputs/phu_dieu_rong_001/segmented.png",
+                "mask": "outputs/phu_dieu_rong_001/mask.png",
+                "svg": "outputs/phu_dieu_rong_001/pattern.svg",
+                "quality_report": "outputs/phu_dieu_rong_001/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phu_dieu_rong_002",
+            "category": "phu_dieu_rong",
+            "filename": "phu_dieu_rong_002.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phu_dieu_rong_002.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phu_dieu_rong/phu_dieu_rong_002.jpg",
+                "width": 120,
+                "height": 80,
+                "format": "jpg",
+                "size_bytes": 5401
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 10835.46,
+                    "resolution": 70.0,
+                    "overall_score": 83.5,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/phu_dieu_rong_002/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_002/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_002/normalized.png",
+                "edges": "outputs/phu_dieu_rong_002/edges.png",
+                "segmented": "outputs/phu_dieu_rong_002/segmented.png",
+                "mask": "outputs/phu_dieu_rong_002/mask.png",
+                "svg": "outputs/phu_dieu_rong_002/pattern.svg",
+                "quality_report": "outputs/phu_dieu_rong_002/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phu_dieu_rong_003",
+            "category": "phu_dieu_rong",
+            "filename": "phu_dieu_rong_003.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phu_dieu_rong_003.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phu_dieu_rong/phu_dieu_rong_003.jpg",
+                "width": 120,
+                "height": 160,
+                "format": "jpg",
+                "size_bytes": 10614
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 40.0,
+                    "contrast": 100.0,
+                    "sharpness": 7656.44,
+                    "resolution": 100.0,
+                    "overall_score": 83.5,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/phu_dieu_rong_003/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_003/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_003/normalized.png",
+                "edges": "outputs/phu_dieu_rong_003/edges.png",
+                "segmented": "outputs/phu_dieu_rong_003/segmented.png",
+                "mask": "outputs/phu_dieu_rong_003/mask.png",
+                "svg": "outputs/phu_dieu_rong_003/pattern.svg",
+                "quality_report": "outputs/phu_dieu_rong_003/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phu_dieu_rong_005",
+            "category": "phu_dieu_rong",
+            "filename": "phu_dieu_rong_005.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phu_dieu_rong_005.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phu_dieu_rong/phu_dieu_rong_005.jpg",
+                "width": 120,
+                "height": 120,
+                "format": "jpg",
+                "size_bytes": 9756
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 26750.2,
+                    "resolution": 100.0,
+                    "overall_score": 85.0,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/phu_dieu_rong_005/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_005/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_005/normalized.png",
+                "edges": "outputs/phu_dieu_rong_005/edges.png",
+                "segmented": "outputs/phu_dieu_rong_005/segmented.png",
+                "mask": "outputs/phu_dieu_rong_005/mask.png",
+                "svg": "outputs/phu_dieu_rong_005/pattern.svg",
+                "quality_report": "outputs/phu_dieu_rong_005/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "rong_viet_nam_001",
+            "category": "rong_viet_nam",
+            "filename": "rong_viet_nam_001.JPG",
+            "source": {
+                "type": "dataset",
+                "name": "rong_viet_nam_001.JPG"
+            },
+            "original": {
+                "path": "dataset/images/rong_viet_nam/rong_viet_nam_001.JPG",
+                "width": 120,
+                "height": 90,
+                "format": "jpg",
+                "size_bytes": 5019
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 6036.43,
+                    "resolution": 85.0,
+                    "overall_score": 96.25,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/rong_viet_nam_001/restored.png",
+                "cleaned": "outputs/rong_viet_nam_001/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_001/normalized.png",
+                "edges": "outputs/rong_viet_nam_001/edges.png",
+                "segmented": "outputs/rong_viet_nam_001/segmented.png",
+                "mask": "outputs/rong_viet_nam_001/mask.png",
+                "svg": "outputs/rong_viet_nam_001/pattern.svg",
+                "quality_report": "outputs/rong_viet_nam_001/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "rong_viet_nam_002",
+            "category": "rong_viet_nam",
+            "filename": "rong_viet_nam_002.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "rong_viet_nam_002.jpg"
+            },
+            "original": {
+                "path": "dataset/images/rong_viet_nam/rong_viet_nam_002.jpg",
+                "width": 120,
+                "height": 213,
+                "format": "jpg",
+                "size_bytes": 11941
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 7736.16,
+                    "resolution": 100.0,
+                    "overall_score": 95.5,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/rong_viet_nam_002/restored.png",
+                "cleaned": "outputs/rong_viet_nam_002/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_002/normalized.png",
+                "edges": "outputs/rong_viet_nam_002/edges.png",
+                "segmented": "outputs/rong_viet_nam_002/segmented.png",
+                "mask": "outputs/rong_viet_nam_002/mask.png",
+                "svg": "outputs/rong_viet_nam_002/pattern.svg",
+                "quality_report": "outputs/rong_viet_nam_002/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "rong_viet_nam_003",
+            "category": "rong_viet_nam",
+            "filename": "rong_viet_nam_003.png",
+            "source": {
+                "type": "dataset",
+                "name": "rong_viet_nam_003.png"
+            },
+            "original": {
+                "path": "dataset/images/rong_viet_nam/rong_viet_nam_003.png",
+                "width": 120,
+                "height": 121,
+                "format": "png",
+                "size_bytes": 33668
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 85.0,
+                    "sharpness": 4018.81,
+                    "resolution": 100.0,
+                    "overall_score": 91.75,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/rong_viet_nam_003/restored.png",
+                "cleaned": "outputs/rong_viet_nam_003/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_003/normalized.png",
+                "edges": "outputs/rong_viet_nam_003/edges.png",
+                "segmented": "outputs/rong_viet_nam_003/segmented.png",
+                "mask": "outputs/rong_viet_nam_003/mask.png",
+                "svg": "outputs/rong_viet_nam_003/pattern.svg",
+                "quality_report": "outputs/rong_viet_nam_003/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "rong_viet_nam_004",
+            "category": "rong_viet_nam",
+            "filename": "rong_viet_nam_004.webp",
+            "source": {
+                "type": "dataset",
+                "name": "rong_viet_nam_004.webp"
+            },
+            "original": {
+                "path": "dataset/images/rong_viet_nam/rong_viet_nam_004.webp",
+                "width": 120,
+                "height": 93,
+                "format": "webp",
+                "size_bytes": 8436
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 85.0,
+                    "sharpness": 32379.41,
+                    "resolution": 85.0,
+                    "overall_score": 77.5,
+                    "label": "ACCEPTABLE"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/rong_viet_nam_004/restored.png",
+                "cleaned": "outputs/rong_viet_nam_004/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_004/normalized.png",
+                "edges": "outputs/rong_viet_nam_004/edges.png",
+                "segmented": "outputs/rong_viet_nam_004/segmented.png",
+                "mask": "outputs/rong_viet_nam_004/mask.png",
+                "svg": "outputs/rong_viet_nam_004/pattern.svg",
+                "quality_report": "outputs/rong_viet_nam_004/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "rong_viet_nam_005",
+            "category": "rong_viet_nam",
+            "filename": "rong_viet_nam_005.png",
+            "source": {
+                "type": "dataset",
+                "name": "rong_viet_nam_005.png"
+            },
+            "original": {
+                "path": "dataset/images/rong_viet_nam/rong_viet_nam_005.png",
+                "width": 120,
+                "height": 129,
+                "format": "png",
+                "size_bytes": 32758
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 2151.12,
+                    "resolution": 100.0,
+                    "overall_score": 100.0,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/rong_viet_nam_005/restored.png",
+                "cleaned": "outputs/rong_viet_nam_005/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_005/normalized.png",
+                "edges": "outputs/rong_viet_nam_005/edges.png",
+                "segmented": "outputs/rong_viet_nam_005/segmented.png",
+                "mask": "outputs/rong_viet_nam_005/mask.png",
+                "svg": "outputs/rong_viet_nam_005/pattern.svg",
+                "quality_report": "outputs/rong_viet_nam_005/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "rong_viet_nam_006",
+            "category": "rong_viet_nam",
+            "filename": "rong_viet_nam_006.png",
+            "source": {
+                "type": "dataset",
+                "name": "rong_viet_nam_006.png"
+            },
+            "original": {
+                "path": "dataset/images/rong_viet_nam/rong_viet_nam_006.png",
+                "width": 120,
+                "height": 176,
+                "format": "png",
+                "size_bytes": 38773
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "sharpness": 1754.46,
+                    "resolution": 100.0,
+                    "overall_score": 100.0,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/rong_viet_nam_006/restored.png",
+                "cleaned": "outputs/rong_viet_nam_006/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_006/normalized.png",
+                "edges": "outputs/rong_viet_nam_006/edges.png",
+                "segmented": "outputs/rong_viet_nam_006/segmented.png",
+                "mask": "outputs/rong_viet_nam_006/mask.png",
+                "svg": "outputs/rong_viet_nam_006/pattern.svg",
+                "quality_report": "outputs/rong_viet_nam_006/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "rong_viet_nam_007",
+            "category": "rong_viet_nam",
+            "filename": "rong_viet_nam_007.png",
+            "source": {
+                "type": "dataset",
+                "name": "rong_viet_nam_007.png"
+            },
+            "original": {
+                "path": "dataset/images/rong_viet_nam/rong_viet_nam_007.png",
+                "width": 120,
+                "height": 119,
+                "format": "png",
+                "size_bytes": 30568
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": {
+                    "brightness": 40.0,
+                    "contrast": 100.0,
+                    "sharpness": 3871.66,
+                    "resolution": 85.0,
+                    "overall_score": 84.25,
+                    "label": "GOOD"
+                },
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {
+                "restored": "outputs/rong_viet_nam_007/restored.png",
+                "cleaned": "outputs/rong_viet_nam_007/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_007/normalized.png",
+                "edges": "outputs/rong_viet_nam_007/edges.png",
+                "segmented": "outputs/rong_viet_nam_007/segmented.png",
+                "mask": "outputs/rong_viet_nam_007/mask.png",
+                "svg": "outputs/rong_viet_nam_007/pattern.svg",
+                "quality_report": "outputs/rong_viet_nam_007/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "uploaded_001",
+            "category": "uploaded",
+            "filename": "_chikawa__chikawawa_16a0d00c.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "_chikawa__chikawawa_16a0d00c.jpg"
+            },
+            "original": {
+                "path": "dataset/images/uploaded/_chikawa__chikawawa_16a0d00c.jpg",
+                "width": 736,
+                "height": 736,
+                "format": "jpg",
+                "size_bytes": 37368
+            },
+            "processing": {
+                "preprocessed": false,
+                "restored": false,
+                "normalized": false,
+                "segmented": false,
+                "vectorized": false
+            },
+            "quality": {
+                "brightness": null,
+                "contrast": null,
+                "sharpness": null,
+                "resolution": null,
+                "overall_score": null,
+                "label": null
+            },
+            "outputs": {}
+        }
+    ]
+}

@@ -9,6 +9,16 @@
             "sharpness": 20039.91,
             "noise": 13.07,
             "edge_density": 0.1908
+        },
+        "quality": {
+            "quality": "GOOD",
+            "score": 84.75,
+            "component_scores": {
+                "resolution": 85.0,
+                "brightness": 65.0,
+                "contrast": 100.0,
+                "noise": 85.0
+            }
         }
     },
     "restored": {
@@ -21,6 +31,16 @@
             "sharpness": 2299.31,
             "noise": 1.02,
             "edge_density": 0.088
+        },
+        "quality": {
+            "quality": "GOOD",
+            "score": 93.0,
+            "component_scores": {
+                "resolution": 100.0,
+                "brightness": 65.0,
+                "contrast": 100.0,
+                "noise": 100.0
+            }
         }
     },
     "cleaned": {
@@ -33,6 +53,16 @@
             "sharpness": 2125.52,
             "noise": 0.93,
             "edge_density": 0.092
+        },
+        "quality": {
+            "quality": "GOOD",
+            "score": 97.0,
+            "component_scores": {
+                "resolution": 100.0,
+                "brightness": 85.0,
+                "contrast": 100.0,
+                "noise": 100.0
+            }
         }
     },
     "normalized": {
@@ -45,6 +75,16 @@
             "sharpness": 2125.52,
             "noise": 0.93,
             "edge_density": 0.092
+        },
+        "quality": {
+            "quality": "GOOD",
+            "score": 97.0,
+            "component_scores": {
+                "resolution": 100.0,
+                "brightness": 85.0,
+                "contrast": 100.0,
+                "noise": 100.0
+            }
         }
     },
     "outputs": {

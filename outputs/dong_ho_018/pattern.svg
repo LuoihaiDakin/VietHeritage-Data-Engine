@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300">
+  <g fill="black" stroke="none">
+    <path d="M 16 15 L 15 282 L 462 281 L 464 18 Z"/>
+    <path d="M 63 67 L 64 68 L 64 85 L 63 86 L 63 90 L 62 91 L 62 92 L 59 95 L 59 96 L 53 102 L 52 102 L 50 104 L 48 104 L 47 105 L 45 105 L 42 107 L 40 107 L 39 108 L 38 108 L 36 110 L 35 113 L 33 115 L 33 116 L 31 119 L 31 121 L 29 123 L 29 124 L 25 128 L 20 128 L 18 126 L 18 78 L 19 77 L 23 77 L 24 78 L 26 78 L 27 79 L 32 81 L 34 83 L 35 83 L 36 84 L 39 84 L 40 83 L 45 81 L 47 79 L 48 79 L 59 67 Z"/>
+  </g>
+</svg>
