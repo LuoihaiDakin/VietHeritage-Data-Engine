@@ -1,0 +1,90 @@
+{
+    "model": {
+        "name": "HOG + SVM",
+        "algorithm": "Support Vector Machine",
+        "kernel": "RBF"
+    },
+    "feature_extraction": {
+        "method": "HOG",
+        "image_size": [
+            128,
+            128
+        ],
+        "orientations": 9,
+        "pixels_per_cell": [
+            8,
+            8
+        ],
+        "cells_per_block": [
+            2,
+            2
+        ]
+    },
+    "training": {
+        "samples": 31,
+        "feature_dimension": 8100,
+        "categories": [
+            "dong_ho",
+            "phu_dieu_rong",
+            "rong_viet_nam"
+        ],
+        "category_distribution": {
+            "rong_viet_nam": 5,
+            "dong_ho": 24,
+            "phu_dieu_rong": 2
+        }
+    },
+    "validation": {
+        "samples": 7,
+        "accuracy": 0.7142857142857143,
+        "category_distribution": {
+            "dong_ho": 5,
+            "rong_viet_nam": 1,
+            "phu_dieu_rong": 1
+        }
+    },
+    "assets": {
+        "train": [
+            "rong_viet_nam_007",
+            "dong_ho_005",
+            "dong_ho_030",
+            "dong_ho_002",
+            "dong_ho_014",
+            "dong_ho_023",
+            "dong_ho_007",
+            "rong_viet_nam_003",
+            "dong_ho_009",
+            "dong_ho_032",
+            "dong_ho_027",
+            "phu_dieu_rong_002",
+            "dong_ho_022",
+            "dong_ho_034",
+            "dong_ho_004",
+            "rong_viet_nam_001",
+            "dong_ho_033",
+            "dong_ho_018",
+            "dong_ho_026",
+            "dong_ho_003",
+            "dong_ho_010",
+            "dong_ho_024",
+            "dong_ho_028",
+            "dong_ho_008",
+            "dong_ho_015",
+            "phu_dieu_rong_003",
+            "dong_ho_001",
+            "dong_ho_031",
+            "rong_viet_nam_002",
+            "rong_viet_nam_005",
+            "dong_ho_019"
+        ],
+        "validation": [
+            "dong_ho_017",
+            "dong_ho_029",
+            "dong_ho_012",
+            "rong_viet_nam_004",
+            "dong_ho_016",
+            "dong_ho_011",
+            "phu_dieu_rong_001"
+        ]
+    }
+}
