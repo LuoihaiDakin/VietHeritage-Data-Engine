@@ -1,5 +1,5 @@
-import os
 import json
+from pathlib import Path
 import sys
 
 
@@ -7,451 +7,450 @@ import sys
 # PROJECT ROOT
 # ============================================================
 
-BASE_DIR = os.path.dirname(
-    os.path.dirname(
-        os.path.abspath(__file__)
-    )
-)
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
-if BASE_DIR not in sys.path:
-    sys.path.insert(0, BASE_DIR)
-
-
-from catalog.catalog_manager import (
-    get_all_assets,
-    update_asset,
-    update_quality,
-    update_processing_status,
-    update_output
-)
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 
 # ============================================================
 # PATHS
 # ============================================================
 
-OUTPUTS_DIR = os.path.join(
-    BASE_DIR,
-    "outputs"
-)
+CATALOG_PATH = PROJECT_ROOT / "catalog" / "catalog.json"
+OUTPUTS_DIR = PROJECT_ROOT / "outputs"
 
 
 # ============================================================
-# HELPERS
+# LOAD / SAVE
 # ============================================================
 
-def normalize_path(path):
-    """
-    Convert a path to a normalized project-relative path.
+def load_catalog():
+    with open(
+        CATALOG_PATH,
+        "r",
+        encoding="utf-8"
+    ) as f:
+        return json.load(f)
 
-    This makes paths consistent on Windows and avoids
-    storing different slash styles in catalog.json.
-    """
 
-    if not path:
-        return None
-
-    path = os.path.normpath(path)
-
-    try:
-        relative_path = os.path.relpath(
-            path,
-            BASE_DIR
+def save_catalog(data):
+    with open(
+        CATALOG_PATH,
+        "w",
+        encoding="utf-8"
+    ) as f:
+        json.dump(
+            data,
+            f,
+            ensure_ascii=False,
+            indent=4
         )
-
-        return relative_path.replace(
-            "\\",
-            "/"
-        )
-
-    except ValueError:
-        return path.replace(
-            "\\",
-            "/"
-        )
-
-
-def load_quality_report(report_path):
-    """
-    Load one quality_report.json file.
-    """
-
-    try:
-        with open(
-            report_path,
-            "r",
-            encoding="utf-8"
-        ) as file:
-
-            return json.load(file)
-
-    except Exception as error:
-
-        print(
-            f"[ERROR] Cannot read report: "
-            f"{report_path}"
-        )
-
-        print(
-            f"        {error}"
-        )
-
-        return None
-
-
-def find_quality_report(asset_id):
-    """
-    Find the quality report belonging to an asset.
-
-    Expected structure:
-
-        outputs/
-            asset_id/
-                quality_report.json
-    """
-
-    report_path = os.path.join(
-        OUTPUTS_DIR,
-        asset_id,
-        "quality_report.json"
-    )
-
-    if not os.path.isfile(report_path):
-        return None
-
-    return report_path
 
 
 # ============================================================
-# SYNC ONE ASSET
+# QUALITY SYNC
 # ============================================================
 
-def sync_asset(asset):
+def sync_quality(asset, report):
     """
-    Synchronize one catalog asset with its existing
-    processing results.
+    Read quality information from:
+
+        quality_report.json
+        └── input
+            ├── metrics
+            └── quality
+                ├── quality
+                ├── score
+                └── component_scores
+
+    Then convert it into the normalized catalog structure.
     """
 
-    asset_id = asset.get(
-        "asset_id"
-    )
+    input_data = report.get("input", {})
 
-    if not asset_id:
-
-        print(
-            "[SKIP] Asset without asset_id"
-        )
-
-        return False
-
-
-    # --------------------------------------------------------
-    # Find quality report
-    # --------------------------------------------------------
-
-    report_path = find_quality_report(
-        asset_id
-    )
-
-    if report_path is None:
-
-        print(
-            f"[SKIP] {asset_id}"
-            f" -> quality_report.json not found"
-        )
-
-        return False
-
-
-    # --------------------------------------------------------
-    # Load report
-    # --------------------------------------------------------
-
-    report = load_quality_report(
-        report_path
-    )
-
-    if report is None:
-        return False
-
-
-    # --------------------------------------------------------
-    # Get original/input quality
-    # --------------------------------------------------------
-
-    input_data = report.get(
-        "input",
-        {}
-    )
-
-    input_metrics = input_data.get(
+    metrics = input_data.get(
         "metrics",
         {}
     )
 
-    input_quality = input_data.get(
+    quality_data = input_data.get(
         "quality",
         {}
     )
 
-
-    # --------------------------------------------------------
-    # Quality values
-    # --------------------------------------------------------
-
-    component_scores = input_quality.get(
+    component_scores = quality_data.get(
         "component_scores",
         {}
     )
 
-    quality_data = {
-
-        "brightness": component_scores.get(
-            "brightness"
-        ),
-
-        "contrast": component_scores.get(
-            "contrast"
-        ),
-
-        "sharpness": input_metrics.get(
-            "sharpness"
-        ),
-
-        "resolution": component_scores.get(
-            "resolution"
-        ),
-
-        "overall_score": input_quality.get(
-            "score"
-        ),
-
-        "label": input_quality.get(
-            "quality"
-        )
-    }
-
-
     # --------------------------------------------------------
-    # Update quality
+    # Actual measured values
     # --------------------------------------------------------
 
-    update_quality(
-        asset_id,
-        quality_data
+    brightness = metrics.get(
+        "brightness"
     )
 
+    contrast = metrics.get(
+        "contrast"
+    )
+
+    sharpness = metrics.get(
+        "sharpness"
+    )
 
     # --------------------------------------------------------
-    # Processing status
+    # Component quality scores
     # --------------------------------------------------------
 
-    processing_stages = {
+    resolution = component_scores.get(
+        "resolution"
+    )
 
-        "preprocessed": True,
+    # --------------------------------------------------------
+    # Overall quality
+    # --------------------------------------------------------
 
-        "restored": os.path.isfile(
-            os.path.join(
-                OUTPUTS_DIR,
-                asset_id,
-                "restored.png"
-            )
-        ),
+    overall_score = quality_data.get(
+        "score"
+    )
 
-        "normalized": os.path.isfile(
-            os.path.join(
-                OUTPUTS_DIR,
-                asset_id,
-                "normalized.png"
-            )
-        ),
+    label = quality_data.get(
+        "quality"
+    )
 
-        "segmented": os.path.isfile(
-            os.path.join(
-                OUTPUTS_DIR,
-                asset_id,
-                "segmented.png"
-            )
-        ),
+    # --------------------------------------------------------
+    # Store clean catalog structure
+    # --------------------------------------------------------
 
-        "vectorized": os.path.isfile(
-            os.path.join(
-                OUTPUTS_DIR,
-                asset_id,
-                "pattern.svg"
-            )
-        )
+    asset["quality"] = {
+        "brightness": brightness,
+        "contrast": contrast,
+        "sharpness": sharpness,
+        "resolution": resolution,
+        "overall_score": overall_score,
+        "label": label
     }
 
+    return label, overall_score
 
-    for stage, status in processing_stages.items():
 
-        update_processing_status(
-            asset_id,
-            stage,
-            status
-        )
+# ============================================================
+# PROCESSING SYNC
+# ============================================================
 
+def sync_processing(asset, output_dir):
+
+    processing = asset.setdefault(
+        "processing",
+        {}
+    )
+
+    outputs = asset.setdefault(
+        "outputs",
+        {}
+    )
 
     # --------------------------------------------------------
     # Output files
     # --------------------------------------------------------
 
-    asset_output_dir = os.path.join(
-        OUTPUTS_DIR,
-        asset_id
-    )
-
-
     output_files = {
-
         "restored": "restored.png",
-
         "cleaned": "cleaned.png",
-
         "normalized": "normalized.png",
-
         "edges": "edges.png",
-
         "segmented": "segmented.png",
-
         "mask": "mask.png",
-
         "svg": "pattern.svg",
-
         "quality_report": "quality_report.json"
     }
 
-
-    for output_name, filename in output_files.items():
-
-        full_path = os.path.join(
-            asset_output_dir,
-            filename
-        )
-
-        if os.path.isfile(full_path):
-
-            relative_path = normalize_path(
-                full_path
-            )
-
-            update_output(
-                asset_id,
-                output_name,
-                relative_path
-            )
-
-
     # --------------------------------------------------------
-    # Print result
+    # Save relative output paths
     # --------------------------------------------------------
 
-    label = quality_data.get(
+    for key, filename in output_files.items():
+
+        path = output_dir / filename
+
+        if path.exists():
+
+            relative_path = (
+                Path("outputs")
+                / asset["asset_id"]
+                / filename
+            )
+
+            outputs[key] = relative_path.as_posix()
+
+    # --------------------------------------------------------
+    # Processing flags
+    # --------------------------------------------------------
+
+    processing["preprocessed"] = (
+        output_dir / "cleaned.png"
+    ).exists()
+
+    processing["restored"] = (
+        output_dir / "restored.png"
+    ).exists()
+
+    processing["normalized"] = (
+        output_dir / "normalized.png"
+    ).exists()
+
+    processing["segmented"] = (
+        output_dir / "segmented.png"
+    ).exists()
+
+    processing["vectorized"] = (
+        output_dir / "pattern.svg"
+    ).exists()
+
+
+# ============================================================
+# LINEAGE SYNC
+# ============================================================
+
+def sync_lineage(asset):
+
+    lineage = asset.get(
+        "lineage"
+    )
+
+    if not lineage:
+        return
+
+    quality = asset.get(
+        "quality",
+        {}
+    )
+
+    quality_label = quality.get(
         "label"
     )
 
-    score = quality_data.get(
+    quality_score = quality.get(
         "overall_score"
     )
 
+    # --------------------------------------------------------
+    # Update QUALITY_EVALUATION stage
+    # --------------------------------------------------------
 
-    print(
-        f"[SYNC] {asset_id:<25}"
-        f" {label:<12}"
-        f" score={score}"
-    )
-
-    return True
-
-
-# ============================================================
-# SYNC ALL ASSETS
-# ============================================================
-
-def sync_catalog():
-    """
-    Synchronize all assets currently registered
-    in catalog.json.
-    """
-
-    print()
-    print("=" * 70)
-    print("VIETHERITAGE CATALOG SYNCHRONIZATION")
-    print("=" * 70)
-    print()
-
-    if not os.path.isdir(
-        OUTPUTS_DIR
+    for stage in lineage.get(
+        "stages",
+        []
     ):
 
-        print(
-            "[ERROR] outputs directory not found:"
+        if stage.get(
+            "stage"
+        ) == "QUALITY_EVALUATION":
+
+            if quality_label is not None:
+
+                stage["status"] = "completed"
+
+                stage["quality"] = {
+                    "label": quality_label,
+                    "score": quality_score
+                }
+
+    # --------------------------------------------------------
+    # Recalculate lineage completion
+    # --------------------------------------------------------
+
+    stages = lineage.get(
+        "stages",
+        []
+    )
+
+    completed_stages = sum(
+        1
+        for stage in stages
+        if stage.get("status")
+        in (
+            "available",
+            "completed"
         )
+    )
 
-        print(
-            OUTPUTS_DIR
+    total_stages = len(
+        stages
+    )
+
+    completion_ratio = (
+        round(
+            completed_stages / total_stages,
+            2
         )
+        if total_stages > 0
+        else 0
+    )
 
-        return
-
-
-    assets = get_all_assets()
-
-    if not assets:
-
-        print(
-            "[INFO] No assets found in catalog."
-        )
-
-        return
+    lineage["final_state"] = {
+        "completed_stages": completed_stages,
+        "total_stages": total_stages,
+        "completion_ratio": completion_ratio,
+        "quality_label": quality_label,
+        "quality_score": quality_score
+    }
 
 
-    total = len(
-        assets
+# ============================================================
+# MAIN
+# ============================================================
+
+def main():
+
+    print("=" * 70)
+    print("VIETHERITAGE CATALOG SYNC")
+    print("=" * 70)
+
+    catalog = load_catalog()
+
+    assets = catalog.get(
+        "assets",
+        []
     )
 
     synced = 0
     skipped = 0
 
+    good = 0
+    acceptable = 0
+    poor = 0
 
-    print(
-        f"Catalog assets: {total}"
-    )
-
-    print(
-        f"Outputs directory: {OUTPUTS_DIR}"
-    )
-
-    print()
-
+    # ========================================================
+    # PROCESS ALL ASSETS
+    # ========================================================
 
     for asset in assets:
 
-        success = sync_asset(
+        asset_id = asset.get(
+            "asset_id"
+        )
+
+        if not asset_id:
+
+            skipped += 1
+            continue
+
+        output_dir = (
+            OUTPUTS_DIR / asset_id
+        )
+
+        report_path = (
+            output_dir /
+            "quality_report.json"
+        )
+
+        # ----------------------------------------------------
+        # Missing report
+        # ----------------------------------------------------
+
+        if not report_path.exists():
+
+            print(
+                f"[SKIP] {asset_id:<30} "
+                f"quality_report.json not found"
+            )
+
+            skipped += 1
+            continue
+
+        # ----------------------------------------------------
+        # Load report
+        # ----------------------------------------------------
+
+        try:
+
+            with open(
+                report_path,
+                "r",
+                encoding="utf-8"
+            ) as f:
+
+                report = json.load(f)
+
+        except Exception as e:
+
+            print(
+                f"[ERROR] {asset_id:<30} "
+                f"{e}"
+            )
+
+            skipped += 1
+            continue
+
+        # ----------------------------------------------------
+        # Sync quality
+        # ----------------------------------------------------
+
+        label, score = sync_quality(
+            asset,
+            report
+        )
+
+        # ----------------------------------------------------
+        # Sync processing
+        # ----------------------------------------------------
+
+        sync_processing(
+            asset,
+            output_dir
+        )
+
+        # ----------------------------------------------------
+        # Sync lineage
+        # ----------------------------------------------------
+
+        sync_lineage(
             asset
         )
 
-        if success:
+        # ----------------------------------------------------
+        # Statistics
+        # ----------------------------------------------------
 
-            synced += 1
+        if label == "GOOD":
+            good += 1
 
-        else:
+        elif label == "ACCEPTABLE":
+            acceptable += 1
 
-            skipped += 1
+        elif label == "POOR":
+            poor += 1
 
+        synced += 1
 
-    # --------------------------------------------------------
-    # Summary
-    # --------------------------------------------------------
+        print(
+            f"[SYNC] {asset_id:<30} "
+            f"{str(label):<12} "
+            f"score={score}"
+        )
+
+    # ========================================================
+    # SAVE
+    # ========================================================
+
+    save_catalog(
+        catalog
+    )
+
+    # ========================================================
+    # SUMMARY
+    # ========================================================
 
     print()
     print("=" * 70)
-    print("SYNCHRONIZATION COMPLETE")
+    print("SYNC COMPLETE")
     print("=" * 70)
 
     print(
-        f"Total assets : {total}"
+        f"Total assets : {len(assets)}"
     )
 
     print(
@@ -462,14 +461,30 @@ def sync_catalog():
         f"Skipped      : {skipped}"
     )
 
-    print("=" * 70)
     print()
+    print("QUALITY")
+
+    print(
+        f"GOOD         : {good}"
+    )
+
+    print(
+        f"ACCEPTABLE   : {acceptable}"
+    )
+
+    print(
+        f"POOR         : {poor}"
+    )
+
+    print()
+    print(
+        "catalog/catalog.json updated."
+    )
 
 
 # ============================================================
-# MAIN
+# ENTRY POINT
 # ============================================================
 
 if __name__ == "__main__":
-
-    sync_catalog()
+    main()
