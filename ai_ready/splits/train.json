@@ -1,0 +1,318 @@
+{
+    "dataset": "VietHeritage AI-Ready Dataset",
+    "split": "train",
+    "seed": 42,
+    "count": 31,
+    "assets": [
+        {
+            "asset_id": "rong_viet_nam_007",
+            "category": "rong_viet_nam",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_007.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 84.25
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_005",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_005.png",
+            "quality": {
+                "label": "ACCEPTABLE",
+                "overall_score": 77.5
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_030",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_030.png",
+            "quality": {
+                "label": "ACCEPTABLE",
+                "overall_score": 77.5
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_002",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_002.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 96.25
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_014",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_014.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 91.0
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_023",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_023.png",
+            "quality": {
+                "label": "ACCEPTABLE",
+                "overall_score": 77.5
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_007",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_007.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 91.0
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "rong_viet_nam_003",
+            "category": "rong_viet_nam",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_003.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 91.75
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_009",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_009.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 85.0
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_032",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_032.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 85.0
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_027",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_027.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 81.25
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "phu_dieu_rong_002",
+            "category": "phu_dieu_rong",
+            "image": "ai_ready/images/phu_dieu_rong/phu_dieu_rong_002.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 83.5
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_022",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_022.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 83.5
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_034",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_034.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 88.0
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_004",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_004.png",
+            "quality": {
+                "label": "ACCEPTABLE",
+                "overall_score": 77.5
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "rong_viet_nam_001",
+            "category": "rong_viet_nam",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_001.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 96.25
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_033",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_033.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 91.75
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_018",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_018.png",
+            "quality": {
+                "label": "ACCEPTABLE",
+                "overall_score": 71.5
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_026",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_026.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 83.5
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_003",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_003.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 95.5
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_010",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_010.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 95.5
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_024",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_024.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 85.0
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_028",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_028.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 84.25
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_008",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_008.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 83.5
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_015",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_015.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 84.75
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "phu_dieu_rong_003",
+            "category": "phu_dieu_rong",
+            "image": "ai_ready/images/phu_dieu_rong/phu_dieu_rong_003.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 83.5
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_001",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_001.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 83.5
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_031",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_031.png",
+            "quality": {
+                "label": "ACCEPTABLE",
+                "overall_score": 79.0
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "rong_viet_nam_002",
+            "category": "rong_viet_nam",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_002.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 95.5
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "rong_viet_nam_005",
+            "category": "rong_viet_nam",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_005.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0
+            },
+            "split": "train"
+        },
+        {
+            "asset_id": "dong_ho_019",
+            "category": "dong_ho",
+            "image": "ai_ready/images/dong_ho/dong_ho_019.png",
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 83.5
+            },
+            "split": "train"
+        }
+    ]
+}
