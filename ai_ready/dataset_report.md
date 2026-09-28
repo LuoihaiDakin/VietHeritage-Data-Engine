@@ -2,17 +2,17 @@
 
 **Validation status:** `VALID`
 
-**Validated at:** 2026-09-28T22:46:03+07:00
+**Validated at:** 2026-09-29T00:50:21+07:00
 
 ## Dataset Statistics
 
-- Total assets: 45
-- Valid assets: 45
+- Total assets: 90
+- Valid assets: 90
 - Invalid assets: 0
 - Missing files: 0
 - Unreadable files: 0
 - Duplicate groups: 0
-- Dataset size: 16.13 MB
+- Dataset size: 71.19 MB
 
 ## Category Distribution
 
@@ -20,13 +20,18 @@
 |---|---:|
 | dong_ho | 34 |
 | phu_dieu_rong | 4 |
-| rong_viet_nam | 7 |
+| rong_viet_nam | 24 |
+| uploaded | 1 |
+| phuong | 14 |
+| sen | 4 |
+| other | 6 |
+| trong_dong | 3 |
 
 ## Quality Distribution
 
 | Quality | Assets |
 |---|---:|
-| GOOD | 32 |
+| GOOD | 77 |
 | ACCEPTABLE | 13 |
 
 ## Image Dimensions
@@ -62,6 +67,44 @@
 | 480x516 | 1 |
 | 480x704 | 1 |
 | 480x476 | 1 |
+| 1200x1200 | 1 |
+| 828x1200 | 1 |
+| 1200x800 | 3 |
+| 1053x1200 | 1 |
+| 586x1200 | 1 |
+| 1200x720 | 1 |
+| 1200x622 | 1 |
+| 1200x306 | 1 |
+| 941x1200 | 1 |
+| 1200x798 | 1 |
+| 800x1200 | 6 |
+| 804x1200 | 1 |
+| 1200x1135 | 1 |
+| 1200x900 | 1 |
+| 906x1200 | 1 |
+| 825x1200 | 1 |
+| 1200x1095 | 1 |
+| 917x1200 | 1 |
+| 1200x676 | 1 |
+| 1200x950 | 1 |
+| 940x1200 | 1 |
+| 708x1200 | 1 |
+| 1200x726 | 1 |
+| 1121x1200 | 1 |
+| 1200x744 | 1 |
+| 1200x1072 | 1 |
+| 1200x675 | 1 |
+| 838x1200 | 1 |
+| 1200x855 | 1 |
+| 1200x749 | 1 |
+| 1082x1200 | 1 |
+| 1081x1200 | 1 |
+| 947x1200 | 1 |
+| 1200x777 | 1 |
+| 760x1200 | 1 |
+| 1200x942 | 1 |
+| 1200x1116 | 1 |
+| 1200x627 | 1 |
 
 ## Validation Checks
 

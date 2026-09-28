@@ -33,10 +33,18 @@ AI_READY_DIR = os.path.join(
     "ai_ready"
 )
 
+# ------------------------------------------------------------
+# V3 classification manifest
+# ------------------------------------------------------------
+
 MANIFEST_FILE = os.path.join(
     AI_READY_DIR,
-    "manifest.json"
+    "classification_manifest.json"
 )
+
+# ------------------------------------------------------------
+# Original AI-ready validation report
+# ------------------------------------------------------------
 
 VALIDATION_REPORT = os.path.join(
     AI_READY_DIR,
@@ -66,6 +74,15 @@ TEST_FILE = os.path.join(
 SPLIT_REPORT_FILE = os.path.join(
     SPLITS_DIR,
     "split_report.json"
+)
+
+
+# ============================================================
+# DATASET NAME
+# ============================================================
+
+DATASET_NAME = (
+    "VietHeritage Classification Dataset V3"
 )
 
 
@@ -465,14 +482,14 @@ def create_splits():
 
     print()
     print("=" * 70)
-    print("VIETHERITAGE DATASET SPLIT")
+    print("VIETHERITAGE CLASSIFICATION DATASET V3 SPLIT")
     print("=" * 70)
     print()
 
     validate_ratios()
 
     # --------------------------------------------------------
-    # Check validation
+    # Check original AI-ready validation
     # --------------------------------------------------------
 
     validation_report = (
@@ -484,7 +501,7 @@ def create_splits():
     )
 
     # --------------------------------------------------------
-    # Load manifest
+    # Load classification manifest
     # --------------------------------------------------------
 
     manifest = load_json(
@@ -499,11 +516,46 @@ def create_splits():
     if not assets:
 
         raise RuntimeError(
-            "No AI-ready assets found in manifest."
+            "No classification assets found "
+            "in classification_manifest.json."
         )
 
     print(
-        f"AI-ready assets    : {len(assets)}"
+        f"Classification assets : {len(assets)}"
+    )
+
+    # --------------------------------------------------------
+    # Safety check
+    # --------------------------------------------------------
+
+    excluded_categories = {
+        "other",
+        "uploaded"
+    }
+
+    remaining_excluded = [
+        asset
+        for asset in assets
+        if asset.get("category") in excluded_categories
+    ]
+
+    if remaining_excluded:
+
+        raise RuntimeError(
+            "Excluded categories found in "
+            "classification manifest: "
+            + ", ".join(
+                sorted(
+                    set(
+                        asset.get("category")
+                        for asset in remaining_excluded
+                    )
+                )
+            )
+        )
+
+    print(
+        "Excluded categories : PASS"
     )
 
     # --------------------------------------------------------
@@ -660,7 +712,7 @@ def create_splits():
         TRAIN_FILE,
         {
             "dataset":
-                "VietHeritage AI-Ready Dataset",
+                DATASET_NAME,
 
             "split":
                 "train",
@@ -680,7 +732,7 @@ def create_splits():
         VALIDATION_FILE,
         {
             "dataset":
-                "VietHeritage AI-Ready Dataset",
+                DATASET_NAME,
 
             "split":
                 "validation",
@@ -700,7 +752,7 @@ def create_splits():
         TEST_FILE,
         {
             "dataset":
-                "VietHeritage AI-Ready Dataset",
+                DATASET_NAME,
 
             "split":
                 "test",
@@ -734,7 +786,10 @@ def create_splits():
     split_report = {
 
         "dataset":
-            "VietHeritage AI-Ready Dataset",
+            DATASET_NAME,
+
+        "source_manifest":
+            "ai_ready/classification_manifest.json",
 
         "created_at":
             datetime.now().astimezone().isoformat(
@@ -759,6 +814,20 @@ def create_splits():
 
         "total_assets":
             len(assets),
+
+        "categories":
+            distribution(
+                [
+                    {
+                        "category":
+                            asset.get(
+                                "category"
+                            )
+                    }
+
+                    for asset in assets
+                ]
+            ),
 
         "splits":
 
@@ -888,19 +957,19 @@ def create_splits():
     )
 
     print(
-        f"  ai_ready/splits/train.json"
+        "  ai_ready/splits/train.json"
     )
 
     print(
-        f"  ai_ready/splits/validation.json"
+        "  ai_ready/splits/validation.json"
     )
 
     print(
-        f"  ai_ready/splits/test.json"
+        "  ai_ready/splits/test.json"
     )
 
     print(
-        f"  ai_ready/splits/split_report.json"
+        "  ai_ready/splits/split_report.json"
     )
 
     print()
