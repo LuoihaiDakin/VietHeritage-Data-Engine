@@ -1,7 +1,7 @@
 {
     "dataset_name": "VietHeritage AI-Ready Dataset",
     "version": "1.0",
-    "created_at": "2026-09-28T01:20:31+07:00",
+    "created_at": "2026-09-28T22:45:51+07:00",
     "description": "Quality-controlled dataset generated from the VietHeritage Data Engine.",
     "pipeline": [
         "RAW",
@@ -23,10 +23,10 @@
         "pending": "Assets without quality evaluation are excluded."
     },
     "statistics": {
-        "total_catalog_assets": 46,
+        "total_catalog_assets": 68,
         "ai_ready": 45,
         "rejected": 0,
-        "pending": 1
+        "pending": 23
     },
     "assets": [
         {
@@ -2014,6 +2014,94 @@
     "pending_assets": [
         {
             "asset_id": "uploaded_001",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "phuong_001",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "phuong_002",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "phuong_003",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "phuong_004",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "phuong_005",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "rong_viet_nam_008",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "rong_viet_nam_009",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "rong_viet_nam_010",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "rong_viet_nam_011",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "rong_viet_nam_012",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "rong_viet_nam_013",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "rong_viet_nam_014",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "rong_viet_nam_015",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "rong_viet_nam_016",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "rong_viet_nam_017",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "rong_viet_nam_018",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "rong_viet_nam_019",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "rong_viet_nam_020",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "sen_001",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "sen_002",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "sen_003",
+            "reason": "Quality evaluation unavailable."
+        },
+        {
+            "asset_id": "sen_004",
             "reason": "Quality evaluation unavailable."
         }
     ]
