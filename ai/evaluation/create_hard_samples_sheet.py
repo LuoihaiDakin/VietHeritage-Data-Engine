@@ -1,6 +1,7 @@
 from pathlib import Path
 import json
 import math
+from collections import Counter
 
 from PIL import Image, ImageDraw, ImageFont
 
@@ -11,11 +12,11 @@ from PIL import Image, ImageDraw, ImageFont
 
 BASE_DIR = Path(__file__).resolve().parents[2]
 
-COMPARISON_FILE = (
+PREDICTIONS_FILE = (
     BASE_DIR
     / "ai"
     / "evaluation"
-    / "comparison_v3_v4.json"
+    / "test_predictions_v5.json"
 )
 
 CATALOG_FILE = (
@@ -24,11 +25,18 @@ CATALOG_FILE = (
     / "catalog.json"
 )
 
+ERROR_ANALYSIS_FILE = (
+    BASE_DIR
+    / "ai"
+    / "evaluation"
+    / "error_analysis_v5.json"
+)
+
 OUTPUT_FILE = (
     BASE_DIR
     / "ai"
     / "evaluation"
-    / "hard_samples_v3_v4.png"
+    / "error_contact_sheet_v5.png"
 )
 
 
@@ -39,7 +47,7 @@ OUTPUT_FILE = (
 THUMB_WIDTH = 420
 THUMB_HEIGHT = 320
 
-LABEL_HEIGHT = 100
+LABEL_HEIGHT = 120
 
 COLUMNS = 3
 
@@ -53,8 +61,6 @@ BORDER_COLOR = "black"
 # ============================================================
 
 def load_font(size, bold=False):
-
-    possible_fonts = []
 
     if bold:
         possible_fonts = [
@@ -108,6 +114,108 @@ def load_json(path):
 
 
 # ============================================================
+# BUILD ERROR ANALYSIS
+# ============================================================
+
+def build_error_analysis(predictions):
+
+    errors = [
+        item
+        for item in predictions
+        if not item.get("correct", False)
+    ]
+
+    confusion = Counter()
+
+    for item in errors:
+
+        true_label = item.get(
+            "true_label",
+            "UNKNOWN"
+        )
+
+        predicted_label = item.get(
+            "predicted_label",
+            "UNKNOWN"
+        )
+
+        confusion[
+            (
+                true_label,
+                predicted_label
+            )
+        ] += 1
+
+    true_distribution = Counter(
+        item.get("true_label", "UNKNOWN")
+        for item in predictions
+    )
+
+    predicted_distribution = Counter(
+        item.get("predicted_label", "UNKNOWN")
+        for item in predictions
+    )
+
+    error_by_true_class = Counter(
+        item.get("true_label", "UNKNOWN")
+        for item in errors
+    )
+
+    error_by_predicted_class = Counter(
+        item.get("predicted_label", "UNKNOWN")
+        for item in errors
+    )
+
+    confusion_pairs = []
+
+    for (
+        (true_label, predicted_label),
+        count
+    ) in sorted(
+        confusion.items(),
+        key=lambda x: (-x[1], x[0])
+    ):
+
+        confusion_pairs.append(
+            {
+                "true_label": true_label,
+                "predicted_label": predicted_label,
+                "count": count
+            }
+        )
+
+    return {
+        "model": "baseline_svm_v5",
+        "experiment": "normalized_images_hog_svm",
+        "dataset": "VietHeritage Classification Dataset V5",
+        "split": "test",
+        "total_samples": len(predictions),
+        "correct_samples": len(predictions) - len(errors),
+        "incorrect_samples": len(errors),
+        "accuracy": (
+            (len(predictions) - len(errors))
+            / len(predictions)
+            if predictions
+            else 0
+        ),
+        "true_class_distribution": dict(
+            sorted(true_distribution.items())
+        ),
+        "predicted_class_distribution": dict(
+            sorted(predicted_distribution.items())
+        ),
+        "errors_by_true_class": dict(
+            sorted(error_by_true_class.items())
+        ),
+        "errors_by_predicted_class": dict(
+            sorted(error_by_predicted_class.items())
+        ),
+        "confusion_pairs": confusion_pairs,
+        "hard_samples": errors
+    }
+
+
+# ============================================================
 # MAIN
 # ============================================================
 
@@ -115,32 +223,104 @@ def main():
 
     print()
     print("=" * 72)
-    print("VIETHERITAGE - HARD SAMPLE CONTACT SHEET")
+    print("VIETHERITAGE - V5 ERROR ANALYSIS")
     print("=" * 72)
     print()
 
     # --------------------------------------------------------
-    # Load comparison
+    # Load predictions
     # --------------------------------------------------------
 
-    comparison = load_json(
-        COMPARISON_FILE
+    prediction_data = load_json(
+        PREDICTIONS_FILE
     )
 
-    hard_samples = comparison.get(
-        "both_wrong",
+    predictions = prediction_data.get(
+        "predictions",
         []
     )
 
-    if not hard_samples:
+    if not predictions:
 
         raise RuntimeError(
-            "No hard samples found in comparison_v3_v4.json"
+            "No predictions found in test_predictions_v5.json"
         )
 
     print(
-        f"Hard samples: {len(hard_samples)}"
+        f"Test samples: {len(predictions)}"
     )
+
+    # --------------------------------------------------------
+    # Build error analysis
+    # --------------------------------------------------------
+
+    analysis = build_error_analysis(
+        predictions
+    )
+
+    hard_samples = analysis[
+        "hard_samples"
+    ]
+
+    print(
+        f"Correct samples: "
+        f"{analysis['correct_samples']}"
+    )
+
+    print(
+        f"Incorrect samples: "
+        f"{analysis['incorrect_samples']}"
+    )
+
+    print()
+
+    print("CONFUSION PAIRS")
+    print("-" * 72)
+
+    for pair in analysis[
+        "confusion_pairs"
+    ]:
+
+        print(
+            f"{pair['true_label']:<20}"
+            f" -> "
+            f"{pair['predicted_label']:<20}"
+            f"{pair['count']}"
+        )
+
+    print()
+
+    # --------------------------------------------------------
+    # Save error analysis JSON
+    # --------------------------------------------------------
+
+    ERROR_ANALYSIS_FILE.parent.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    with open(
+        ERROR_ANALYSIS_FILE,
+        "w",
+        encoding="utf-8"
+    ) as f:
+
+        json.dump(
+            analysis,
+            f,
+            ensure_ascii=False,
+            indent=2
+        )
+
+    print(
+        "Error analysis saved:"
+    )
+
+    print(
+        ERROR_ANALYSIS_FILE
+    )
+
+    print()
 
     # --------------------------------------------------------
     # Load catalog
@@ -170,6 +350,14 @@ def main():
     # --------------------------------------------------------
     # Canvas
     # --------------------------------------------------------
+
+    if not hard_samples:
+
+        print(
+            "No hard samples found."
+        )
+
+        return
 
     rows = math.ceil(
         len(hard_samples) / COLUMNS
@@ -226,19 +414,10 @@ def main():
             "UNKNOWN"
         )
 
-        v3_prediction = sample.get(
-            "v3_prediction",
+        predicted_label = sample.get(
+            "predicted_label",
             "UNKNOWN"
         )
-
-        v4_prediction = sample.get(
-            "v4_prediction",
-            "UNKNOWN"
-        )
-
-        # ----------------------------------------------------
-        # Find catalog asset
-        # ----------------------------------------------------
 
         asset = catalog_assets.get(
             asset_id
@@ -264,7 +443,9 @@ def main():
             * cell_height
         )
 
-        # Border around entire cell
+        # ----------------------------------------------------
+        # Cell border
+        # ----------------------------------------------------
 
         draw.rectangle(
             [
@@ -304,10 +485,7 @@ def main():
             continue
 
         # ----------------------------------------------------
-        # IMPORTANT:
-        # Current catalog structure:
-        #
-        # asset["original"]["path"]
+        # Original image path
         # ----------------------------------------------------
 
         original = asset.get(
@@ -341,10 +519,6 @@ def main():
                 asset_id,
                 fill=TEXT_COLOR,
                 font=FONT_LABEL
-            )
-
-            print(
-                f"WARNING: image path missing: {asset_id}"
             )
 
             continue
@@ -473,7 +647,8 @@ def main():
             )
 
             print(
-                f"WARNING: cannot open {absolute_path}: {e}"
+                f"WARNING: cannot open "
+                f"{absolute_path}: {e}"
             )
 
         # ----------------------------------------------------
@@ -515,17 +690,23 @@ def main():
                 text_x,
                 text_y + 42
             ),
+            f"PREDICTED: {predicted_label}",
+            fill=TEXT_COLOR,
+            font=FONT_SMALL
+        )
+
+        draw.text(
             (
-                f"V3: {v3_prediction}"
-                f"  |  "
-                f"V4: {v4_prediction}"
+                text_x,
+                text_y + 62
             ),
+            "ERROR",
             fill=TEXT_COLOR,
             font=FONT_SMALL
         )
 
     # --------------------------------------------------------
-    # Save
+    # Save contact sheet
     # --------------------------------------------------------
 
     OUTPUT_FILE.parent.mkdir(
@@ -544,25 +725,40 @@ def main():
 
     print()
     print("=" * 72)
-    print("HARD SAMPLE CONTACT SHEET COMPLETE")
+    print("V5 ERROR ANALYSIS COMPLETE")
     print("=" * 72)
 
     print()
     print(
-        f"Total hard samples : {len(hard_samples)}"
+        f"Total test samples : "
+        f"{len(predictions)}"
     )
 
     print(
-        f"Rendered images    : {rendered}"
+        f"Correct            : "
+        f"{analysis['correct_samples']}"
     )
 
     print(
-        f"Failed images      : {failed}"
+        f"Incorrect          : "
+        f"{analysis['incorrect_samples']}"
+    )
+
+    print(
+        f"Rendered images    : "
+        f"{rendered}"
+    )
+
+    print(
+        f"Failed images      : "
+        f"{failed}"
     )
 
     print()
+    print("Files:")
+
     print(
-        f"Output:"
+        ERROR_ANALYSIS_FILE
     )
 
     print(
@@ -571,26 +767,23 @@ def main():
 
     print()
 
-    if rendered == 0:
+    if rendered == len(hard_samples):
 
         print(
-            "WARNING: 0 images were rendered."
+            "All hard samples rendered successfully."
         )
 
-        print(
-            "Check catalog original.path values."
-        )
-
-    elif failed > 0:
+    elif rendered > 0:
 
         print(
-            "WARNING: Some images could not be rendered."
+            "WARNING: Some hard samples "
+            "could not be rendered."
         )
 
     else:
 
         print(
-            "All hard samples rendered successfully."
+            "WARNING: 0 images were rendered."
         )
 
     print()

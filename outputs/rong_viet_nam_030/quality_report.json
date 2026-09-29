@@ -1,0 +1,100 @@
+{
+    "input": {
+        "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\dataset\\images\\rong_viet_nam\\rong_viet_nam_030.jpg",
+        "metrics": {
+            "width": 120,
+            "height": 120,
+            "brightness": 146.28,
+            "contrast": 72.71,
+            "sharpness": 26750.2,
+            "noise": 27.24,
+            "edge_density": 0.2757
+        },
+        "quality": {
+            "quality": "GOOD",
+            "score": 85.0,
+            "component_scores": {
+                "resolution": 100.0,
+                "brightness": 100.0,
+                "contrast": 100.0,
+                "noise": 50.0
+            }
+        }
+    },
+    "restored": {
+        "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\rong_viet_nam_030\\restored.png",
+        "metrics": {
+            "width": 480,
+            "height": 480,
+            "brightness": 145.61,
+            "contrast": 75.35,
+            "sharpness": 2160.38,
+            "noise": 2.87,
+            "edge_density": 0.1279
+        },
+        "quality": {
+            "quality": "GOOD",
+            "score": 100.0,
+            "component_scores": {
+                "resolution": 100.0,
+                "brightness": 100.0,
+                "contrast": 100.0,
+                "noise": 100.0
+            }
+        }
+    },
+    "cleaned": {
+        "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\rong_viet_nam_030\\cleaned.png",
+        "metrics": {
+            "width": 480,
+            "height": 480,
+            "brightness": 143.9,
+            "contrast": 74.52,
+            "sharpness": 2207.05,
+            "noise": 2.78,
+            "edge_density": 0.1317
+        },
+        "quality": {
+            "quality": "GOOD",
+            "score": 100.0,
+            "component_scores": {
+                "resolution": 100.0,
+                "brightness": 100.0,
+                "contrast": 100.0,
+                "noise": 100.0
+            }
+        }
+    },
+    "normalized": {
+        "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\rong_viet_nam_030\\normalized.png",
+        "metrics": {
+            "width": 480,
+            "height": 480,
+            "brightness": 143.9,
+            "contrast": 74.52,
+            "sharpness": 2207.05,
+            "noise": 2.78,
+            "edge_density": 0.1317
+        },
+        "quality": {
+            "quality": "GOOD",
+            "score": 100.0,
+            "component_scores": {
+                "resolution": 100.0,
+                "brightness": 100.0,
+                "contrast": 100.0,
+                "noise": 100.0
+            }
+        }
+    },
+    "outputs": {
+        "restored": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\rong_viet_nam_030\\restored.png",
+        "cleaned": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\rong_viet_nam_030\\cleaned.png",
+        "normalized": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\rong_viet_nam_030\\normalized.png",
+        "edges": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\rong_viet_nam_030\\edges.png",
+        "segmented": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\rong_viet_nam_030\\segmented.png",
+        "mask": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\rong_viet_nam_030\\mask.png",
+        "svg": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\rong_viet_nam_030\\pattern.svg"
+    },
+    "status": "completed"
+}

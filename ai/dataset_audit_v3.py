@@ -30,11 +30,9 @@ SHEET_DIR = OUTPUT_DIR / "audit_sheets"
 
 CLASSIFICATION_CATEGORIES = [
     "dong_ho",
-    "phu_dieu_rong",
     "phuong",
     "rong_viet_nam",
     "sen",
-    "trong_dong",
 ]
 
 
