@@ -1,0 +1,189 @@
+{
+  "experiment": "V3 RAW vs V4 NORMALIZED",
+  "summary": {
+    "total_common_test_samples": 19,
+    "both_correct": 5,
+    "v3_correct_v4_wrong": 1,
+    "v3_wrong_v4_correct": 1,
+    "both_wrong": 12
+  },
+  "both_correct": [
+    {
+      "asset_id": "dong_ho_006",
+      "true_label": "dong_ho",
+      "v3_prediction": "dong_ho",
+      "v4_prediction": "dong_ho",
+      "v3_correct": true,
+      "v4_correct": true,
+      "image": "../dataset/images/dong_ho/dong_ho_006.JPG"
+    },
+    {
+      "asset_id": "dong_ho_010",
+      "true_label": "dong_ho",
+      "v3_prediction": "dong_ho",
+      "v4_prediction": "dong_ho",
+      "v3_correct": true,
+      "v4_correct": true,
+      "image": "../dataset/images/dong_ho/dong_ho_010.jpg"
+    },
+    {
+      "asset_id": "dong_ho_013",
+      "true_label": "dong_ho",
+      "v3_prediction": "dong_ho",
+      "v4_prediction": "dong_ho",
+      "v3_correct": true,
+      "v4_correct": true,
+      "image": "../dataset/images/dong_ho/dong_ho_013.JPG"
+    },
+    {
+      "asset_id": "dong_ho_021",
+      "true_label": "dong_ho",
+      "v3_prediction": "dong_ho",
+      "v4_prediction": "dong_ho",
+      "v3_correct": true,
+      "v4_correct": true,
+      "image": "../dataset/images/dong_ho/dong_ho_021.JPG"
+    },
+    {
+      "asset_id": "dong_ho_032",
+      "true_label": "dong_ho",
+      "v3_prediction": "dong_ho",
+      "v4_prediction": "dong_ho",
+      "v3_correct": true,
+      "v4_correct": true,
+      "image": "../dataset/images/dong_ho/dong_ho_032.jpg"
+    }
+  ],
+  "v3_correct_v4_wrong": [
+    {
+      "asset_id": "rong_viet_nam_012",
+      "true_label": "rong_viet_nam",
+      "v3_prediction": "rong_viet_nam",
+      "v4_prediction": "dong_ho",
+      "v3_correct": true,
+      "v4_correct": false,
+      "image": "../dataset/images/rong_viet_nam/rong_viet_nam_012.jpg"
+    }
+  ],
+  "v3_wrong_v4_correct": [
+    {
+      "asset_id": "phuong_006",
+      "true_label": "phuong",
+      "v3_prediction": "dong_ho",
+      "v4_prediction": "phuong",
+      "v3_correct": false,
+      "v4_correct": true,
+      "image": "../dataset/images/phuong/phuong_006.webp"
+    }
+  ],
+  "both_wrong": [
+    {
+      "asset_id": "phu_dieu_rong_008",
+      "true_label": "phu_dieu_rong",
+      "v3_prediction": "sen",
+      "v4_prediction": "sen",
+      "v3_correct": false,
+      "v4_correct": false,
+      "image": "../dataset/images/phu_dieu_rong/phu_dieu_rong_009.jpg"
+    },
+    {
+      "asset_id": "phu_dieu_rong_010",
+      "true_label": "phu_dieu_rong",
+      "v3_prediction": "sen",
+      "v4_prediction": "sen",
+      "v3_correct": false,
+      "v4_correct": false,
+      "image": "../dataset/images/phu_dieu_rong/phu_dieu_rong_011.jpg"
+    },
+    {
+      "asset_id": "phu_dieu_rong_019",
+      "true_label": "phu_dieu_rong",
+      "v3_prediction": "dong_ho",
+      "v4_prediction": "phuong",
+      "v3_correct": false,
+      "v4_correct": false,
+      "image": "../dataset/images/phu_dieu_rong/phu_dieu_rong_020.jpg"
+    },
+    {
+      "asset_id": "phuong_015",
+      "true_label": "phuong",
+      "v3_prediction": "sen",
+      "v4_prediction": "sen",
+      "v3_correct": false,
+      "v4_correct": false,
+      "image": "../dataset/images/phuong/phuong_006.jpg"
+    },
+    {
+      "asset_id": "phuong_020",
+      "true_label": "phuong",
+      "v3_prediction": "sen",
+      "v4_prediction": "sen",
+      "v3_correct": false,
+      "v4_correct": false,
+      "image": "../dataset/images/phuong/phuong_018.jpg"
+    },
+    {
+      "asset_id": "rong_viet_nam_010",
+      "true_label": "rong_viet_nam",
+      "v3_prediction": "dong_ho",
+      "v4_prediction": "dong_ho",
+      "v3_correct": false,
+      "v4_correct": false,
+      "image": "../dataset/images/rong_viet_nam/rong_viet_nam_010.jpg"
+    },
+    {
+      "asset_id": "rong_viet_nam_013",
+      "true_label": "rong_viet_nam",
+      "v3_prediction": "dong_ho",
+      "v4_prediction": "dong_ho",
+      "v3_correct": false,
+      "v4_correct": false,
+      "image": "../dataset/images/rong_viet_nam/rong_viet_nam_013.jpg"
+    },
+    {
+      "asset_id": "rong_viet_nam_014",
+      "true_label": "rong_viet_nam",
+      "v3_prediction": "sen",
+      "v4_prediction": "sen",
+      "v3_correct": false,
+      "v4_correct": false,
+      "image": "../dataset/images/rong_viet_nam/rong_viet_nam_014.jpg"
+    },
+    {
+      "asset_id": "sen_001",
+      "true_label": "sen",
+      "v3_prediction": "rong_viet_nam",
+      "v4_prediction": "rong_viet_nam",
+      "v3_correct": false,
+      "v4_correct": false,
+      "image": "../dataset/images/sen/sen_001.jpg"
+    },
+    {
+      "asset_id": "sen_002",
+      "true_label": "sen",
+      "v3_prediction": "rong_viet_nam",
+      "v4_prediction": "phuong",
+      "v3_correct": false,
+      "v4_correct": false,
+      "image": "../dataset/images/sen/sen_002.jpg"
+    },
+    {
+      "asset_id": "sen_010",
+      "true_label": "sen",
+      "v3_prediction": "phuong",
+      "v4_prediction": "dong_ho",
+      "v3_correct": false,
+      "v4_correct": false,
+      "image": "../dataset/images/sen/sen_010.jpg"
+    },
+    {
+      "asset_id": "trong_dong_003",
+      "true_label": "trong_dong",
+      "v3_prediction": "dong_ho",
+      "v4_prediction": "rong_viet_nam",
+      "v3_correct": false,
+      "v4_correct": false,
+      "image": "../dataset/images/trong_dong/trong_dong_004.jpg"
+    }
+  ]
+}
