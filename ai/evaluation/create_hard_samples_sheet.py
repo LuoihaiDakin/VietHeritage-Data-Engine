@@ -36,317 +36,569 @@ OUTPUT_FILE = (
 # SETTINGS
 # ============================================================
 
-THUMB_WIDTH = 260
-THUMB_HEIGHT = 220
-LABEL_HEIGHT = 80
+THUMB_WIDTH = 420
+THUMB_HEIGHT = 320
+
+LABEL_HEIGHT = 100
+
 COLUMNS = 3
 
-
-# ============================================================
-# LOAD COMPARISON
-# ============================================================
-
-with open(
-    COMPARISON_FILE,
-    "r",
-    encoding="utf-8",
-) as f:
-    comparison = json.load(f)
-
-
-hard_samples = comparison["both_wrong"]
-
-
-# ============================================================
-# LOAD CATALOG
-# ============================================================
-
-with open(
-    CATALOG_FILE,
-    "r",
-    encoding="utf-8",
-) as f:
-    catalog = json.load(f)
-
-
-# ============================================================
-# BUILD ASSET LOOKUP
-# ============================================================
-
-assets = catalog.get("assets", [])
-
-catalog_assets = {}
-
-for asset in assets:
-
-    # Current catalog uses asset_id
-    asset_id = asset.get("asset_id")
-
-    if asset_id:
-        catalog_assets[asset_id] = asset
+BACKGROUND_COLOR = "white"
+TEXT_COLOR = "black"
+BORDER_COLOR = "black"
 
 
 # ============================================================
 # FONT
 # ============================================================
 
-try:
+def load_font(size, bold=False):
 
-    font = ImageFont.truetype(
-        "arial.ttf",
-        16,
-    )
+    possible_fonts = []
 
-    small_font = ImageFont.truetype(
-        "arial.ttf",
-        13,
-    )
+    if bold:
+        possible_fonts = [
+            "arialbd.ttf",
+            "C:/Windows/Fonts/arialbd.ttf",
+        ]
+    else:
+        possible_fonts = [
+            "arial.ttf",
+            "C:/Windows/Fonts/arial.ttf",
+        ]
 
-except Exception:
+    for font_path in possible_fonts:
 
-    font = ImageFont.load_default()
-    small_font = ImageFont.load_default()
+        try:
+            return ImageFont.truetype(
+                font_path,
+                size
+            )
+
+        except OSError:
+            continue
+
+    return ImageFont.load_default()
 
 
-# ============================================================
-# CREATE CANVAS
-# ============================================================
-
-rows = math.ceil(
-    len(hard_samples) / COLUMNS
-)
-
-cell_width = THUMB_WIDTH
-cell_height = THUMB_HEIGHT + LABEL_HEIGHT
-
-canvas_width = COLUMNS * cell_width
-canvas_height = rows * cell_height
-
-sheet = Image.new(
-    "RGB",
-    (
-        canvas_width,
-        canvas_height,
-    ),
-    "white",
-)
-
-draw = ImageDraw.Draw(sheet)
+FONT_TITLE = load_font(20, bold=True)
+FONT_LABEL = load_font(16)
+FONT_SMALL = load_font(14)
 
 
 # ============================================================
-# RENDER
+# LOAD JSON
 # ============================================================
 
-for index, sample in enumerate(hard_samples):
+def load_json(path):
 
-    asset_id = sample["asset_id"]
+    if not path.exists():
 
-    true_label = sample["true_label"]
-
-    v3_prediction = sample["v3_prediction"]
-
-    v4_prediction = sample["v4_prediction"]
-
-
-    # --------------------------------------------------------
-    # FIND ASSET
-    # --------------------------------------------------------
-
-    asset = catalog_assets.get(asset_id)
-
-    if asset is None:
-
-        print(
-            f"WARNING: asset not found in catalog: "
-            f"{asset_id}"
+        raise FileNotFoundError(
+            f"File not found:\n{path}"
         )
 
-        continue
+    with open(
+        path,
+        "r",
+        encoding="utf-8"
+    ) as f:
 
+        return json.load(f)
+
+
+# ============================================================
+# MAIN
+# ============================================================
+
+def main():
+
+    print()
+    print("=" * 72)
+    print("VIETHERITAGE - HARD SAMPLE CONTACT SHEET")
+    print("=" * 72)
+    print()
 
     # --------------------------------------------------------
-    # IMAGE PATH
+    # Load comparison
     # --------------------------------------------------------
 
-    image_path = asset.get("path")
-
-    if not image_path:
-
-        print(
-            f"WARNING: no image path for "
-            f"{asset_id}"
-        )
-
-        continue
-
-
-    image_path = (
-        BASE_DIR
-        / image_path
+    comparison = load_json(
+        COMPARISON_FILE
     )
 
-
-    if not image_path.exists():
-
-        print(
-            f"WARNING: image not found: "
-            f"{image_path}"
-        )
-
-        continue
-
-
-    # --------------------------------------------------------
-    # OPEN IMAGE
-    # --------------------------------------------------------
-
-    try:
-
-        image = Image.open(
-            image_path
-        ).convert("RGB")
-
-    except Exception as e:
-
-        print(
-            f"WARNING: cannot open "
-            f"{image_path}: {e}"
-        )
-
-        continue
-
-
-    # --------------------------------------------------------
-    # THUMBNAIL
-    # --------------------------------------------------------
-
-    image.thumbnail(
-        (
-            THUMB_WIDTH - 20,
-            THUMB_HEIGHT - 20,
-        )
+    hard_samples = comparison.get(
+        "both_wrong",
+        []
     )
 
+    if not hard_samples:
 
-    x_index = index % COLUMNS
-    y_index = index // COLUMNS
+        raise RuntimeError(
+            "No hard samples found in comparison_v3_v4.json"
+        )
 
-    cell_x = (
-        x_index
+    print(
+        f"Hard samples: {len(hard_samples)}"
+    )
+
+    # --------------------------------------------------------
+    # Load catalog
+    # --------------------------------------------------------
+
+    catalog = load_json(
+        CATALOG_FILE
+    )
+
+    assets = catalog.get(
+        "assets",
+        []
+    )
+
+    catalog_assets = {
+        asset.get("asset_id"): asset
+        for asset in assets
+        if asset.get("asset_id")
+    }
+
+    print(
+        f"Catalog assets: {len(catalog_assets)}"
+    )
+
+    print()
+
+    # --------------------------------------------------------
+    # Canvas
+    # --------------------------------------------------------
+
+    rows = math.ceil(
+        len(hard_samples) / COLUMNS
+    )
+
+    cell_width = THUMB_WIDTH
+
+    cell_height = (
+        THUMB_HEIGHT
+        + LABEL_HEIGHT
+    )
+
+    canvas_width = (
+        COLUMNS
         * cell_width
     )
 
-    cell_y = (
-        y_index
+    canvas_height = (
+        rows
         * cell_height
     )
 
-
-    image_x = (
-        cell_x
-        + (
-            THUMB_WIDTH
-            - image.width
-        )
-        // 2
-    )
-
-    image_y = (
-        cell_y
-        + (
-            THUMB_HEIGHT
-            - image.height
-        )
-        // 2
-    )
-
-
-    sheet.paste(
-        image,
+    sheet = Image.new(
+        "RGB",
         (
-            image_x,
-            image_y,
+            canvas_width,
+            canvas_height
         ),
+        BACKGROUND_COLOR
     )
 
+    draw = ImageDraw.Draw(
+        sheet
+    )
 
     # --------------------------------------------------------
-    # LABEL
+    # Render samples
     # --------------------------------------------------------
 
-    text_x = cell_x + 8
+    rendered = 0
+    failed = 0
 
-    text_y = (
-        cell_y
-        + THUMB_HEIGHT
-        + 4
+    for index, sample in enumerate(
+        hard_samples
+    ):
+
+        asset_id = sample.get(
+            "asset_id",
+            "UNKNOWN"
+        )
+
+        true_label = sample.get(
+            "true_label",
+            "UNKNOWN"
+        )
+
+        v3_prediction = sample.get(
+            "v3_prediction",
+            "UNKNOWN"
+        )
+
+        v4_prediction = sample.get(
+            "v4_prediction",
+            "UNKNOWN"
+        )
+
+        # ----------------------------------------------------
+        # Find catalog asset
+        # ----------------------------------------------------
+
+        asset = catalog_assets.get(
+            asset_id
+        )
+
+        x_index = (
+            index
+            % COLUMNS
+        )
+
+        y_index = (
+            index
+            // COLUMNS
+        )
+
+        cell_x = (
+            x_index
+            * cell_width
+        )
+
+        cell_y = (
+            y_index
+            * cell_height
+        )
+
+        # Border around entire cell
+
+        draw.rectangle(
+            [
+                cell_x,
+                cell_y,
+                cell_x + cell_width - 1,
+                cell_y + cell_height - 1,
+            ],
+            outline=BORDER_COLOR,
+            width=2
+        )
+
+        if asset is None:
+
+            failed += 1
+
+            draw.text(
+                (
+                    cell_x + 10,
+                    cell_y + 20
+                ),
+                "ASSET NOT FOUND",
+                fill=TEXT_COLOR,
+                font=FONT_TITLE
+            )
+
+            draw.text(
+                (
+                    cell_x + 10,
+                    cell_y + 55
+                ),
+                asset_id,
+                fill=TEXT_COLOR,
+                font=FONT_LABEL
+            )
+
+            continue
+
+        # ----------------------------------------------------
+        # IMPORTANT:
+        # Current catalog structure:
+        #
+        # asset["original"]["path"]
+        # ----------------------------------------------------
+
+        original = asset.get(
+            "original",
+            {}
+        )
+
+        image_path = original.get(
+            "path"
+        )
+
+        if not image_path:
+
+            failed += 1
+
+            draw.text(
+                (
+                    cell_x + 10,
+                    cell_y + 20
+                ),
+                "IMAGE PATH MISSING",
+                fill=TEXT_COLOR,
+                font=FONT_TITLE
+            )
+
+            draw.text(
+                (
+                    cell_x + 10,
+                    cell_y + 55
+                ),
+                asset_id,
+                fill=TEXT_COLOR,
+                font=FONT_LABEL
+            )
+
+            print(
+                f"WARNING: image path missing: {asset_id}"
+            )
+
+            continue
+
+        absolute_path = (
+            BASE_DIR
+            / image_path
+        )
+
+        # ----------------------------------------------------
+        # Check image
+        # ----------------------------------------------------
+
+        if not absolute_path.is_file():
+
+            failed += 1
+
+            draw.text(
+                (
+                    cell_x + 10,
+                    cell_y + 20
+                ),
+                "IMAGE NOT FOUND",
+                fill=TEXT_COLOR,
+                font=FONT_TITLE
+            )
+
+            draw.text(
+                (
+                    cell_x + 10,
+                    cell_y + 55
+                ),
+                str(absolute_path),
+                fill=TEXT_COLOR,
+                font=FONT_SMALL
+            )
+
+            print(
+                f"WARNING: image not found:"
+                f"\n  {absolute_path}"
+            )
+
+            continue
+
+        # ----------------------------------------------------
+        # Open image
+        # ----------------------------------------------------
+
+        try:
+
+            image = Image.open(
+                absolute_path
+            ).convert("RGB")
+
+            image.thumbnail(
+                (
+                    THUMB_WIDTH - 20,
+                    THUMB_HEIGHT - 20
+                ),
+                Image.Resampling.LANCZOS
+            )
+
+            image_x = (
+                cell_x
+                + (
+                    THUMB_WIDTH
+                    - image.width
+                )
+                // 2
+            )
+
+            image_y = (
+                cell_y
+                + (
+                    THUMB_HEIGHT
+                    - image.height
+                )
+                // 2
+            )
+
+            sheet.paste(
+                image,
+                (
+                    image_x,
+                    image_y
+                )
+            )
+
+            # Image border
+
+            draw.rectangle(
+                [
+                    image_x - 1,
+                    image_y - 1,
+                    image_x + image.width,
+                    image_y + image.height,
+                ],
+                outline=BORDER_COLOR,
+                width=1
+            )
+
+            rendered += 1
+
+        except Exception as e:
+
+            failed += 1
+
+            draw.text(
+                (
+                    cell_x + 10,
+                    cell_y + 20
+                ),
+                "IMAGE ERROR",
+                fill=TEXT_COLOR,
+                font=FONT_TITLE
+            )
+
+            draw.text(
+                (
+                    cell_x + 10,
+                    cell_y + 55
+                ),
+                str(e),
+                fill=TEXT_COLOR,
+                font=FONT_SMALL
+            )
+
+            print(
+                f"WARNING: cannot open {absolute_path}: {e}"
+            )
+
+        # ----------------------------------------------------
+        # Labels
+        # ----------------------------------------------------
+
+        text_x = (
+            cell_x + 8
+        )
+
+        text_y = (
+            cell_y
+            + THUMB_HEIGHT
+            + 5
+        )
+
+        draw.text(
+            (
+                text_x,
+                text_y
+            ),
+            asset_id,
+            fill=TEXT_COLOR,
+            font=FONT_LABEL
+        )
+
+        draw.text(
+            (
+                text_x,
+                text_y + 22
+            ),
+            f"TRUE: {true_label}",
+            fill=TEXT_COLOR,
+            font=FONT_SMALL
+        )
+
+        draw.text(
+            (
+                text_x,
+                text_y + 42
+            ),
+            (
+                f"V3: {v3_prediction}"
+                f"  |  "
+                f"V4: {v4_prediction}"
+            ),
+            fill=TEXT_COLOR,
+            font=FONT_SMALL
+        )
+
+    # --------------------------------------------------------
+    # Save
+    # --------------------------------------------------------
+
+    OUTPUT_FILE.parent.mkdir(
+        parents=True,
+        exist_ok=True
     )
 
-
-    draw.text(
-        (
-            text_x,
-            text_y,
-        ),
-        asset_id,
-        fill="black",
-        font=font,
+    sheet.save(
+        OUTPUT_FILE,
+        format="PNG"
     )
 
+    # --------------------------------------------------------
+    # Result
+    # --------------------------------------------------------
 
-    draw.text(
-        (
-            text_x,
-            text_y + 20,
-        ),
-        f"TRUE: {true_label}",
-        fill="black",
-        font=small_font,
+    print()
+    print("=" * 72)
+    print("HARD SAMPLE CONTACT SHEET COMPLETE")
+    print("=" * 72)
+
+    print()
+    print(
+        f"Total hard samples : {len(hard_samples)}"
     )
 
-
-    draw.text(
-        (
-            text_x,
-            text_y + 38,
-        ),
-        (
-            f"V3: {v3_prediction} "
-            f"| V4: {v4_prediction}"
-        ),
-        fill="black",
-        font=small_font,
+    print(
+        f"Rendered images    : {rendered}"
     )
+
+    print(
+        f"Failed images      : {failed}"
+    )
+
+    print()
+    print(
+        f"Output:"
+    )
+
+    print(
+        OUTPUT_FILE
+    )
+
+    print()
+
+    if rendered == 0:
+
+        print(
+            "WARNING: 0 images were rendered."
+        )
+
+        print(
+            "Check catalog original.path values."
+        )
+
+    elif failed > 0:
+
+        print(
+            "WARNING: Some images could not be rendered."
+        )
+
+    else:
+
+        print(
+            "All hard samples rendered successfully."
+        )
+
+    print()
 
 
 # ============================================================
-# SAVE
+# ENTRY POINT
 # ============================================================
 
-sheet.save(
-    OUTPUT_FILE
-)
-
-
-# ============================================================
-# RESULT
-# ============================================================
-
-print("=" * 72)
-print("HARD SAMPLE CONTACT SHEET")
-print("=" * 72)
-
-print()
-print(
-    f"Samples: {len(hard_samples)}"
-)
-
-print()
-print(
-    f"Catalog assets loaded: "
-    f"{len(catalog_assets)}"
-)
-
-print()
-print(OUTPUT_FILE)
+if __name__ == "__main__":
+    main()
