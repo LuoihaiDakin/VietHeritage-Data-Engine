@@ -1,7 +1,7 @@
 {
     "dataset_name": "VietHeritage AI-Ready Dataset",
     "version": "1.0",
-    "created_at": "2026-09-28T01:20:31+07:00",
+    "created_at": "2026-09-29T00:48:05+07:00",
     "description": "Quality-controlled dataset generated from the VietHeritage Data Engine.",
     "pipeline": [
         "RAW",
@@ -23,10 +23,10 @@
         "pending": "Assets without quality evaluation are excluded."
     },
     "statistics": {
-        "total_catalog_assets": 46,
-        "ai_ready": 45,
+        "total_catalog_assets": 92,
+        "ai_ready": 92,
         "rejected": 0,
-        "pending": 1
+        "pending": 0
     },
     "assets": [
         {
@@ -2008,13 +2008,1772 @@
                 "QUALITY_EVALUATION"
             ],
             "ai_ready": true
+        },
+        {
+            "asset_id": "uploaded_001",
+            "category": "uploaded",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/uploaded/uploaded_001.png",
+            "source": {
+                "original": "dataset/images/uploaded/_chikawa__chikawawa_16a0d00c.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/uploaded_001/restored.png",
+                "cleaned": "outputs/uploaded_001/cleaned.png",
+                "normalized": "outputs/uploaded_001/normalized.png",
+                "edges": "outputs/uploaded_001/edges.png",
+                "segmented": "outputs/uploaded_001/segmented.png",
+                "mask": "outputs/uploaded_001/mask.png",
+                "vectorized": "outputs/uploaded_001/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 96.25,
+                "brightness": 153.6,
+                "contrast": 91.4,
+                "sharpness": 41.92,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_001",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_001.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_001.JPG"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_001/restored.png",
+                "cleaned": "outputs/phuong_001/cleaned.png",
+                "normalized": "outputs/phuong_001/normalized.png",
+                "edges": "outputs/phuong_001/edges.png",
+                "segmented": "outputs/phuong_001/segmented.png",
+                "mask": "outputs/phuong_001/mask.png",
+                "vectorized": "outputs/phuong_001/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 163.27,
+                "contrast": 79.19,
+                "sharpness": 3492.42,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_002",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_002.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_002.JPG"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_002/restored.png",
+                "cleaned": "outputs/phuong_002/cleaned.png",
+                "normalized": "outputs/phuong_002/normalized.png",
+                "edges": "outputs/phuong_002/edges.png",
+                "segmented": "outputs/phuong_002/segmented.png",
+                "mask": "outputs/phuong_002/mask.png",
+                "vectorized": "outputs/phuong_002/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 102.32,
+                "contrast": 67.3,
+                "sharpness": 7680.67,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_003",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_003.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_003.JPG"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_003/restored.png",
+                "cleaned": "outputs/phuong_003/cleaned.png",
+                "normalized": "outputs/phuong_003/normalized.png",
+                "edges": "outputs/phuong_003/edges.png",
+                "segmented": "outputs/phuong_003/segmented.png",
+                "mask": "outputs/phuong_003/mask.png",
+                "vectorized": "outputs/phuong_003/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 178.33,
+                "contrast": 50.51,
+                "sharpness": 6853.91,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_004",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_004.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_004.JPG"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_004/restored.png",
+                "cleaned": "outputs/phuong_004/cleaned.png",
+                "normalized": "outputs/phuong_004/normalized.png",
+                "edges": "outputs/phuong_004/edges.png",
+                "segmented": "outputs/phuong_004/segmented.png",
+                "mask": "outputs/phuong_004/mask.png",
+                "vectorized": "outputs/phuong_004/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 147.36,
+                "contrast": 75.99,
+                "sharpness": 3864.16,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_005",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_005.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_005.JPG"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_005/restored.png",
+                "cleaned": "outputs/phuong_005/cleaned.png",
+                "normalized": "outputs/phuong_005/normalized.png",
+                "edges": "outputs/phuong_005/edges.png",
+                "segmented": "outputs/phuong_005/segmented.png",
+                "mask": "outputs/phuong_005/mask.png",
+                "vectorized": "outputs/phuong_005/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 160.33,
+                "contrast": 60.97,
+                "sharpness": 5760.55,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "rong_viet_nam_008",
+            "category": "rong_viet_nam",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_008.png",
+            "source": {
+                "original": "dataset/images/rong_viet_nam/rong_viet_nam_008.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/rong_viet_nam_008/restored.png",
+                "cleaned": "outputs/rong_viet_nam_008/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_008/normalized.png",
+                "edges": "outputs/rong_viet_nam_008/edges.png",
+                "segmented": "outputs/rong_viet_nam_008/segmented.png",
+                "mask": "outputs/rong_viet_nam_008/mask.png",
+                "vectorized": "outputs/rong_viet_nam_008/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 143.34,
+                "contrast": 64.46,
+                "sharpness": 1325.23,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "rong_viet_nam_009",
+            "category": "rong_viet_nam",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_009.png",
+            "source": {
+                "original": "dataset/images/rong_viet_nam/rong_viet_nam_009.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/rong_viet_nam_009/restored.png",
+                "cleaned": "outputs/rong_viet_nam_009/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_009/normalized.png",
+                "edges": "outputs/rong_viet_nam_009/edges.png",
+                "segmented": "outputs/rong_viet_nam_009/segmented.png",
+                "mask": "outputs/rong_viet_nam_009/mask.png",
+                "vectorized": "outputs/rong_viet_nam_009/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 95.5,
+                "brightness": 117.42,
+                "contrast": 59.67,
+                "sharpness": 5504.5,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "rong_viet_nam_010",
+            "category": "rong_viet_nam",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_010.png",
+            "source": {
+                "original": "dataset/images/rong_viet_nam/rong_viet_nam_010.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/rong_viet_nam_010/restored.png",
+                "cleaned": "outputs/rong_viet_nam_010/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_010/normalized.png",
+                "edges": "outputs/rong_viet_nam_010/edges.png",
+                "segmented": "outputs/rong_viet_nam_010/segmented.png",
+                "mask": "outputs/rong_viet_nam_010/mask.png",
+                "vectorized": "outputs/rong_viet_nam_010/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 143.73,
+                "contrast": 52.11,
+                "sharpness": 1940.66,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "rong_viet_nam_011",
+            "category": "rong_viet_nam",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_011.png",
+            "source": {
+                "original": "dataset/images/rong_viet_nam/rong_viet_nam_011.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/rong_viet_nam_011/restored.png",
+                "cleaned": "outputs/rong_viet_nam_011/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_011/normalized.png",
+                "edges": "outputs/rong_viet_nam_011/edges.png",
+                "segmented": "outputs/rong_viet_nam_011/segmented.png",
+                "mask": "outputs/rong_viet_nam_011/mask.png",
+                "vectorized": "outputs/rong_viet_nam_011/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 95.5,
+                "brightness": 138.3,
+                "contrast": 68.83,
+                "sharpness": 8909.74,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "rong_viet_nam_012",
+            "category": "rong_viet_nam",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_012.png",
+            "source": {
+                "original": "dataset/images/rong_viet_nam/rong_viet_nam_012.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/rong_viet_nam_012/restored.png",
+                "cleaned": "outputs/rong_viet_nam_012/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_012/normalized.png",
+                "edges": "outputs/rong_viet_nam_012/edges.png",
+                "segmented": "outputs/rong_viet_nam_012/segmented.png",
+                "mask": "outputs/rong_viet_nam_012/mask.png",
+                "vectorized": "outputs/rong_viet_nam_012/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 176.71,
+                "contrast": 73.48,
+                "sharpness": 2450.4,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "rong_viet_nam_013",
+            "category": "rong_viet_nam",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_013.png",
+            "source": {
+                "original": "dataset/images/rong_viet_nam/rong_viet_nam_013.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/rong_viet_nam_013/restored.png",
+                "cleaned": "outputs/rong_viet_nam_013/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_013/normalized.png",
+                "edges": "outputs/rong_viet_nam_013/edges.png",
+                "segmented": "outputs/rong_viet_nam_013/segmented.png",
+                "mask": "outputs/rong_viet_nam_013/mask.png",
+                "vectorized": "outputs/rong_viet_nam_013/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 97.0,
+                "brightness": 183.07,
+                "contrast": 56.31,
+                "sharpness": 3300.46,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "rong_viet_nam_014",
+            "category": "rong_viet_nam",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_014.png",
+            "source": {
+                "original": "dataset/images/rong_viet_nam/rong_viet_nam_014.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/rong_viet_nam_014/restored.png",
+                "cleaned": "outputs/rong_viet_nam_014/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_014/normalized.png",
+                "edges": "outputs/rong_viet_nam_014/edges.png",
+                "segmented": "outputs/rong_viet_nam_014/segmented.png",
+                "mask": "outputs/rong_viet_nam_014/mask.png",
+                "vectorized": "outputs/rong_viet_nam_014/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 95.5,
+                "brightness": 138.18,
+                "contrast": 73.85,
+                "sharpness": 6663.85,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "rong_viet_nam_015",
+            "category": "rong_viet_nam",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_015.png",
+            "source": {
+                "original": "dataset/images/rong_viet_nam/rong_viet_nam_015.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/rong_viet_nam_015/restored.png",
+                "cleaned": "outputs/rong_viet_nam_015/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_015/normalized.png",
+                "edges": "outputs/rong_viet_nam_015/edges.png",
+                "segmented": "outputs/rong_viet_nam_015/segmented.png",
+                "mask": "outputs/rong_viet_nam_015/mask.png",
+                "vectorized": "outputs/rong_viet_nam_015/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 95.5,
+                "brightness": 142.07,
+                "contrast": 70.47,
+                "sharpness": 7735.28,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "rong_viet_nam_016",
+            "category": "rong_viet_nam",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_016.png",
+            "source": {
+                "original": "dataset/images/rong_viet_nam/rong_viet_nam_016.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/rong_viet_nam_016/restored.png",
+                "cleaned": "outputs/rong_viet_nam_016/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_016/normalized.png",
+                "edges": "outputs/rong_viet_nam_016/edges.png",
+                "segmented": "outputs/rong_viet_nam_016/segmented.png",
+                "mask": "outputs/rong_viet_nam_016/mask.png",
+                "vectorized": "outputs/rong_viet_nam_016/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 92.5,
+                "brightness": 99.14,
+                "contrast": 48.09,
+                "sharpness": 4934.81,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "rong_viet_nam_018",
+            "category": "rong_viet_nam",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_018.png",
+            "source": {
+                "original": "dataset/images/rong_viet_nam/rong_viet_nam_018.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/rong_viet_nam_018/restored.png",
+                "cleaned": "outputs/rong_viet_nam_018/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_018/normalized.png",
+                "edges": "outputs/rong_viet_nam_018/edges.png",
+                "segmented": "outputs/rong_viet_nam_018/segmented.png",
+                "mask": "outputs/rong_viet_nam_018/mask.png",
+                "vectorized": "outputs/rong_viet_nam_018/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 103.21,
+                "contrast": 81.96,
+                "sharpness": 4093.97,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "rong_viet_nam_019",
+            "category": "rong_viet_nam",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_019.png",
+            "source": {
+                "original": "dataset/images/rong_viet_nam/rong_viet_nam_019.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/rong_viet_nam_019/restored.png",
+                "cleaned": "outputs/rong_viet_nam_019/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_019/normalized.png",
+                "edges": "outputs/rong_viet_nam_019/edges.png",
+                "segmented": "outputs/rong_viet_nam_019/segmented.png",
+                "mask": "outputs/rong_viet_nam_019/mask.png",
+                "vectorized": "outputs/rong_viet_nam_019/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 96.25,
+                "brightness": 120.3,
+                "contrast": 38.16,
+                "sharpness": 1121.59,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_001",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_001.png",
+            "source": {
+                "original": "dataset/images/sen/sen_001.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_001/restored.png",
+                "cleaned": "outputs/sen_001/cleaned.png",
+                "normalized": "outputs/sen_001/normalized.png",
+                "edges": "outputs/sen_001/edges.png",
+                "segmented": "outputs/sen_001/segmented.png",
+                "mask": "outputs/sen_001/mask.png",
+                "vectorized": "outputs/sen_001/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 93.0,
+                "brightness": 197.08,
+                "contrast": 44.01,
+                "sharpness": 886.15,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_002",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_002.png",
+            "source": {
+                "original": "dataset/images/sen/sen_002.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_002/restored.png",
+                "cleaned": "outputs/sen_002/cleaned.png",
+                "normalized": "outputs/sen_002/normalized.png",
+                "edges": "outputs/sen_002/edges.png",
+                "segmented": "outputs/sen_002/segmented.png",
+                "mask": "outputs/sen_002/mask.png",
+                "vectorized": "outputs/sen_002/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 154.45,
+                "contrast": 49.09,
+                "sharpness": 909.34,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_003",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_003.png",
+            "source": {
+                "original": "dataset/images/sen/sen_003.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_003/restored.png",
+                "cleaned": "outputs/sen_003/cleaned.png",
+                "normalized": "outputs/sen_003/normalized.png",
+                "edges": "outputs/sen_003/edges.png",
+                "segmented": "outputs/sen_003/segmented.png",
+                "mask": "outputs/sen_003/mask.png",
+                "vectorized": "outputs/sen_003/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 93.0,
+                "brightness": 202.93,
+                "contrast": 53.25,
+                "sharpness": 966.24,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_004",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_004.png",
+            "source": {
+                "original": "dataset/images/sen/sen_004.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_004/restored.png",
+                "cleaned": "outputs/sen_004/cleaned.png",
+                "normalized": "outputs/sen_004/normalized.png",
+                "edges": "outputs/sen_004/edges.png",
+                "segmented": "outputs/sen_004/segmented.png",
+                "mask": "outputs/sen_004/mask.png",
+                "vectorized": "outputs/sen_004/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 129.88,
+                "contrast": 61.87,
+                "sharpness": 2316.95,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [
+                "RAW",
+                "RESTORATION",
+                "CLEANING",
+                "NORMALIZATION",
+                "EDGE_PROCESSING",
+                "SEGMENTATION",
+                "VECTORIZATION",
+                "QUALITY_EVALUATION"
+            ],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "other_001",
+            "category": "other",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/other/other_001.png",
+            "source": {
+                "original": "dataset/images/other/other_001.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/other_001/restored.png",
+                "cleaned": "outputs/other_001/cleaned.png",
+                "normalized": "outputs/other_001/normalized.png",
+                "edges": "outputs/other_001/edges.png",
+                "segmented": "outputs/other_001/segmented.png",
+                "mask": "outputs/other_001/mask.png",
+                "vectorized": "outputs/other_001/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 97.0,
+                "brightness": 189.69,
+                "contrast": 86.96,
+                "sharpness": 1812.03,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "other_002",
+            "category": "other",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/other/other_002.png",
+            "source": {
+                "original": "dataset/images/other/other_002.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/other_002/restored.png",
+                "cleaned": "outputs/other_002/cleaned.png",
+                "normalized": "outputs/other_002/normalized.png",
+                "edges": "outputs/other_002/edges.png",
+                "segmented": "outputs/other_002/segmented.png",
+                "mask": "outputs/other_002/mask.png",
+                "vectorized": "outputs/other_002/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 88.0,
+                "brightness": 57.71,
+                "contrast": 73.44,
+                "sharpness": 406.2,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "other_003",
+            "category": "other",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/other/other_003.png",
+            "source": {
+                "original": "dataset/images/other/other_003.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/other_003/restored.png",
+                "cleaned": "outputs/other_003/cleaned.png",
+                "normalized": "outputs/other_003/normalized.png",
+                "edges": "outputs/other_003/edges.png",
+                "segmented": "outputs/other_003/segmented.png",
+                "mask": "outputs/other_003/mask.png",
+                "vectorized": "outputs/other_003/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 93.0,
+                "brightness": 81.27,
+                "contrast": 84.29,
+                "sharpness": 200.25,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "other_004",
+            "category": "other",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/other/other_004.png",
+            "source": {
+                "original": "dataset/images/other/other_004.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/other_004/restored.png",
+                "cleaned": "outputs/other_004/cleaned.png",
+                "normalized": "outputs/other_004/normalized.png",
+                "edges": "outputs/other_004/edges.png",
+                "segmented": "outputs/other_004/segmented.png",
+                "mask": "outputs/other_004/mask.png",
+                "vectorized": "outputs/other_004/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 115.34,
+                "contrast": 47.48,
+                "sharpness": 89.83,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "other_005",
+            "category": "other",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/other/other_005.png",
+            "source": {
+                "original": "dataset/images/other/other_005.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/other_005/restored.png",
+                "cleaned": "outputs/other_005/cleaned.png",
+                "normalized": "outputs/other_005/normalized.png",
+                "edges": "outputs/other_005/edges.png",
+                "segmented": "outputs/other_005/segmented.png",
+                "mask": "outputs/other_005/mask.png",
+                "vectorized": "outputs/other_005/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 88.0,
+                "brightness": 47.91,
+                "contrast": 51.59,
+                "sharpness": 843.99,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "other_006",
+            "category": "other",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/other/other_006.png",
+            "source": {
+                "original": "dataset/images/other/other_006.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/other_006/restored.png",
+                "cleaned": "outputs/other_006/cleaned.png",
+                "normalized": "outputs/other_006/normalized.png",
+                "edges": "outputs/other_006/edges.png",
+                "segmented": "outputs/other_006/segmented.png",
+                "mask": "outputs/other_006/mask.png",
+                "vectorized": "outputs/other_006/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 88.0,
+                "brightness": 61.48,
+                "contrast": 50.91,
+                "sharpness": 140.44,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_006",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_006.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_006.webp"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_006/restored.png",
+                "cleaned": "outputs/phuong_006/cleaned.png",
+                "normalized": "outputs/phuong_006/normalized.png",
+                "edges": "outputs/phuong_006/edges.png",
+                "segmented": "outputs/phuong_006/segmented.png",
+                "mask": "outputs/phuong_006/mask.png",
+                "vectorized": "outputs/phuong_006/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 121.78,
+                "contrast": 59.83,
+                "sharpness": 1257.55,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_007",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_007.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_007.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_007/restored.png",
+                "cleaned": "outputs/phuong_007/cleaned.png",
+                "normalized": "outputs/phuong_007/normalized.png",
+                "edges": "outputs/phuong_007/edges.png",
+                "segmented": "outputs/phuong_007/segmented.png",
+                "mask": "outputs/phuong_007/mask.png",
+                "vectorized": "outputs/phuong_007/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 162.33,
+                "contrast": 50.49,
+                "sharpness": 382.25,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_008",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_008.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_008.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_008/restored.png",
+                "cleaned": "outputs/phuong_008/cleaned.png",
+                "normalized": "outputs/phuong_008/normalized.png",
+                "edges": "outputs/phuong_008/edges.png",
+                "segmented": "outputs/phuong_008/segmented.png",
+                "mask": "outputs/phuong_008/mask.png",
+                "vectorized": "outputs/phuong_008/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 92.5,
+                "brightness": 107.1,
+                "contrast": 32.86,
+                "sharpness": 80.84,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_009",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_009.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_009.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_009/restored.png",
+                "cleaned": "outputs/phuong_009/cleaned.png",
+                "normalized": "outputs/phuong_009/normalized.png",
+                "edges": "outputs/phuong_009/edges.png",
+                "segmented": "outputs/phuong_009/segmented.png",
+                "mask": "outputs/phuong_009/mask.png",
+                "vectorized": "outputs/phuong_009/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 88.0,
+                "brightness": 24.65,
+                "contrast": 50.72,
+                "sharpness": 717.67,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_010",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_010.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_010.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_010/restored.png",
+                "cleaned": "outputs/phuong_010/cleaned.png",
+                "normalized": "outputs/phuong_010/normalized.png",
+                "edges": "outputs/phuong_010/edges.png",
+                "segmented": "outputs/phuong_010/segmented.png",
+                "mask": "outputs/phuong_010/mask.png",
+                "vectorized": "outputs/phuong_010/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 96.25,
+                "brightness": 127.9,
+                "contrast": 39.14,
+                "sharpness": 708.81,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_011",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_011.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_011.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_011/restored.png",
+                "cleaned": "outputs/phuong_011/cleaned.png",
+                "normalized": "outputs/phuong_011/normalized.png",
+                "edges": "outputs/phuong_011/edges.png",
+                "segmented": "outputs/phuong_011/segmented.png",
+                "mask": "outputs/phuong_011/mask.png",
+                "vectorized": "outputs/phuong_011/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 117.97,
+                "contrast": 41.79,
+                "sharpness": 438.63,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_012",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_012.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_012.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_012/restored.png",
+                "cleaned": "outputs/phuong_012/cleaned.png",
+                "normalized": "outputs/phuong_012/normalized.png",
+                "edges": "outputs/phuong_012/edges.png",
+                "segmented": "outputs/phuong_012/segmented.png",
+                "mask": "outputs/phuong_012/mask.png",
+                "vectorized": "outputs/phuong_012/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 166.36,
+                "contrast": 82.06,
+                "sharpness": 649.03,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_013",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_013.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_013.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_013/restored.png",
+                "cleaned": "outputs/phuong_013/cleaned.png",
+                "normalized": "outputs/phuong_013/normalized.png",
+                "edges": "outputs/phuong_013/edges.png",
+                "segmented": "outputs/phuong_013/segmented.png",
+                "mask": "outputs/phuong_013/mask.png",
+                "vectorized": "outputs/phuong_013/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 95.5,
+                "brightness": 109.81,
+                "contrast": 67.28,
+                "sharpness": 8539.02,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_014",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_014.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_014.webp"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_014/restored.png",
+                "cleaned": "outputs/phuong_014/cleaned.png",
+                "normalized": "outputs/phuong_014/normalized.png",
+                "edges": "outputs/phuong_014/edges.png",
+                "segmented": "outputs/phuong_014/segmented.png",
+                "mask": "outputs/phuong_014/mask.png",
+                "vectorized": "outputs/phuong_014/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 88.0,
+                "brightness": 76.48,
+                "contrast": 50.64,
+                "sharpness": 518.34,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "rong_viet_nam_021",
+            "category": "rong_viet_nam",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_021.png",
+            "source": {
+                "original": "dataset/images/rong_viet_nam/rong_viet_nam_021.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/rong_viet_nam_021/restored.png",
+                "cleaned": "outputs/rong_viet_nam_021/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_021/normalized.png",
+                "edges": "outputs/rong_viet_nam_021/edges.png",
+                "segmented": "outputs/rong_viet_nam_021/segmented.png",
+                "mask": "outputs/rong_viet_nam_021/mask.png",
+                "vectorized": "outputs/rong_viet_nam_021/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 88.0,
+                "brightness": 51.07,
+                "contrast": 81.19,
+                "sharpness": 2488.55,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "rong_viet_nam_022",
+            "category": "rong_viet_nam",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_022.png",
+            "source": {
+                "original": "dataset/images/rong_viet_nam/rong_viet_nam_022.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/rong_viet_nam_022/restored.png",
+                "cleaned": "outputs/rong_viet_nam_022/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_022/normalized.png",
+                "edges": "outputs/rong_viet_nam_022/edges.png",
+                "segmented": "outputs/rong_viet_nam_022/segmented.png",
+                "mask": "outputs/rong_viet_nam_022/mask.png",
+                "vectorized": "outputs/rong_viet_nam_022/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 97.0,
+                "brightness": 95.43,
+                "contrast": 77.0,
+                "sharpness": 80.54,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "rong_viet_nam_023",
+            "category": "rong_viet_nam",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_023.png",
+            "source": {
+                "original": "dataset/images/rong_viet_nam/rong_viet_nam_023.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/rong_viet_nam_023/restored.png",
+                "cleaned": "outputs/rong_viet_nam_023/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_023/normalized.png",
+                "edges": "outputs/rong_viet_nam_023/edges.png",
+                "segmented": "outputs/rong_viet_nam_023/segmented.png",
+                "mask": "outputs/rong_viet_nam_023/mask.png",
+                "vectorized": "outputs/rong_viet_nam_023/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 113.96,
+                "contrast": 63.16,
+                "sharpness": 135.28,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "rong_viet_nam_024",
+            "category": "rong_viet_nam",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_024.png",
+            "source": {
+                "original": "dataset/images/rong_viet_nam/rong_viet_nam_024.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/rong_viet_nam_024/restored.png",
+                "cleaned": "outputs/rong_viet_nam_024/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_024/normalized.png",
+                "edges": "outputs/rong_viet_nam_024/edges.png",
+                "segmented": "outputs/rong_viet_nam_024/segmented.png",
+                "mask": "outputs/rong_viet_nam_024/mask.png",
+                "vectorized": "outputs/rong_viet_nam_024/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 178.32,
+                "contrast": 77.01,
+                "sharpness": 1828.3,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "rong_viet_nam_025",
+            "category": "rong_viet_nam",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_025.png",
+            "source": {
+                "original": "dataset/images/rong_viet_nam/rong_viet_nam_025.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/rong_viet_nam_025/restored.png",
+                "cleaned": "outputs/rong_viet_nam_025/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_025/normalized.png",
+                "edges": "outputs/rong_viet_nam_025/edges.png",
+                "segmented": "outputs/rong_viet_nam_025/segmented.png",
+                "mask": "outputs/rong_viet_nam_025/mask.png",
+                "vectorized": "outputs/rong_viet_nam_025/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 88.0,
+                "brightness": 64.74,
+                "contrast": 57.02,
+                "sharpness": 1915.14,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "rong_viet_nam_026",
+            "category": "rong_viet_nam",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/rong_viet_nam/rong_viet_nam_026.png",
+            "source": {
+                "original": "dataset/images/rong_viet_nam/rong_viet_nam_026.png"
+            },
+            "refined_data": {
+                "restored": "outputs/rong_viet_nam_026/restored.png",
+                "cleaned": "outputs/rong_viet_nam_026/cleaned.png",
+                "normalized": "outputs/rong_viet_nam_026/normalized.png",
+                "edges": "outputs/rong_viet_nam_026/edges.png",
+                "segmented": "outputs/rong_viet_nam_026/segmented.png",
+                "mask": "outputs/rong_viet_nam_026/mask.png",
+                "vectorized": "outputs/rong_viet_nam_026/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 97.0,
+                "brightness": 92.73,
+                "contrast": 54.47,
+                "sharpness": 290.34,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "trong_dong_001",
+            "category": "trong_dong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/trong_dong/trong_dong_001.png",
+            "source": {
+                "original": "dataset/images/trong_dong/trong_dong_002.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/trong_dong_001/restored.png",
+                "cleaned": "outputs/trong_dong_001/cleaned.png",
+                "normalized": "outputs/trong_dong_001/normalized.png",
+                "edges": "outputs/trong_dong_001/edges.png",
+                "segmented": "outputs/trong_dong_001/segmented.png",
+                "mask": "outputs/trong_dong_001/mask.png",
+                "vectorized": "outputs/trong_dong_001/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 129.92,
+                "contrast": 58.53,
+                "sharpness": 2527.37,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "trong_dong_002",
+            "category": "trong_dong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/trong_dong/trong_dong_002.png",
+            "source": {
+                "original": "dataset/images/trong_dong/trong_dong_003.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/trong_dong_002/restored.png",
+                "cleaned": "outputs/trong_dong_002/cleaned.png",
+                "normalized": "outputs/trong_dong_002/normalized.png",
+                "edges": "outputs/trong_dong_002/edges.png",
+                "segmented": "outputs/trong_dong_002/segmented.png",
+                "mask": "outputs/trong_dong_002/mask.png",
+                "vectorized": "outputs/trong_dong_002/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 112.68,
+                "contrast": 86.94,
+                "sharpness": 1722.68,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "trong_dong_003",
+            "category": "trong_dong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/trong_dong/trong_dong_003.png",
+            "source": {
+                "original": "dataset/images/trong_dong/trong_dong_004.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/trong_dong_003/restored.png",
+                "cleaned": "outputs/trong_dong_003/cleaned.png",
+                "normalized": "outputs/trong_dong_003/normalized.png",
+                "edges": "outputs/trong_dong_003/edges.png",
+                "segmented": "outputs/trong_dong_003/segmented.png",
+                "mask": "outputs/trong_dong_003/mask.png",
+                "vectorized": "outputs/trong_dong_003/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 146.09,
+                "contrast": 40.97,
+                "sharpness": 325.17,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
         }
     ],
     "rejected_assets": [],
-    "pending_assets": [
-        {
-            "asset_id": "uploaded_001",
-            "reason": "Quality evaluation unavailable."
-        }
-    ]
+    "pending_assets": []
 }

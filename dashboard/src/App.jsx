@@ -1147,7 +1147,7 @@ function App() {
 
               {filteredAssets.map((asset) => (
                 <AssetCard
-                  key={asset.id}
+                  key={asset.asset_id || asset.id}
                   asset={asset}
                   onClick={() =>
                     setSelectedAsset(asset)

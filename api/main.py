@@ -36,8 +36,8 @@ PROJECT_ROOT = os.path.dirname(
 
 CATALOG_PATH = os.path.join(
     PROJECT_ROOT,
-    "metadata",
-    "heritage_catalog.json"
+    "catalog",
+    "catalog.json"
 )
 
 DATASET_DIR = os.path.join(
@@ -160,7 +160,19 @@ def load_catalog():
             encoding="utf-8"
         ) as file:
 
-            return json.load(file)
+            data = json.load(file)
+
+        # catalog/catalog.json stores assets inside
+        # the top-level "assets" field.
+        if isinstance(data, dict):
+            assets = data.get("assets", [])
+            return assets if isinstance(assets, list) else []
+
+        # Keep compatibility with a plain list catalog.
+        if isinstance(data, list):
+            return data
+
+        return []
 
     except Exception as error:
 
@@ -188,6 +200,30 @@ def save_catalog(catalog):
         exist_ok=True
     )
 
+    # Preserve the catalog JSON structure while
+    # updating only the assets list.
+    existing_data = {}
+
+    if os.path.exists(CATALOG_PATH):
+        try:
+            with open(
+                CATALOG_PATH,
+                "r",
+                encoding="utf-8"
+            ) as existing_file:
+                existing_data = json.load(existing_file)
+
+        except Exception:
+            existing_data = {}
+
+    if isinstance(existing_data, dict):
+        existing_data["assets"] = catalog
+        data_to_save = existing_data
+    else:
+        data_to_save = {
+            "assets": catalog
+        }
+
     with open(
         CATALOG_PATH,
         "w",
@@ -195,7 +231,7 @@ def save_catalog(catalog):
     ) as file:
 
         json.dump(
-            catalog,
+            data_to_save,
             file,
             indent=4,
             ensure_ascii=False
@@ -359,6 +395,60 @@ def get_quality_score(item):
     return quality.get(
         "overall_score"
     )
+
+
+def get_asset_identifier(item):
+    """Return the canonical identifier regardless of catalog version."""
+    if not isinstance(item, dict):
+        return None
+
+    return item.get("asset_id") or item.get("id")
+
+
+def find_asset_by_id(catalog, asset_id):
+    """Find an asset using either asset_id or the legacy id field."""
+    target = str(asset_id)
+
+    for item in catalog:
+        if not isinstance(item, dict):
+            continue
+
+        if str(item.get("asset_id", "")) == target:
+            return item
+
+        if str(item.get("id", "")) == target:
+            return item
+
+    return None
+
+
+def prepare_asset_for_api(item):
+    """Expose compatibility fields without modifying catalog.json."""
+    if not isinstance(item, dict):
+        return item
+
+    result = dict(item)
+
+    # Current catalog uses asset_id; older dashboard code expects id.
+    if not result.get("id") and result.get("asset_id"):
+        result["id"] = result["asset_id"]
+
+    # Current catalog stores the original path under original.path.
+    if not result.get("path"):
+        original = result.get("original")
+        if isinstance(original, dict) and original.get("path"):
+            result["path"] = original["path"]
+
+    # Keep the quality object exactly as stored by the catalog.
+    quality = result.get("quality")
+    if isinstance(quality, dict):
+        if "label" not in quality and quality.get("quality") is not None:
+            quality["label"] = quality.get("quality")
+
+    # processing_outputs already contains the comparison files.
+    # Do not overwrite it with outputs because the frontend uses both.
+
+    return result
 
 
 def calculate_image_metrics(
@@ -526,9 +616,12 @@ def get_assets(
 
     total = len(catalog)
 
-    results = catalog[
-        offset:
-        offset + limit
+    results = [
+        prepare_asset_for_api(item)
+        for item in catalog[
+            offset:
+            offset + limit
+        ]
     ]
 
     return {
@@ -552,13 +645,13 @@ def get_asset(
 
     catalog = load_catalog()
 
-    for item in catalog:
+    asset = find_asset_by_id(
+        catalog,
+        asset_id
+    )
 
-        if item.get(
-            "id"
-        ) == asset_id:
-
-            return item
+    if asset:
+        return prepare_asset_for_api(asset)
 
     return {
         "error": "Asset not found",
@@ -729,6 +822,8 @@ async def upload_image(
 
         "id": asset_id,
 
+        "asset_id": asset_id,
+
         "filename": saved_filename,
 
         "path": relative_image_path,
@@ -897,9 +992,7 @@ def update_asset_metadata(
     ):
 
         if str(
-            asset.get(
-                "id"
-            )
+            get_asset_identifier(asset)
         ) == str(
             asset_id
         ):
@@ -1499,7 +1592,7 @@ def get_asset_comparison(
         (
             item
             for item in catalog
-            if item.get("id") == asset_id
+            if str(get_asset_identifier(item)) == str(asset_id)
         ),
         None
     )

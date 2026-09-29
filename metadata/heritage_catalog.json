@@ -8007,9 +8007,9 @@
             "comparison_preview": "/outputs/rong_viet_nam_004/comparison_preview.png",
             "comparison_history": "/outputs/rong_viet_nam_004/comparison_history.json"
         },
-        "processed_at": "2026-09-28T01:06:05",
+        "processed_at": "2026-09-28T01:13:33",
         "comparison": {
-            "created_at": "2026-09-28T01:06:05",
+            "created_at": "2026-09-28T01:13:33",
             "before": {
                 "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\dataset\\images\\rong_viet_nam\\rong_viet_nam_004.webp",
                 "quality": "POOR",

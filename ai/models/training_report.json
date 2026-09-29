@@ -1,8 +1,13 @@
 {
+    "experiment": {
+        "version": "v2",
+        "purpose": "Evaluate HOG + SVM with class imbalance handling"
+    },
     "model": {
         "name": "HOG + SVM",
         "algorithm": "Support Vector Machine",
-        "kernel": "RBF"
+        "kernel": "RBF",
+        "class_weight": "balanced"
     },
     "feature_extraction": {
         "method": "HOG",
@@ -20,71 +25,127 @@
             2
         ]
     },
+    "dataset_policy": {
+        "excluded_categories": [
+            "uploaded"
+        ],
+        "reason": "Excluded categories are retained in the catalog but not used as classifier classes."
+    },
     "training": {
-        "samples": 31,
+        "samples": 59,
         "feature_dimension": 8100,
         "categories": [
             "dong_ho",
+            "other",
             "phu_dieu_rong",
-            "rong_viet_nam"
+            "phuong",
+            "rong_viet_nam",
+            "sen",
+            "trong_dong"
         ],
         "category_distribution": {
-            "rong_viet_nam": 5,
             "dong_ho": 24,
+            "rong_viet_nam": 16,
+            "trong_dong": 1,
+            "other": 4,
+            "phuong": 10,
+            "sen": 2,
             "phu_dieu_rong": 2
-        }
+        },
+        "excluded_assets": 1
     },
     "validation": {
-        "samples": 7,
-        "accuracy": 0.7142857142857143,
+        "samples": 15,
+        "accuracy": 0.4666666666666667,
         "category_distribution": {
+            "rong_viet_nam": 4,
+            "phuong": 2,
             "dong_ho": 5,
-            "rong_viet_nam": 1,
-            "phu_dieu_rong": 1
-        }
+            "sen": 1,
+            "phu_dieu_rong": 1,
+            "trong_dong": 1,
+            "other": 1
+        },
+        "excluded_assets": 0
     },
     "assets": {
         "train": [
-            "rong_viet_nam_007",
-            "dong_ho_005",
-            "dong_ho_030",
             "dong_ho_002",
-            "dong_ho_014",
-            "dong_ho_023",
-            "dong_ho_007",
-            "rong_viet_nam_003",
-            "dong_ho_009",
-            "dong_ho_032",
-            "dong_ho_027",
-            "phu_dieu_rong_002",
-            "dong_ho_022",
-            "dong_ho_034",
-            "dong_ho_004",
-            "rong_viet_nam_001",
-            "dong_ho_033",
             "dong_ho_018",
-            "dong_ho_026",
-            "dong_ho_003",
-            "dong_ho_010",
-            "dong_ho_024",
-            "dong_ho_028",
-            "dong_ho_008",
-            "dong_ho_015",
-            "phu_dieu_rong_003",
-            "dong_ho_001",
+            "rong_viet_nam_022",
+            "dong_ho_030",
+            "rong_viet_nam_026",
+            "trong_dong_003",
+            "other_003",
             "dong_ho_031",
+            "dong_ho_007",
+            "other_006",
+            "phuong_002",
+            "phuong_007",
+            "dong_ho_027",
+            "rong_viet_nam_013",
+            "dong_ho_015",
+            "other_002",
+            "phuong_001",
+            "rong_viet_nam_018",
+            "rong_viet_nam_009",
+            "dong_ho_019",
+            "dong_ho_003",
+            "sen_003",
+            "rong_viet_nam_003",
+            "dong_ho_005",
+            "rong_viet_nam_016",
+            "dong_ho_001",
             "rong_viet_nam_002",
-            "rong_viet_nam_005",
-            "dong_ho_019"
+            "rong_viet_nam_007",
+            "dong_ho_008",
+            "dong_ho_023",
+            "phuong_012",
+            "dong_ho_004",
+            "dong_ho_033",
+            "other_004",
+            "rong_viet_nam_001",
+            "rong_viet_nam_004",
+            "phuong_004",
+            "rong_viet_nam_024",
+            "dong_ho_032",
+            "dong_ho_009",
+            "sen_001",
+            "phu_dieu_rong_003",
+            "phuong_005",
+            "dong_ho_026",
+            "phuong_011",
+            "dong_ho_010",
+            "dong_ho_034",
+            "phuong_014",
+            "dong_ho_028",
+            "rong_viet_nam_012",
+            "phuong_008",
+            "rong_viet_nam_011",
+            "dong_ho_024",
+            "phu_dieu_rong_002",
+            "rong_viet_nam_008",
+            "dong_ho_014",
+            "dong_ho_022",
+            "phuong_013",
+            "rong_viet_nam_019"
         ],
         "validation": [
+            "rong_viet_nam_023",
+            "rong_viet_nam_025",
+            "rong_viet_nam_010",
+            "phuong_010",
             "dong_ho_017",
-            "dong_ho_029",
-            "dong_ho_012",
-            "rong_viet_nam_004",
-            "dong_ho_016",
             "dong_ho_011",
-            "phu_dieu_rong_001"
+            "sen_002",
+            "phu_dieu_rong_001",
+            "dong_ho_012",
+            "trong_dong_001",
+            "dong_ho_016",
+            "phuong_006",
+            "dong_ho_029",
+            "other_001",
+            "rong_viet_nam_005"
         ]
     }
 }
