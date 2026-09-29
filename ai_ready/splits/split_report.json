@@ -1,54 +1,54 @@
 {
     "dataset": "VietHeritage Classification Dataset V3",
     "source_manifest": "ai_ready/classification_manifest.json",
-    "created_at": "2026-09-29T00:59:03+07:00",
+    "created_at": "2026-09-29T17:58:21+07:00",
     "random_seed": 42,
     "ratios": {
         "train": 0.7,
         "validation": 0.15,
         "test": 0.15
     },
-    "total_assets": 83,
+    "total_assets": 123,
     "categories": {
-        "dong_ho": 34,
-        "phu_dieu_rong": 4,
+        "dong_ho": 35,
+        "phu_dieu_rong": 19,
+        "phuong": 22,
         "rong_viet_nam": 24,
-        "phuong": 14,
-        "sen": 4,
+        "sen": 20,
         "trong_dong": 3
     },
     "splits": {
         "train": {
-            "count": 55,
+            "count": 85,
             "distribution": {
-                "dong_ho": 24,
+                "phuong": 16,
+                "phu_dieu_rong": 13,
                 "rong_viet_nam": 16,
-                "phuong": 10,
-                "sen": 2,
-                "trong_dong": 1,
-                "phu_dieu_rong": 2
+                "dong_ho": 25,
+                "sen": 14,
+                "trong_dong": 1
             }
         },
         "validation": {
-            "count": 14,
+            "count": 19,
             "distribution": {
                 "rong_viet_nam": 4,
+                "sen": 3,
                 "dong_ho": 5,
-                "phu_dieu_rong": 1,
-                "sen": 1,
-                "phuong": 2,
+                "phu_dieu_rong": 3,
+                "phuong": 3,
                 "trong_dong": 1
             }
         },
         "test": {
-            "count": 14,
+            "count": 19,
             "distribution": {
                 "rong_viet_nam": 4,
-                "sen": 1,
+                "phuong": 3,
                 "dong_ho": 5,
-                "phu_dieu_rong": 1,
-                "trong_dong": 1,
-                "phuong": 2
+                "phu_dieu_rong": 3,
+                "sen": 3,
+                "trong_dong": 1
             }
         }
     },

@@ -23,12 +23,23 @@
                 "vectorized": true
             },
             "quality": {
-                "brightness": 133.2,
-                "contrast": 51.45,
-                "sharpness": 13585.99,
-                "resolution": 70.0,
+                "quality": "GOOD",
                 "overall_score": 83.5,
-                "label": "GOOD"
+                "quality_scores": {
+                    "resolution": 70.0,
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "noise": 70.0
+                },
+                "technical_metrics": {
+                    "width": 120,
+                    "height": 89,
+                    "brightness": 133.2,
+                    "contrast": 51.45,
+                    "sharpness": 13585.99,
+                    "noise": 19.51,
+                    "edge_density": 0.2538
+                }
             },
             "outputs": {
                 "restored": "outputs/dong_ho_001/restored.png",
@@ -147,9 +158,9 @@
                 "comparison_preview": "/outputs/dong_ho_001/comparison_preview.png",
                 "comparison_history": "/outputs/dong_ho_001/comparison_history.json"
             },
-            "processed_at": "2026-09-28T23:25:28",
+            "processed_at": "2026-09-29T18:16:00",
             "comparison": {
-                "created_at": "2026-09-28T23:25:27",
+                "created_at": "2026-09-29T18:16:00",
                 "before": {
                     "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\dataset\\images\\dong_ho\\dong_ho_001.jpg",
                     "quality": "POOR",
@@ -8558,141 +8569,6 @@
             }
         },
         {
-            "asset_id": "rong_viet_nam_017",
-            "category": "rong_viet_nam",
-            "filename": "rong_viet_nam_017.jpg",
-            "source": {
-                "type": "dataset",
-                "name": "rong_viet_nam_017.jpg"
-            },
-            "original": {
-                "path": "dataset/images/rong_viet_nam/rong_viet_nam_017.jpg",
-                "width": 500,
-                "height": 637,
-                "format": "jpg",
-                "size_bytes": 82546
-            },
-            "processing": {
-                "preprocessed": true,
-                "restored": true,
-                "normalized": true,
-                "segmented": true,
-                "vectorized": true
-            },
-            "quality": {
-                "brightness": 143.73,
-                "contrast": 52.11,
-                "sharpness": 1940.66,
-                "resolution": 100.0,
-                "overall_score": 100.0,
-                "label": "GOOD"
-            },
-            "outputs": {
-                "restored": "outputs/rong_viet_nam_017/restored.png",
-                "cleaned": "outputs/rong_viet_nam_017/cleaned.png",
-                "normalized": "outputs/rong_viet_nam_017/normalized.png",
-                "edges": "outputs/rong_viet_nam_017/edges.png",
-                "segmented": "outputs/rong_viet_nam_017/segmented.png",
-                "mask": "outputs/rong_viet_nam_017/mask.png",
-                "svg": "outputs/rong_viet_nam_017/pattern.svg",
-                "quality_report": "outputs/rong_viet_nam_017/quality_report.json"
-            },
-            "lineage": {
-                "asset_id": "rong_viet_nam_017",
-                "created_at": "2026-09-28T23:18:15+07:00",
-                "pipeline": [
-                    "RAW",
-                    "RESTORATION",
-                    "CLEANING",
-                    "NORMALIZATION",
-                    "EDGE_PROCESSING",
-                    "SEGMENTATION",
-                    "VECTORIZATION",
-                    "QUALITY_EVALUATION"
-                ],
-                "stages": [
-                    {
-                        "stage": "RAW",
-                        "status": "available",
-                        "input": null,
-                        "output": "dataset/images/rong_viet_nam/rong_viet_nam_017.jpg",
-                        "description": "Original raw image collected from dataset.",
-                        "timestamp": null
-                    },
-                    {
-                        "stage": "RESTORATION",
-                        "status": "completed",
-                        "input": "dataset/images/rong_viet_nam/rong_viet_nam_017.jpg",
-                        "output": "outputs/rong_viet_nam_017/restored.png",
-                        "description": "Restore and enhance the original image.",
-                        "timestamp": null
-                    },
-                    {
-                        "stage": "CLEANING",
-                        "status": "completed",
-                        "input": "outputs/rong_viet_nam_017/restored.png",
-                        "output": "outputs/rong_viet_nam_017/cleaned.png",
-                        "description": "Remove unwanted artifacts and prepare the image for downstream processing.",
-                        "timestamp": null
-                    },
-                    {
-                        "stage": "NORMALIZATION",
-                        "status": "completed",
-                        "input": "outputs/rong_viet_nam_017/cleaned.png",
-                        "output": "outputs/rong_viet_nam_017/normalized.png",
-                        "description": "Normalize visual characteristics for consistent downstream processing.",
-                        "timestamp": null
-                    },
-                    {
-                        "stage": "EDGE_PROCESSING",
-                        "status": "completed",
-                        "input": "outputs/rong_viet_nam_017/normalized.png",
-                        "output": "outputs/rong_viet_nam_017/edges.png",
-                        "description": "Extract structural edge information from the normalized image.",
-                        "timestamp": null
-                    },
-                    {
-                        "stage": "SEGMENTATION",
-                        "status": "completed",
-                        "input": "outputs/rong_viet_nam_017/normalized.png",
-                        "output": {
-                            "segmented": "outputs/rong_viet_nam_017/segmented.png",
-                            "mask": "outputs/rong_viet_nam_017/mask.png"
-                        },
-                        "description": "Separate the heritage pattern from the background.",
-                        "timestamp": null
-                    },
-                    {
-                        "stage": "VECTORIZATION",
-                        "status": "completed",
-                        "input": "outputs/rong_viet_nam_017/mask.png",
-                        "output": "outputs/rong_viet_nam_017/pattern.svg",
-                        "description": "Convert the segmented pattern into a vector representation.",
-                        "timestamp": null
-                    },
-                    {
-                        "stage": "QUALITY_EVALUATION",
-                        "status": "completed",
-                        "input": "outputs/rong_viet_nam_017/normalized.png",
-                        "output": "outputs/rong_viet_nam_017/quality_report.json",
-                        "quality": {
-                            "label": "GOOD",
-                            "score": 100.0
-                        },
-                        "description": "Evaluate technical quality and determine whether the asset is suitable for downstream use.",
-                        "timestamp": null
-                    }
-                ],
-                "final_state": {
-                    "completed_stages": 8,
-                    "total_stages": 8,
-                    "completion_ratio": 1.0,
-                    "quality_label": "GOOD",
-                    "quality_score": 100.0
-                }
-            }
-        },
-        {
             "asset_id": "rong_viet_nam_018",
             "category": "rong_viet_nam",
             "filename": "rong_viet_nam_018.jpg",
@@ -8959,141 +8835,6 @@
                     "completion_ratio": 1.0,
                     "quality_label": "GOOD",
                     "quality_score": 96.25
-                }
-            }
-        },
-        {
-            "asset_id": "rong_viet_nam_020",
-            "category": "rong_viet_nam",
-            "filename": "rong_viet_nam_020.jpg",
-            "source": {
-                "type": "dataset",
-                "name": "rong_viet_nam_020.jpg"
-            },
-            "original": {
-                "path": "dataset/images/rong_viet_nam/rong_viet_nam_020.jpg",
-                "width": 500,
-                "height": 750,
-                "format": "jpg",
-                "size_bytes": 89616
-            },
-            "processing": {
-                "preprocessed": true,
-                "restored": true,
-                "normalized": true,
-                "segmented": true,
-                "vectorized": true
-            },
-            "quality": {
-                "brightness": 183.07,
-                "contrast": 56.31,
-                "sharpness": 3300.46,
-                "resolution": 100.0,
-                "overall_score": 97.0,
-                "label": "GOOD"
-            },
-            "outputs": {
-                "restored": "outputs/rong_viet_nam_020/restored.png",
-                "cleaned": "outputs/rong_viet_nam_020/cleaned.png",
-                "normalized": "outputs/rong_viet_nam_020/normalized.png",
-                "edges": "outputs/rong_viet_nam_020/edges.png",
-                "segmented": "outputs/rong_viet_nam_020/segmented.png",
-                "mask": "outputs/rong_viet_nam_020/mask.png",
-                "svg": "outputs/rong_viet_nam_020/pattern.svg",
-                "quality_report": "outputs/rong_viet_nam_020/quality_report.json"
-            },
-            "lineage": {
-                "asset_id": "rong_viet_nam_020",
-                "created_at": "2026-09-28T23:18:15+07:00",
-                "pipeline": [
-                    "RAW",
-                    "RESTORATION",
-                    "CLEANING",
-                    "NORMALIZATION",
-                    "EDGE_PROCESSING",
-                    "SEGMENTATION",
-                    "VECTORIZATION",
-                    "QUALITY_EVALUATION"
-                ],
-                "stages": [
-                    {
-                        "stage": "RAW",
-                        "status": "available",
-                        "input": null,
-                        "output": "dataset/images/rong_viet_nam/rong_viet_nam_020.jpg",
-                        "description": "Original raw image collected from dataset.",
-                        "timestamp": null
-                    },
-                    {
-                        "stage": "RESTORATION",
-                        "status": "completed",
-                        "input": "dataset/images/rong_viet_nam/rong_viet_nam_020.jpg",
-                        "output": "outputs/rong_viet_nam_020/restored.png",
-                        "description": "Restore and enhance the original image.",
-                        "timestamp": null
-                    },
-                    {
-                        "stage": "CLEANING",
-                        "status": "completed",
-                        "input": "outputs/rong_viet_nam_020/restored.png",
-                        "output": "outputs/rong_viet_nam_020/cleaned.png",
-                        "description": "Remove unwanted artifacts and prepare the image for downstream processing.",
-                        "timestamp": null
-                    },
-                    {
-                        "stage": "NORMALIZATION",
-                        "status": "completed",
-                        "input": "outputs/rong_viet_nam_020/cleaned.png",
-                        "output": "outputs/rong_viet_nam_020/normalized.png",
-                        "description": "Normalize visual characteristics for consistent downstream processing.",
-                        "timestamp": null
-                    },
-                    {
-                        "stage": "EDGE_PROCESSING",
-                        "status": "completed",
-                        "input": "outputs/rong_viet_nam_020/normalized.png",
-                        "output": "outputs/rong_viet_nam_020/edges.png",
-                        "description": "Extract structural edge information from the normalized image.",
-                        "timestamp": null
-                    },
-                    {
-                        "stage": "SEGMENTATION",
-                        "status": "completed",
-                        "input": "outputs/rong_viet_nam_020/normalized.png",
-                        "output": {
-                            "segmented": "outputs/rong_viet_nam_020/segmented.png",
-                            "mask": "outputs/rong_viet_nam_020/mask.png"
-                        },
-                        "description": "Separate the heritage pattern from the background.",
-                        "timestamp": null
-                    },
-                    {
-                        "stage": "VECTORIZATION",
-                        "status": "completed",
-                        "input": "outputs/rong_viet_nam_020/mask.png",
-                        "output": "outputs/rong_viet_nam_020/pattern.svg",
-                        "description": "Convert the segmented pattern into a vector representation.",
-                        "timestamp": null
-                    },
-                    {
-                        "stage": "QUALITY_EVALUATION",
-                        "status": "completed",
-                        "input": "outputs/rong_viet_nam_020/normalized.png",
-                        "output": "outputs/rong_viet_nam_020/quality_report.json",
-                        "quality": {
-                            "label": "GOOD",
-                            "score": 97.0
-                        },
-                        "description": "Evaluate technical quality and determine whether the asset is suitable for downstream use.",
-                        "timestamp": null
-                    }
-                ],
-                "final_state": {
-                    "completed_stages": 8,
-                    "total_stages": 8,
-                    "completion_ratio": 1.0,
-                    "quality_label": "GOOD",
-                    "quality_score": 97.0
                 }
             }
         },
@@ -10757,6 +10498,1646 @@
                 "mask": "outputs/trong_dong_003/mask.png",
                 "svg": "outputs/trong_dong_003/pattern.svg",
                 "quality_report": "outputs/trong_dong_003/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "dong_ho_035",
+            "category": "dong_ho",
+            "filename": "dong_ho_035.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "dong_ho_035.jpg"
+            },
+            "original": {
+                "path": "dataset/images/dong_ho/dong_ho_035.jpg",
+                "width": 454,
+                "height": 614,
+                "format": "jpg",
+                "size_bytes": 65484
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 150.79,
+                "contrast": 56.44,
+                "sharpness": 2016.16,
+                "resolution": 100.0,
+                "overall_score": 100.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/dong_ho_035/restored.png",
+                "cleaned": "outputs/dong_ho_035/cleaned.png",
+                "normalized": "outputs/dong_ho_035/normalized.png",
+                "edges": "outputs/dong_ho_035/edges.png",
+                "segmented": "outputs/dong_ho_035/segmented.png",
+                "mask": "outputs/dong_ho_035/mask.png",
+                "svg": "outputs/dong_ho_035/pattern.svg",
+                "quality_report": "outputs/dong_ho_035/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phu_dieu_rong_004",
+            "category": "phu_dieu_rong",
+            "filename": "phu_dieu_rong_006.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phu_dieu_rong_006.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phu_dieu_rong/phu_dieu_rong_006.jpg",
+                "width": 387,
+                "height": 516,
+                "format": "jpg",
+                "size_bytes": 27540
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 200.16,
+                "contrast": 64.72,
+                "sharpness": 1110.19,
+                "resolution": 100.0,
+                "overall_score": 93.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phu_dieu_rong_004/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_004/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_004/normalized.png",
+                "edges": "outputs/phu_dieu_rong_004/edges.png",
+                "segmented": "outputs/phu_dieu_rong_004/segmented.png",
+                "mask": "outputs/phu_dieu_rong_004/mask.png",
+                "svg": "outputs/phu_dieu_rong_004/pattern.svg",
+                "quality_report": "outputs/phu_dieu_rong_004/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phu_dieu_rong_006",
+            "category": "phu_dieu_rong",
+            "filename": "phu_dieu_rong_007.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phu_dieu_rong_007.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phu_dieu_rong/phu_dieu_rong_007.jpg",
+                "width": 447,
+                "height": 447,
+                "format": "jpg",
+                "size_bytes": 57668
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 136.18,
+                "contrast": 70.48,
+                "sharpness": 7801.51,
+                "resolution": 100.0,
+                "overall_score": 95.5,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phu_dieu_rong_006/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_006/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_006/normalized.png",
+                "edges": "outputs/phu_dieu_rong_006/edges.png",
+                "segmented": "outputs/phu_dieu_rong_006/segmented.png",
+                "mask": "outputs/phu_dieu_rong_006/mask.png",
+                "svg": "outputs/phu_dieu_rong_006/pattern.svg",
+                "quality_report": "outputs/phu_dieu_rong_006/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phu_dieu_rong_007",
+            "category": "phu_dieu_rong",
+            "filename": "phu_dieu_rong_008.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phu_dieu_rong_008.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phu_dieu_rong/phu_dieu_rong_008.jpg",
+                "width": 645,
+                "height": 475,
+                "format": "jpg",
+                "size_bytes": 68932
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 119.24,
+                "contrast": 52.95,
+                "sharpness": 3208.53,
+                "resolution": 100.0,
+                "overall_score": 95.5,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phu_dieu_rong_007/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_007/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_007/normalized.png",
+                "edges": "outputs/phu_dieu_rong_007/edges.png",
+                "segmented": "outputs/phu_dieu_rong_007/segmented.png",
+                "mask": "outputs/phu_dieu_rong_007/mask.png",
+                "svg": "outputs/phu_dieu_rong_007/pattern.svg",
+                "quality_report": "outputs/phu_dieu_rong_007/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phu_dieu_rong_008",
+            "category": "phu_dieu_rong",
+            "filename": "phu_dieu_rong_009.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phu_dieu_rong_009.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phu_dieu_rong/phu_dieu_rong_009.jpg",
+                "width": 457,
+                "height": 671,
+                "format": "jpg",
+                "size_bytes": 53855
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 80.38,
+                "contrast": 56.38,
+                "sharpness": 1758.27,
+                "resolution": 100.0,
+                "overall_score": 93.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phu_dieu_rong_008/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_008/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_008/normalized.png",
+                "edges": "outputs/phu_dieu_rong_008/edges.png",
+                "segmented": "outputs/phu_dieu_rong_008/segmented.png",
+                "mask": "outputs/phu_dieu_rong_008/mask.png",
+                "svg": "outputs/phu_dieu_rong_008/pattern.svg",
+                "quality_report": "outputs/phu_dieu_rong_008/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phu_dieu_rong_009",
+            "category": "phu_dieu_rong",
+            "filename": "phu_dieu_rong_010.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phu_dieu_rong_010.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phu_dieu_rong/phu_dieu_rong_010.jpg",
+                "width": 475,
+                "height": 421,
+                "format": "jpg",
+                "size_bytes": 37974
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 93.29,
+                "contrast": 65.33,
+                "sharpness": 1506.39,
+                "resolution": 100.0,
+                "overall_score": 97.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phu_dieu_rong_009/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_009/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_009/normalized.png",
+                "edges": "outputs/phu_dieu_rong_009/edges.png",
+                "segmented": "outputs/phu_dieu_rong_009/segmented.png",
+                "mask": "outputs/phu_dieu_rong_009/mask.png",
+                "svg": "outputs/phu_dieu_rong_009/pattern.svg",
+                "quality_report": "outputs/phu_dieu_rong_009/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phu_dieu_rong_010",
+            "category": "phu_dieu_rong",
+            "filename": "phu_dieu_rong_011.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phu_dieu_rong_011.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phu_dieu_rong/phu_dieu_rong_011.jpg",
+                "width": 415,
+                "height": 739,
+                "format": "jpg",
+                "size_bytes": 61959
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 149.05,
+                "contrast": 40.71,
+                "sharpness": 1833.11,
+                "resolution": 100.0,
+                "overall_score": 100.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phu_dieu_rong_010/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_010/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_010/normalized.png",
+                "edges": "outputs/phu_dieu_rong_010/edges.png",
+                "segmented": "outputs/phu_dieu_rong_010/segmented.png",
+                "mask": "outputs/phu_dieu_rong_010/mask.png",
+                "svg": "outputs/phu_dieu_rong_010/pattern.svg",
+                "quality_report": "outputs/phu_dieu_rong_010/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phu_dieu_rong_011",
+            "category": "phu_dieu_rong",
+            "filename": "phu_dieu_rong_012.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phu_dieu_rong_012.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phu_dieu_rong/phu_dieu_rong_012.jpg",
+                "width": 678,
+                "height": 452,
+                "format": "jpg",
+                "size_bytes": 61202
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 83.54,
+                "contrast": 57.39,
+                "sharpness": 2338.95,
+                "resolution": 100.0,
+                "overall_score": 93.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phu_dieu_rong_011/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_011/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_011/normalized.png",
+                "edges": "outputs/phu_dieu_rong_011/edges.png",
+                "segmented": "outputs/phu_dieu_rong_011/segmented.png",
+                "mask": "outputs/phu_dieu_rong_011/mask.png",
+                "svg": "outputs/phu_dieu_rong_011/pattern.svg",
+                "quality_report": "outputs/phu_dieu_rong_011/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phu_dieu_rong_012",
+            "category": "phu_dieu_rong",
+            "filename": "phu_dieu_rong_013.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phu_dieu_rong_013.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phu_dieu_rong/phu_dieu_rong_013.jpg",
+                "width": 641,
+                "height": 477,
+                "format": "jpg",
+                "size_bytes": 83512
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 115.85,
+                "contrast": 53.07,
+                "sharpness": 2420.51,
+                "resolution": 100.0,
+                "overall_score": 95.5,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phu_dieu_rong_012/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_012/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_012/normalized.png",
+                "edges": "outputs/phu_dieu_rong_012/edges.png",
+                "segmented": "outputs/phu_dieu_rong_012/segmented.png",
+                "mask": "outputs/phu_dieu_rong_012/mask.png",
+                "svg": "outputs/phu_dieu_rong_012/pattern.svg",
+                "quality_report": "outputs/phu_dieu_rong_012/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phu_dieu_rong_013",
+            "category": "phu_dieu_rong",
+            "filename": "phu_dieu_rong_014.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phu_dieu_rong_014.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phu_dieu_rong/phu_dieu_rong_014.jpg",
+                "width": 300,
+                "height": 300,
+                "format": "jpg",
+                "size_bytes": 19837
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 158.31,
+                "contrast": 27.67,
+                "sharpness": 1266.37,
+                "resolution": 100.0,
+                "overall_score": 87.5,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phu_dieu_rong_013/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_013/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_013/normalized.png",
+                "edges": "outputs/phu_dieu_rong_013/edges.png",
+                "segmented": "outputs/phu_dieu_rong_013/segmented.png",
+                "mask": "outputs/phu_dieu_rong_013/mask.png",
+                "svg": "outputs/phu_dieu_rong_013/pattern.svg",
+                "quality_report": "outputs/phu_dieu_rong_013/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phu_dieu_rong_014",
+            "category": "phu_dieu_rong",
+            "filename": "phu_dieu_rong_015.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phu_dieu_rong_015.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phu_dieu_rong/phu_dieu_rong_015.jpg",
+                "width": 382,
+                "height": 523,
+                "format": "jpg",
+                "size_bytes": 39377
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 141.75,
+                "contrast": 39.03,
+                "sharpness": 1047.11,
+                "resolution": 100.0,
+                "overall_score": 96.25,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phu_dieu_rong_014/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_014/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_014/normalized.png",
+                "edges": "outputs/phu_dieu_rong_014/edges.png",
+                "segmented": "outputs/phu_dieu_rong_014/segmented.png",
+                "mask": "outputs/phu_dieu_rong_014/mask.png",
+                "svg": "outputs/phu_dieu_rong_014/pattern.svg",
+                "quality_report": "outputs/phu_dieu_rong_014/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phu_dieu_rong_015",
+            "category": "phu_dieu_rong",
+            "filename": "phu_dieu_rong_016.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phu_dieu_rong_016.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phu_dieu_rong/phu_dieu_rong_016.jpg",
+                "width": 377,
+                "height": 512,
+                "format": "jpg",
+                "size_bytes": 59437
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 121.68,
+                "contrast": 50.98,
+                "sharpness": 14538.23,
+                "resolution": 100.0,
+                "overall_score": 91.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phu_dieu_rong_015/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_015/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_015/normalized.png",
+                "edges": "outputs/phu_dieu_rong_015/edges.png",
+                "segmented": "outputs/phu_dieu_rong_015/segmented.png",
+                "mask": "outputs/phu_dieu_rong_015/mask.png",
+                "svg": "outputs/phu_dieu_rong_015/pattern.svg",
+                "quality_report": "outputs/phu_dieu_rong_015/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phu_dieu_rong_016",
+            "category": "phu_dieu_rong",
+            "filename": "phu_dieu_rong_017.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phu_dieu_rong_017.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phu_dieu_rong/phu_dieu_rong_017.jpg",
+                "width": 554,
+                "height": 554,
+                "format": "jpg",
+                "size_bytes": 44454
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 140.01,
+                "contrast": 34.29,
+                "sharpness": 1039.97,
+                "resolution": 100.0,
+                "overall_score": 92.5,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phu_dieu_rong_016/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_016/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_016/normalized.png",
+                "edges": "outputs/phu_dieu_rong_016/edges.png",
+                "segmented": "outputs/phu_dieu_rong_016/segmented.png",
+                "mask": "outputs/phu_dieu_rong_016/mask.png",
+                "svg": "outputs/phu_dieu_rong_016/pattern.svg",
+                "quality_report": "outputs/phu_dieu_rong_016/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phu_dieu_rong_017",
+            "category": "phu_dieu_rong",
+            "filename": "phu_dieu_rong_018.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phu_dieu_rong_018.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phu_dieu_rong/phu_dieu_rong_018.jpg",
+                "width": 316,
+                "height": 632,
+                "format": "jpg",
+                "size_bytes": 48105
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 99.21,
+                "contrast": 57.1,
+                "sharpness": 4210.05,
+                "resolution": 100.0,
+                "overall_score": 97.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phu_dieu_rong_017/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_017/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_017/normalized.png",
+                "edges": "outputs/phu_dieu_rong_017/edges.png",
+                "segmented": "outputs/phu_dieu_rong_017/segmented.png",
+                "mask": "outputs/phu_dieu_rong_017/mask.png",
+                "svg": "outputs/phu_dieu_rong_017/pattern.svg",
+                "quality_report": "outputs/phu_dieu_rong_017/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phu_dieu_rong_018",
+            "category": "phu_dieu_rong",
+            "filename": "phu_dieu_rong_019.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phu_dieu_rong_019.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phu_dieu_rong/phu_dieu_rong_019.jpg",
+                "width": 447,
+                "height": 447,
+                "format": "jpg",
+                "size_bytes": 59143
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 110.32,
+                "contrast": 48.87,
+                "sharpness": 3728.03,
+                "resolution": 100.0,
+                "overall_score": 95.5,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phu_dieu_rong_018/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_018/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_018/normalized.png",
+                "edges": "outputs/phu_dieu_rong_018/edges.png",
+                "segmented": "outputs/phu_dieu_rong_018/segmented.png",
+                "mask": "outputs/phu_dieu_rong_018/mask.png",
+                "svg": "outputs/phu_dieu_rong_018/pattern.svg",
+                "quality_report": "outputs/phu_dieu_rong_018/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phu_dieu_rong_019",
+            "category": "phu_dieu_rong",
+            "filename": "phu_dieu_rong_020.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phu_dieu_rong_020.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phu_dieu_rong/phu_dieu_rong_020.jpg",
+                "width": 738,
+                "height": 408,
+                "format": "jpg",
+                "size_bytes": 65098
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 206.17,
+                "contrast": 32.68,
+                "sharpness": 5940.73,
+                "resolution": 100.0,
+                "overall_score": 85.5,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phu_dieu_rong_019/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_019/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_019/normalized.png",
+                "edges": "outputs/phu_dieu_rong_019/edges.png",
+                "segmented": "outputs/phu_dieu_rong_019/segmented.png",
+                "mask": "outputs/phu_dieu_rong_019/mask.png",
+                "svg": "outputs/phu_dieu_rong_019/pattern.svg",
+                "quality_report": "outputs/phu_dieu_rong_019/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phuong_015",
+            "category": "phuong",
+            "filename": "phuong_006.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phuong_006.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phuong/phuong_006.jpg",
+                "width": 425,
+                "height": 303,
+                "format": "jpg",
+                "size_bytes": 132354
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 161.61,
+                "contrast": 43.85,
+                "sharpness": 4219.58,
+                "resolution": 100.0,
+                "overall_score": 100.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phuong_015/restored.png",
+                "cleaned": "outputs/phuong_015/cleaned.png",
+                "normalized": "outputs/phuong_015/normalized.png",
+                "edges": "outputs/phuong_015/edges.png",
+                "segmented": "outputs/phuong_015/segmented.png",
+                "mask": "outputs/phuong_015/mask.png",
+                "svg": "outputs/phuong_015/pattern.svg",
+                "quality_report": "outputs/phuong_015/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phuong_016",
+            "category": "phuong",
+            "filename": "phuong_014.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phuong_014.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phuong/phuong_014.jpg",
+                "width": 717,
+                "height": 960,
+                "format": "jpg",
+                "size_bytes": 79176
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 149.12,
+                "contrast": 40.27,
+                "sharpness": 160.35,
+                "resolution": 100.0,
+                "overall_score": 100.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phuong_016/restored.png",
+                "cleaned": "outputs/phuong_016/cleaned.png",
+                "normalized": "outputs/phuong_016/normalized.png",
+                "edges": "outputs/phuong_016/edges.png",
+                "segmented": "outputs/phuong_016/segmented.png",
+                "mask": "outputs/phuong_016/mask.png",
+                "svg": "outputs/phuong_016/pattern.svg",
+                "quality_report": "outputs/phuong_016/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phuong_017",
+            "category": "phuong",
+            "filename": "phuong_015.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phuong_015.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phuong/phuong_015.jpg",
+                "width": 736,
+                "height": 736,
+                "format": "jpg",
+                "size_bytes": 146599
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 73.11,
+                "contrast": 58.31,
+                "sharpness": 4728.93,
+                "resolution": 100.0,
+                "overall_score": 88.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phuong_017/restored.png",
+                "cleaned": "outputs/phuong_017/cleaned.png",
+                "normalized": "outputs/phuong_017/normalized.png",
+                "edges": "outputs/phuong_017/edges.png",
+                "segmented": "outputs/phuong_017/segmented.png",
+                "mask": "outputs/phuong_017/mask.png",
+                "svg": "outputs/phuong_017/pattern.svg",
+                "quality_report": "outputs/phuong_017/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phuong_018",
+            "category": "phuong",
+            "filename": "phuong_016.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phuong_016.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phuong/phuong_016.jpg",
+                "width": 588,
+                "height": 777,
+                "format": "jpg",
+                "size_bytes": 130219
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 159.54,
+                "contrast": 64.68,
+                "sharpness": 2199.1,
+                "resolution": 100.0,
+                "overall_score": 95.5,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phuong_018/restored.png",
+                "cleaned": "outputs/phuong_018/cleaned.png",
+                "normalized": "outputs/phuong_018/normalized.png",
+                "edges": "outputs/phuong_018/edges.png",
+                "segmented": "outputs/phuong_018/segmented.png",
+                "mask": "outputs/phuong_018/mask.png",
+                "svg": "outputs/phuong_018/pattern.svg",
+                "quality_report": "outputs/phuong_018/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phuong_019",
+            "category": "phuong",
+            "filename": "phuong_017.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phuong_017.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phuong/phuong_017.jpg",
+                "width": 518,
+                "height": 960,
+                "format": "jpg",
+                "size_bytes": 158767
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 129.87,
+                "contrast": 44.84,
+                "sharpness": 8686.23,
+                "resolution": 100.0,
+                "overall_score": 91.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phuong_019/restored.png",
+                "cleaned": "outputs/phuong_019/cleaned.png",
+                "normalized": "outputs/phuong_019/normalized.png",
+                "edges": "outputs/phuong_019/edges.png",
+                "segmented": "outputs/phuong_019/segmented.png",
+                "mask": "outputs/phuong_019/mask.png",
+                "svg": "outputs/phuong_019/pattern.svg",
+                "quality_report": "outputs/phuong_019/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phuong_020",
+            "category": "phuong",
+            "filename": "phuong_018.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phuong_018.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phuong/phuong_018.jpg",
+                "width": 736,
+                "height": 1104,
+                "format": "jpg",
+                "size_bytes": 269185
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 97.4,
+                "contrast": 84.27,
+                "sharpness": 5731.77,
+                "resolution": 100.0,
+                "overall_score": 97.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phuong_020/restored.png",
+                "cleaned": "outputs/phuong_020/cleaned.png",
+                "normalized": "outputs/phuong_020/normalized.png",
+                "edges": "outputs/phuong_020/edges.png",
+                "segmented": "outputs/phuong_020/segmented.png",
+                "mask": "outputs/phuong_020/mask.png",
+                "svg": "outputs/phuong_020/pattern.svg",
+                "quality_report": "outputs/phuong_020/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phuong_021",
+            "category": "phuong",
+            "filename": "phuong_019.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phuong_019.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phuong/phuong_019.jpg",
+                "width": 295,
+                "height": 504,
+                "format": "jpg",
+                "size_bytes": 38950
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 121.44,
+                "contrast": 41.41,
+                "sharpness": 1795.68,
+                "resolution": 100.0,
+                "overall_score": 100.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phuong_021/restored.png",
+                "cleaned": "outputs/phuong_021/cleaned.png",
+                "normalized": "outputs/phuong_021/normalized.png",
+                "edges": "outputs/phuong_021/edges.png",
+                "segmented": "outputs/phuong_021/segmented.png",
+                "mask": "outputs/phuong_021/mask.png",
+                "svg": "outputs/phuong_021/pattern.svg",
+                "quality_report": "outputs/phuong_021/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "phuong_022",
+            "category": "phuong",
+            "filename": "phuong_020.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "phuong_020.jpg"
+            },
+            "original": {
+                "path": "dataset/images/phuong/phuong_020.jpg",
+                "width": 720,
+                "height": 711,
+                "format": "jpg",
+                "size_bytes": 102196
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 98.11,
+                "contrast": 47.41,
+                "sharpness": 821.27,
+                "resolution": 100.0,
+                "overall_score": 97.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/phuong_022/restored.png",
+                "cleaned": "outputs/phuong_022/cleaned.png",
+                "normalized": "outputs/phuong_022/normalized.png",
+                "edges": "outputs/phuong_022/edges.png",
+                "segmented": "outputs/phuong_022/segmented.png",
+                "mask": "outputs/phuong_022/mask.png",
+                "svg": "outputs/phuong_022/pattern.svg",
+                "quality_report": "outputs/phuong_022/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "sen_005",
+            "category": "sen",
+            "filename": "sen_005.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "sen_005.jpg"
+            },
+            "original": {
+                "path": "dataset/images/sen/sen_005.jpg",
+                "width": 736,
+                "height": 981,
+                "format": "jpg",
+                "size_bytes": 134894
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 152.42,
+                "contrast": 50.83,
+                "sharpness": 747.73,
+                "resolution": 100.0,
+                "overall_score": 100.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/sen_005/restored.png",
+                "cleaned": "outputs/sen_005/cleaned.png",
+                "normalized": "outputs/sen_005/normalized.png",
+                "edges": "outputs/sen_005/edges.png",
+                "segmented": "outputs/sen_005/segmented.png",
+                "mask": "outputs/sen_005/mask.png",
+                "svg": "outputs/sen_005/pattern.svg",
+                "quality_report": "outputs/sen_005/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "sen_006",
+            "category": "sen",
+            "filename": "sen_006.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "sen_006.jpg"
+            },
+            "original": {
+                "path": "dataset/images/sen/sen_006.jpg",
+                "width": 600,
+                "height": 433,
+                "format": "jpg",
+                "size_bytes": 88439
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 132.45,
+                "contrast": 41.88,
+                "sharpness": 6670.07,
+                "resolution": 100.0,
+                "overall_score": 95.5,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/sen_006/restored.png",
+                "cleaned": "outputs/sen_006/cleaned.png",
+                "normalized": "outputs/sen_006/normalized.png",
+                "edges": "outputs/sen_006/edges.png",
+                "segmented": "outputs/sen_006/segmented.png",
+                "mask": "outputs/sen_006/mask.png",
+                "svg": "outputs/sen_006/pattern.svg",
+                "quality_report": "outputs/sen_006/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "sen_007",
+            "category": "sen",
+            "filename": "sen_007.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "sen_007.jpg"
+            },
+            "original": {
+                "path": "dataset/images/sen/sen_007.jpg",
+                "width": 735,
+                "height": 628,
+                "format": "jpg",
+                "size_bytes": 102519
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 125.74,
+                "contrast": 55.89,
+                "sharpness": 1735.86,
+                "resolution": 100.0,
+                "overall_score": 100.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/sen_007/restored.png",
+                "cleaned": "outputs/sen_007/cleaned.png",
+                "normalized": "outputs/sen_007/normalized.png",
+                "edges": "outputs/sen_007/edges.png",
+                "segmented": "outputs/sen_007/segmented.png",
+                "mask": "outputs/sen_007/mask.png",
+                "svg": "outputs/sen_007/pattern.svg",
+                "quality_report": "outputs/sen_007/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "sen_008",
+            "category": "sen",
+            "filename": "sen_008.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "sen_008.jpg"
+            },
+            "original": {
+                "path": "dataset/images/sen/sen_008.jpg",
+                "width": 600,
+                "height": 629,
+                "format": "jpg",
+                "size_bytes": 99000
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 167.51,
+                "contrast": 44.13,
+                "sharpness": 1509.09,
+                "resolution": 100.0,
+                "overall_score": 100.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/sen_008/restored.png",
+                "cleaned": "outputs/sen_008/cleaned.png",
+                "normalized": "outputs/sen_008/normalized.png",
+                "edges": "outputs/sen_008/edges.png",
+                "segmented": "outputs/sen_008/segmented.png",
+                "mask": "outputs/sen_008/mask.png",
+                "svg": "outputs/sen_008/pattern.svg",
+                "quality_report": "outputs/sen_008/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "sen_009",
+            "category": "sen",
+            "filename": "sen_009.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "sen_009.jpg"
+            },
+            "original": {
+                "path": "dataset/images/sen/sen_009.jpg",
+                "width": 736,
+                "height": 1030,
+                "format": "jpg",
+                "size_bytes": 134698
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 169.58,
+                "contrast": 47.87,
+                "sharpness": 721.35,
+                "resolution": 100.0,
+                "overall_score": 100.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/sen_009/restored.png",
+                "cleaned": "outputs/sen_009/cleaned.png",
+                "normalized": "outputs/sen_009/normalized.png",
+                "edges": "outputs/sen_009/edges.png",
+                "segmented": "outputs/sen_009/segmented.png",
+                "mask": "outputs/sen_009/mask.png",
+                "svg": "outputs/sen_009/pattern.svg",
+                "quality_report": "outputs/sen_009/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "sen_010",
+            "category": "sen",
+            "filename": "sen_010.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "sen_010.jpg"
+            },
+            "original": {
+                "path": "dataset/images/sen/sen_010.jpg",
+                "width": 347,
+                "height": 555,
+                "format": "jpg",
+                "size_bytes": 41886
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 135.67,
+                "contrast": 52.69,
+                "sharpness": 932.56,
+                "resolution": 100.0,
+                "overall_score": 100.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/sen_010/restored.png",
+                "cleaned": "outputs/sen_010/cleaned.png",
+                "normalized": "outputs/sen_010/normalized.png",
+                "edges": "outputs/sen_010/edges.png",
+                "segmented": "outputs/sen_010/segmented.png",
+                "mask": "outputs/sen_010/mask.png",
+                "svg": "outputs/sen_010/pattern.svg",
+                "quality_report": "outputs/sen_010/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "sen_011",
+            "category": "sen",
+            "filename": "sen_011.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "sen_011.jpg"
+            },
+            "original": {
+                "path": "dataset/images/sen/sen_011.jpg",
+                "width": 736,
+                "height": 981,
+                "format": "jpg",
+                "size_bytes": 195704
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 71.17,
+                "contrast": 40.95,
+                "sharpness": 2463.77,
+                "resolution": 100.0,
+                "overall_score": 88.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/sen_011/restored.png",
+                "cleaned": "outputs/sen_011/cleaned.png",
+                "normalized": "outputs/sen_011/normalized.png",
+                "edges": "outputs/sen_011/edges.png",
+                "segmented": "outputs/sen_011/segmented.png",
+                "mask": "outputs/sen_011/mask.png",
+                "svg": "outputs/sen_011/pattern.svg",
+                "quality_report": "outputs/sen_011/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "sen_012",
+            "category": "sen",
+            "filename": "sen_012.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "sen_012.jpg"
+            },
+            "original": {
+                "path": "dataset/images/sen/sen_012.jpg",
+                "width": 736,
+                "height": 736,
+                "format": "jpg",
+                "size_bytes": 55088
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 75.6,
+                "contrast": 48.4,
+                "sharpness": 100.33,
+                "resolution": 100.0,
+                "overall_score": 88.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/sen_012/restored.png",
+                "cleaned": "outputs/sen_012/cleaned.png",
+                "normalized": "outputs/sen_012/normalized.png",
+                "edges": "outputs/sen_012/edges.png",
+                "segmented": "outputs/sen_012/segmented.png",
+                "mask": "outputs/sen_012/mask.png",
+                "svg": "outputs/sen_012/pattern.svg",
+                "quality_report": "outputs/sen_012/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "sen_013",
+            "category": "sen",
+            "filename": "sen_013.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "sen_013.jpg"
+            },
+            "original": {
+                "path": "dataset/images/sen/sen_013.jpg",
+                "width": 217,
+                "height": 404,
+                "format": "jpg",
+                "size_bytes": 15536
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 156.35,
+                "contrast": 24.99,
+                "sharpness": 620.42,
+                "resolution": 100.0,
+                "overall_score": 87.5,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/sen_013/restored.png",
+                "cleaned": "outputs/sen_013/cleaned.png",
+                "normalized": "outputs/sen_013/normalized.png",
+                "edges": "outputs/sen_013/edges.png",
+                "segmented": "outputs/sen_013/segmented.png",
+                "mask": "outputs/sen_013/mask.png",
+                "svg": "outputs/sen_013/pattern.svg",
+                "quality_report": "outputs/sen_013/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "sen_014",
+            "category": "sen",
+            "filename": "sen_014.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "sen_014.jpg"
+            },
+            "original": {
+                "path": "dataset/images/sen/sen_014.jpg",
+                "width": 736,
+                "height": 1635,
+                "format": "jpg",
+                "size_bytes": 258148
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 78.31,
+                "contrast": 82.4,
+                "sharpness": 1206.64,
+                "resolution": 100.0,
+                "overall_score": 88.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/sen_014/restored.png",
+                "cleaned": "outputs/sen_014/cleaned.png",
+                "normalized": "outputs/sen_014/normalized.png",
+                "edges": "outputs/sen_014/edges.png",
+                "segmented": "outputs/sen_014/segmented.png",
+                "mask": "outputs/sen_014/mask.png",
+                "svg": "outputs/sen_014/pattern.svg",
+                "quality_report": "outputs/sen_014/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "sen_015",
+            "category": "sen",
+            "filename": "sen_015.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "sen_015.jpg"
+            },
+            "original": {
+                "path": "dataset/images/sen/sen_015.jpg",
+                "width": 243,
+                "height": 207,
+                "format": "jpg",
+                "size_bytes": 17705
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 132.43,
+                "contrast": 42.83,
+                "sharpness": 8818.86,
+                "resolution": 100.0,
+                "overall_score": 95.5,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/sen_015/restored.png",
+                "cleaned": "outputs/sen_015/cleaned.png",
+                "normalized": "outputs/sen_015/normalized.png",
+                "edges": "outputs/sen_015/edges.png",
+                "segmented": "outputs/sen_015/segmented.png",
+                "mask": "outputs/sen_015/mask.png",
+                "svg": "outputs/sen_015/pattern.svg",
+                "quality_report": "outputs/sen_015/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "sen_016",
+            "category": "sen",
+            "filename": "sen_016.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "sen_016.jpg"
+            },
+            "original": {
+                "path": "dataset/images/sen/sen_016.jpg",
+                "width": 736,
+                "height": 1265,
+                "format": "jpg",
+                "size_bytes": 250829
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 122.62,
+                "contrast": 57.18,
+                "sharpness": 1764.47,
+                "resolution": 100.0,
+                "overall_score": 100.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/sen_016/restored.png",
+                "cleaned": "outputs/sen_016/cleaned.png",
+                "normalized": "outputs/sen_016/normalized.png",
+                "edges": "outputs/sen_016/edges.png",
+                "segmented": "outputs/sen_016/segmented.png",
+                "mask": "outputs/sen_016/mask.png",
+                "svg": "outputs/sen_016/pattern.svg",
+                "quality_report": "outputs/sen_016/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "sen_017",
+            "category": "sen",
+            "filename": "sen_017.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "sen_017.jpg"
+            },
+            "original": {
+                "path": "dataset/images/sen/sen_017.jpg",
+                "width": 675,
+                "height": 1200,
+                "format": "jpg",
+                "size_bytes": 117724
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 156.67,
+                "contrast": 47.81,
+                "sharpness": 303.21,
+                "resolution": 100.0,
+                "overall_score": 100.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/sen_017/restored.png",
+                "cleaned": "outputs/sen_017/cleaned.png",
+                "normalized": "outputs/sen_017/normalized.png",
+                "edges": "outputs/sen_017/edges.png",
+                "segmented": "outputs/sen_017/segmented.png",
+                "mask": "outputs/sen_017/mask.png",
+                "svg": "outputs/sen_017/pattern.svg",
+                "quality_report": "outputs/sen_017/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "sen_018",
+            "category": "sen",
+            "filename": "sen_018.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "sen_018.jpg"
+            },
+            "original": {
+                "path": "dataset/images/sen/sen_018.jpg",
+                "width": 736,
+                "height": 981,
+                "format": "jpg",
+                "size_bytes": 225635
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 101.03,
+                "contrast": 49.64,
+                "sharpness": 3990.05,
+                "resolution": 100.0,
+                "overall_score": 95.5,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/sen_018/restored.png",
+                "cleaned": "outputs/sen_018/cleaned.png",
+                "normalized": "outputs/sen_018/normalized.png",
+                "edges": "outputs/sen_018/edges.png",
+                "segmented": "outputs/sen_018/segmented.png",
+                "mask": "outputs/sen_018/mask.png",
+                "svg": "outputs/sen_018/pattern.svg",
+                "quality_report": "outputs/sen_018/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "sen_019",
+            "category": "sen",
+            "filename": "sen_019.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "sen_019.jpg"
+            },
+            "original": {
+                "path": "dataset/images/sen/sen_019.jpg",
+                "width": 736,
+                "height": 552,
+                "format": "jpg",
+                "size_bytes": 95000
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 130.37,
+                "contrast": 66.35,
+                "sharpness": 2058.24,
+                "resolution": 100.0,
+                "overall_score": 100.0,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/sen_019/restored.png",
+                "cleaned": "outputs/sen_019/cleaned.png",
+                "normalized": "outputs/sen_019/normalized.png",
+                "edges": "outputs/sen_019/edges.png",
+                "segmented": "outputs/sen_019/segmented.png",
+                "mask": "outputs/sen_019/mask.png",
+                "svg": "outputs/sen_019/pattern.svg",
+                "quality_report": "outputs/sen_019/quality_report.json"
+            }
+        },
+        {
+            "asset_id": "sen_020",
+            "category": "sen",
+            "filename": "sen_020.jpg",
+            "source": {
+                "type": "dataset",
+                "name": "sen_020.jpg"
+            },
+            "original": {
+                "path": "dataset/images/sen/sen_020.jpg",
+                "width": 735,
+                "height": 552,
+                "format": "jpg",
+                "size_bytes": 77146
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "quality": {
+                "brightness": 164.87,
+                "contrast": 29.45,
+                "sharpness": 1005.07,
+                "resolution": 100.0,
+                "overall_score": 87.5,
+                "label": "GOOD"
+            },
+            "outputs": {
+                "restored": "outputs/sen_020/restored.png",
+                "cleaned": "outputs/sen_020/cleaned.png",
+                "normalized": "outputs/sen_020/normalized.png",
+                "edges": "outputs/sen_020/edges.png",
+                "segmented": "outputs/sen_020/segmented.png",
+                "mask": "outputs/sen_020/mask.png",
+                "svg": "outputs/sen_020/pattern.svg",
+                "quality_report": "outputs/sen_020/quality_report.json"
             }
         }
     ]

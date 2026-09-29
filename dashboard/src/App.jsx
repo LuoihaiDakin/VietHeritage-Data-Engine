@@ -50,7 +50,7 @@ function App() {
       setError("");
 
       const response = await fetch(
-        `${API_BASE}/assets?limit=100&offset=0`
+        `${API_BASE}/assets?limit=1000&offset=0`
       );
 
       if (!response.ok) {

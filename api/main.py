@@ -602,7 +602,7 @@ def health():
 @app.get("/assets")
 def get_assets(
     limit: int = Query(
-        50,
+        1000,
         ge=1,
         le=1000
     ),

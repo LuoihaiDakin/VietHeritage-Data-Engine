@@ -1,7 +1,7 @@
 {
     "dataset_name": "VietHeritage AI-Ready Dataset",
     "version": "1.0",
-    "created_at": "2026-09-29T00:48:05+07:00",
+    "created_at": "2026-09-29T17:50:08+07:00",
     "description": "Quality-controlled dataset generated from the VietHeritage Data Engine.",
     "pipeline": [
         "RAW",
@@ -23,8 +23,8 @@
         "pending": "Assets without quality evaluation are excluded."
     },
     "statistics": {
-        "total_catalog_assets": 92,
-        "ai_ready": 92,
+        "total_catalog_assets": 130,
+        "ai_ready": 130,
         "rejected": 0,
         "pending": 0
     },
@@ -3761,6 +3761,1406 @@
                 "brightness": 146.09,
                 "contrast": 40.97,
                 "sharpness": 325.17,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "dong_ho_035",
+            "category": "dong_ho",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/dong_ho/dong_ho_035.png",
+            "source": {
+                "original": "dataset/images/dong_ho/dong_ho_035.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/dong_ho_035/restored.png",
+                "cleaned": "outputs/dong_ho_035/cleaned.png",
+                "normalized": "outputs/dong_ho_035/normalized.png",
+                "edges": "outputs/dong_ho_035/edges.png",
+                "segmented": "outputs/dong_ho_035/segmented.png",
+                "mask": "outputs/dong_ho_035/mask.png",
+                "vectorized": "outputs/dong_ho_035/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 150.79,
+                "contrast": 56.44,
+                "sharpness": 2016.16,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phu_dieu_rong_004",
+            "category": "phu_dieu_rong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phu_dieu_rong/phu_dieu_rong_004.png",
+            "source": {
+                "original": "dataset/images/phu_dieu_rong/phu_dieu_rong_006.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phu_dieu_rong_004/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_004/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_004/normalized.png",
+                "edges": "outputs/phu_dieu_rong_004/edges.png",
+                "segmented": "outputs/phu_dieu_rong_004/segmented.png",
+                "mask": "outputs/phu_dieu_rong_004/mask.png",
+                "vectorized": "outputs/phu_dieu_rong_004/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 93.0,
+                "brightness": 200.16,
+                "contrast": 64.72,
+                "sharpness": 1110.19,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phu_dieu_rong_006",
+            "category": "phu_dieu_rong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phu_dieu_rong/phu_dieu_rong_006.png",
+            "source": {
+                "original": "dataset/images/phu_dieu_rong/phu_dieu_rong_007.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phu_dieu_rong_006/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_006/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_006/normalized.png",
+                "edges": "outputs/phu_dieu_rong_006/edges.png",
+                "segmented": "outputs/phu_dieu_rong_006/segmented.png",
+                "mask": "outputs/phu_dieu_rong_006/mask.png",
+                "vectorized": "outputs/phu_dieu_rong_006/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 95.5,
+                "brightness": 136.18,
+                "contrast": 70.48,
+                "sharpness": 7801.51,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phu_dieu_rong_007",
+            "category": "phu_dieu_rong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phu_dieu_rong/phu_dieu_rong_007.png",
+            "source": {
+                "original": "dataset/images/phu_dieu_rong/phu_dieu_rong_008.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phu_dieu_rong_007/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_007/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_007/normalized.png",
+                "edges": "outputs/phu_dieu_rong_007/edges.png",
+                "segmented": "outputs/phu_dieu_rong_007/segmented.png",
+                "mask": "outputs/phu_dieu_rong_007/mask.png",
+                "vectorized": "outputs/phu_dieu_rong_007/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 95.5,
+                "brightness": 119.24,
+                "contrast": 52.95,
+                "sharpness": 3208.53,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phu_dieu_rong_008",
+            "category": "phu_dieu_rong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phu_dieu_rong/phu_dieu_rong_008.png",
+            "source": {
+                "original": "dataset/images/phu_dieu_rong/phu_dieu_rong_009.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phu_dieu_rong_008/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_008/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_008/normalized.png",
+                "edges": "outputs/phu_dieu_rong_008/edges.png",
+                "segmented": "outputs/phu_dieu_rong_008/segmented.png",
+                "mask": "outputs/phu_dieu_rong_008/mask.png",
+                "vectorized": "outputs/phu_dieu_rong_008/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 93.0,
+                "brightness": 80.38,
+                "contrast": 56.38,
+                "sharpness": 1758.27,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phu_dieu_rong_009",
+            "category": "phu_dieu_rong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phu_dieu_rong/phu_dieu_rong_009.png",
+            "source": {
+                "original": "dataset/images/phu_dieu_rong/phu_dieu_rong_010.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phu_dieu_rong_009/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_009/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_009/normalized.png",
+                "edges": "outputs/phu_dieu_rong_009/edges.png",
+                "segmented": "outputs/phu_dieu_rong_009/segmented.png",
+                "mask": "outputs/phu_dieu_rong_009/mask.png",
+                "vectorized": "outputs/phu_dieu_rong_009/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 97.0,
+                "brightness": 93.29,
+                "contrast": 65.33,
+                "sharpness": 1506.39,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phu_dieu_rong_010",
+            "category": "phu_dieu_rong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phu_dieu_rong/phu_dieu_rong_010.png",
+            "source": {
+                "original": "dataset/images/phu_dieu_rong/phu_dieu_rong_011.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phu_dieu_rong_010/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_010/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_010/normalized.png",
+                "edges": "outputs/phu_dieu_rong_010/edges.png",
+                "segmented": "outputs/phu_dieu_rong_010/segmented.png",
+                "mask": "outputs/phu_dieu_rong_010/mask.png",
+                "vectorized": "outputs/phu_dieu_rong_010/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 149.05,
+                "contrast": 40.71,
+                "sharpness": 1833.11,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phu_dieu_rong_011",
+            "category": "phu_dieu_rong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phu_dieu_rong/phu_dieu_rong_011.png",
+            "source": {
+                "original": "dataset/images/phu_dieu_rong/phu_dieu_rong_012.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phu_dieu_rong_011/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_011/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_011/normalized.png",
+                "edges": "outputs/phu_dieu_rong_011/edges.png",
+                "segmented": "outputs/phu_dieu_rong_011/segmented.png",
+                "mask": "outputs/phu_dieu_rong_011/mask.png",
+                "vectorized": "outputs/phu_dieu_rong_011/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 93.0,
+                "brightness": 83.54,
+                "contrast": 57.39,
+                "sharpness": 2338.95,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phu_dieu_rong_012",
+            "category": "phu_dieu_rong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phu_dieu_rong/phu_dieu_rong_012.png",
+            "source": {
+                "original": "dataset/images/phu_dieu_rong/phu_dieu_rong_013.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phu_dieu_rong_012/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_012/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_012/normalized.png",
+                "edges": "outputs/phu_dieu_rong_012/edges.png",
+                "segmented": "outputs/phu_dieu_rong_012/segmented.png",
+                "mask": "outputs/phu_dieu_rong_012/mask.png",
+                "vectorized": "outputs/phu_dieu_rong_012/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 95.5,
+                "brightness": 115.85,
+                "contrast": 53.07,
+                "sharpness": 2420.51,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phu_dieu_rong_013",
+            "category": "phu_dieu_rong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phu_dieu_rong/phu_dieu_rong_013.png",
+            "source": {
+                "original": "dataset/images/phu_dieu_rong/phu_dieu_rong_014.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phu_dieu_rong_013/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_013/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_013/normalized.png",
+                "edges": "outputs/phu_dieu_rong_013/edges.png",
+                "segmented": "outputs/phu_dieu_rong_013/segmented.png",
+                "mask": "outputs/phu_dieu_rong_013/mask.png",
+                "vectorized": "outputs/phu_dieu_rong_013/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 87.5,
+                "brightness": 158.31,
+                "contrast": 27.67,
+                "sharpness": 1266.37,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phu_dieu_rong_014",
+            "category": "phu_dieu_rong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phu_dieu_rong/phu_dieu_rong_014.png",
+            "source": {
+                "original": "dataset/images/phu_dieu_rong/phu_dieu_rong_015.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phu_dieu_rong_014/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_014/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_014/normalized.png",
+                "edges": "outputs/phu_dieu_rong_014/edges.png",
+                "segmented": "outputs/phu_dieu_rong_014/segmented.png",
+                "mask": "outputs/phu_dieu_rong_014/mask.png",
+                "vectorized": "outputs/phu_dieu_rong_014/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 96.25,
+                "brightness": 141.75,
+                "contrast": 39.03,
+                "sharpness": 1047.11,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phu_dieu_rong_015",
+            "category": "phu_dieu_rong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phu_dieu_rong/phu_dieu_rong_015.png",
+            "source": {
+                "original": "dataset/images/phu_dieu_rong/phu_dieu_rong_016.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phu_dieu_rong_015/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_015/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_015/normalized.png",
+                "edges": "outputs/phu_dieu_rong_015/edges.png",
+                "segmented": "outputs/phu_dieu_rong_015/segmented.png",
+                "mask": "outputs/phu_dieu_rong_015/mask.png",
+                "vectorized": "outputs/phu_dieu_rong_015/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 91.0,
+                "brightness": 121.68,
+                "contrast": 50.98,
+                "sharpness": 14538.23,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phu_dieu_rong_016",
+            "category": "phu_dieu_rong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phu_dieu_rong/phu_dieu_rong_016.png",
+            "source": {
+                "original": "dataset/images/phu_dieu_rong/phu_dieu_rong_017.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phu_dieu_rong_016/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_016/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_016/normalized.png",
+                "edges": "outputs/phu_dieu_rong_016/edges.png",
+                "segmented": "outputs/phu_dieu_rong_016/segmented.png",
+                "mask": "outputs/phu_dieu_rong_016/mask.png",
+                "vectorized": "outputs/phu_dieu_rong_016/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 92.5,
+                "brightness": 140.01,
+                "contrast": 34.29,
+                "sharpness": 1039.97,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phu_dieu_rong_017",
+            "category": "phu_dieu_rong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phu_dieu_rong/phu_dieu_rong_017.png",
+            "source": {
+                "original": "dataset/images/phu_dieu_rong/phu_dieu_rong_018.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phu_dieu_rong_017/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_017/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_017/normalized.png",
+                "edges": "outputs/phu_dieu_rong_017/edges.png",
+                "segmented": "outputs/phu_dieu_rong_017/segmented.png",
+                "mask": "outputs/phu_dieu_rong_017/mask.png",
+                "vectorized": "outputs/phu_dieu_rong_017/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 97.0,
+                "brightness": 99.21,
+                "contrast": 57.1,
+                "sharpness": 4210.05,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phu_dieu_rong_018",
+            "category": "phu_dieu_rong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phu_dieu_rong/phu_dieu_rong_018.png",
+            "source": {
+                "original": "dataset/images/phu_dieu_rong/phu_dieu_rong_019.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phu_dieu_rong_018/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_018/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_018/normalized.png",
+                "edges": "outputs/phu_dieu_rong_018/edges.png",
+                "segmented": "outputs/phu_dieu_rong_018/segmented.png",
+                "mask": "outputs/phu_dieu_rong_018/mask.png",
+                "vectorized": "outputs/phu_dieu_rong_018/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 95.5,
+                "brightness": 110.32,
+                "contrast": 48.87,
+                "sharpness": 3728.03,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phu_dieu_rong_019",
+            "category": "phu_dieu_rong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phu_dieu_rong/phu_dieu_rong_019.png",
+            "source": {
+                "original": "dataset/images/phu_dieu_rong/phu_dieu_rong_020.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phu_dieu_rong_019/restored.png",
+                "cleaned": "outputs/phu_dieu_rong_019/cleaned.png",
+                "normalized": "outputs/phu_dieu_rong_019/normalized.png",
+                "edges": "outputs/phu_dieu_rong_019/edges.png",
+                "segmented": "outputs/phu_dieu_rong_019/segmented.png",
+                "mask": "outputs/phu_dieu_rong_019/mask.png",
+                "vectorized": "outputs/phu_dieu_rong_019/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 85.5,
+                "brightness": 206.17,
+                "contrast": 32.68,
+                "sharpness": 5940.73,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_015",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_015.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_006.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_015/restored.png",
+                "cleaned": "outputs/phuong_015/cleaned.png",
+                "normalized": "outputs/phuong_015/normalized.png",
+                "edges": "outputs/phuong_015/edges.png",
+                "segmented": "outputs/phuong_015/segmented.png",
+                "mask": "outputs/phuong_015/mask.png",
+                "vectorized": "outputs/phuong_015/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 161.61,
+                "contrast": 43.85,
+                "sharpness": 4219.58,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_016",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_016.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_014.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_016/restored.png",
+                "cleaned": "outputs/phuong_016/cleaned.png",
+                "normalized": "outputs/phuong_016/normalized.png",
+                "edges": "outputs/phuong_016/edges.png",
+                "segmented": "outputs/phuong_016/segmented.png",
+                "mask": "outputs/phuong_016/mask.png",
+                "vectorized": "outputs/phuong_016/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 149.12,
+                "contrast": 40.27,
+                "sharpness": 160.35,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_017",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_017.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_015.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_017/restored.png",
+                "cleaned": "outputs/phuong_017/cleaned.png",
+                "normalized": "outputs/phuong_017/normalized.png",
+                "edges": "outputs/phuong_017/edges.png",
+                "segmented": "outputs/phuong_017/segmented.png",
+                "mask": "outputs/phuong_017/mask.png",
+                "vectorized": "outputs/phuong_017/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 88.0,
+                "brightness": 73.11,
+                "contrast": 58.31,
+                "sharpness": 4728.93,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_018",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_018.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_016.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_018/restored.png",
+                "cleaned": "outputs/phuong_018/cleaned.png",
+                "normalized": "outputs/phuong_018/normalized.png",
+                "edges": "outputs/phuong_018/edges.png",
+                "segmented": "outputs/phuong_018/segmented.png",
+                "mask": "outputs/phuong_018/mask.png",
+                "vectorized": "outputs/phuong_018/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 95.5,
+                "brightness": 159.54,
+                "contrast": 64.68,
+                "sharpness": 2199.1,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_019",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_019.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_017.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_019/restored.png",
+                "cleaned": "outputs/phuong_019/cleaned.png",
+                "normalized": "outputs/phuong_019/normalized.png",
+                "edges": "outputs/phuong_019/edges.png",
+                "segmented": "outputs/phuong_019/segmented.png",
+                "mask": "outputs/phuong_019/mask.png",
+                "vectorized": "outputs/phuong_019/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 91.0,
+                "brightness": 129.87,
+                "contrast": 44.84,
+                "sharpness": 8686.23,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_020",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_020.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_018.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_020/restored.png",
+                "cleaned": "outputs/phuong_020/cleaned.png",
+                "normalized": "outputs/phuong_020/normalized.png",
+                "edges": "outputs/phuong_020/edges.png",
+                "segmented": "outputs/phuong_020/segmented.png",
+                "mask": "outputs/phuong_020/mask.png",
+                "vectorized": "outputs/phuong_020/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 97.0,
+                "brightness": 97.4,
+                "contrast": 84.27,
+                "sharpness": 5731.77,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_021",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_021.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_019.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_021/restored.png",
+                "cleaned": "outputs/phuong_021/cleaned.png",
+                "normalized": "outputs/phuong_021/normalized.png",
+                "edges": "outputs/phuong_021/edges.png",
+                "segmented": "outputs/phuong_021/segmented.png",
+                "mask": "outputs/phuong_021/mask.png",
+                "vectorized": "outputs/phuong_021/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 121.44,
+                "contrast": 41.41,
+                "sharpness": 1795.68,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "phuong_022",
+            "category": "phuong",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/phuong/phuong_022.png",
+            "source": {
+                "original": "dataset/images/phuong/phuong_020.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/phuong_022/restored.png",
+                "cleaned": "outputs/phuong_022/cleaned.png",
+                "normalized": "outputs/phuong_022/normalized.png",
+                "edges": "outputs/phuong_022/edges.png",
+                "segmented": "outputs/phuong_022/segmented.png",
+                "mask": "outputs/phuong_022/mask.png",
+                "vectorized": "outputs/phuong_022/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 97.0,
+                "brightness": 98.11,
+                "contrast": 47.41,
+                "sharpness": 821.27,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_005",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_005.png",
+            "source": {
+                "original": "dataset/images/sen/sen_005.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_005/restored.png",
+                "cleaned": "outputs/sen_005/cleaned.png",
+                "normalized": "outputs/sen_005/normalized.png",
+                "edges": "outputs/sen_005/edges.png",
+                "segmented": "outputs/sen_005/segmented.png",
+                "mask": "outputs/sen_005/mask.png",
+                "vectorized": "outputs/sen_005/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 152.42,
+                "contrast": 50.83,
+                "sharpness": 747.73,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_006",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_006.png",
+            "source": {
+                "original": "dataset/images/sen/sen_006.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_006/restored.png",
+                "cleaned": "outputs/sen_006/cleaned.png",
+                "normalized": "outputs/sen_006/normalized.png",
+                "edges": "outputs/sen_006/edges.png",
+                "segmented": "outputs/sen_006/segmented.png",
+                "mask": "outputs/sen_006/mask.png",
+                "vectorized": "outputs/sen_006/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 95.5,
+                "brightness": 132.45,
+                "contrast": 41.88,
+                "sharpness": 6670.07,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_007",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_007.png",
+            "source": {
+                "original": "dataset/images/sen/sen_007.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_007/restored.png",
+                "cleaned": "outputs/sen_007/cleaned.png",
+                "normalized": "outputs/sen_007/normalized.png",
+                "edges": "outputs/sen_007/edges.png",
+                "segmented": "outputs/sen_007/segmented.png",
+                "mask": "outputs/sen_007/mask.png",
+                "vectorized": "outputs/sen_007/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 125.74,
+                "contrast": 55.89,
+                "sharpness": 1735.86,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_008",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_008.png",
+            "source": {
+                "original": "dataset/images/sen/sen_008.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_008/restored.png",
+                "cleaned": "outputs/sen_008/cleaned.png",
+                "normalized": "outputs/sen_008/normalized.png",
+                "edges": "outputs/sen_008/edges.png",
+                "segmented": "outputs/sen_008/segmented.png",
+                "mask": "outputs/sen_008/mask.png",
+                "vectorized": "outputs/sen_008/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 167.51,
+                "contrast": 44.13,
+                "sharpness": 1509.09,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_009",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_009.png",
+            "source": {
+                "original": "dataset/images/sen/sen_009.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_009/restored.png",
+                "cleaned": "outputs/sen_009/cleaned.png",
+                "normalized": "outputs/sen_009/normalized.png",
+                "edges": "outputs/sen_009/edges.png",
+                "segmented": "outputs/sen_009/segmented.png",
+                "mask": "outputs/sen_009/mask.png",
+                "vectorized": "outputs/sen_009/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 169.58,
+                "contrast": 47.87,
+                "sharpness": 721.35,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_010",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_010.png",
+            "source": {
+                "original": "dataset/images/sen/sen_010.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_010/restored.png",
+                "cleaned": "outputs/sen_010/cleaned.png",
+                "normalized": "outputs/sen_010/normalized.png",
+                "edges": "outputs/sen_010/edges.png",
+                "segmented": "outputs/sen_010/segmented.png",
+                "mask": "outputs/sen_010/mask.png",
+                "vectorized": "outputs/sen_010/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 135.67,
+                "contrast": 52.69,
+                "sharpness": 932.56,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_011",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_011.png",
+            "source": {
+                "original": "dataset/images/sen/sen_011.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_011/restored.png",
+                "cleaned": "outputs/sen_011/cleaned.png",
+                "normalized": "outputs/sen_011/normalized.png",
+                "edges": "outputs/sen_011/edges.png",
+                "segmented": "outputs/sen_011/segmented.png",
+                "mask": "outputs/sen_011/mask.png",
+                "vectorized": "outputs/sen_011/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 88.0,
+                "brightness": 71.17,
+                "contrast": 40.95,
+                "sharpness": 2463.77,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_012",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_012.png",
+            "source": {
+                "original": "dataset/images/sen/sen_012.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_012/restored.png",
+                "cleaned": "outputs/sen_012/cleaned.png",
+                "normalized": "outputs/sen_012/normalized.png",
+                "edges": "outputs/sen_012/edges.png",
+                "segmented": "outputs/sen_012/segmented.png",
+                "mask": "outputs/sen_012/mask.png",
+                "vectorized": "outputs/sen_012/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 88.0,
+                "brightness": 75.6,
+                "contrast": 48.4,
+                "sharpness": 100.33,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_013",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_013.png",
+            "source": {
+                "original": "dataset/images/sen/sen_013.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_013/restored.png",
+                "cleaned": "outputs/sen_013/cleaned.png",
+                "normalized": "outputs/sen_013/normalized.png",
+                "edges": "outputs/sen_013/edges.png",
+                "segmented": "outputs/sen_013/segmented.png",
+                "mask": "outputs/sen_013/mask.png",
+                "vectorized": "outputs/sen_013/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 87.5,
+                "brightness": 156.35,
+                "contrast": 24.99,
+                "sharpness": 620.42,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_014",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_014.png",
+            "source": {
+                "original": "dataset/images/sen/sen_014.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_014/restored.png",
+                "cleaned": "outputs/sen_014/cleaned.png",
+                "normalized": "outputs/sen_014/normalized.png",
+                "edges": "outputs/sen_014/edges.png",
+                "segmented": "outputs/sen_014/segmented.png",
+                "mask": "outputs/sen_014/mask.png",
+                "vectorized": "outputs/sen_014/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 88.0,
+                "brightness": 78.31,
+                "contrast": 82.4,
+                "sharpness": 1206.64,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_015",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_015.png",
+            "source": {
+                "original": "dataset/images/sen/sen_015.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_015/restored.png",
+                "cleaned": "outputs/sen_015/cleaned.png",
+                "normalized": "outputs/sen_015/normalized.png",
+                "edges": "outputs/sen_015/edges.png",
+                "segmented": "outputs/sen_015/segmented.png",
+                "mask": "outputs/sen_015/mask.png",
+                "vectorized": "outputs/sen_015/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 95.5,
+                "brightness": 132.43,
+                "contrast": 42.83,
+                "sharpness": 8818.86,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_016",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_016.png",
+            "source": {
+                "original": "dataset/images/sen/sen_016.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_016/restored.png",
+                "cleaned": "outputs/sen_016/cleaned.png",
+                "normalized": "outputs/sen_016/normalized.png",
+                "edges": "outputs/sen_016/edges.png",
+                "segmented": "outputs/sen_016/segmented.png",
+                "mask": "outputs/sen_016/mask.png",
+                "vectorized": "outputs/sen_016/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 122.62,
+                "contrast": 57.18,
+                "sharpness": 1764.47,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_017",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_017.png",
+            "source": {
+                "original": "dataset/images/sen/sen_017.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_017/restored.png",
+                "cleaned": "outputs/sen_017/cleaned.png",
+                "normalized": "outputs/sen_017/normalized.png",
+                "edges": "outputs/sen_017/edges.png",
+                "segmented": "outputs/sen_017/segmented.png",
+                "mask": "outputs/sen_017/mask.png",
+                "vectorized": "outputs/sen_017/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 156.67,
+                "contrast": 47.81,
+                "sharpness": 303.21,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_018",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_018.png",
+            "source": {
+                "original": "dataset/images/sen/sen_018.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_018/restored.png",
+                "cleaned": "outputs/sen_018/cleaned.png",
+                "normalized": "outputs/sen_018/normalized.png",
+                "edges": "outputs/sen_018/edges.png",
+                "segmented": "outputs/sen_018/segmented.png",
+                "mask": "outputs/sen_018/mask.png",
+                "vectorized": "outputs/sen_018/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 95.5,
+                "brightness": 101.03,
+                "contrast": 49.64,
+                "sharpness": 3990.05,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_019",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_019.png",
+            "source": {
+                "original": "dataset/images/sen/sen_019.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_019/restored.png",
+                "cleaned": "outputs/sen_019/cleaned.png",
+                "normalized": "outputs/sen_019/normalized.png",
+                "edges": "outputs/sen_019/edges.png",
+                "segmented": "outputs/sen_019/segmented.png",
+                "mask": "outputs/sen_019/mask.png",
+                "vectorized": "outputs/sen_019/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 100.0,
+                "brightness": 130.37,
+                "contrast": 66.35,
+                "sharpness": 2058.24,
+                "resolution": 100.0
+            },
+            "processing": {
+                "preprocessed": true,
+                "restored": true,
+                "normalized": true,
+                "segmented": true,
+                "vectorized": true
+            },
+            "lineage": [],
+            "ai_ready": true
+        },
+        {
+            "asset_id": "sen_020",
+            "category": "sen",
+            "dataset_role": "ai_ready",
+            "image": "ai_ready/images/sen/sen_020.png",
+            "source": {
+                "original": "dataset/images/sen/sen_020.jpg"
+            },
+            "refined_data": {
+                "restored": "outputs/sen_020/restored.png",
+                "cleaned": "outputs/sen_020/cleaned.png",
+                "normalized": "outputs/sen_020/normalized.png",
+                "edges": "outputs/sen_020/edges.png",
+                "segmented": "outputs/sen_020/segmented.png",
+                "mask": "outputs/sen_020/mask.png",
+                "vectorized": "outputs/sen_020/pattern.svg"
+            },
+            "quality": {
+                "label": "GOOD",
+                "overall_score": 87.5,
+                "brightness": 164.87,
+                "contrast": 29.45,
+                "sharpness": 1005.07,
                 "resolution": 100.0
             },
             "processing": {

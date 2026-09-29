@@ -1,0 +1,239 @@
+{
+    "experiment": "v3",
+    "model": "HOG + SVM",
+    "dataset": "VietHeritage Classification Dataset V3",
+    "split": "test",
+    "excluded_categories": [
+        "other",
+        "uploaded"
+    ],
+    "summary": {
+        "total_evaluated": 19,
+        "correct": 6,
+        "errors": 13,
+        "accuracy": 0.3158,
+        "error_rate": 0.6842
+    },
+    "class_analysis": {
+        "dong_ho": {
+            "total": 5,
+            "correct": 5,
+            "errors": 0,
+            "accuracy": 1.0
+        },
+        "phu_dieu_rong": {
+            "total": 3,
+            "correct": 0,
+            "errors": 3,
+            "accuracy": 0.0
+        },
+        "phuong": {
+            "total": 3,
+            "correct": 0,
+            "errors": 3,
+            "accuracy": 0.0
+        },
+        "rong_viet_nam": {
+            "total": 4,
+            "correct": 1,
+            "errors": 3,
+            "accuracy": 0.25
+        },
+        "sen": {
+            "total": 3,
+            "correct": 0,
+            "errors": 3,
+            "accuracy": 0.0
+        },
+        "trong_dong": {
+            "total": 1,
+            "correct": 0,
+            "errors": 1,
+            "accuracy": 0.0
+        }
+    },
+    "confusion_pairs": [
+        {
+            "actual": "phu_dieu_rong",
+            "predicted": "sen",
+            "count": 2
+        },
+        {
+            "actual": "phuong",
+            "predicted": "sen",
+            "count": 2
+        },
+        {
+            "actual": "rong_viet_nam",
+            "predicted": "dong_ho",
+            "count": 2
+        },
+        {
+            "actual": "sen",
+            "predicted": "rong_viet_nam",
+            "count": 2
+        },
+        {
+            "actual": "phu_dieu_rong",
+            "predicted": "dong_ho",
+            "count": 1
+        },
+        {
+            "actual": "phuong",
+            "predicted": "dong_ho",
+            "count": 1
+        },
+        {
+            "actual": "rong_viet_nam",
+            "predicted": "sen",
+            "count": 1
+        },
+        {
+            "actual": "sen",
+            "predicted": "phuong",
+            "count": 1
+        },
+        {
+            "actual": "trong_dong",
+            "predicted": "dong_ho",
+            "count": 1
+        }
+    ],
+    "correct_predictions": [
+        {
+            "asset_id": "dong_ho_010",
+            "image": "../dataset/images/dong_ho/dong_ho_010.jpg",
+            "actual": "dong_ho",
+            "predicted": "dong_ho",
+            "correct": true
+        },
+        {
+            "asset_id": "dong_ho_013",
+            "image": "../dataset/images/dong_ho/dong_ho_013.JPG",
+            "actual": "dong_ho",
+            "predicted": "dong_ho",
+            "correct": true
+        },
+        {
+            "asset_id": "rong_viet_nam_012",
+            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_012.jpg",
+            "actual": "rong_viet_nam",
+            "predicted": "rong_viet_nam",
+            "correct": true
+        },
+        {
+            "asset_id": "dong_ho_021",
+            "image": "../dataset/images/dong_ho/dong_ho_021.JPG",
+            "actual": "dong_ho",
+            "predicted": "dong_ho",
+            "correct": true
+        },
+        {
+            "asset_id": "dong_ho_032",
+            "image": "../dataset/images/dong_ho/dong_ho_032.jpg",
+            "actual": "dong_ho",
+            "predicted": "dong_ho",
+            "correct": true
+        },
+        {
+            "asset_id": "dong_ho_006",
+            "image": "../dataset/images/dong_ho/dong_ho_006.JPG",
+            "actual": "dong_ho",
+            "predicted": "dong_ho",
+            "correct": true
+        }
+    ],
+    "incorrect_predictions": [
+        {
+            "asset_id": "rong_viet_nam_010",
+            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_010.jpg",
+            "actual": "rong_viet_nam",
+            "predicted": "dong_ho",
+            "correct": false
+        },
+        {
+            "asset_id": "phuong_020",
+            "image": "../dataset/images/phuong/phuong_018.jpg",
+            "actual": "phuong",
+            "predicted": "sen",
+            "correct": false
+        },
+        {
+            "asset_id": "phu_dieu_rong_010",
+            "image": "../dataset/images/phu_dieu_rong/phu_dieu_rong_011.jpg",
+            "actual": "phu_dieu_rong",
+            "predicted": "sen",
+            "correct": false
+        },
+        {
+            "asset_id": "rong_viet_nam_014",
+            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_014.jpg",
+            "actual": "rong_viet_nam",
+            "predicted": "sen",
+            "correct": false
+        },
+        {
+            "asset_id": "phu_dieu_rong_019",
+            "image": "../dataset/images/phu_dieu_rong/phu_dieu_rong_020.jpg",
+            "actual": "phu_dieu_rong",
+            "predicted": "dong_ho",
+            "correct": false
+        },
+        {
+            "asset_id": "rong_viet_nam_013",
+            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_013.jpg",
+            "actual": "rong_viet_nam",
+            "predicted": "dong_ho",
+            "correct": false
+        },
+        {
+            "asset_id": "sen_002",
+            "image": "../dataset/images/sen/sen_002.jpg",
+            "actual": "sen",
+            "predicted": "rong_viet_nam",
+            "correct": false
+        },
+        {
+            "asset_id": "phuong_015",
+            "image": "../dataset/images/phuong/phuong_006.jpg",
+            "actual": "phuong",
+            "predicted": "sen",
+            "correct": false
+        },
+        {
+            "asset_id": "sen_010",
+            "image": "../dataset/images/sen/sen_010.jpg",
+            "actual": "sen",
+            "predicted": "phuong",
+            "correct": false
+        },
+        {
+            "asset_id": "trong_dong_003",
+            "image": "../dataset/images/trong_dong/trong_dong_004.jpg",
+            "actual": "trong_dong",
+            "predicted": "dong_ho",
+            "correct": false
+        },
+        {
+            "asset_id": "phu_dieu_rong_008",
+            "image": "../dataset/images/phu_dieu_rong/phu_dieu_rong_009.jpg",
+            "actual": "phu_dieu_rong",
+            "predicted": "sen",
+            "correct": false
+        },
+        {
+            "asset_id": "sen_001",
+            "image": "../dataset/images/sen/sen_001.jpg",
+            "actual": "sen",
+            "predicted": "rong_viet_nam",
+            "correct": false
+        },
+        {
+            "asset_id": "phuong_006",
+            "image": "../dataset/images/phuong/phuong_006.webp",
+            "actual": "phuong",
+            "predicted": "dong_ho",
+            "correct": false
+        }
+    ]
+}
