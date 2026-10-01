@@ -1,0 +1,24 @@
+{
+    "filename": "phuong_010.jpg",
+    "path": "dataset/images/phuong/phuong_010.jpg",
+    "category": "phuong",
+    "technical_metrics": {
+        "brightness": 97.35,
+        "contrast": 46.39,
+        "sharpness": 1326.89,
+        "width": 499,
+        "height": 373
+    },
+    "quality_scores": {
+        "brightness": 100,
+        "contrast": 68.1,
+        "sharpness": 90,
+        "resolution": 20
+    },
+    "overall_score": 65.62,
+    "quality": "POOR",
+    "quality_flags": [
+        "low_resolution"
+    ],
+    "recommendation": "Image requires restoration or preprocessing: low_resolution."
+}

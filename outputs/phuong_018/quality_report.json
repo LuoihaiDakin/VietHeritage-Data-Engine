@@ -1,43 +1,43 @@
 {
     "input": {
-        "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\dataset\\images\\phuong\\phuong_016.jpg",
+        "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\dataset\\images\\phuong\\phuong_018.jpg",
         "metrics": {
-            "width": 588,
-            "height": 777,
-            "brightness": 159.54,
-            "contrast": 64.68,
-            "sharpness": 2199.1,
-            "noise": 8.43,
-            "edge_density": 0.2144
+            "width": 736,
+            "height": 1104,
+            "brightness": 97.4,
+            "contrast": 84.27,
+            "sharpness": 5731.77,
+            "noise": 5.19,
+            "edge_density": 0.1637
         },
         "quality": {
             "quality": "GOOD",
-            "score": 95.5,
+            "score": 97.0,
             "component_scores": {
                 "resolution": 100.0,
-                "brightness": 100.0,
+                "brightness": 85.0,
                 "contrast": 100.0,
-                "noise": 85.0
+                "noise": 100.0
             }
         }
     },
     "restored": {
         "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\phuong_018\\restored.png",
         "metrics": {
-            "width": 2352,
-            "height": 3108,
-            "brightness": 164.25,
-            "contrast": 72.68,
-            "sharpness": 1147.34,
-            "noise": 2.87,
-            "edge_density": 0.1067
+            "width": 2944,
+            "height": 4416,
+            "brightness": 97.62,
+            "contrast": 87.33,
+            "sharpness": 623.15,
+            "noise": 0.74,
+            "edge_density": 0.0593
         },
         "quality": {
             "quality": "GOOD",
-            "score": 100.0,
+            "score": 97.0,
             "component_scores": {
                 "resolution": 100.0,
-                "brightness": 100.0,
+                "brightness": 85.0,
                 "contrast": 100.0,
                 "noise": 100.0
             }
@@ -46,20 +46,20 @@
     "cleaned": {
         "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\phuong_018\\cleaned.png",
         "metrics": {
-            "width": 2352,
-            "height": 3108,
-            "brightness": 151.47,
-            "contrast": 74.78,
-            "sharpness": 1192.31,
-            "noise": 1.67,
-            "edge_density": 0.0997
+            "width": 2944,
+            "height": 4416,
+            "brightness": 93.25,
+            "contrast": 79.85,
+            "sharpness": 642.57,
+            "noise": 0.56,
+            "edge_density": 0.0593
         },
         "quality": {
             "quality": "GOOD",
-            "score": 100.0,
+            "score": 97.0,
             "component_scores": {
                 "resolution": 100.0,
-                "brightness": 100.0,
+                "brightness": 85.0,
                 "contrast": 100.0,
                 "noise": 100.0
             }
@@ -68,20 +68,20 @@
     "normalized": {
         "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\phuong_018\\normalized.png",
         "metrics": {
-            "width": 908,
+            "width": 800,
             "height": 1200,
-            "brightness": 151.47,
-            "contrast": 72.75,
-            "sharpness": 3200.28,
-            "noise": 3.98,
-            "edge_density": 0.1594
+            "brightness": 93.23,
+            "contrast": 77.5,
+            "sharpness": 5049.05,
+            "noise": 2.04,
+            "edge_density": 0.1525
         },
         "quality": {
             "quality": "GOOD",
-            "score": 100.0,
+            "score": 97.0,
             "component_scores": {
                 "resolution": 100.0,
-                "brightness": 100.0,
+                "brightness": 85.0,
                 "contrast": 100.0,
                 "noise": 100.0
             }

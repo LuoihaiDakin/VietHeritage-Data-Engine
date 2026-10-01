@@ -1,0 +1,24 @@
+{
+    "filename": "sen_014.jpg",
+    "path": "dataset/images/sen/sen_014.jpg",
+    "category": "sen",
+    "technical_metrics": {
+        "brightness": 78.31,
+        "contrast": 82.4,
+        "sharpness": 1206.64,
+        "width": 736,
+        "height": 1635
+    },
+    "quality_scores": {
+        "brightness": 66.62,
+        "contrast": 100,
+        "sharpness": 90,
+        "resolution": 40
+    },
+    "overall_score": 74.66,
+    "quality": "ACCEPTABLE",
+    "quality_flags": [
+        "low_resolution"
+    ],
+    "recommendation": "Image is usable but preprocessing is recommended: low_resolution."
+}

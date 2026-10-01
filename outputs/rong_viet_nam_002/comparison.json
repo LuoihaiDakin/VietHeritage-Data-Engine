@@ -1,5 +1,5 @@
 {
-    "created_at": "2026-09-28T00:56:37",
+    "created_at": "2026-10-01T01:33:23",
     "before": {
         "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\dataset\\images\\rong_viet_nam\\rong_viet_nam_002.jpg",
         "quality": "POOR",
@@ -13,7 +13,7 @@
         },
         "quality_report": {
             "filename": "rong_viet_nam_002.jpg",
-            "path": "images/rong_viet_nam/rong_viet_nam_002.jpg",
+            "path": "dataset/images/rong_viet_nam/rong_viet_nam_002.jpg",
             "category": "rong_viet_nam",
             "technical_metrics": {
                 "brightness": 139.85,

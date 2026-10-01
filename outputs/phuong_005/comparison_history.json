@@ -1,0 +1,108 @@
+[
+    {
+        "created_at": "2026-10-01T00:50:14",
+        "before": {
+            "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\dataset\\images\\phuong\\phuong_005.JPG",
+            "quality": "ACCEPTABLE",
+            "score": 76.62,
+            "metrics": {
+                "width": 960,
+                "height": 576,
+                "brightness": 160.33,
+                "contrast": 60.97,
+                "sharpness": 5760.55
+            },
+            "quality_report": {
+                "filename": "phuong_005.JPG",
+                "path": "dataset/images/phuong/phuong_005.JPG",
+                "category": "phuong",
+                "technical_metrics": {
+                    "brightness": 160.33,
+                    "contrast": 60.97,
+                    "sharpness": 5760.55,
+                    "width": 960,
+                    "height": 576
+                },
+                "quality_scores": {
+                    "brightness": 100,
+                    "contrast": 93.09,
+                    "sharpness": 90,
+                    "resolution": 40
+                },
+                "overall_score": 76.62,
+                "quality": "ACCEPTABLE",
+                "quality_flags": [
+                    "low_resolution"
+                ],
+                "recommendation": "Image is usable but preprocessing is recommended: low_resolution."
+            }
+        },
+        "after": {
+            "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\phuong_005\\normalized.png",
+            "quality": "GOOD",
+            "score": 100.0,
+            "metrics": {
+                "width": 1200,
+                "height": 720,
+                "brightness": 160.02,
+                "contrast": 61.48,
+                "sharpness": 2511.71
+            },
+            "quality_report": {
+                "quality": "GOOD",
+                "score": 100.0,
+                "component_scores": {
+                    "resolution": 100.0,
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "noise": 100.0
+                }
+            }
+        },
+        "improvement": {
+            "score_change": 23.38,
+            "quality_changed": true,
+            "classification": {
+                "before": "ACCEPTABLE",
+                "after": "GOOD"
+            },
+            "metrics": {
+                "resolution": {
+                    "before": [
+                        960,
+                        576
+                    ],
+                    "after": [
+                        1200,
+                        720
+                    ]
+                },
+                "brightness": {
+                    "before": 160.33,
+                    "after": 160.02,
+                    "delta": -0.31,
+                    "percentage": -0.19
+                },
+                "contrast": {
+                    "before": 60.97,
+                    "after": 61.48,
+                    "delta": 0.51,
+                    "percentage": 0.84
+                },
+                "sharpness": {
+                    "before": 5760.55,
+                    "after": 2511.71,
+                    "delta": -3248.84,
+                    "percentage": -56.4
+                }
+            }
+        },
+        "similarity": {
+            "mse": 239.36,
+            "psnr_db": 24.34,
+            "ssim": 0.8247,
+            "ssim_percent": 82.47,
+            "changed_pixels_percent": 41.6
+        }
+    }
+]

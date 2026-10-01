@@ -422,31 +422,436 @@ def find_asset_by_id(catalog, asset_id):
     return None
 
 
-def prepare_asset_for_api(item):
-    """Expose compatibility fields without modifying catalog.json."""
+def resolve_catalog_image_path(item):
+    """
+    Resolve the real image path from catalog data.
+
+    Supports:
+    - dataset/images/...
+    - images/...
+    - ./dataset/images/...
+    - absolute paths
+    """
+
     if not isinstance(item, dict):
+        return None
+
+    candidates = []
+
+    original = item.get("original")
+
+    if isinstance(original, dict):
+        original_path = original.get("path")
+
+        if original_path:
+            candidates.append(
+                str(original_path)
+            )
+
+    for key in [
+        "path",
+        "image_path"
+    ]:
+
+        value = item.get(key)
+
+        if value:
+            candidates.append(
+                str(value)
+            )
+
+    for candidate in candidates:
+
+        candidate = candidate.replace(
+            "\\",
+            "/"
+        ).strip()
+
+        if not candidate:
+            continue
+
+        # Absolute path
+        if os.path.isabs(candidate):
+
+            absolute_path = os.path.abspath(
+                candidate
+            )
+
+            if os.path.isfile(
+                absolute_path
+            ):
+                return absolute_path
+
+        # ./dataset/images/...
+        if candidate.startswith(
+            "./dataset/"
+        ):
+
+            candidate = candidate[2:]
+
+        # dataset/images/...
+        if candidate.startswith(
+            "dataset/"
+        ):
+
+            absolute_path = os.path.join(
+                PROJECT_ROOT,
+                candidate
+            )
+
+            if os.path.isfile(
+                absolute_path
+            ):
+                return os.path.abspath(
+                    absolute_path
+                )
+
+        # images/...
+        if candidate.startswith(
+            "images/"
+        ):
+
+            absolute_path = os.path.join(
+                DATASET_DIR,
+                candidate
+            )
+
+            if os.path.isfile(
+                absolute_path
+            ):
+                return os.path.abspath(
+                    absolute_path
+                )
+
+        # Sometimes only filename is stored
+        filename = os.path.basename(
+            candidate
+        )
+
+        if filename:
+
+            matches = []
+
+            for root, _, files in os.walk(
+                IMAGE_DIR
+            ):
+
+                if filename in files:
+
+                    matches.append(
+                        os.path.join(
+                            root,
+                            filename
+                        )
+                    )
+
+            if matches:
+
+                return os.path.abspath(
+                    matches[0]
+                )
+
+    return None
+
+def build_persistent_image_metadata(
+    item
+):
+    """
+    Read technical metadata from the ORIGINAL
+    image without running the processing pipeline.
+
+    This is intentionally lightweight and safe
+    to use when the dashboard is opened again.
+    """
+
+    image_path = resolve_catalog_image_path(
+        item
+    )
+
+    if not image_path:
+        return {}
+
+    try:
+
+        file_size_bytes = os.path.getsize(
+            image_path
+        )
+
+        image = cv2.imread(
+            image_path
+        )
+
+        if image is None:
+            return {
+                "file_size_bytes": int(
+                    file_size_bytes
+                ),
+                "file_size_kb": round(
+                    file_size_bytes / 1024,
+                    2
+                ),
+                "file_size_mb": round(
+                    file_size_bytes / (
+                        1024 * 1024
+                    ),
+                    4
+                )
+            }
+
+        height, width = image.shape[:2]
+
+        gray = cv2.cvtColor(
+            image,
+            cv2.COLOR_BGR2GRAY
+        )
+
+        brightness = float(
+            gray.mean()
+        )
+
+        contrast = float(
+            gray.std()
+        )
+
+        sharpness = float(
+            cv2.Laplacian(
+                gray,
+                cv2.CV_64F
+            ).var()
+        )
+
+        return {
+
+            "file_size_bytes": int(
+                file_size_bytes
+            ),
+
+            "file_size_kb": round(
+                file_size_bytes / 1024,
+                2
+            ),
+
+            "file_size_mb": round(
+                file_size_bytes / (
+                    1024 * 1024
+                ),
+                4
+            ),
+
+            "width": int(
+                width
+            ),
+
+            "height": int(
+                height
+            ),
+
+            "brightness": round(
+                brightness,
+                2
+            ),
+
+            "contrast": round(
+                contrast,
+                2
+            ),
+
+            "sharpness": round(
+                sharpness,
+                2
+            )
+
+        }
+
+    except Exception as error:
+
+        print(
+            "WARNING: Could not build "
+            f"image metadata: {error}"
+        )
+
+        return {}
+
+def prepare_asset_for_api(item):
+    """
+    Prepare a catalog asset for the frontend.
+
+    Important:
+    - Never runs the processing pipeline.
+    - Reads existing catalog metadata first.
+    - Fills missing technical metadata from
+      the original image.
+    - Exposes both nested and top-level fields
+      for frontend compatibility.
+    """
+
+    if not isinstance(
+        item,
+        dict
+    ):
+
         return item
 
-    result = dict(item)
+    result = dict(
+        item
+    )
 
-    # Current catalog uses asset_id; older dashboard code expects id.
-    if not result.get("id") and result.get("asset_id"):
-        result["id"] = result["asset_id"]
+    # ----------------------------------------
+    # ID COMPATIBILITY
+    # ----------------------------------------
 
-    # Current catalog stores the original path under original.path.
+    if (
+        not result.get("id")
+        and result.get("asset_id")
+    ):
+
+        result["id"] = result[
+            "asset_id"
+        ]
+
+    # ----------------------------------------
+    # ORIGINAL PATH COMPATIBILITY
+    # ----------------------------------------
+
     if not result.get("path"):
-        original = result.get("original")
-        if isinstance(original, dict) and original.get("path"):
-            result["path"] = original["path"]
 
-    # Keep the quality object exactly as stored by the catalog.
-    quality = result.get("quality")
-    if isinstance(quality, dict):
-        if "label" not in quality and quality.get("quality") is not None:
-            quality["label"] = quality.get("quality")
+        original = result.get(
+            "original"
+        )
 
-    # processing_outputs already contains the comparison files.
-    # Do not overwrite it with outputs because the frontend uses both.
+        if (
+            isinstance(
+                original,
+                dict
+            )
+            and original.get("path")
+        ):
+
+            result["path"] = (
+                original["path"]
+            )
+
+    # ----------------------------------------
+    # QUALITY COMPATIBILITY
+    # ----------------------------------------
+
+    quality = result.get(
+        "quality"
+    )
+
+    if not isinstance(
+        quality,
+        dict
+    ):
+
+        quality = {}
+
+        result["quality"] = quality
+
+    if (
+        "label" not in quality
+        and quality.get("quality")
+        is not None
+    ):
+
+        quality["label"] = quality[
+            "quality"
+        ]
+
+    # ----------------------------------------
+    # TECHNICAL METADATA
+    # ----------------------------------------
+    #
+    # First use data already saved in catalog.
+    # Only calculate missing information from
+    # the ORIGINAL image.
+    #
+
+    technical_metrics = quality.get(
+        "technical_metrics"
+    )
+
+    if not isinstance(
+        technical_metrics,
+        dict
+    ):
+
+        technical_metrics = {}
+
+    calculated = (
+        build_persistent_image_metadata(
+            result
+        )
+    )
+
+    # Fill only missing values.
+    # Existing catalog values are preserved.
+
+    for key, value in calculated.items():
+
+        if (
+            key not in technical_metrics
+            or technical_metrics[key]
+            is None
+        ):
+
+            technical_metrics[key] = value
+
+    quality[
+        "technical_metrics"
+    ] = technical_metrics
+
+    # ----------------------------------------
+    # TOP-LEVEL COMPATIBILITY FIELDS
+    # ----------------------------------------
+    #
+    # This makes the frontend work regardless
+    # of whether it reads:
+    #
+    # asset.sharpness
+    #
+    # or:
+    #
+    # asset.quality.technical_metrics.sharpness
+    #
+
+    for key in [
+        "width",
+        "height",
+        "brightness",
+        "contrast",
+        "sharpness",
+        "file_size_bytes",
+        "file_size_kb",
+        "file_size_mb"
+    ]:
+
+        if (
+            key in technical_metrics
+            and technical_metrics[key]
+            is not None
+        ):
+
+            result[key] = (
+                technical_metrics[key]
+            )
+
+    # ----------------------------------------
+    # PROCESSING OUTPUTS
+    # ----------------------------------------
+
+    processing_outputs = result.get(
+        "processing_outputs"
+    )
+
+    if not isinstance(
+        processing_outputs,
+        dict
+    ):
+
+        result[
+            "processing_outputs"
+        ] = {}
 
     return result
 
@@ -559,6 +964,132 @@ def evaluate_image_quality(
     return score_image(
         metadata
     )
+
+
+# ========================================
+# REPAIR EXISTING CATALOG METADATA
+# ========================================
+
+def repair_catalog_metadata():
+    """
+    Repair missing technical metadata for existing
+    catalog assets.
+
+    This DOES NOT run the image processing pipeline.
+
+    It only reads the original image and stores:
+    - file size
+    - width
+    - height
+    - brightness
+    - contrast
+    - sharpness
+    """
+
+    catalog = load_catalog()
+
+    if not catalog:
+        return
+
+    changed = False
+
+    for asset in catalog:
+
+        if not isinstance(
+            asset,
+            dict
+        ):
+
+            continue
+
+        metadata = (
+            build_persistent_image_metadata(
+                asset
+            )
+        )
+
+        if not metadata:
+            continue
+
+        quality = asset.get(
+            "quality"
+        )
+
+        if not isinstance(
+            quality,
+            dict
+        ):
+
+            quality = {}
+
+        technical_metrics = (
+            quality.get(
+                "technical_metrics"
+            )
+        )
+
+        if not isinstance(
+            technical_metrics,
+            dict
+        ):
+
+            technical_metrics = {}
+
+        # Fill missing values only.
+        for key, value in metadata.items():
+
+            if (
+                key not in technical_metrics
+                or technical_metrics[key]
+                is None
+            ):
+
+                technical_metrics[key] = value
+                changed = True
+
+        quality[
+            "technical_metrics"
+        ] = technical_metrics
+
+        asset[
+            "quality"
+        ] = quality
+
+        # Keep top-level fields synchronized.
+        for key in [
+            "width",
+            "height",
+            "brightness",
+            "contrast",
+            "sharpness",
+            "file_size_bytes",
+            "file_size_kb",
+            "file_size_mb"
+        ]:
+
+            if key in metadata:
+
+                if (
+                    key not in asset
+                    or asset[key] is None
+                ):
+
+                    asset[key] = metadata[key]
+                    changed = True
+
+    if changed:
+
+        save_catalog(
+            catalog
+        )
+
+        print(
+            "CATALOG METADATA REPAIRED"
+        )
+
+
+# Repair missing metadata once when API starts.
+repair_catalog_metadata()
 
 
 # ========================================
@@ -2338,6 +2869,56 @@ def process_asset(
 
             if pipeline_quality:
 
+                # --------------------------------
+                # BUILD COMPLETE ORIGINAL METADATA
+                # --------------------------------
+
+                original_metadata = (
+                    build_persistent_image_metadata(
+                        asset
+                    )
+                )
+
+                pipeline_metrics = (
+                    result.get(
+                        "input",
+                        {}
+                    ).get(
+                        "metrics",
+                        {}
+                    )
+                )
+
+                if not isinstance(
+                    pipeline_metrics,
+                    dict
+                ):
+
+                    pipeline_metrics = {}
+
+                # --------------------------------
+                # MERGE METRICS
+                # --------------------------------
+                #
+                # Pipeline metrics take priority because
+                # they are generated during processing.
+                #
+                # Missing values are filled from the
+                # original image metadata.
+                #
+
+                complete_metrics = dict(
+                    original_metadata
+                )
+
+                complete_metrics.update(
+                    pipeline_metrics
+                )
+
+                # --------------------------------
+                # SAVE COMPLETE QUALITY OBJECT
+                # --------------------------------
+
                 asset["quality"] = {
 
                     "quality": pipeline_quality.get(
@@ -2354,16 +2935,35 @@ def process_asset(
                     ),
 
                     "technical_metrics": (
-                        result.get(
-                            "input",
-                            {}
-                        ).get(
-                            "metrics",
-                            {}
-                        )
+                        complete_metrics
                     )
 
                 }
+
+                # --------------------------------
+                # ALSO SAVE TOP-LEVEL METADATA
+                # --------------------------------
+                #
+                # This makes catalog.json self-contained
+                # and keeps compatibility with the dashboard.
+                #
+
+                for key in [
+                    "width",
+                    "height",
+                    "brightness",
+                    "contrast",
+                    "sharpness",
+                    "file_size_bytes",
+                    "file_size_kb",
+                    "file_size_mb"
+                ]:
+
+                    if key in complete_metrics:
+
+                        asset[key] = (
+                            complete_metrics[key]
+                        )
 
                 result["quality"] = (
                     asset["quality"]

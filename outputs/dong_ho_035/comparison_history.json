@@ -1,0 +1,108 @@
+[
+    {
+        "created_at": "2026-10-01T00:40:30",
+        "before": {
+            "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\dataset\\images\\dong_ho\\dong_ho_035.jpg",
+            "quality": "POOR",
+            "score": 69.07,
+            "metrics": {
+                "width": 454,
+                "height": 614,
+                "brightness": 150.79,
+                "contrast": 56.44,
+                "sharpness": 2016.16
+            },
+            "quality_report": {
+                "filename": "dong_ho_035.jpg",
+                "path": "dataset/images/dong_ho/dong_ho_035.jpg",
+                "category": "dong_ho",
+                "technical_metrics": {
+                    "brightness": 150.79,
+                    "contrast": 56.44,
+                    "sharpness": 2016.16,
+                    "width": 454,
+                    "height": 614
+                },
+                "quality_scores": {
+                    "brightness": 100,
+                    "contrast": 85.33,
+                    "sharpness": 90,
+                    "resolution": 20
+                },
+                "overall_score": 69.07,
+                "quality": "POOR",
+                "quality_flags": [
+                    "low_resolution"
+                ],
+                "recommendation": "Image requires restoration or preprocessing: low_resolution."
+            }
+        },
+        "after": {
+            "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\dong_ho_035\\normalized.png",
+            "quality": "GOOD",
+            "score": 100.0,
+            "metrics": {
+                "width": 887,
+                "height": 1200,
+                "brightness": 153.99,
+                "contrast": 66.82,
+                "sharpness": 2125.37
+            },
+            "quality_report": {
+                "quality": "GOOD",
+                "score": 100.0,
+                "component_scores": {
+                    "resolution": 100.0,
+                    "brightness": 100.0,
+                    "contrast": 100.0,
+                    "noise": 100.0
+                }
+            }
+        },
+        "improvement": {
+            "score_change": 30.93,
+            "quality_changed": true,
+            "classification": {
+                "before": "POOR",
+                "after": "GOOD"
+            },
+            "metrics": {
+                "resolution": {
+                    "before": [
+                        454,
+                        614
+                    ],
+                    "after": [
+                        887,
+                        1200
+                    ]
+                },
+                "brightness": {
+                    "before": 150.79,
+                    "after": 153.99,
+                    "delta": 3.2,
+                    "percentage": 2.12
+                },
+                "contrast": {
+                    "before": 56.44,
+                    "after": 66.82,
+                    "delta": 10.38,
+                    "percentage": 18.39
+                },
+                "sharpness": {
+                    "before": 2016.16,
+                    "after": 2125.37,
+                    "delta": 109.21,
+                    "percentage": 5.42
+                }
+            }
+        },
+        "similarity": {
+            "mse": 252.18,
+            "psnr_db": 24.11,
+            "ssim": 0.8975,
+            "ssim_percent": 89.75,
+            "changed_pixels_percent": 50.67
+        }
+    }
+]

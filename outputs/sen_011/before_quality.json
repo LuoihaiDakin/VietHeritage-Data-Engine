@@ -1,0 +1,26 @@
+{
+    "filename": "sen_011.jpg",
+    "path": "dataset/images/sen/sen_011.jpg",
+    "category": "sen",
+    "technical_metrics": {
+        "brightness": 71.17,
+        "contrast": 40.95,
+        "sharpness": 2463.77,
+        "width": 736,
+        "height": 981
+    },
+    "quality_scores": {
+        "brightness": 52.34,
+        "contrast": 58.77,
+        "sharpness": 90,
+        "resolution": 40
+    },
+    "overall_score": 64.99,
+    "quality": "POOR",
+    "quality_flags": [
+        "poor_brightness",
+        "poor_contrast",
+        "low_resolution"
+    ],
+    "recommendation": "Image requires restoration or preprocessing: poor_brightness, poor_contrast, low_resolution."
+}

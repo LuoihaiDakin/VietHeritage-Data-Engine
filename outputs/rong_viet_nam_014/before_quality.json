@@ -1,0 +1,24 @@
+{
+    "filename": "rong_viet_nam_014.jpg",
+    "path": "dataset/images/rong_viet_nam/rong_viet_nam_014.jpg",
+    "category": "rong_viet_nam",
+    "technical_metrics": {
+        "brightness": 138.18,
+        "contrast": 73.85,
+        "sharpness": 6663.85,
+        "width": 500,
+        "height": 750
+    },
+    "quality_scores": {
+        "brightness": 100,
+        "contrast": 100,
+        "sharpness": 90,
+        "resolution": 20
+    },
+    "overall_score": 72.0,
+    "quality": "ACCEPTABLE",
+    "quality_flags": [
+        "low_resolution"
+    ],
+    "recommendation": "Image is usable but preprocessing is recommended: low_resolution."
+}

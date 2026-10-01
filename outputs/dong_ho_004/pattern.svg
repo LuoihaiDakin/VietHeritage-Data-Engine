@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="312" viewBox="0 0 480 312">
   <g fill="black" stroke="none">
-    <path d="M 15 15 L 16 296 L 464 296 L 463 15 Z"/>
+    <path d="M 15 15 L 16 296 L 464 295 L 463 15 Z"/>
   </g>
 </svg>

@@ -1,5 +1,5 @@
 {
-    "created_at": "2026-09-28T00:52:10",
+    "created_at": "2026-10-01T00:25:47",
     "before": {
         "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\dataset\\images\\dong_ho\\dong_ho_028.jpg",
         "quality": "POOR",
@@ -13,7 +13,7 @@
         },
         "quality_report": {
             "filename": "dong_ho_028.jpg",
-            "path": "images/dong_ho/dong_ho_028.jpg",
+            "path": "dataset/images/dong_ho/dong_ho_028.jpg",
             "category": "dong_ho",
             "technical_metrics": {
                 "brightness": 96.98,

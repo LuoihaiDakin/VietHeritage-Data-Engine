@@ -1,0 +1,24 @@
+{
+    "filename": "sen_017.jpg",
+    "path": "dataset/images/sen/sen_017.jpg",
+    "category": "sen",
+    "technical_metrics": {
+        "brightness": 156.67,
+        "contrast": 47.81,
+        "sharpness": 303.21,
+        "width": 675,
+        "height": 1200
+    },
+    "quality_scores": {
+        "brightness": 100,
+        "contrast": 70.53,
+        "sharpness": 80.64,
+        "resolution": 40
+    },
+    "overall_score": 68.36,
+    "quality": "POOR",
+    "quality_flags": [
+        "low_resolution"
+    ],
+    "recommendation": "Image requires restoration or preprocessing: low_resolution."
+}

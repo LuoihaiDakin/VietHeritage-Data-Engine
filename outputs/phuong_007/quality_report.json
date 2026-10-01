@@ -2,13 +2,13 @@
     "input": {
         "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\dataset\\images\\phuong\\phuong_007.jpg",
         "metrics": {
-            "width": 480,
-            "height": 320,
-            "brightness": 162.33,
-            "contrast": 50.49,
-            "sharpness": 382.25,
-            "noise": 0.37,
-            "edge_density": 0.0259
+            "width": 538,
+            "height": 371,
+            "brightness": 132.03,
+            "contrast": 41.82,
+            "sharpness": 2540.24,
+            "noise": 6.02,
+            "edge_density": 0.1619
         },
         "quality": {
             "quality": "GOOD",
@@ -24,13 +24,13 @@
     "restored": {
         "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\phuong_007\\restored.png",
         "metrics": {
-            "width": 1920,
-            "height": 1280,
-            "brightness": 162.21,
-            "contrast": 51.35,
-            "sharpness": 37.23,
-            "noise": 0.56,
-            "edge_density": 0.0101
+            "width": 2152,
+            "height": 1484,
+            "brightness": 129.88,
+            "contrast": 42.82,
+            "sharpness": 159.44,
+            "noise": 1.02,
+            "edge_density": 0.0528
         },
         "quality": {
             "quality": "GOOD",
@@ -46,13 +46,13 @@
     "cleaned": {
         "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\phuong_007\\cleaned.png",
         "metrics": {
-            "width": 1920,
-            "height": 1280,
-            "brightness": 163.49,
-            "contrast": 49.21,
-            "sharpness": 52.63,
-            "noise": 0.0,
-            "edge_density": 0.0175
+            "width": 2152,
+            "height": 1484,
+            "brightness": 144.01,
+            "contrast": 53.97,
+            "sharpness": 227.9,
+            "noise": 0.93,
+            "edge_density": 0.06
         },
         "quality": {
             "quality": "GOOD",
@@ -69,12 +69,12 @@
         "path": "C:\\Users\\asus\\OneDrive\\Documents\\GitHub\\VietHeritage-Data-Engine\\outputs\\phuong_007\\normalized.png",
         "metrics": {
             "width": 1200,
-            "height": 800,
-            "brightness": 163.49,
-            "contrast": 49.1,
-            "sharpness": 108.59,
-            "noise": 0.28,
-            "edge_density": 0.0272
+            "height": 827,
+            "brightness": 144.01,
+            "contrast": 53.19,
+            "sharpness": 731.98,
+            "noise": 1.2,
+            "edge_density": 0.1057
         },
         "quality": {
             "quality": "GOOD",

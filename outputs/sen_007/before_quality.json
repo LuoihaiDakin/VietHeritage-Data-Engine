@@ -1,0 +1,24 @@
+{
+    "filename": "sen_007.jpg",
+    "path": "dataset/images/sen/sen_007.jpg",
+    "category": "sen",
+    "technical_metrics": {
+        "brightness": 125.74,
+        "contrast": 55.89,
+        "sharpness": 1735.86,
+        "width": 735,
+        "height": 628
+    },
+    "quality_scores": {
+        "brightness": 100,
+        "contrast": 84.38,
+        "sharpness": 90,
+        "resolution": 40
+    },
+    "overall_score": 74.88,
+    "quality": "ACCEPTABLE",
+    "quality_flags": [
+        "low_resolution"
+    ],
+    "recommendation": "Image is usable but preprocessing is recommended: low_resolution."
+}

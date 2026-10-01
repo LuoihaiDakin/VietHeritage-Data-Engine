@@ -1,0 +1,25 @@
+{
+    "filename": "rong_viet_nam_025.jpg",
+    "path": "dataset/images/rong_viet_nam/rong_viet_nam_025.jpg",
+    "category": "rong_viet_nam",
+    "technical_metrics": {
+        "brightness": 64.74,
+        "contrast": 57.02,
+        "sharpness": 1915.14,
+        "width": 540,
+        "height": 350
+    },
+    "quality_scores": {
+        "brightness": 41.23,
+        "contrast": 86.32,
+        "sharpness": 90,
+        "resolution": 20
+    },
+    "overall_score": 63.39,
+    "quality": "POOR",
+    "quality_flags": [
+        "poor_brightness",
+        "low_resolution"
+    ],
+    "recommendation": "Image requires restoration or preprocessing: poor_brightness, low_resolution."
+}

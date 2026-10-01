@@ -1,0 +1,24 @@
+{
+    "filename": "phuong_006.webp",
+    "path": "dataset/images/phuong/phuong_006.webp",
+    "category": "phuong",
+    "technical_metrics": {
+        "brightness": 121.78,
+        "contrast": 59.83,
+        "sharpness": 1257.55,
+        "width": 1024,
+        "height": 620
+    },
+    "quality_scores": {
+        "brightness": 100,
+        "contrast": 91.14,
+        "sharpness": 90,
+        "resolution": 40
+    },
+    "overall_score": 76.23,
+    "quality": "ACCEPTABLE",
+    "quality_flags": [
+        "low_resolution"
+    ],
+    "recommendation": "Image is usable but preprocessing is recommended: low_resolution."
+}

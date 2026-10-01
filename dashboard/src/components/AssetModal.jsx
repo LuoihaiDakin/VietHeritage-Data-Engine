@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import ProcessPanel from "./ProcessPanel";
 import ComparisonPanel from "./ComparisonPanel";
 
@@ -23,7 +24,6 @@ function buildImageUrl(path) {
   // =========================
   // ORIGINAL DATASET IMAGE
   // =========================
-
   if (normalizedPath.startsWith("images/")) {
     return `${API_BASE}/${normalizedPath}`;
   }
@@ -31,7 +31,6 @@ function buildImageUrl(path) {
   // =========================
   // DATASET/IMAGES PATH
   // =========================
-
   if (normalizedPath.startsWith("dataset/images/")) {
     const imagePath = normalizedPath.substring(
       "dataset/images/".length
@@ -43,7 +42,6 @@ function buildImageUrl(path) {
   // =========================
   // OUTPUTS
   // =========================
-
   if (normalizedPath.startsWith("outputs/")) {
     return `${API_BASE}/${normalizedPath}`;
   }
@@ -51,7 +49,6 @@ function buildImageUrl(path) {
   // =========================
   // OTHER DATASET PATHS
   // =========================
-
   if (normalizedPath.startsWith("dataset/")) {
     return `${API_BASE}/${normalizedPath}`;
   }
@@ -96,10 +93,7 @@ function getQuality(asset) {
 function getQualityScore(asset) {
   const score = asset?.quality?.overall_score;
 
-  if (
-    score === null ||
-    score === undefined
-  ) {
+  if (score === null || score === undefined) {
     return null;
   }
 
@@ -377,13 +371,10 @@ function AssetModal({
           event.stopPropagation()
         }
       >
-
         {/* ================= HEADER ================= */}
 
         <div className="vh-modal-header">
-
           <div className="vh-title-area">
-
             <div className="vh-modal-eyebrow">
               HERITAGE ASSET
             </div>
@@ -395,7 +386,6 @@ function AssetModal({
             <div className="vh-modal-id">
               ID: {formatValue(workingAsset.id)}
             </div>
-
           </div>
 
           <button
@@ -405,7 +395,6 @@ function AssetModal({
           >
             ×
           </button>
-
         </div>
 
         {/* ================= BODY ================= */}
@@ -415,9 +404,7 @@ function AssetModal({
           {/* ================= IMAGE ================= */}
 
           <section className="vh-image-section">
-
             <div className="vh-image-container">
-
               {originalImageUrl ? (
                 <img
                   src={originalImageUrl}
@@ -430,17 +417,13 @@ function AssetModal({
                   No preview available
                 </div>
               )}
-
             </div>
-
           </section>
 
           {/* ================= QUALITY ================= */}
 
           <section className="vh-section">
-
             <div className="vh-section-header">
-
               <div>
                 <span className="vh-section-label">
                   DATA QUALITY
@@ -456,7 +439,6 @@ function AssetModal({
               >
                 {quality}
               </div>
-
             </div>
 
             <div className="vh-quality-overview">
@@ -464,7 +446,6 @@ function AssetModal({
               {/* SCORE */}
 
               <div className="vh-score-card">
-
                 <span>
                   Overall Score
                 </span>
@@ -478,7 +459,6 @@ function AssetModal({
                 <small>
                   / 100
                 </small>
-
               </div>
 
               {/* METRICS */}
@@ -488,9 +468,7 @@ function AssetModal({
                 {/* BRIGHTNESS */}
 
                 <div className="vh-quality-metric">
-
                   <div className="vh-quality-metric-header">
-
                     <span>
                       Brightness
                     </span>
@@ -500,11 +478,9 @@ function AssetModal({
                         qualityScores.brightness
                       )}
                     </strong>
-
                   </div>
 
                   <div className="vh-quality-track">
-
                     <div
                       className="vh-quality-fill"
                       style={{
@@ -519,17 +495,13 @@ function AssetModal({
                         )}%`,
                       }}
                     />
-
                   </div>
-
                 </div>
 
                 {/* CONTRAST */}
 
                 <div className="vh-quality-metric">
-
                   <div className="vh-quality-metric-header">
-
                     <span>
                       Contrast
                     </span>
@@ -539,11 +511,9 @@ function AssetModal({
                         qualityScores.contrast
                       )}
                     </strong>
-
                   </div>
 
                   <div className="vh-quality-track">
-
                     <div
                       className="vh-quality-fill"
                       style={{
@@ -558,17 +528,13 @@ function AssetModal({
                         )}%`,
                       }}
                     />
-
                   </div>
-
                 </div>
 
                 {/* SHARPNESS */}
 
                 <div className="vh-quality-metric">
-
                   <div className="vh-quality-metric-header">
-
                     <span>
                       Sharpness
                     </span>
@@ -578,11 +544,9 @@ function AssetModal({
                         qualityScores.sharpness
                       )}
                     </strong>
-
                   </div>
 
                   <div className="vh-quality-track">
-
                     <div
                       className="vh-quality-fill"
                       style={{
@@ -597,17 +561,13 @@ function AssetModal({
                         )}%`,
                       }}
                     />
-
                   </div>
-
                 </div>
 
                 {/* RESOLUTION */}
 
                 <div className="vh-quality-metric">
-
                   <div className="vh-quality-metric-header">
-
                     <span>
                       Resolution
                     </span>
@@ -617,11 +577,9 @@ function AssetModal({
                         qualityScores.resolution
                       )}
                     </strong>
-
                   </div>
 
                   <div className="vh-quality-track">
-
                     <div
                       className="vh-quality-fill"
                       style={{
@@ -636,26 +594,21 @@ function AssetModal({
                         )}%`,
                       }}
                     />
-
                   </div>
-
                 </div>
 
               </div>
-
             </div>
 
             {/* FLAGS */}
 
             {qualityFlags.length > 0 && (
               <div className="vh-quality-flags">
-
                 <span className="vh-subtitle">
                   Quality Flags
                 </span>
 
                 <div className="vh-tag-list">
-
                   {qualityFlags.map(
                     (flag, index) => (
                       <span
@@ -666,16 +619,13 @@ function AssetModal({
                       </span>
                     )
                   )}
-
                 </div>
-
               </div>
             )}
 
             {/* RECOMMENDATION */}
 
             <div className="vh-recommendation">
-
               <span className="vh-subtitle">
                 Recommendation
               </span>
@@ -683,9 +633,7 @@ function AssetModal({
               <p>
                 {recommendation}
               </p>
-
             </div>
-
           </section>
 
           {/* ================= METADATA ================= */}
@@ -726,6 +674,7 @@ function AssetModal({
             {!isEditingMetadata ? (
               <>
                 <div className="vh-metadata-grid">
+
                   <div className="vh-meta-item">
                     <span>Filename</span>
                     <strong>
@@ -797,6 +746,7 @@ function AssetModal({
                       )}
                     </strong>
                   </div>
+
                 </div>
 
                 {metadataMessage && (
@@ -807,7 +757,9 @@ function AssetModal({
               </>
             ) : (
               <div className="vh-metadata-editor">
+
                 <div className="vh-metadata-form-grid">
+
                   <div className="vh-metadata-field">
                     <label>
                       Category
@@ -933,6 +885,7 @@ function AssetModal({
                       placeholder="e.g. Public Domain"
                     />
                   </div>
+
                 </div>
 
                 {metadataMessage && (
@@ -942,6 +895,7 @@ function AssetModal({
                 )}
 
                 <div className="vh-metadata-actions">
+
                   <button
                     type="button"
                     className="vh-metadata-cancel"
@@ -980,10 +934,10 @@ function AssetModal({
                       ? "Saving..."
                       : "Save Metadata"}
                   </button>
+
                 </div>
               </div>
             )}
-
           </section>
 
           {/* ================= PROCESSING STATUS ================= */}
@@ -991,9 +945,7 @@ function AssetModal({
           <section className="vh-processing-panel">
 
             <div className="vh-processing-header">
-
               <div>
-
                 <span className="vh-section-label">
                   DATA PIPELINE
                 </span>
@@ -1006,11 +958,9 @@ function AssetModal({
                   Current processing stages
                   and generated results
                 </p>
-
               </div>
 
               <div className="vh-processing-summary">
-
                 <strong>
                   {
                     processingStages.filter(
@@ -1025,16 +975,13 @@ function AssetModal({
                 <span>
                   / {processingStages.length}
                 </span>
-
               </div>
-
             </div>
 
             <div className="vh-processing-grid">
 
               {processingStages.map(
                 (stage, index) => {
-
                   const completed =
                     processing?.[
                       stage.key
@@ -1049,7 +996,6 @@ function AssetModal({
                       }`}
                       key={stage.key}
                     >
-
                       <div
                         className={`vh-processing-icon ${
                           completed
@@ -1063,7 +1009,6 @@ function AssetModal({
                       </div>
 
                       <div className="vh-processing-info">
-
                         <strong>
                           {stage.label}
                         </strong>
@@ -1073,7 +1018,6 @@ function AssetModal({
                             ? "Completed"
                             : "Not processed"}
                         </span>
-
                       </div>
 
                       <div
@@ -1087,7 +1031,6 @@ function AssetModal({
                           ? "READY"
                           : "PENDING"}
                       </div>
-
                     </div>
                   );
                 }
@@ -1115,9 +1058,7 @@ function AssetModal({
             <section className="vh-section">
 
               <div className="vh-section-header">
-
                 <div>
-
                   <span className="vh-section-label">
                     GENERATED DATA
                   </span>
@@ -1125,16 +1066,13 @@ function AssetModal({
                   <h3>
                     Processing Outputs
                   </h3>
-
                 </div>
-
               </div>
 
               <div className="vh-output-grid">
 
                 {outputEntries.map(
                   (output) => {
-
                     const path =
                       getOutputPath(
                         output.key
@@ -1149,13 +1087,11 @@ function AssetModal({
                         }`}
                         key={output.key}
                       >
-
                         <div className="vh-output-icon">
                           {output.icon}
                         </div>
 
                         <div className="vh-output-content">
-
                           <strong>
                             {output.label}
                           </strong>
@@ -1165,7 +1101,6 @@ function AssetModal({
                               ? "Available"
                               : "Not available"}
                           </span>
-
                         </div>
 
                         {path && (
@@ -1180,14 +1115,12 @@ function AssetModal({
                             Open
                           </a>
                         )}
-
                       </div>
                     );
                   }
                 )}
 
               </div>
-
             </section>
           )}
 
@@ -1196,9 +1129,7 @@ function AssetModal({
           <section className="vh-section">
 
             <div className="vh-section-header">
-
               <div>
-
                 <span className="vh-section-label">
                   TECHNICAL DATA
                 </span>
@@ -1206,9 +1137,7 @@ function AssetModal({
                 <h3>
                   Source Image Metrics
                 </h3>
-
               </div>
-
             </div>
 
             <div className="vh-technical-grid">
@@ -1284,7 +1213,6 @@ function AssetModal({
               </div>
 
             </div>
-
           </section>
 
           {/* ================= PROCESS PANEL ================= */}
@@ -1292,9 +1220,7 @@ function AssetModal({
           <section className="vh-section vh-process-section">
 
             <div className="vh-section-header">
-
               <div>
-
                 <span className="vh-section-label">
                   PIPELINE CONTROL
                 </span>
@@ -1302,9 +1228,7 @@ function AssetModal({
                 <h3>
                   Process Asset
                 </h3>
-
               </div>
-
             </div>
 
             <ProcessPanel
@@ -1324,7 +1248,6 @@ function AssetModal({
       {/* ================= STYLES ================= */}
 
       <style>{`
-
         /* ========================================
            MODAL
         ======================================== */
@@ -1333,30 +1256,20 @@ function AssetModal({
           position: fixed;
           inset: 0;
           z-index: 1000;
-
           display: flex;
           align-items: center;
           justify-content: center;
-
           padding: 24px;
-
-          background:
-            rgba(3, 5, 8, 0.82);
-
+          background: rgba(3, 5, 8, 0.82);
           backdrop-filter: blur(12px);
         }
 
         .vh-modal {
           width: min(1180px, 100%);
           max-height: 94vh;
-
           overflow: hidden;
-
-          border: 1px solid
-            rgba(255,255,255,0.09);
-
+          border: 1px solid rgba(255, 255, 255, 0.09);
           border-radius: 22px;
-
           background:
             linear-gradient(
               145deg,
@@ -1364,11 +1277,8 @@ function AssetModal({
               #101010 55%,
               #0d0d0d 100%
             );
-
           box-shadow:
-            0 30px 100px
-              rgba(0,0,0,0.65);
-
+            0 30px 100px rgba(0, 0, 0, 0.65);
         }
 
         /* ========================================
@@ -1379,17 +1289,12 @@ function AssetModal({
           display: flex;
           align-items: flex-start;
           justify-content: space-between;
-
           padding: 24px 28px;
-
-          border-bottom:
-            1px solid
-            rgba(255,255,255,0.07);
-
+          border-bottom: 1px solid rgba(255, 255, 255, 0.07);
           background:
             linear-gradient(
               180deg,
-              rgba(255,255,255,0.025),
+              rgba(255, 255, 255, 0.025),
               transparent
             );
         }
@@ -1397,21 +1302,16 @@ function AssetModal({
         .vh-modal-eyebrow,
         .vh-section-label {
           color: #a87869;
-
           font-size: 9px;
           font-weight: 800;
-
           letter-spacing: 1.7px;
         }
 
         .vh-modal-header h2 {
           margin: 7px 0 4px;
-
           color: #f0f0f0;
-
           font-size: 22px;
           font-weight: 700;
-
           letter-spacing: -0.3px;
         }
 
@@ -1423,22 +1323,12 @@ function AssetModal({
         .vh-close-button {
           width: 38px;
           height: 38px;
-
-          border:
-            1px solid
-            rgba(255,255,255,0.08);
-
+          border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 10px;
-
-          background:
-            rgba(255,255,255,0.035);
-
+          background: rgba(255, 255, 255, 0.035);
           color: #888;
-
           font-size: 23px;
-
           cursor: pointer;
-
           transition:
             background 0.2s ease,
             color 0.2s ease,
@@ -1446,11 +1336,8 @@ function AssetModal({
         }
 
         .vh-close-button:hover {
-          background:
-            rgba(255,255,255,0.08);
-
+          background: rgba(255, 255, 255, 0.08);
           color: #eee;
-
           transform: rotate(90deg);
         }
 
@@ -1459,13 +1346,9 @@ function AssetModal({
         ======================================== */
 
         .vh-modal-body {
-          max-height:
-            calc(94vh - 88px);
-
+          max-height: calc(94vh - 88px);
           overflow-y: auto;
-
-          padding:
-            24px 28px 36px;
+          padding: 24px 28px 36px;
         }
 
         .vh-modal-body::-webkit-scrollbar {
@@ -1478,9 +1361,7 @@ function AssetModal({
 
         .vh-modal-body::-webkit-scrollbar-thumb {
           border-radius: 10px;
-
-          background:
-            rgba(255,255,255,0.12);
+          background: rgba(255, 255, 255, 0.12);
         }
 
         /* ========================================
@@ -1493,70 +1374,47 @@ function AssetModal({
 
         .vh-image-container {
           display: flex;
-
           align-items: center;
           justify-content: center;
-
           min-height: 300px;
-
           overflow: hidden;
-
-          border:
-            1px solid
-            rgba(255,255,255,0.08);
-
+          border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 16px;
-
           background:
             radial-gradient(
               circle at center,
               #191919,
               #0a0a0a 75%
             );
-
           box-shadow:
-            inset 0 0 50px
-              rgba(0,0,0,0.3);
+            inset 0 0 50px rgba(0, 0, 0, 0.3);
         }
 
         .vh-main-image {
           display: block;
-
           max-width: 100%;
           max-height: 430px;
-
           object-fit: contain;
         }
 
         .vh-image-placeholder {
           display: flex;
-
           flex-direction: column;
           align-items: center;
-
           gap: 8px;
-
           color: #555;
-
           font-size: 11px;
         }
 
         .vh-image-placeholder span {
           display: flex;
-
           align-items: center;
           justify-content: center;
-
           width: 42px;
           height: 42px;
-
           border-radius: 10px;
-
-          background:
-            rgba(255,255,255,0.05);
-
+          background: rgba(255, 255, 255, 0.05);
           color: #777;
-
           font-size: 9px;
           font-weight: 700;
         }
@@ -1567,34 +1425,23 @@ function AssetModal({
 
         .vh-section {
           margin-top: 18px;
-
           padding: 21px;
-
-          border:
-            1px solid
-            rgba(255,255,255,0.065);
-
+          border: 1px solid rgba(255, 255, 255, 0.065);
           border-radius: 16px;
-
-          background:
-            rgba(255,255,255,0.018);
+          background: rgba(255, 255, 255, 0.018);
         }
 
         .vh-section-header {
           display: flex;
-
           align-items: flex-start;
           justify-content: space-between;
-
           margin-bottom: 17px;
         }
 
         .vh-section-header h3,
         .vh-processing-header h3 {
           margin: 5px 0 0;
-
           color: #e8e8e8;
-
           font-size: 15px;
           font-weight: 700;
         }
@@ -1605,71 +1452,50 @@ function AssetModal({
 
         .vh-quality-badge {
           padding: 6px 11px;
-
           border-radius: 999px;
-
           font-size: 9px;
           font-weight: 800;
-
           letter-spacing: 0.6px;
         }
 
         .vh-quality-badge.good {
-          background:
-            rgba(101,197,141,0.12);
-
+          background: rgba(101, 197, 141, 0.12);
           color: #65c58d;
         }
 
         .vh-quality-badge.acceptable {
-          background:
-            rgba(203,167,93,0.12);
-
+          background: rgba(203, 167, 93, 0.12);
           color: #cba75d;
         }
 
         .vh-quality-badge.poor {
-          background:
-            rgba(201,111,111,0.12);
-
+          background: rgba(201, 111, 111, 0.12);
           color: #c96f6f;
         }
 
         .vh-quality-badge.unknown {
-          background:
-            rgba(255,255,255,0.06);
-
+          background: rgba(255, 255, 255, 0.06);
           color: #777;
         }
 
         .vh-quality-overview {
           display: grid;
-
-          grid-template-columns:
-            180px 1fr;
-
+          grid-template-columns: 180px 1fr;
           gap: 14px;
         }
 
         .vh-score-card {
           display: flex;
-
           flex-direction: column;
           justify-content: center;
-
           padding: 18px;
-
-          border:
-            1px solid
-            rgba(255,255,255,0.055);
-
+          border: 1px solid rgba(255, 255, 255, 0.055);
           border-radius: 13px;
-
           background:
             linear-gradient(
               145deg,
-              rgba(255,255,255,0.045),
-              rgba(255,255,255,0.018)
+              rgba(255, 255, 255, 0.045),
+              rgba(255, 255, 255, 0.018)
             );
         }
 
@@ -1680,9 +1506,7 @@ function AssetModal({
 
         .vh-score-value {
           margin-top: 4px;
-
           color: #f1f1f1;
-
           font-size: 34px;
           font-weight: 700;
         }
@@ -1694,32 +1518,21 @@ function AssetModal({
 
         .vh-quality-metrics {
           display: grid;
-
-          grid-template-columns:
-            repeat(2, 1fr);
-
+          grid-template-columns: repeat(2, 1fr);
           gap: 8px;
         }
 
         .vh-quality-metric {
           padding: 13px;
-
-          border:
-            1px solid
-            rgba(255,255,255,0.04);
-
+          border: 1px solid rgba(255, 255, 255, 0.04);
           border-radius: 10px;
-
-          background:
-            rgba(255,255,255,0.025);
+          background: rgba(255, 255, 255, 0.025);
         }
 
         .vh-quality-metric-header {
           display: flex;
-
           align-items: center;
           justify-content: space-between;
-
           margin-bottom: 9px;
         }
 
@@ -1736,29 +1549,21 @@ function AssetModal({
         .vh-quality-track {
           width: 100%;
           height: 4px;
-
           overflow: hidden;
-
           border-radius: 999px;
-
-          background:
-            rgba(255,255,255,0.06);
+          background: rgba(255, 255, 255, 0.06);
         }
 
         .vh-quality-fill {
           height: 100%;
-
           border-radius: inherit;
-
           background:
             linear-gradient(
               90deg,
               #8d5c50,
               #c38b78
             );
-
-          transition:
-            width 0.45s ease;
+          transition: width 0.45s ease;
         }
 
         .vh-quality-flags,
@@ -1768,48 +1573,32 @@ function AssetModal({
 
         .vh-subtitle {
           display: block;
-
           margin-bottom: 8px;
-
           color: #666;
-
           font-size: 9px;
           font-weight: 700;
-
           text-transform: uppercase;
           letter-spacing: 0.8px;
         }
 
         .vh-tag-list {
           display: flex;
-
           flex-wrap: wrap;
-
           gap: 7px;
         }
 
         .vh-tag {
           padding: 6px 9px;
-
-          border:
-            1px solid
-            rgba(201,111,111,0.2);
-
+          border: 1px solid rgba(201, 111, 111, 0.2);
           border-radius: 7px;
-
-          background:
-            rgba(201,111,111,0.06);
-
+          background: rgba(201, 111, 111, 0.06);
           color: #c98282;
-
           font-size: 9px;
         }
 
         .vh-recommendation p {
           margin: 0;
-
           color: #888;
-
           font-size: 10px;
           line-height: 1.6;
         }
@@ -1820,9 +1609,9 @@ function AssetModal({
 
         .vh-metadata-edit-button {
           padding: 7px 11px;
-          border: 1px solid rgba(255,255,255,0.08);
+          border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 8px;
-          background: rgba(255,255,255,0.035);
+          background: rgba(255, 255, 255, 0.035);
           color: #999;
           font-size: 9px;
           font-weight: 700;
@@ -1835,16 +1624,16 @@ function AssetModal({
 
         .vh-metadata-edit-button:hover,
         .vh-metadata-edit-button.active {
-          border-color: rgba(180,123,109,0.35);
-          background: rgba(180,123,109,0.1);
+          border-color: rgba(180, 123, 109, 0.35);
+          background: rgba(180, 123, 109, 0.1);
           color: #d29a8a;
         }
 
         .vh-metadata-editor {
           padding: 15px;
-          border: 1px solid rgba(255,255,255,0.055);
+          border: 1px solid rgba(255, 255, 255, 0.055);
           border-radius: 12px;
-          background: rgba(255,255,255,0.018);
+          background: rgba(255, 255, 255, 0.018);
         }
 
         .vh-metadata-form-grid {
@@ -1871,10 +1660,10 @@ function AssetModal({
           width: 100%;
           box-sizing: border-box;
           padding: 10px 11px;
-          border: 1px solid rgba(255,255,255,0.07);
+          border: 1px solid rgba(255, 255, 255, 0.07);
           border-radius: 8px;
           outline: none;
-          background: rgba(0,0,0,0.2);
+          background: rgba(0, 0, 0, 0.2);
           color: #ddd;
           font-family: inherit;
           font-size: 10px;
@@ -1888,8 +1677,8 @@ function AssetModal({
         }
 
         .vh-metadata-field input:focus {
-          border-color: rgba(180,123,109,0.45);
-          background: rgba(255,255,255,0.025);
+          border-color: rgba(180, 123, 109, 0.45);
+          background: rgba(255, 255, 255, 0.025);
         }
 
         .vh-metadata-actions {
@@ -1898,7 +1687,7 @@ function AssetModal({
           gap: 8px;
           margin-top: 15px;
           padding-top: 13px;
-          border-top: 1px solid rgba(255,255,255,0.05);
+          border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .vh-metadata-cancel,
@@ -1915,25 +1704,25 @@ function AssetModal({
         }
 
         .vh-metadata-cancel {
-          border: 1px solid rgba(255,255,255,0.07);
-          background: rgba(255,255,255,0.025);
+          border: 1px solid rgba(255, 255, 255, 0.07);
+          background: rgba(255, 255, 255, 0.025);
           color: #777;
         }
 
         .vh-metadata-cancel:hover {
-          background: rgba(255,255,255,0.06);
+          background: rgba(255, 255, 255, 0.06);
           color: #bbb;
         }
 
         .vh-metadata-save {
-          border: 1px solid rgba(180,123,109,0.35);
-          background: rgba(180,123,109,0.13);
+          border: 1px solid rgba(180, 123, 109, 0.35);
+          background: rgba(180, 123, 109, 0.13);
           color: #d29a8a;
         }
 
         .vh-metadata-save:hover {
-          background: rgba(180,123,109,0.2);
-          border-color: rgba(180,123,109,0.5);
+          background: rgba(180, 123, 109, 0.2);
+          border-color: rgba(180, 123, 109, 0.5);
         }
 
         .vh-metadata-save:disabled {
@@ -1949,41 +1738,30 @@ function AssetModal({
         }
 
         .vh-metadata-message.success {
-          border: 1px solid rgba(101,197,141,0.15);
-          background: rgba(101,197,141,0.06);
+          border: 1px solid rgba(101, 197, 141, 0.15);
+          background: rgba(101, 197, 141, 0.06);
           color: #65c58d;
         }
 
         .vh-metadata-message.error {
-          border: 1px solid rgba(201,111,111,0.18);
-          background: rgba(201,111,111,0.06);
+          border: 1px solid rgba(201, 111, 111, 0.18);
+          background: rgba(201, 111, 111, 0.06);
           color: #c98282;
         }
 
         .vh-metadata-grid {
           display: grid;
-
-          grid-template-columns:
-            repeat(4, 1fr);
-
+          grid-template-columns: repeat(4, 1fr);
           gap: 9px;
         }
 
         .vh-meta-item,
         .vh-technical-item {
           min-width: 0;
-
           padding: 14px;
-
-          border:
-            1px solid
-            rgba(255,255,255,0.045);
-
+          border: 1px solid rgba(255, 255, 255, 0.045);
           border-radius: 11px;
-
-          background:
-            rgba(255,255,255,0.025);
-
+          background: rgba(255, 255, 255, 0.025);
           transition:
             background 0.2s ease,
             border-color 0.2s ease;
@@ -1991,24 +1769,17 @@ function AssetModal({
 
         .vh-meta-item:hover,
         .vh-technical-item:hover {
-          border-color:
-            rgba(255,255,255,0.09);
-
-          background:
-            rgba(255,255,255,0.04);
+          border-color: rgba(255, 255, 255, 0.09);
+          background: rgba(255, 255, 255, 0.04);
         }
 
         .vh-meta-item span,
         .vh-technical-item span {
           display: block;
-
           margin-bottom: 7px;
-
           color: #5f5f5f;
-
           font-size: 9px;
           font-weight: 600;
-
           text-transform: uppercase;
           letter-spacing: 0.4px;
         }
@@ -2016,13 +1787,9 @@ function AssetModal({
         .vh-meta-item strong,
         .vh-technical-item strong {
           display: block;
-
           overflow: hidden;
-
           color: #d2d2d2;
-
           font-size: 11px;
-
           text-overflow: ellipsis;
           white-space: nowrap;
         }
@@ -2033,60 +1800,39 @@ function AssetModal({
 
         .vh-processing-panel {
           margin-top: 18px;
-
           padding: 21px;
-
-          border:
-            1px solid
-            rgba(255,255,255,0.08);
-
+          border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 16px;
-
           background:
             linear-gradient(
               145deg,
-              rgba(255,255,255,0.035),
-              rgba(255,255,255,0.012)
+              rgba(255, 255, 255, 0.035),
+              rgba(255, 255, 255, 0.012)
             );
-
           box-shadow:
-            inset 0 1px 0
-              rgba(255,255,255,0.025);
+            inset 0 1px 0 rgba(255, 255, 255, 0.025);
         }
 
         .vh-processing-header {
           display: flex;
-
           align-items: flex-start;
           justify-content: space-between;
-
           margin-bottom: 17px;
         }
 
         .vh-processing-header p {
           margin: 5px 0 0;
-
           color: #5e5e5e;
-
           font-size: 9px;
         }
 
         .vh-processing-summary {
           display: flex;
-
           align-items: baseline;
-
           padding: 8px 12px;
-
-          border:
-            1px solid
-            rgba(101,197,141,0.15);
-
+          border: 1px solid rgba(101, 197, 141, 0.15);
           border-radius: 9px;
-
-          background:
-            rgba(101,197,141,0.06);
-
+          background: rgba(101, 197, 141, 0.06);
           color: #65c58d;
         }
 
@@ -2096,41 +1842,25 @@ function AssetModal({
 
         .vh-processing-summary span {
           margin-left: 2px;
-
           color: #567c67;
-
           font-size: 10px;
         }
 
         .vh-processing-grid {
           display: grid;
-
-          grid-template-columns:
-            repeat(5, 1fr);
-
+          grid-template-columns: repeat(5, 1fr);
           gap: 9px;
         }
 
         .vh-processing-card {
           position: relative;
-
           display: flex;
-
           align-items: center;
-
           min-width: 0;
-
           padding: 13px;
-
-          border:
-            1px solid
-            rgba(255,255,255,0.05);
-
+          border: 1px solid rgba(255, 255, 255, 0.05);
           border-radius: 11px;
-
-          background:
-            rgba(255,255,255,0.025);
-
+          background: rgba(255, 255, 255, 0.025);
           transition:
             transform 0.2s ease,
             background 0.2s ease,
@@ -2139,82 +1869,58 @@ function AssetModal({
 
         .vh-processing-card:hover {
           transform: translateY(-2px);
-
-          background:
-            rgba(255,255,255,0.045);
+          background: rgba(255, 255, 255, 0.045);
         }
 
         .vh-processing-card.completed {
-          border-color:
-            rgba(101,197,141,0.16);
-
+          border-color: rgba(101, 197, 141, 0.16);
           background:
             linear-gradient(
               145deg,
-              rgba(101,197,141,0.075),
-              rgba(255,255,255,0.02)
+              rgba(101, 197, 141, 0.075),
+              rgba(255, 255, 255, 0.02)
             );
         }
 
         .vh-processing-icon {
           display: flex;
-
           align-items: center;
           justify-content: center;
-
           flex-shrink: 0;
-
           width: 30px;
           height: 30px;
-
           border-radius: 9px;
-
-          background:
-            rgba(255,255,255,0.055);
-
+          background: rgba(255, 255, 255, 0.055);
           color: #666;
-
           font-size: 10px;
           font-weight: 800;
         }
 
         .vh-processing-icon.completed {
-          background:
-            rgba(101,197,141,0.14);
-
+          background: rgba(101, 197, 141, 0.14);
           color: #65c58d;
-
           box-shadow:
-            0 0 14px
-              rgba(101,197,141,0.08);
+            0 0 14px rgba(101, 197, 141, 0.08);
         }
 
         .vh-processing-info {
           min-width: 0;
-
           margin-left: 9px;
         }
 
         .vh-processing-info strong {
           display: block;
-
           overflow: hidden;
-
           color: #d3d3d3;
-
           font-size: 10px;
-
           text-overflow: ellipsis;
           white-space: nowrap;
         }
 
         .vh-processing-info span {
           display: block;
-
           margin-top: 3px;
-
           color: #5c5c5c;
-
           font-size: 8px;
         }
 
@@ -2228,18 +1934,11 @@ function AssetModal({
 
         .processed-time {
           display: flex;
-
           justify-content: space-between;
-
           margin-top: 13px;
           padding-top: 12px;
-
-          border-top:
-            1px solid
-            rgba(255,255,255,0.05);
-
+          border-top: 1px solid rgba(255, 255, 255, 0.05);
           color: #555;
-
           font-size: 9px;
         }
 
@@ -2254,84 +1953,55 @@ function AssetModal({
 
         .vh-output-grid {
           display: grid;
-
-          grid-template-columns:
-            repeat(3, 1fr);
-
+          grid-template-columns: repeat(3, 1fr);
           gap: 9px;
         }
 
         .vh-output-card {
           display: flex;
-
           align-items: center;
-
           min-width: 0;
-
           padding: 13px;
-
-          border:
-            1px solid
-            rgba(255,255,255,0.045);
-
+          border: 1px solid rgba(255, 255, 255, 0.045);
           border-radius: 11px;
-
-          background:
-            rgba(255,255,255,0.02);
+          background: rgba(255, 255, 255, 0.02);
         }
 
         .vh-output-card.available {
-          border-color:
-            rgba(255,255,255,0.065);
+          border-color: rgba(255, 255, 255, 0.065);
         }
 
         .vh-output-icon {
           display: flex;
-
           align-items: center;
           justify-content: center;
-
           flex-shrink: 0;
-
           width: 30px;
           height: 30px;
-
           border-radius: 8px;
-
-          background:
-            rgba(163,106,93,0.12);
-
+          background: rgba(163, 106, 93, 0.12);
           color: #b47b6d;
-
           font-size: 13px;
         }
 
         .vh-output-content {
           min-width: 0;
-
           margin-left: 9px;
         }
 
         .vh-output-content strong {
           display: block;
-
           overflow: hidden;
-
           color: #ccc;
-
           font-size: 10px;
-
           text-overflow: ellipsis;
           white-space: nowrap;
         }
 
         .vh-output-content span {
           display: block;
-
           margin-top: 3px;
-
           color: #555;
-
           font-size: 8px;
         }
 
@@ -2342,33 +2012,21 @@ function AssetModal({
 
         .vh-output-link {
           flex-shrink: 0;
-
           margin-left: auto;
-
           padding: 6px 9px;
-
-          border:
-            1px solid
-            rgba(255,255,255,0.08);
-
+          border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 7px;
-
           color: #999;
-
           font-size: 8px;
           font-weight: 600;
-
           text-decoration: none;
-
           transition:
             background 0.2s ease,
             color 0.2s ease;
         }
 
         .vh-output-link:hover {
-          background:
-            rgba(163,106,93,0.12);
-
+          background: rgba(163, 106, 93, 0.12);
           color: #d29a8a;
         }
 
@@ -2378,10 +2036,7 @@ function AssetModal({
 
         .vh-technical-grid {
           display: grid;
-
-          grid-template-columns:
-            repeat(4, 1fr);
-
+          grid-template-columns: repeat(4, 1fr);
           gap: 9px;
         }
 
@@ -2398,21 +2053,16 @@ function AssetModal({
         ======================================== */
 
         @media (max-width: 1000px) {
-
           .vh-processing-grid {
-            grid-template-columns:
-              repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
           }
 
           .vh-output-grid {
-            grid-template-columns:
-              repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
           }
-
         }
 
         @media (max-width: 800px) {
-
           .vh-modal-overlay {
             padding: 10px;
           }
@@ -2428,8 +2078,7 @@ function AssetModal({
           }
 
           .vh-quality-metrics {
-            grid-template-columns:
-              repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
           }
 
           .vh-metadata-form-grid {
@@ -2438,19 +2087,15 @@ function AssetModal({
 
           .vh-metadata-grid,
           .vh-technical-grid {
-            grid-template-columns:
-              repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
           }
 
           .vh-processing-grid {
-            grid-template-columns:
-              repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
           }
-
         }
 
         @media (max-width: 500px) {
-
           .vh-quality-metrics,
           .vh-metadata-grid,
           .vh-technical-grid,
@@ -2463,11 +2108,8 @@ function AssetModal({
             flex-direction: column;
             gap: 12px;
           }
-
         }
-
       `}</style>
-
     </div>
   );
 }
