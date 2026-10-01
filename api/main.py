@@ -22,7 +22,6 @@ from pydantic import BaseModel
 
 from processing.pipeline import process_image
 from processing.comparison import build_comparison
-from dataset.metadata.quality_scorer import score_image
 
 # ========================================
 # PROJECT PATH
@@ -931,39 +930,29 @@ def evaluate_image_quality(
         image_path
     )
 
-    metadata = {
+    from processing.quality_classifier import classify_quality
 
-        "filename": filename,
-
-        "path": relative_path,
-
-        "category": category,
-
-        "brightness": (
-            metrics["brightness"]
-        ),
-
-        "contrast": (
-            metrics["contrast"]
-        ),
-
-        "sharpness": (
-            metrics["sharpness"]
-        ),
-
-        "width": (
-            metrics["width"]
-        ),
-
-        "height": (
-            metrics["height"]
-        )
-
-    }
-
-    return score_image(
-        metadata
+    quality = classify_quality(
+        metrics
     )
+
+    return {
+        "filename": filename,
+        "path": relative_path,
+        "category": category,
+        "brightness": metrics["brightness"],
+        "contrast": metrics["contrast"],
+        "sharpness": metrics["sharpness"],
+        "width": metrics["width"],
+        "height": metrics["height"],
+        "quality": quality.get("quality"),
+        "overall_score": quality.get("score"),
+        "quality_scores": quality.get(
+            "component_scores",
+            {}
+        ),
+        "technical_metrics": metrics
+    }
 
 
 # ========================================

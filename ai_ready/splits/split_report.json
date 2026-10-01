@@ -1,27 +1,27 @@
 {
     "dataset": "VietHeritage Classification Dataset V3",
     "source_manifest": "ai_ready/classification_manifest.json",
-    "created_at": "2026-09-30T00:52:57+07:00",
+    "created_at": "2026-10-01T15:05:53+07:00",
     "random_seed": 42,
     "ratios": {
         "train": 0.7,
         "validation": 0.15,
         "test": 0.15
     },
-    "total_assets": 114,
+    "total_assets": 112,
     "categories": {
         "dong_ho": 35,
-        "phuong": 21,
+        "phuong": 19,
         "rong_viet_nam": 42,
         "sen": 16
     },
     "splits": {
         "train": {
-            "count": 82,
+            "count": 80,
             "distribution": {
-                "rong_viet_nam": 30,
-                "phuong": 15,
                 "dong_ho": 25,
+                "rong_viet_nam": 30,
+                "phuong": 13,
                 "sen": 12
             }
         },
@@ -38,8 +38,8 @@
             "count": 16,
             "distribution": {
                 "rong_viet_nam": 6,
-                "sen": 2,
                 "dong_ho": 5,
+                "sen": 2,
                 "phuong": 3
             }
         }

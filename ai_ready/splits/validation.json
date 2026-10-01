@@ -10,27 +10,17 @@
             "image": "../dataset/images/dong_ho/dong_ho_030.JPG",
             "quality": {
                 "label": null,
-                "overall_score": null
+                "overall_score": 77.5
             },
             "split": "validation"
         },
         {
-            "asset_id": "dong_ho_017",
-            "category": "dong_ho",
-            "image": "../dataset/images/dong_ho/dong_ho_017.jpg",
-            "quality": {
-                "label": null,
-                "overall_score": null
-            },
-            "split": "validation"
-        },
-        {
-            "asset_id": "phuong_015",
+            "asset_id": "phuong_001",
             "category": "phuong",
-            "image": "../dataset/images/phuong/phuong_015.jpg",
+            "image": "../dataset/images/phuong/phuong_001.JPG",
             "quality": {
                 "label": null,
-                "overall_score": null
+                "overall_score": 100.0
             },
             "split": "validation"
         },
@@ -40,67 +30,7 @@
             "image": "../dataset/images/dong_ho/dong_ho_023.JPG",
             "quality": {
                 "label": null,
-                "overall_score": null
-            },
-            "split": "validation"
-        },
-        {
-            "asset_id": "rong_viet_nam_019",
-            "category": "rong_viet_nam",
-            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_019.jpg",
-            "quality": {
-                "label": null,
-                "overall_score": null
-            },
-            "split": "validation"
-        },
-        {
-            "asset_id": "rong_viet_nam_030",
-            "category": "rong_viet_nam",
-            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_030.jpg",
-            "quality": {
-                "label": null,
-                "overall_score": null
-            },
-            "split": "validation"
-        },
-        {
-            "asset_id": "rong_viet_nam_045",
-            "category": "rong_viet_nam",
-            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_045.JPG",
-            "quality": {
-                "label": null,
-                "overall_score": null
-            },
-            "split": "validation"
-        },
-        {
-            "asset_id": "phuong_007",
-            "category": "phuong",
-            "image": "../dataset/images/phuong/phuong_007.jpg",
-            "quality": {
-                "label": null,
-                "overall_score": null
-            },
-            "split": "validation"
-        },
-        {
-            "asset_id": "sen_007",
-            "category": "sen",
-            "image": "../dataset/images/sen/sen_007.jpg",
-            "quality": {
-                "label": null,
-                "overall_score": null
-            },
-            "split": "validation"
-        },
-        {
-            "asset_id": "dong_ho_025",
-            "category": "dong_ho",
-            "image": "../dataset/images/dong_ho/dong_ho_025.JPG",
-            "quality": {
-                "label": null,
-                "overall_score": null
+                "overall_score": 77.5
             },
             "split": "validation"
         },
@@ -110,57 +40,127 @@
             "image": "../dataset/images/dong_ho/dong_ho_027.jpg",
             "quality": {
                 "label": null,
-                "overall_score": null
+                "overall_score": 81.25
             },
             "split": "validation"
         },
         {
-            "asset_id": "rong_viet_nam_036",
-            "category": "rong_viet_nam",
-            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_036.jpg",
-            "quality": {
-                "label": null,
-                "overall_score": null
-            },
-            "split": "validation"
-        },
-        {
-            "asset_id": "rong_viet_nam_033",
-            "category": "rong_viet_nam",
-            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_033.jpg",
-            "quality": {
-                "label": null,
-                "overall_score": null
-            },
-            "split": "validation"
-        },
-        {
-            "asset_id": "rong_viet_nam_018",
-            "category": "rong_viet_nam",
-            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_018.jpg",
-            "quality": {
-                "label": null,
-                "overall_score": null
-            },
-            "split": "validation"
-        },
-        {
-            "asset_id": "sen_005",
-            "category": "sen",
-            "image": "../dataset/images/sen/sen_005.jpg",
-            "quality": {
-                "label": null,
-                "overall_score": null
-            },
-            "split": "validation"
-        },
-        {
-            "asset_id": "phuong_019",
+            "asset_id": "phuong_004",
             "category": "phuong",
-            "image": "../dataset/images/phuong/phuong_019.jpg",
+            "image": "../dataset/images/phuong/phuong_004.JPG",
             "quality": {
                 "label": null,
-                "overall_score": null
+                "overall_score": 100.0
+            },
+            "split": "validation"
+        },
+        {
+            "asset_id": "dong_ho_025",
+            "category": "dong_ho",
+            "image": "../dataset/images/dong_ho/dong_ho_025.JPG",
+            "quality": {
+                "label": null,
+                "overall_score": 91.75
+            },
+            "split": "validation"
+        },
+        {
+            "asset_id": "rong_viet_nam_021",
+            "category": "rong_viet_nam",
+            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_021.jpg",
+            "quality": {
+                "label": null,
+                "overall_score": 88.0
+            },
+            "split": "validation"
+        },
+        {
+            "asset_id": "rong_viet_nam_032",
+            "category": "rong_viet_nam",
+            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_032.jpg",
+            "quality": {
+                "label": null,
+                "overall_score": 95.5
+            },
+            "split": "validation"
+        },
+        {
+            "asset_id": "rong_viet_nam_019",
+            "category": "rong_viet_nam",
+            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_019.jpg",
+            "quality": {
+                "label": null,
+                "overall_score": 96.25
+            },
+            "split": "validation"
+        },
+        {
+            "asset_id": "phuong_003",
+            "category": "phuong",
+            "image": "../dataset/images/phuong/phuong_003.JPG",
+            "quality": {
+                "label": null,
+                "overall_score": 100.0
+            },
+            "split": "validation"
+        },
+        {
+            "asset_id": "rong_viet_nam_029",
+            "category": "rong_viet_nam",
+            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_029.jpg",
+            "quality": {
+                "label": null,
+                "overall_score": 83.5
+            },
+            "split": "validation"
+        },
+        {
+            "asset_id": "sen_013",
+            "category": "sen",
+            "image": "../dataset/images/sen/sen_013.jpg",
+            "quality": {
+                "label": null,
+                "overall_score": 87.5
+            },
+            "split": "validation"
+        },
+        {
+            "asset_id": "sen_015",
+            "category": "sen",
+            "image": "../dataset/images/sen/sen_015.jpg",
+            "quality": {
+                "label": null,
+                "overall_score": 95.5
+            },
+            "split": "validation"
+        },
+        {
+            "asset_id": "rong_viet_nam_041",
+            "category": "rong_viet_nam",
+            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_041.jpg",
+            "quality": {
+                "label": null,
+                "overall_score": 91.0
+            },
+            "split": "validation"
+        },
+        {
+            "asset_id": "rong_viet_nam_030",
+            "category": "rong_viet_nam",
+            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_030.jpg",
+            "quality": {
+                "label": null,
+                "overall_score": 85.0
+            },
+            "split": "validation"
+        },
+        {
+            "asset_id": "dong_ho_017",
+            "category": "dong_ho",
+            "image": "../dataset/images/dong_ho/dong_ho_017.jpg",
+            "quality": {
+                "label": null,
+                "overall_score": 74.5
             },
             "split": "validation"
         }

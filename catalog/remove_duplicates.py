@@ -8,8 +8,8 @@ ROOT = Path(__file__).resolve().parent.parent
 CATALOG_FILE = ROOT / "catalog" / "catalog.json"
 
 REMOVE_IDS = {
-    "rong_viet_nam_017",
-    "rong_viet_nam_020",
+    "phuong_006",
+    "phuong_006_webp",
 }
 
 

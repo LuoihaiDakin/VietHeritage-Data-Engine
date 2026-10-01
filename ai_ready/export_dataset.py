@@ -16,10 +16,7 @@ BASE_DIR = os.path.dirname(
 )
 
 if BASE_DIR not in sys.path:
-    sys.path.insert(
-        0,
-        BASE_DIR
-    )
+    sys.path.insert(0, BASE_DIR)
 
 
 # ============================================================
@@ -64,9 +61,7 @@ ALLOWED_QUALITIES = {
 
 def load_catalog():
 
-    if not os.path.isfile(
-        CATALOG_FILE
-    ):
+    if not os.path.isfile(CATALOG_FILE):
         raise FileNotFoundError(
             f"Catalog not found: {CATALOG_FILE}"
         )
@@ -77,9 +72,7 @@ def load_catalog():
         encoding="utf-8"
     ) as file:
 
-        return json.load(
-            file
-        )
+        return json.load(file)
 
 
 # ============================================================
@@ -91,12 +84,17 @@ def absolute_path(relative_path):
     if not relative_path:
         return None
 
+    # Catalog currently stores paths like:
+    # /outputs/dong_ho_001/normalized.png
+    # /dataset/images/dong_ho/dong_ho_001.jpg
+
+    clean_path = relative_path.replace("/", os.sep).lstrip(
+        "\\/"
+    )
+
     return os.path.join(
         BASE_DIR,
-        relative_path.replace(
-            "/",
-            os.sep
-        )
+        clean_path
     )
 
 
@@ -115,16 +113,63 @@ def relative_path(path):
 # QUALITY CHECK
 # ============================================================
 
-def is_ai_ready(asset):
+def get_quality_info(asset):
 
     quality = asset.get(
         "quality",
         {}
     )
 
-    label = quality.get(
-        "label"
+    # Current catalog structure:
+    #
+    # "quality": {
+    #     "quality": "GOOD",
+    #     "overall_score": 83.5,
+    #     ...
+    # }
+    #
+    # Backward compatibility:
+    # old structure used "label".
+
+    label = quality.get("quality")
+
+    if label is None:
+        label = quality.get("label")
+
+    overall_score = quality.get(
+        "overall_score"
     )
+
+    return label, overall_score
+
+
+def get_processing_outputs(asset):
+
+    # Current catalog structure:
+    #
+    # "processing_outputs": {
+    #     "normalized": "/outputs/.../normalized.png",
+    #     ...
+    # }
+
+    processing_outputs = asset.get(
+        "processing_outputs",
+        {}
+    )
+
+    # Backward compatibility with old structure.
+    if not processing_outputs:
+        processing_outputs = asset.get(
+            "outputs",
+            {}
+        )
+
+    return processing_outputs
+
+
+def is_ai_ready(asset):
+
+    label, _ = get_quality_info(asset)
 
     processing = asset.get(
         "processing",
@@ -150,13 +195,12 @@ def is_ai_ready(asset):
         label in ALLOWED_QUALITIES
     )
 
-    normalized_output = (
-        asset.get(
-            "outputs",
-            {}
-        ).get(
-            "normalized"
-        )
+    processing_outputs = get_processing_outputs(
+        asset
+    )
+
+    normalized_output = processing_outputs.get(
+        "normalized"
     )
 
     normalized_exists = False
@@ -191,12 +235,19 @@ def copy_normalized_image(asset):
         "unknown"
     )
 
-    outputs = asset.get(
-        "outputs",
-        {}
+    # Sanitize category for Windows folder names
+    invalid_chars = '<>:"/\\|?*'
+
+    for char in invalid_chars:
+        category = category.replace(char, "_")
+
+    category = category.strip().strip(".")
+
+    processing_outputs = get_processing_outputs(
+        asset
     )
 
-    normalized_output = outputs.get(
+    normalized_output = processing_outputs.get(
         "normalized"
     )
 
@@ -278,14 +329,17 @@ def build_ai_ready_record(
         {}
     )
 
-    outputs = asset.get(
-        "outputs",
-        {}
+    processing_outputs = get_processing_outputs(
+        asset
     )
 
     lineage = asset.get(
         "lineage",
         {}
+    )
+
+    label, overall_score = get_quality_info(
+        asset
     )
 
     return {
@@ -314,37 +368,37 @@ def build_ai_ready_record(
         "refined_data": {
 
             "restored":
-                outputs.get(
+                processing_outputs.get(
                     "restored"
                 ),
 
             "cleaned":
-                outputs.get(
+                processing_outputs.get(
                     "cleaned"
                 ),
 
             "normalized":
-                outputs.get(
+                processing_outputs.get(
                     "normalized"
                 ),
 
             "edges":
-                outputs.get(
+                processing_outputs.get(
                     "edges"
                 ),
 
             "segmented":
-                outputs.get(
+                processing_outputs.get(
                     "segmented"
                 ),
 
             "mask":
-                outputs.get(
+                processing_outputs.get(
                     "mask"
                 ),
 
             "vectorized":
-                outputs.get(
+                processing_outputs.get(
                     "svg"
                 )
         },
@@ -352,14 +406,10 @@ def build_ai_ready_record(
         "quality": {
 
             "label":
-                quality.get(
-                    "label"
-                ),
+                label,
 
             "overall_score":
-                quality.get(
-                    "overall_score"
-                ),
+                overall_score,
 
             "brightness":
                 quality.get(
@@ -457,13 +507,8 @@ def export_ai_ready():
             "asset_id"
         )
 
-        quality = asset.get(
-            "quality",
-            {}
-        )
-
-        label = quality.get(
-            "label"
+        label, overall_score = get_quality_info(
+            asset
         )
 
         # ====================================================
@@ -533,7 +578,7 @@ def export_ai_ready():
                 f"[AI-READY] {asset_id:<28} "
                 f"{label:<12} "
                 f"score="
-                f"{quality.get('overall_score')}"
+                f"{overall_score}"
             )
 
         # ====================================================
@@ -551,9 +596,7 @@ def export_ai_ready():
                         label,
 
                     "overall_score":
-                        quality.get(
-                            "overall_score"
-                        ),
+                        overall_score,
 
                     "reason":
                         "Does not pass AI quality gate."
@@ -564,7 +607,7 @@ def export_ai_ready():
                 f"[REJECTED] {asset_id:<28} "
                 f"{label:<12} "
                 f"score="
-                f"{quality.get('overall_score')}"
+                f"{overall_score}"
             )
 
     # ========================================================
