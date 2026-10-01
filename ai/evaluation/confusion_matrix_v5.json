@@ -1,0 +1,89 @@
+{
+  "experiment": "normalized_images_hog_svm",
+  "model": "baseline_svm_v5",
+  "dataset": "VietHeritage Classification Dataset V5",
+  "split": "test",
+  "total_predictions": 16,
+  "correct": 10,
+  "errors": 6,
+  "accuracy": 0.625,
+  "classes": [
+    "dong_ho",
+    "phuong",
+    "rong_viet_nam",
+    "sen"
+  ],
+  "matrix": {
+    "dong_ho": {
+      "dong_ho": 3,
+      "phuong": 0,
+      "rong_viet_nam": 2,
+      "sen": 0
+    },
+    "phuong": {
+      "dong_ho": 0,
+      "phuong": 1,
+      "rong_viet_nam": 2,
+      "sen": 0
+    },
+    "rong_viet_nam": {
+      "dong_ho": 0,
+      "phuong": 0,
+      "rong_viet_nam": 6,
+      "sen": 0
+    },
+    "sen": {
+      "dong_ho": 0,
+      "phuong": 0,
+      "rong_viet_nam": 2,
+      "sen": 0
+    }
+  },
+  "class_statistics": {
+    "dong_ho": {
+      "total": 5,
+      "correct": 3,
+      "errors": 2,
+      "accuracy": 0.6,
+      "error_rate": 0.4
+    },
+    "phuong": {
+      "total": 3,
+      "correct": 1,
+      "errors": 2,
+      "accuracy": 0.3333333333333333,
+      "error_rate": 0.6666666666666666
+    },
+    "rong_viet_nam": {
+      "total": 6,
+      "correct": 6,
+      "errors": 0,
+      "accuracy": 1.0,
+      "error_rate": 0.0
+    },
+    "sen": {
+      "total": 2,
+      "correct": 0,
+      "errors": 2,
+      "accuracy": 0.0,
+      "error_rate": 1.0
+    }
+  },
+  "confusion_pairs": [
+    {
+      "true_label": "dong_ho",
+      "predicted_label": "rong_viet_nam",
+      "count": 2
+    },
+    {
+      "true_label": "sen",
+      "predicted_label": "rong_viet_nam",
+      "count": 2
+    },
+    {
+      "true_label": "phuong",
+      "predicted_label": "rong_viet_nam",
+      "count": 2
+    }
+  ]
+}

@@ -644,7 +644,11 @@ def main():
         },
 
         "dataset_config": {
-            "total_classification_assets": 123,
+            "total_classification_assets": int(
+                len(X_train)
+                + len(X_validation)
+                + len(X_test)
+            ),
             "classes": label_encoder.classes_.tolist(),
             "excluded_categories": sorted(
                 EXCLUDED_CATEGORIES
