@@ -2,7 +2,7 @@
   "model": "baseline_svm_v5",
   "experiment": "normalized_images_hog_svm",
   "dataset": "VietHeritage Classification Dataset V5",
-  "created_at": "2026-10-01T17:12:14.534277",
+  "created_at": "2026-10-02T17:00:34.013323",
   "input": {
     "type": "normalized",
     "path_template": "outputs/<asset_id>/normalized.png"

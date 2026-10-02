@@ -1,142 +1,131 @@
 {
-  "model": "baseline_svm_v5",
-  "experiment": "normalized_images_hog_svm",
-  "dataset": "VietHeritage Classification Dataset V5",
-  "split": "test",
-  "count": 16,
-  "excluded_categories": [
-    "other",
-    "uploaded"
-  ],
-  "input": "outputs/<asset_id>/normalized.png",
-  "predictions": [
-    {
-      "asset_id": "rong_viet_nam_003",
-      "category": "rong_viet_nam",
-      "image": "outputs/rong_viet_nam_003/normalized.png",
-      "true_label": "rong_viet_nam",
-      "predicted_label": "rong_viet_nam",
-      "correct": true
-    },
-    {
-      "asset_id": "dong_ho_021",
-      "category": "dong_ho",
-      "image": "outputs/dong_ho_021/normalized.png",
-      "true_label": "dong_ho",
-      "predicted_label": "dong_ho",
-      "correct": true
-    },
-    {
-      "asset_id": "dong_ho_032",
-      "category": "dong_ho",
-      "image": "outputs/dong_ho_032/normalized.png",
-      "true_label": "dong_ho",
-      "predicted_label": "dong_ho",
-      "correct": true
-    },
-    {
-      "asset_id": "dong_ho_006",
-      "category": "dong_ho",
-      "image": "outputs/dong_ho_006/normalized.png",
-      "true_label": "dong_ho",
-      "predicted_label": "rong_viet_nam",
-      "correct": false
-    },
-    {
-      "asset_id": "dong_ho_010",
-      "category": "dong_ho",
-      "image": "outputs/dong_ho_010/normalized.png",
-      "true_label": "dong_ho",
-      "predicted_label": "rong_viet_nam",
-      "correct": false
-    },
-    {
-      "asset_id": "sen_017",
-      "category": "sen",
-      "image": "outputs/sen_017/normalized.png",
-      "true_label": "sen",
-      "predicted_label": "rong_viet_nam",
-      "correct": false
-    },
-    {
-      "asset_id": "sen_012",
-      "category": "sen",
-      "image": "outputs/sen_012/normalized.png",
-      "true_label": "sen",
-      "predicted_label": "rong_viet_nam",
-      "correct": false
-    },
-    {
-      "asset_id": "dong_ho_013",
-      "category": "dong_ho",
-      "image": "outputs/dong_ho_013/normalized.png",
-      "true_label": "dong_ho",
-      "predicted_label": "dong_ho",
-      "correct": true
-    },
-    {
-      "asset_id": "rong_viet_nam_038",
-      "category": "rong_viet_nam",
-      "image": "outputs/rong_viet_nam_038/normalized.png",
-      "true_label": "rong_viet_nam",
-      "predicted_label": "rong_viet_nam",
-      "correct": true
-    },
-    {
-      "asset_id": "rong_viet_nam_002",
-      "category": "rong_viet_nam",
-      "image": "outputs/rong_viet_nam_002/normalized.png",
-      "true_label": "rong_viet_nam",
-      "predicted_label": "rong_viet_nam",
-      "correct": true
-    },
-    {
-      "asset_id": "phuong_009",
-      "category": "phuong",
-      "image": "outputs/phuong_009/normalized.png",
-      "true_label": "phuong",
-      "predicted_label": "rong_viet_nam",
-      "correct": false
-    },
-    {
-      "asset_id": "phuong_011",
-      "category": "phuong",
-      "image": "outputs/phuong_011/normalized.png",
-      "true_label": "phuong",
-      "predicted_label": "phuong",
-      "correct": true
-    },
-    {
-      "asset_id": "rong_viet_nam_026",
-      "category": "rong_viet_nam",
-      "image": "outputs/rong_viet_nam_026/normalized.png",
-      "true_label": "rong_viet_nam",
-      "predicted_label": "rong_viet_nam",
-      "correct": true
-    },
-    {
-      "asset_id": "rong_viet_nam_035",
-      "category": "rong_viet_nam",
-      "image": "outputs/rong_viet_nam_035/normalized.png",
-      "true_label": "rong_viet_nam",
-      "predicted_label": "rong_viet_nam",
-      "correct": true
-    },
-    {
-      "asset_id": "phuong_020",
-      "category": "phuong",
-      "image": "outputs/phuong_020/normalized.png",
-      "true_label": "phuong",
-      "predicted_label": "rong_viet_nam",
-      "correct": false
-    },
-    {
-      "asset_id": "rong_viet_nam_015",
-      "category": "rong_viet_nam",
-      "image": "outputs/rong_viet_nam_015/normalized.png",
-      "true_label": "rong_viet_nam",
-      "predicted_label": "rong_viet_nam",
-      "correct": true
-    }
-  ]
+    "model": "HOG + SVM",
+    "experiment": "v5",
+    "dataset": "VietHeritage Classification Dataset V5",
+    "split": "test",
+    "count": 16,
+    "excluded_categories": [
+        "other",
+        "uploaded"
+    ],
+    "classes": [
+        "dong_ho",
+        "phuong",
+        "rong_viet_nam",
+        "sen"
+    ],
+    "predictions": [
+        {
+            "asset_id": "rong_viet_nam_003",
+            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_003.png",
+            "actual_category": "rong_viet_nam",
+            "predicted_category": "rong_viet_nam",
+            "correct": true
+        },
+        {
+            "asset_id": "dong_ho_021",
+            "image": "../dataset/images/dong_ho/dong_ho_021.JPG",
+            "actual_category": "dong_ho",
+            "predicted_category": "dong_ho",
+            "correct": true
+        },
+        {
+            "asset_id": "dong_ho_032",
+            "image": "../dataset/images/dong_ho/dong_ho_032.jpg",
+            "actual_category": "dong_ho",
+            "predicted_category": "dong_ho",
+            "correct": true
+        },
+        {
+            "asset_id": "dong_ho_006",
+            "image": "../dataset/images/dong_ho/dong_ho_006.JPG",
+            "actual_category": "dong_ho",
+            "predicted_category": "rong_viet_nam",
+            "correct": false
+        },
+        {
+            "asset_id": "dong_ho_010",
+            "image": "../dataset/images/dong_ho/dong_ho_010.jpg",
+            "actual_category": "dong_ho",
+            "predicted_category": "rong_viet_nam",
+            "correct": false
+        },
+        {
+            "asset_id": "sen_017",
+            "image": "../dataset/images/sen/sen_017.jpg",
+            "actual_category": "sen",
+            "predicted_category": "rong_viet_nam",
+            "correct": false
+        },
+        {
+            "asset_id": "sen_012",
+            "image": "../dataset/images/sen/sen_012.jpg",
+            "actual_category": "sen",
+            "predicted_category": "rong_viet_nam",
+            "correct": false
+        },
+        {
+            "asset_id": "dong_ho_013",
+            "image": "../dataset/images/dong_ho/dong_ho_013.JPG",
+            "actual_category": "dong_ho",
+            "predicted_category": "dong_ho",
+            "correct": true
+        },
+        {
+            "asset_id": "rong_viet_nam_038",
+            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_038.jpg",
+            "actual_category": "rong_viet_nam",
+            "predicted_category": "rong_viet_nam",
+            "correct": true
+        },
+        {
+            "asset_id": "rong_viet_nam_002",
+            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_002.jpg",
+            "actual_category": "rong_viet_nam",
+            "predicted_category": "rong_viet_nam",
+            "correct": true
+        },
+        {
+            "asset_id": "phuong_009",
+            "image": "../dataset/images/phuong/phuong_009.jpg",
+            "actual_category": "phuong",
+            "predicted_category": "dong_ho",
+            "correct": false
+        },
+        {
+            "asset_id": "phuong_011",
+            "image": "../dataset/images/phuong/phuong_011.jpg",
+            "actual_category": "phuong",
+            "predicted_category": "phuong",
+            "correct": true
+        },
+        {
+            "asset_id": "rong_viet_nam_026",
+            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_026.png",
+            "actual_category": "rong_viet_nam",
+            "predicted_category": "rong_viet_nam",
+            "correct": true
+        },
+        {
+            "asset_id": "rong_viet_nam_035",
+            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_035.jpg",
+            "actual_category": "rong_viet_nam",
+            "predicted_category": "rong_viet_nam",
+            "correct": true
+        },
+        {
+            "asset_id": "phuong_020",
+            "image": "../dataset/images/phuong/phuong_020.jpg",
+            "actual_category": "phuong",
+            "predicted_category": "rong_viet_nam",
+            "correct": false
+        },
+        {
+            "asset_id": "rong_viet_nam_015",
+            "image": "../dataset/images/rong_viet_nam/rong_viet_nam_015.jpg",
+            "actual_category": "rong_viet_nam",
+            "predicted_category": "rong_viet_nam",
+            "correct": true
+        }
+    ]
 }

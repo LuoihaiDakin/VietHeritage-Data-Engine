@@ -27,36 +27,32 @@ SPLITS_DIR = AI_READY_DIR / "splits"
 MODEL_DIR = BASE_DIR / "ai" / "models"
 EVALUATION_DIR = BASE_DIR / "ai" / "evaluation"
 
-# ============================================================
-# V3 MODEL
-# ============================================================
-
-MODEL_FILE = (
-    MODEL_DIR / "baseline_svm_v3.joblib"
-)
-
-LABEL_ENCODER_FILE = (
-    MODEL_DIR / "label_encoder_v3.joblib"
-)
-
-TEST_FILE = (
-    SPLITS_DIR / "test.json"
-)
 
 # ============================================================
-# V3 OUTPUT FILES
+# V5 MODEL
+# ============================================================
+
+MODEL_FILE = MODEL_DIR / "baseline_svm_v5.joblib"
+
+LABEL_ENCODER_FILE = MODEL_DIR / "label_encoder_v5.joblib"
+
+TEST_FILE = SPLITS_DIR / "test.json"
+
+
+# ============================================================
+# V5 OUTPUT FILES
 # ============================================================
 
 PREDICTIONS_FILE = (
-    EVALUATION_DIR / "test_predictions_v3.json"
+    EVALUATION_DIR / "test_predictions_v5.json"
 )
 
 REPORT_FILE = (
-    EVALUATION_DIR / "evaluation_report_v3.json"
+    EVALUATION_DIR / "evaluation_report_v5.json"
 )
 
 CONFUSION_MATRIX_FILE = (
-    EVALUATION_DIR / "confusion_matrix_v3.png"
+    EVALUATION_DIR / "confusion_matrix_v5.png"
 )
 
 
@@ -70,15 +66,27 @@ HOG_ORIENTATIONS = 9
 HOG_PIXELS_PER_CELL = (8, 8)
 HOG_CELLS_PER_BLOCK = (2, 2)
 
-# Must match V3 train_baseline.py
-#
-# "other" and "uploaded" are not part of the
-# classification task.
-#
-# They remain in the broader VietHeritage dataset.
+
+# These categories are part of the broader
+# VietHeritage dataset but are NOT part of
+# the V5 classification task.
+
 EXCLUDED_CATEGORIES = {
     "other",
-    "uploaded"
+    "uploaded",
+}
+
+
+# Expected V5 classification classes.
+#
+# This is a safety check so that the evaluator
+# cannot silently evaluate a wrong-version model.
+
+EXPECTED_V5_CLASSES = {
+    "dong_ho",
+    "phuong",
+    "rong_viet_nam",
+    "sen",
 }
 
 
@@ -204,36 +212,43 @@ def category_distribution(labels):
 def main():
 
     print("=" * 70)
+
     print(
-        "VIETHERITAGE BASELINE AI - V3 TEST EVALUATION"
+        "VIETHERITAGE BASELINE AI - V5 TEST EVALUATION"
     )
+
     print("=" * 70)
+
 
     EVALUATION_DIR.mkdir(
         parents=True,
         exist_ok=True
     )
 
+
     # ========================================================
     # 1. LOAD MODEL
     # ========================================================
 
     print(
-        "\n[1/6] Loading trained V3 model..."
+        "\n[1/6] Loading trained V5 model..."
     )
+
 
     if not MODEL_FILE.exists():
 
         raise FileNotFoundError(
-            f"V3 model not found:\n{MODEL_FILE}"
+            f"V5 model not found:\n{MODEL_FILE}"
         )
+
 
     if not LABEL_ENCODER_FILE.exists():
 
         raise FileNotFoundError(
-            f"V3 label encoder not found:\n"
+            f"V5 label encoder not found:\n"
             f"{LABEL_ENCODER_FILE}"
         )
+
 
     model = joblib.load(
         MODEL_FILE
@@ -243,13 +258,21 @@ def main():
         LABEL_ENCODER_FILE
     )
 
+
     print(
         f"Model loaded: {MODEL_FILE}"
     )
 
     print(
-        "Categories:"
+        f"Label encoder loaded: "
+        f"{LABEL_ENCODER_FILE}"
     )
+
+
+    print(
+        "\nCategories:"
+    )
+
 
     for category in label_encoder.classes_:
 
@@ -257,20 +280,46 @@ def main():
             f"  - {category}"
         )
 
+
+    # --------------------------------------------------------
+    # V5 model safety check
+    # --------------------------------------------------------
+
+    model_classes = set(
+        label_encoder.classes_
+    )
+
+
+    if model_classes != EXPECTED_V5_CLASSES:
+
+        raise RuntimeError(
+            "\nV5 MODEL CLASS MISMATCH\n"
+            f"Expected classes: "
+            f"{sorted(EXPECTED_V5_CLASSES)}\n"
+            f"Loaded classes:   "
+            f"{sorted(model_classes)}\n\n"
+            "The loaded model is probably not the "
+            "V5 model."
+        )
+
+
     # ========================================================
     # 2. LOAD TEST DATA
     # ========================================================
 
     print(
-        "\n[2/6] Loading V3 test dataset..."
+        "\n[2/6] Loading V5 test dataset..."
     )
 
+
     test_data = load_test_split()
+
 
     all_assets = test_data.get(
         "assets",
         []
     )
+
 
     if not all_assets:
 
@@ -278,9 +327,10 @@ def main():
             "Test dataset is empty."
         )
 
+
     # --------------------------------------------------------
     # Exclude categories that are not part
-    # of the V3 classification task.
+    # of the V5 classification task.
     # --------------------------------------------------------
 
     assets = [
@@ -290,6 +340,7 @@ def main():
         not in EXCLUDED_CATEGORIES
     ]
 
+
     excluded_assets = [
         item
         for item in all_assets
@@ -297,20 +348,24 @@ def main():
         in EXCLUDED_CATEGORIES
     ]
 
+
     print(
         f"Test assets       : "
         f"{len(all_assets)}"
     )
+
 
     print(
         f"Usable test assets: "
         f"{len(assets)}"
     )
 
+
     print(
         f"Excluded assets   : "
         f"{len(excluded_assets)}"
     )
+
 
     if excluded_assets:
 
@@ -326,6 +381,33 @@ def main():
                 f"({item['category']})"
             )
 
+
+    # --------------------------------------------------------
+    # Safety check: all test categories must
+    # belong to V5 classes.
+    # --------------------------------------------------------
+
+    test_categories = {
+        item["category"]
+        for item in assets
+    }
+
+
+    invalid_categories = (
+        test_categories
+        - EXPECTED_V5_CLASSES
+    )
+
+
+    if invalid_categories:
+
+        raise RuntimeError(
+            "\nTEST DATASET CLASS MISMATCH\n"
+            f"Unexpected categories: "
+            f"{sorted(invalid_categories)}"
+        )
+
+
     # ========================================================
     # 3. EXTRACT FEATURES
     # ========================================================
@@ -334,74 +416,101 @@ def main():
         "\n[3/6] Extracting HOG features..."
     )
 
+
     X_test = []
+
     y_test = []
 
     asset_ids = []
+
     image_paths = []
 
-    for item in assets:
+
+    for index, item in enumerate(
+        assets,
+        start=1
+    ):
 
         asset_id = item["asset_id"]
+
         category = item["category"]
+
         image_path = item["image"]
 
-        # ----------------------------------------------------
-        # Safety check:
-        # category must exist in V3 model labels.
-        # ----------------------------------------------------
 
-        if category not in label_encoder.classes_:
+        print(
+            f"[{index:03d}/{len(assets):03d}] "
+            f"{asset_id:<30} "
+            f"{category:<18}",
+            end=""
+        )
 
-            raise RuntimeError(
-                f"Category '{category}' is not "
-                f"present in V3 trained model labels."
-            )
 
         image = load_image(
             image_path
         )
 
+
         features = extract_features(
             image
         )
+
 
         X_test.append(
             features
         )
 
+
         y_test.append(
             category
         )
+
 
         asset_ids.append(
             asset_id
         )
 
+
         image_paths.append(
             image_path
         )
+
+
+        print(
+            f"HOG={len(features)}"
+        )
+
 
     X_test = np.array(
         X_test
     )
 
+
     y_test = np.array(
         y_test
     )
 
+
     print(
-        f"Test feature shape: "
+        f"\nTest feature shape: "
         f"{X_test.shape}"
     )
+
+
+    print(
+        f"Feature vector length: "
+        f"{X_test.shape[1]}"
+    )
+
 
     # ========================================================
     # 4. PREDICTION
     # ========================================================
 
     print(
-        "\n[4/6] Running V3 predictions..."
+        "\n[4/6] Running V5 predictions..."
     )
+
 
     y_test_encoded = (
         label_encoder.transform(
@@ -409,11 +518,13 @@ def main():
         )
     )
 
+
     predictions_encoded = (
         model.predict(
             X_test
         )
     )
+
 
     predictions = (
         label_encoder.inverse_transform(
@@ -421,27 +532,32 @@ def main():
         )
     )
 
+
     accuracy = accuracy_score(
         y_test_encoded,
         predictions_encoded
     )
+
 
     print(
         f"Test accuracy: "
         f"{accuracy:.4f}"
     )
 
+
     # ========================================================
     # 5. METRICS
     # ========================================================
 
     print(
-        "\n[5/6] Calculating V3 metrics..."
+        "\n[5/6] Calculating V5 metrics..."
     )
+
 
     classes = list(
         label_encoder.classes_
     )
+
 
     precision, recall, f1, _ = (
         precision_recall_fscore_support(
@@ -453,6 +569,7 @@ def main():
         )
     )
 
+
     report = classification_report(
         y_test,
         predictions,
@@ -461,35 +578,42 @@ def main():
         zero_division=0
     )
 
+
     cm = confusion_matrix(
         y_test,
         predictions,
         labels=classes
     )
 
+
     print(
         f"Accuracy  : "
         f"{accuracy:.4f}"
     )
+
 
     print(
         f"Precision : "
         f"{precision:.4f}"
     )
 
+
     print(
         f"Recall    : "
         f"{recall:.4f}"
     )
+
 
     print(
         f"F1-score  : "
         f"{f1:.4f}"
     )
 
+
     print(
         "\nClassification report:"
     )
+
 
     print(
         classification_report(
@@ -500,19 +624,31 @@ def main():
         )
     )
 
+
+    print(
+        "\nConfusion matrix:"
+    )
+
+    print(
+        cm
+    )
+
+
     # ========================================================
     # 6. SAVE RESULTS
     # ========================================================
 
     print(
-        "\n[6/6] Saving V3 evaluation results..."
+        "\n[6/6] Saving V5 evaluation results..."
     )
+
 
     # --------------------------------------------------------
     # Prediction records
     # --------------------------------------------------------
 
     prediction_records = []
+
 
     for i in range(
         len(asset_ids)
@@ -527,10 +663,14 @@ def main():
                     image_paths[i],
 
                 "actual_category":
-                    y_test[i],
+                    str(
+                        y_test[i]
+                    ),
 
                 "predicted_category":
-                    predictions[i],
+                    str(
+                        predictions[i]
+                    ),
 
                 "correct":
                     bool(
@@ -539,6 +679,7 @@ def main():
                     )
             }
         )
+
 
     with open(
         PREDICTIONS_FILE,
@@ -552,10 +693,10 @@ def main():
                     "HOG + SVM",
 
                 "experiment":
-                    "v3",
+                    "v5",
 
                 "dataset":
-                    "VietHeritage Classification Dataset V3",
+                    "VietHeritage Classification Dataset V5",
 
                 "split":
                     "test",
@@ -570,6 +711,9 @@ def main():
                         EXCLUDED_CATEGORIES
                     ),
 
+                "classes":
+                    classes,
+
                 "predictions":
                     prediction_records
             },
@@ -580,6 +724,7 @@ def main():
 
             indent=4
         )
+
 
     # --------------------------------------------------------
     # Evaluation report
@@ -598,17 +743,24 @@ def main():
             "kernel":
                 "RBF",
 
+            "C":
+                10.0,
+
+            "gamma":
+                "scale",
+
             "class_weight":
                 "balanced"
         },
 
+
         "experiment": {
 
             "version":
-                "v3",
+                "v5",
 
             "dataset":
-                "VietHeritage Classification Dataset V3",
+                "VietHeritage Classification Dataset V5",
 
             "purpose":
                 "Evaluate HOG + SVM "
@@ -617,6 +769,7 @@ def main():
                 "dataset excluding other "
                 "and uploaded categories"
         },
+
 
         "dataset": {
 
@@ -642,6 +795,7 @@ def main():
                     y_test
                 )
         },
+
 
         "feature_extraction": {
 
@@ -672,6 +826,7 @@ def main():
                 )
         },
 
+
         "metrics": {
 
             "accuracy":
@@ -695,14 +850,18 @@ def main():
                 )
         },
 
+
         "classification_report":
             report,
+
 
         "confusion_matrix":
             cm.tolist(),
 
+
         "classes":
             classes,
+
 
         "predictions_file":
             str(
@@ -711,6 +870,7 @@ def main():
                 )
             ),
 
+
         "confusion_matrix_file":
             str(
                 CONFUSION_MATRIX_FILE.relative_to(
@@ -718,6 +878,7 @@ def main():
                 )
             )
     }
+
 
     with open(
         REPORT_FILE,
@@ -732,6 +893,7 @@ def main():
             indent=4
         )
 
+
     # ========================================================
     # CONFUSION MATRIX
     # ========================================================
@@ -740,20 +902,25 @@ def main():
         figsize=(10, 8)
     )
 
+
     plt.imshow(
         cm,
         interpolation="nearest"
     )
 
+
     plt.title(
-        "VietHeritage Baseline V3 - Confusion Matrix"
+        "VietHeritage Baseline V5 - Confusion Matrix"
     )
 
+
     plt.colorbar()
+
 
     tick_marks = np.arange(
         len(classes)
     )
+
 
     plt.xticks(
         tick_marks,
@@ -762,16 +929,19 @@ def main():
         ha="right"
     )
 
+
     plt.yticks(
         tick_marks,
         classes
     )
+
 
     threshold = (
         cm.max() / 2.0
         if cm.size > 0
         else 0
     )
+
 
     for i in range(
         cm.shape[0]
@@ -784,22 +954,28 @@ def main():
             plt.text(
                 j,
                 i,
-                str(cm[i, j]),
+                str(
+                    cm[i, j]
+                ),
                 horizontalalignment="center",
                 color="white"
                 if cm[i, j] > threshold
                 else "black"
             )
 
+
     plt.ylabel(
         "Actual Category"
     )
+
 
     plt.xlabel(
         "Predicted Category"
     )
 
+
     plt.tight_layout()
+
 
     plt.savefig(
         CONFUSION_MATRIX_FILE,
@@ -807,7 +983,9 @@ def main():
         bbox_inches="tight"
     )
 
+
     plt.close()
+
 
     # ========================================================
     # FINAL OUTPUT
@@ -817,58 +995,70 @@ def main():
         "\n" + "=" * 70
     )
 
+
     print(
-        "V3 TEST EVALUATION COMPLETE"
+        "V5 TEST EVALUATION COMPLETE"
     )
+
 
     print(
         "=" * 70
     )
+
 
     print(
         f"\nOriginal test assets : "
         f"{len(all_assets)}"
     )
 
+
     print(
         f"Evaluated assets     : "
         f"{len(assets)}"
     )
+
 
     print(
         f"Excluded assets      : "
         f"{len(excluded_assets)}"
     )
 
+
     print(
         f"\nAccuracy  : "
         f"{accuracy:.4f}"
     )
+
 
     print(
         f"Precision : "
         f"{precision:.4f}"
     )
 
+
     print(
         f"Recall    : "
         f"{recall:.4f}"
     )
+
 
     print(
         f"F1-score  : "
         f"{f1:.4f}"
     )
 
+
     print(
         f"\nPredictions:"
         f"\n{PREDICTIONS_FILE}"
     )
 
+
     print(
         f"\nEvaluation report:"
         f"\n{REPORT_FILE}"
     )
+
 
     print(
         f"\nConfusion matrix:"
